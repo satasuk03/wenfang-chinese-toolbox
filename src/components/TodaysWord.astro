@@ -1,9 +1,9 @@
-<section class="tip" id="tip">
+<section class="tip anim-fade-up" id="tip">
   <div class="container tip-inner">
     <p class="tip-eyebrow">今日一語 · Today's word</p>
     <h2 class="tip-display">
-      <span class="syl">学</span><span class="syl">海</span><span class="syl">无</span><span
-        class="syl">涯</span
+      <span class="syl anim-char" style="animation-delay: 0.1s;">学</span><span class="syl anim-char" style="animation-delay: 0.2s;">海</span><span class="syl anim-char" style="animation-delay: 0.3s;">无</span><span
+        class="syl anim-char" style="animation-delay: 0.4s;">涯</span
       >
     </h2>
     <p class="tip-pinyin">xué hǎi wú yá</p>
@@ -97,6 +97,17 @@
   }
   .tip-translation::after {
     content: ' ”';
+  }
+
+  /* Entrance animations */
+  .tip.anim-fade-up {
+    opacity: 0;
+    animation: fade-up 0.9s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+    animation-delay: 0.1s;
+  }
+  .anim-char {
+    opacity: 0;
+    animation: fade-up 0.7s cubic-bezier(0.22, 1, 0.36, 1) forwards;
   }
 
   @media (max-width: 880px) {

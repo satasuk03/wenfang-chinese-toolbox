@@ -6,20 +6,20 @@ import heroImage from '../assets/hero-inkwash.png';
 <section class="hero">
   <div class="container hero-inner">
     <div class="hero-text">
-      <p class="hero-eyebrow">
+      <p class="hero-eyebrow anim-fade-up">
         <span>Free &amp; Open</span>
         <span>·</span>
         <span class="accent">For Learners</span>
       </p>
-      <h1 class="hero-headline">Chinese Learning <em>Toolbox.</em></h1>
-      <p class="hero-deck">
+      <h1 class="hero-headline anim-fade-up">Chinese Learning <em>Toolbox.</em></h1>
+      <p class="hero-deck anim-fade-up">
         Practical study tools for Chinese learners —
         <b>flashcards tied to your textbook</b>, stroke-order playback for any
         character you paste in. Free to use, no sign-up required.
       </p>
     </div>
     <figure class="hero-image">
-      <div class="hero-image-frame">
+      <div class="hero-image-frame anim-fade-up">
         <Image
           src={heroImage}
           alt="Inkwash brush painting of a young xian-style scholar standing on a misty mountain peak"
@@ -30,7 +30,7 @@ import heroImage from '../assets/hero-inkwash.png';
           class="hero-img"
         />
       </div>
-      <figcaption class="hero-image-caption">
+      <figcaption class="hero-image-caption anim-fade-up">
         <span>Plate I.</span>
         <span>Mountain · Inkwash · 2026</span>
       </figcaption>
@@ -119,6 +119,10 @@ import heroImage from '../assets/hero-inkwash.png';
     height: 100%;
     object-fit: cover;
     object-position: center center;
+    transition: transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+  .hero-image-frame:hover .hero-img {
+    transform: scale(1.03);
   }
   .hero-image-caption {
     margin-top: 14px;
@@ -129,6 +133,36 @@ import heroImage from '../assets/hero-inkwash.png';
     color: var(--color-muted);
     display: flex;
     justify-content: space-between;
+  }
+
+  /* Entrance animations */
+  .anim-fade-up {
+    opacity: 0;
+    animation: fade-up 0.85s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  }
+  .hero-eyebrow.anim-fade-up {
+    animation-delay: 0.05s;
+  }
+  .hero-headline.anim-fade-up {
+    animation-delay: 0.15s;
+  }
+  .hero-deck.anim-fade-up {
+    animation-delay: 0.3s;
+  }
+  .hero-image-frame.anim-fade-up {
+    animation-delay: 0.25s;
+    animation-duration: 1s;
+  }
+  .hero-image-caption.anim-fade-up {
+    animation-delay: 0.5s;
+  }
+
+  /* Subtle image hover zoom */
+  .hero-image-frame {
+    transition: transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+  .hero-image-frame:hover {
+    transform: scale(1.01);
   }
 
   @media (max-width: 1080px) {

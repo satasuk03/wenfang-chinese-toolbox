@@ -36,6 +36,7 @@ const ogImage = new URL('/og.png', Astro.site).toString();
     <!-- Google tag (gtag.js) -->
     <script is:inline async src="https://www.googletagmanager.com/gtag/js?id=G-SVZKS7ELXE"></script>
     <script is:inline>
+      /* eslint-disable prefer-rest-params */
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());

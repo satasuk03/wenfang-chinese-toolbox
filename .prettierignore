@@ -1,0 +1,8 @@
+dist/
+.astro/
+public/fonts/
+node_modules/
+docs/
+
+# prettier-plugin-astro can't parse our inline locale-detect script
+src/layouts/BaseLayout.astro

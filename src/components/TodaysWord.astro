@@ -12,7 +12,9 @@ const { locale } = Astro.props;
   <div class="container tip-inner">
     <p class="tip-eyebrow">{t(locale, 'tip.eyebrow')}</p>
     <h2 class="tip-display">
-      <span class="syl">学</span><span class="syl">海</span><span class="syl">无</span><span class="syl">涯</span>
+      <span class="syl">学</span><span class="syl">海</span><span class="syl">无</span><span
+        class="syl">涯</span
+      >
     </h2>
     <p class="tip-pinyin">xué hǎi wú yá</p>
     <p class="tip-translation">{t(locale, 'tip.translation')}</p>
@@ -65,7 +67,8 @@ const { locale } = Astro.props;
     color: var(--color-accent);
     margin-bottom: 40px;
   }
-  .tip-eyebrow::before, .tip-eyebrow::after {
+  .tip-eyebrow::before,
+  .tip-eyebrow::after {
     content: '';
     width: 44px;
     height: 1px;
@@ -80,7 +83,9 @@ const { locale } = Astro.props;
     margin-bottom: 32px;
     font-weight: 400;
   }
-  .tip-display .syl { display: inline-block; }
+  .tip-display .syl {
+    display: inline-block;
+  }
   .tip-pinyin {
     font-family: var(--font-display);
     font-style: italic;
@@ -98,13 +103,18 @@ const { locale } = Astro.props;
     margin-bottom: 36px;
     text-wrap: balance;
   }
-  .tip-translation::before, .tip-translation::after {
+  .tip-translation::before,
+  .tip-translation::after {
     color: var(--color-accent);
     font-style: normal;
     font-weight: 500;
   }
-  .tip-translation::before { content: '“ '; }
-  .tip-translation::after  { content: ' ”'; }
+  .tip-translation::before {
+    content: '“ ';
+  }
+  .tip-translation::after {
+    content: ' ”';
+  }
   .tip-note {
     max-width: 54ch;
     margin: 0 auto 32px;
@@ -139,10 +149,16 @@ const { locale } = Astro.props;
   }
 
   @media (max-width: 880px) {
-    .tip { padding: 72px 0 80px; }
-    .tip::before { font-size: 160px; }
+    .tip {
+      padding: 72px 0 80px;
+    }
+    .tip::before {
+      font-size: 160px;
+    }
   }
   @media (max-width: 560px) {
-    .tip-display { letter-spacing: 0.04em; }
+    .tip-display {
+      letter-spacing: 0.04em;
+    }
   }
 </style>

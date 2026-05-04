@@ -8,7 +8,7 @@
     "build": "astro build",
     "preview": "astro preview",
     "check": "astro check && tsc --noEmit",
-    "lint": "eslint . --ext .ts,.astro",
+    "lint": "eslint .",
     "format": "prettier --write .",
     "i18n:check": "tsx scripts/check-i18n.ts"
   },
@@ -19,15 +19,18 @@
   "devDependencies": {
     "@astrojs/check": "^0.9.9",
     "@astrojs/sitemap": "^3.7.2",
+    "@eslint/js": "^10.0.1",
     "@tailwindcss/vite": "^4.2.4",
     "@typescript-eslint/eslint-plugin": "^8.59.1",
     "@typescript-eslint/parser": "^8.59.1",
+    "astro-eslint-parser": "^1.4.0",
     "eslint": "^10.3.0",
     "eslint-plugin-astro": "^1.7.0",
     "prettier": "^3.8.3",
     "prettier-plugin-astro": "^0.14.1",
     "tailwindcss": "^4.2.4",
     "tsx": "^4.21.0",
-    "typescript": "^5.9.3"
+    "typescript": "^5.9.3",
+    "typescript-eslint": "^8.59.1"
   }
 }

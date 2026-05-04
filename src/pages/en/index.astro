@@ -8,10 +8,7 @@ const locale = 'en' as const;
 const currentPath = '/en/';
 ---
 
-<BaseLayout
-  locale={locale}
-  alternates={{ th: '/', en: '/en/' }}
->
+<BaseLayout locale={locale} alternates={{ th: '/', en: '/en/' }}>
   <Masthead locale={locale} currentPath={currentPath} />
   <main id="main">
     <Landing locale={locale} />

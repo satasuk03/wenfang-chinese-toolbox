@@ -49,11 +49,17 @@ const otherPath = localizedPath(otherLocale, currentPath);
     letter-spacing: 0.18em;
     text-transform: uppercase;
   }
-  .lang-current { color: var(--color-ink); }
-  .lang-sep    { color: var(--color-border); }
-  .lang-other  {
+  .lang-current {
+    color: var(--color-ink);
+  }
+  .lang-sep {
+    color: var(--color-border);
+  }
+  .lang-other {
     color: var(--color-muted);
     transition: color 0.15s ease;
   }
-  .lang-other:hover { color: var(--color-accent); }
+  .lang-other:hover {
+    color: var(--color-accent);
+  }
 </style>

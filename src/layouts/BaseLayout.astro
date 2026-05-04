@@ -56,19 +56,21 @@ const ogImage = new URL('/og.png', Astro.site).toString();
 
     {enableLocaleDetect && (
       <script is:inline>
-        (function(){
+        (function () {
           try {
-            var stored = localStorage.getItem('wf_locale');
+            const stored = localStorage.getItem('wf_locale');
             if (stored === 'en') {
-              location.replace(location.pathname === '/' ? '/en/' : ('/en' + location.pathname));
+              location.replace(location.pathname === '/' ? '/en/' : '/en' + location.pathname);
               return;
             }
             if (stored === 'th') return;
-            var nav = (navigator.language || '').toLowerCase();
+            const nav = (navigator.language || '').toLowerCase();
             if (nav.indexOf('en') === 0) {
-              location.replace(location.pathname === '/' ? '/en/' : ('/en' + location.pathname));
+              location.replace(location.pathname === '/' ? '/en/' : '/en' + location.pathname);
             }
-          } catch (e) { /* storage blocked — degrade silently */ }
+          } catch {
+            /* storage blocked — degrade silently */
+          }
         })();
       </script>
     )}

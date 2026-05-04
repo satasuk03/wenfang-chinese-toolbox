@@ -18,13 +18,15 @@ const items = tArray<{ title: string; body: string }>(locale, 'principles.items'
       </h2>
     </div>
     <ol class="principles-list">
-      {items.map((item, i) => (
-        <li>
-          <span class="num">— {String(i + 1).padStart(2, '0')}</span>
-          <h4>{item.title}</h4>
-          <p set:html={item.body} />
-        </li>
-      ))}
+      {
+        items.map((item, i) => (
+          <li>
+            <span class="num">— {String(i + 1).padStart(2, '0')}</span>
+            <h4>{item.title}</h4>
+            <p set:html={item.body} />
+          </li>
+        ))
+      }
     </ol>
   </div>
 </section>
@@ -58,7 +60,10 @@ const items = tArray<{ title: string; body: string }>(locale, 'principles.items'
     font-weight: 400;
     text-wrap: balance;
   }
-  .principles h2 em { color: var(--color-accent); font-style: italic; }
+  .principles h2 em {
+    color: var(--color-accent);
+    font-style: italic;
+  }
   .principles-list {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -66,7 +71,10 @@ const items = tArray<{ title: string; body: string }>(locale, 'principles.items'
     row-gap: 40px;
     list-style: none;
   }
-  .principles-list li { position: relative; padding-left: 48px; }
+  .principles-list li {
+    position: relative;
+    padding-left: 48px;
+  }
   .principles-list .num {
     position: absolute;
     left: 0;
@@ -96,9 +104,19 @@ const items = tArray<{ title: string; body: string }>(locale, 'principles.items'
     color: var(--color-fg);
   }
 
-  @media (max-width: 1080px) { .principles-inner { gap: 48px; } }
+  @media (max-width: 1080px) {
+    .principles-inner {
+      gap: 48px;
+    }
+  }
   @media (max-width: 880px) {
-    .principles-inner { grid-template-columns: 1fr; gap: 32px; }
-    .principles-list { grid-template-columns: 1fr; row-gap: 28px; }
+    .principles-inner {
+      grid-template-columns: 1fr;
+      gap: 32px;
+    }
+    .principles-list {
+      grid-template-columns: 1fr;
+      row-gap: 28px;
+    }
   }
 </style>

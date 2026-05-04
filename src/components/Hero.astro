@@ -23,9 +23,15 @@ const { locale } = Astro.props;
       </h1>
       <p class="hero-deck" set:html={t(locale, 'hero.deck')} />
       <dl class="hero-meta">
-        <div><dt>{t(locale, 'hero.metaToolsLabel')}</dt><dd>{t(locale, 'hero.metaToolsValue')}</dd></div>
-        <div><dt>{t(locale, 'hero.metaLevelsLabel')}</dt><dd>{t(locale, 'hero.metaLevelsValue')}</dd></div>
-        <div><dt>{t(locale, 'hero.metaCostLabel')}</dt><dd>{t(locale, 'hero.metaCostValue')}</dd></div>
+        <div>
+          <dt>{t(locale, 'hero.metaToolsLabel')}</dt><dd>{t(locale, 'hero.metaToolsValue')}</dd>
+        </div>
+        <div>
+          <dt>{t(locale, 'hero.metaLevelsLabel')}</dt><dd>{t(locale, 'hero.metaLevelsValue')}</dd>
+        </div>
+        <div>
+          <dt>{t(locale, 'hero.metaCostLabel')}</dt><dd>{t(locale, 'hero.metaCostValue')}</dd>
+        </div>
       </dl>
     </div>
     <figure class="hero-image">
@@ -49,14 +55,20 @@ const { locale } = Astro.props;
 </section>
 
 <style>
-  .hero { position: relative; padding: 96px 0 120px; }
+  .hero {
+    position: relative;
+    padding: 96px 0 120px;
+  }
   .hero-inner {
     display: grid;
     grid-template-columns: 1.15fr 1fr;
     gap: 72px;
     align-items: end;
   }
-  .hero-text { padding-bottom: 18px; max-width: 640px; }
+  .hero-text {
+    padding-bottom: 18px;
+    max-width: 640px;
+  }
   .hero-eyebrow {
     display: flex;
     align-items: center;
@@ -75,7 +87,9 @@ const { locale } = Astro.props;
     background: var(--color-accent);
     display: inline-block;
   }
-  .hero-eyebrow .accent { color: var(--color-accent); }
+  .hero-eyebrow .accent {
+    color: var(--color-accent);
+  }
 
   .hero-headline {
     font-family: var(--font-display);
@@ -100,7 +114,10 @@ const { locale } = Astro.props;
     margin-bottom: 48px;
     text-wrap: pretty;
   }
-  .hero-deck :global(b) { color: var(--color-fg); font-weight: 500; }
+  .hero-deck :global(b) {
+    color: var(--color-fg);
+    font-weight: 500;
+  }
 
   .hero-meta {
     display: grid;
@@ -124,7 +141,10 @@ const { locale } = Astro.props;
     font-style: italic;
   }
 
-  .hero-image { position: relative; align-self: end; }
+  .hero-image {
+    position: relative;
+    align-self: end;
+  }
   .hero-image-frame {
     position: relative;
     background: var(--color-paper);
@@ -150,20 +170,49 @@ const { locale } = Astro.props;
   }
 
   @media (max-width: 1080px) {
-    .hero { padding: 72px 0 96px; }
-    .hero-inner { gap: 48px; }
+    .hero {
+      padding: 72px 0 96px;
+    }
+    .hero-inner {
+      gap: 48px;
+    }
   }
   @media (max-width: 880px) {
-    .hero { padding: 56px 0 72px; }
-    .hero-inner { grid-template-columns: 1fr; gap: 48px; }
-    .hero-image { order: -1; max-width: 440px; }
-    .hero-text { padding-bottom: 0; }
+    .hero {
+      padding: 56px 0 72px;
+    }
+    .hero-inner {
+      grid-template-columns: 1fr;
+      gap: 48px;
+    }
+    .hero-image {
+      order: -1;
+      max-width: 440px;
+    }
+    .hero-text {
+      padding-bottom: 0;
+    }
   }
   @media (max-width: 560px) {
-    .hero-eyebrow { flex-wrap: wrap; gap: 10px; margin-bottom: 24px; }
-    .hero-eyebrow::before { width: 24px; }
-    .hero-headline { margin-bottom: 24px; }
-    .hero-deck { font-size: 17px; margin-bottom: 32px; }
-    .hero-meta { grid-template-columns: 1fr 1fr; row-gap: 16px; max-width: none; }
+    .hero-eyebrow {
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 24px;
+    }
+    .hero-eyebrow::before {
+      width: 24px;
+    }
+    .hero-headline {
+      margin-bottom: 24px;
+    }
+    .hero-deck {
+      font-size: 17px;
+      margin-bottom: 32px;
+    }
+    .hero-meta {
+      grid-template-columns: 1fr 1fr;
+      row-gap: 16px;
+      max-width: none;
+    }
   }
 </style>

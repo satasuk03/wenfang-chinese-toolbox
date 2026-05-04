@@ -55,7 +55,11 @@ const contactHref = '#contact';
     align-items: center;
     padding: 22px 0;
   }
-  .wordmark { display: flex; align-items: baseline; gap: 14px; }
+  .wordmark {
+    display: flex;
+    align-items: baseline;
+    gap: 14px;
+  }
   .wordmark-cn {
     font-family: var(--font-zh);
     font-size: 28px;
@@ -72,9 +76,16 @@ const contactHref = '#contact';
     padding-left: 14px;
     border-left: 1px solid var(--color-border);
   }
-  .wordmark-en em { font-style: italic; color: var(--color-fg); }
+  .wordmark-en em {
+    font-style: italic;
+    color: var(--color-fg);
+  }
 
-  .nav { display: flex; gap: 36px; align-items: center; }
+  .nav {
+    display: flex;
+    gap: 36px;
+    align-items: center;
+  }
   .nav a {
     font-family: var(--font-mono);
     font-size: 11px;
@@ -83,7 +94,9 @@ const contactHref = '#contact';
     color: var(--color-fg);
     transition: color 0.15s ease;
   }
-  .nav a:hover { color: var(--color-accent); }
+  .nav a:hover {
+    color: var(--color-accent);
+  }
   .nav a.dot::before {
     content: '';
     display: inline-block;
@@ -96,7 +109,9 @@ const contactHref = '#contact';
     transform: translateY(-1px);
   }
 
-  .nav-mobile { display: none; }
+  .nav-mobile {
+    display: none;
+  }
 
   .header-meta {
     border-top: 1px solid var(--color-border);
@@ -115,8 +130,14 @@ const contactHref = '#contact';
   }
 
   @media (max-width: 560px) {
-    .nav { display: none; }
-    .nav-mobile { display: flex; }
-    .header-meta { display: none; }
+    .nav {
+      display: none;
+    }
+    .nav-mobile {
+      display: flex;
+    }
+    .header-meta {
+      display: none;
+    }
   }
 </style>

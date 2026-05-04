@@ -19,7 +19,9 @@ const { locale } = Astro.props;
         {t(locale, 'footer.linkX')} — <span class="handle">{t(locale, 'footer.handleX')}</span>
       </a>
       <a href="https://zeze.app/portfolio" target="_blank" rel="noopener noreferrer">
-        {t(locale, 'footer.linkPortfolio')} — <span class="handle">{t(locale, 'footer.handlePortfolio')}</span>
+        {t(locale, 'footer.linkPortfolio')} — <span class="handle"
+          >{t(locale, 'footer.handlePortfolio')}</span
+        >
       </a>
     </div>
   </div>
@@ -70,7 +72,9 @@ const { locale } = Astro.props;
     color: var(--color-muted);
     transition: color 0.15s ease;
   }
-  .footer-social a:hover { color: var(--color-accent); }
+  .footer-social a:hover {
+    color: var(--color-accent);
+  }
   .footer-social a::before {
     content: '';
     display: inline-block;
@@ -88,5 +92,7 @@ const { locale } = Astro.props;
     color: var(--color-fg);
     font-size: 13px;
   }
-  .footer-social a:hover span.handle { color: var(--color-accent); }
+  .footer-social a:hover span.handle {
+    color: var(--color-accent);
+  }
 </style>

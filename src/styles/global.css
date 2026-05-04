@@ -20,8 +20,8 @@
     'Iowan Old Style', 'Charter', 'Source Han Serif SC', 'Songti SC', 'Times New Roman', Georgia,
     serif;
   --font-body:
-    -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Segoe UI', 'PingFang SC', 'Sukhumvit Set',
-    'Helvetica Neue Thai', system-ui, sans-serif;
+    -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Segoe UI', 'PingFang SC', system-ui,
+    sans-serif;
   --font-zh: 'Source Han Serif SC', 'Songti SC', 'STSong', 'SimSun', serif;
   --font-mono: 'JetBrains Mono', 'IBM Plex Mono', ui-monospace, Menlo, monospace;
 

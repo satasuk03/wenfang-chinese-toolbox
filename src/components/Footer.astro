@@ -1,27 +1,15 @@
----
-import { type Locale, t } from '../i18n/ui';
-
-interface Props {
-  locale: Locale;
-}
-
-const { locale } = Astro.props;
----
-
 <footer class="footer" id="contact">
   <div class="container footer-inner">
     <span class="copyright">
       <span class="small-seal" aria-hidden="true"></span>
-      <em>Wénfáng</em>© {t(locale, 'footer.year')}
+      <em>Wénfáng</em>© 2026
     </span>
     <div class="footer-social">
       <a href="https://x.com/ItsmeZecreto" target="_blank" rel="noopener noreferrer">
-        {t(locale, 'footer.linkX')} — <span class="handle">{t(locale, 'footer.handleX')}</span>
+        X — <span class="handle">@ItsmeZecreto</span>
       </a>
       <a href="https://zeze.app/portfolio" target="_blank" rel="noopener noreferrer">
-        {t(locale, 'footer.linkPortfolio')} — <span class="handle"
-          >{t(locale, 'footer.handlePortfolio')}</span
-        >
+        Portfolio — <span class="handle">zeze.app</span>
       </a>
     </div>
   </div>

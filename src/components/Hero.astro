@@ -1,44 +1,33 @@
 ---
 import { Image } from 'astro:assets';
 import heroImage from '../assets/hero-inkwash.png';
-import { type Locale, t } from '../i18n/ui';
-
-interface Props {
-  locale: Locale;
-}
-
-const { locale } = Astro.props;
 ---
 
 <section class="hero">
   <div class="container hero-inner">
     <div class="hero-text">
       <p class="hero-eyebrow">
-        <span>{t(locale, 'hero.eyebrow')}</span>
+        <span>The Studio</span>
         <span>·</span>
-        <span class="accent">{t(locale, 'hero.eyebrowVol')}</span>
+        <span class="accent">Vol. 01</span>
       </p>
-      <h1 class="hero-headline">
-        {t(locale, 'hero.headlinePre')}<em>{t(locale, 'hero.headlineEm')}</em>
-      </h1>
-      <p class="hero-deck" set:html={t(locale, 'hero.deck')} />
+      <h1 class="hero-headline">Quiet tools for studying <em>Chinese.</em></h1>
+      <p class="hero-deck">
+        A small library of focused, single-purpose instruments —
+        <b>flashcards bound to the textbook on your shelf</b>, stroke-order playback for any
+        character you can paste in. Built slowly, kept honest, kept free.
+      </p>
       <dl class="hero-meta">
-        <div>
-          <dt>{t(locale, 'hero.metaToolsLabel')}</dt><dd>{t(locale, 'hero.metaToolsValue')}</dd>
-        </div>
-        <div>
-          <dt>{t(locale, 'hero.metaLevelsLabel')}</dt><dd>{t(locale, 'hero.metaLevelsValue')}</dd>
-        </div>
-        <div>
-          <dt>{t(locale, 'hero.metaCostLabel')}</dt><dd>{t(locale, 'hero.metaCostValue')}</dd>
-        </div>
+        <div><dt>Tools</dt><dd>Two</dd></div>
+        <div><dt>Levels</dt><dd>HSK 1–6</dd></div>
+        <div><dt>Cost</dt><dd>None</dd></div>
       </dl>
     </div>
     <figure class="hero-image">
       <div class="hero-image-frame">
         <Image
           src={heroImage}
-          alt={t(locale, 'hero.imageAlt')}
+          alt="Inkwash brush painting of a young xian-style scholar standing on a misty mountain peak"
           widths={[440, 600, 800, 1200]}
           sizes="(max-width: 560px) 90vw, (max-width: 880px) 440px, (max-width: 1080px) 460px, 540px"
           format="avif"
@@ -47,8 +36,8 @@ const { locale } = Astro.props;
         />
       </div>
       <figcaption class="hero-image-caption">
-        <span>{t(locale, 'hero.imageCaptionLeft')}</span>
-        <span>{t(locale, 'hero.imageCaptionRight')}</span>
+        <span>Plate I.</span>
+        <span>Mountain · Inkwash · 2026</span>
       </figcaption>
     </figure>
   </div>
@@ -114,7 +103,7 @@ const { locale } = Astro.props;
     margin-bottom: 48px;
     text-wrap: pretty;
   }
-  .hero-deck :global(b) {
+  .hero-deck b {
     color: var(--color-fg);
     font-weight: 500;
   }

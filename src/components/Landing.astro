@@ -2,15 +2,8 @@
 import Hero from './Hero.astro';
 import TodaysWord from './TodaysWord.astro';
 import Principles from './Principles.astro';
-import { type Locale } from '../i18n/ui';
-
-interface Props {
-  locale: Locale;
-}
-
-const { locale } = Astro.props;
 ---
 
-<Hero locale={locale} />
-<TodaysWord locale={locale} />
-<Principles locale={locale} />
+<Hero />
+<TodaysWord />
+<Principles />

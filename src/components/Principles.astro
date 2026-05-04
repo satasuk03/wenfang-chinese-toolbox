@@ -1,21 +1,29 @@
 ---
-import { type Locale, t, tArray } from '../i18n/ui';
-
-interface Props {
-  locale: Locale;
-}
-
-const { locale } = Astro.props;
-const items = tArray<{ title: string; body: string }>(locale, 'principles.items');
+const items = [
+  {
+    title: 'One thing per tool.',
+    body: 'Each instrument does a single job and stops. No accounts, no streaks, no leaderboard. The textbook on your shelf already sets the curriculum.',
+  },
+  {
+    title: 'Match the textbook.',
+    body: 'Cards are bound to the exact vocabulary list of <em>Hanyu Jiaocheng</em> volumes 1A through 3B. The tool follows your study, not its own.',
+  },
+  {
+    title: 'Honest defaults.',
+    body: "If we don't have stroke data for a character, we say so plainly. A short, true note is worth more than a generated GIF that's wrong.",
+  },
+  {
+    title: 'Quiet on the page.',
+    body: 'No popovers, no notifications, no banner ads, no dark patterns. Cream paper, one accent, generous margins. Study in peace.',
+  },
+];
 ---
 
 <section class="principles" id="about">
   <div class="container principles-inner">
     <div>
-      <p class="principles-eyebrow">{t(locale, 'principles.eyebrow')}</p>
-      <h2>
-        {t(locale, 'principles.headlinePre')}<em>{t(locale, 'principles.headlineEm')}</em>
-      </h2>
+      <p class="principles-eyebrow">— On the studio</p>
+      <h2>Built like a stationery shop, not <em>a startup.</em></h2>
     </div>
     <ol class="principles-list">
       {

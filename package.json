@@ -9,8 +9,7 @@
     "preview": "astro preview",
     "check": "astro check && tsc --noEmit",
     "lint": "eslint .",
-    "format": "prettier --write .",
-    "i18n:check": "tsx scripts/check-i18n.ts"
+    "format": "prettier --write ."
   },
   "dependencies": {
     "@fontsource/ibm-plex-mono": "^5.2.7",
@@ -29,7 +28,6 @@
     "prettier": "^3.8.3",
     "prettier-plugin-astro": "^0.14.1",
     "tailwindcss": "^4.2.4",
-    "tsx": "^4.21.0",
     "typescript": "^5.9.3",
     "typescript-eslint": "^8.59.1"
   }

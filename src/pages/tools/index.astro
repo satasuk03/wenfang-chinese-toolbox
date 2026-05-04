@@ -3,15 +3,12 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import Masthead from '../../components/Masthead.astro';
 import Footer from '../../components/Footer.astro';
 import ComingSoon from '../../components/ComingSoon.astro';
-
-const locale = 'th' as const;
-const currentPath = '/tools/';
 ---
 
-<BaseLayout locale={locale} enableLocaleDetect alternates={{ th: '/tools/', en: '/en/tools/' }}>
-  <Masthead locale={locale} currentPath={currentPath} />
+<BaseLayout title="Tools — coming soon · Wénfáng">
+  <Masthead />
   <main id="main">
-    <ComingSoon locale={locale} />
+    <ComingSoon />
   </main>
-  <Footer locale={locale} />
+  <Footer />
 </BaseLayout>

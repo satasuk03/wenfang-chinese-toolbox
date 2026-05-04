@@ -1,19 +1,9 @@
----
-import { type Locale, t, localizedPath } from '../i18n/ui';
-
-interface Props {
-  locale: Locale;
-}
-
-const { locale } = Astro.props;
----
-
 <section class="coming-soon">
   <div class="container">
-    <h1>{t(locale, 'comingSoon.title')}</h1>
+    <h1>Tools — coming soon</h1>
     <p>
-      {t(locale, 'comingSoon.body')}
-      <a href={localizedPath(locale, '/')}>{t(locale, 'comingSoon.back')}</a>
+      The studio is still being arranged. Flashcards and stroke-order playback are next. Check
+      back, or <a href="/">return home.</a>
     </p>
   </div>
 </section>

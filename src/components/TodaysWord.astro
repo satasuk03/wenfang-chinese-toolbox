@@ -1,29 +1,24 @@
----
-import { type Locale, t } from '../i18n/ui';
-
-interface Props {
-  locale: Locale;
-}
-
-const { locale } = Astro.props;
----
-
 <section class="tip" id="tip">
   <div class="container tip-inner">
-    <p class="tip-eyebrow">{t(locale, 'tip.eyebrow')}</p>
+    <p class="tip-eyebrow">今日一語 · Today's word</p>
     <h2 class="tip-display">
       <span class="syl">学</span><span class="syl">海</span><span class="syl">无</span><span
         class="syl">涯</span
       >
     </h2>
     <p class="tip-pinyin">xué hǎi wú yá</p>
-    <p class="tip-translation">{t(locale, 'tip.translation')}</p>
-    <p class="tip-note" set:html={t(locale, 'tip.noteHtml')} />
+    <p class="tip-translation">The sea of learning has no shore.</p>
+    <p class="tip-note">
+      From a couplet attributed to the Tang scholar <em>韩愈</em> (Han Yu, 768–824). The full saying —
+      <em>学海无涯苦作舟</em> — "the sea of learning has no shore; let toil be your boat" — has been a
+      refrain for Chinese students for a thousand years. A useful thing to keep on the wall above a
+      desk.
+    </p>
     <p class="tip-meta">
       <span class="accent-dot" aria-hidden="true"></span>
-      {t(locale, 'tip.footerLeft')}
+      Tip 001
       <span>·</span>
-      {t(locale, 'tip.footerRight')}
+      Refreshes daily
     </p>
   </div>
 </section>
@@ -123,7 +118,7 @@ const { locale } = Astro.props;
     color: var(--color-muted);
     text-wrap: pretty;
   }
-  .tip-note :global(em) {
+  .tip-note em {
     font-family: var(--font-zh);
     font-style: normal;
     color: var(--color-fg);

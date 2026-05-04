@@ -3,15 +3,12 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import Masthead from '../components/Masthead.astro';
 import Footer from '../components/Footer.astro';
 import Landing from '../components/Landing.astro';
-
-const locale = 'th' as const;
-const currentPath = '/';
 ---
 
-<BaseLayout locale={locale} enableLocaleDetect alternates={{ th: '/', en: '/en/' }}>
-  <Masthead locale={locale} currentPath={currentPath} />
+<BaseLayout>
+  <Masthead />
   <main id="main">
-    <Landing locale={locale} />
+    <Landing />
   </main>
-  <Footer locale={locale} />
+  <Footer />
 </BaseLayout>

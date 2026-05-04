@@ -1,42 +1,21 @@
----
-import LangToggle from './LangToggle.astro';
-import { type Locale, t, localizedPath } from '../i18n/ui';
-
-interface Props {
-  locale: Locale;
-  currentPath: string;
-}
-
-const { locale, currentPath } = Astro.props;
-
-const homeHref = '#top';
-const toolsHref = localizedPath(locale, '/tools/');
-const aboutHref = '#about';
-const contactHref = '#contact';
----
-
 <header class="masthead" id="top">
   <div class="container masthead-inner">
-    <a href={localizedPath(locale, '/')} class="wordmark" aria-label="Wénfáng — home">
+    <a href="/" class="wordmark" aria-label="Wénfáng — home">
       <span class="wordmark-cn">文房</span>
       <span class="wordmark-en">Wén<em>fáng</em> · Studio</span>
     </a>
     <nav class="nav" aria-label="Primary">
-      <a href={homeHref} class="dot">{t(locale, 'nav.home')}</a>
-      <a href={toolsHref}>{t(locale, 'nav.tools')}</a>
-      <a href={aboutHref}>{t(locale, 'nav.about')}</a>
-      <a href={contactHref}>{t(locale, 'nav.contact')}</a>
-      <LangToggle locale={locale} currentPath={currentPath} />
+      <a href="#top" class="dot">Home</a>
+      <a href="/tools/">Tools</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
     </nav>
-    <div class="nav-mobile">
-      <LangToggle locale={locale} currentPath={currentPath} />
-    </div>
   </div>
   <div class="header-meta">
     <div class="container header-meta-inner">
-      <span>{t(locale, 'headerMeta.left')}</span>
+      <span>Free &amp; open</span>
       <div class="right">
-        <span>{t(locale, 'headerMeta.right')}</span>
+        <span>Made by Zeze</span>
       </div>
     </div>
   </div>
@@ -109,10 +88,6 @@ const contactHref = '#contact';
     transform: translateY(-1px);
   }
 
-  .nav-mobile {
-    display: none;
-  }
-
   .header-meta {
     border-top: 1px solid var(--color-border);
     border-bottom: 1px solid var(--color-border);
@@ -132,9 +107,6 @@ const contactHref = '#contact';
   @media (max-width: 560px) {
     .nav {
       display: none;
-    }
-    .nav-mobile {
-      display: flex;
     }
     .header-meta {
       display: none;

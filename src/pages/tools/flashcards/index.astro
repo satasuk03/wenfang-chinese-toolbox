@@ -13,7 +13,9 @@ const data = vocab1A as {
 }[];
 
 const entries = data.filter((e) => e.chapter !== null);
-const allChapters = Array.from(new Set(entries.map((e) => e.chapter))).sort((a, b) => a - b);
+const allChapters = Array.from(new Set(entries.map((e) => e.chapter)))
+  .filter((ch): ch is number => ch !== null)
+  .sort((a, b) => a - b);
 ---
 
 <BaseLayout title="Flashcards · Wénfáng">
@@ -92,7 +94,9 @@ const allChapters = Array.from(new Set(entries.map((e) => e.chapter))).sort((a, 
   try {
     const savedTab = localStorage.getItem(STORAGE_TAB);
     if (savedTab === 'character' || savedTab === 'pinyin' || savedTab === 'meaning') activeTab = savedTab;
-  } catch {}
+  } catch {
+    /* ignore */
+  }
 
   const savedChapters = new Set(allChapters);
   try {
@@ -104,7 +108,9 @@ const allChapters = Array.from(new Set(entries.map((e) => e.chapter))).sort((a, 
         parsed.forEach((c) => savedChapters.add(c));
       }
     }
-  } catch {}
+  } catch {
+    /* ignore */
+  }
 
   let deck = [];
   let idx = 0;
@@ -208,7 +214,11 @@ const allChapters = Array.from(new Set(entries.map((e) => e.chapter))).sort((a, 
     btn.addEventListener('click', () => {
       activeTab = btn.dataset.tab;
       updateTabs();
-      try { localStorage.setItem(STORAGE_TAB, activeTab); } catch {}
+      try {
+        localStorage.setItem(STORAGE_TAB, activeTab);
+      } catch {
+        /* ignore */
+      }
       render();
     });
   });
@@ -236,7 +246,9 @@ const allChapters = Array.from(new Set(entries.map((e) => e.chapter))).sort((a, 
   const saveChapters = () => {
     try {
       localStorage.setItem(STORAGE_CHAPTERS, JSON.stringify(Array.from(savedChapters)));
-    } catch {}
+    } catch {
+      /* ignore */
+    }
     rebuildDeck();
   };
 
@@ -357,12 +369,14 @@ const allChapters = Array.from(new Set(entries.map((e) => e.chapter))).sort((a, 
     max-width: 420px;
     aspect-ratio: 1;
     perspective: 1000px;
+    -webkit-perspective: 1000px;
   }
   .flash-card {
     width: 100%;
     height: 100%;
     position: relative;
     transform-style: preserve-3d;
+    -webkit-transform-style: preserve-3d;
     transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
     background: none;
     border: 0;
@@ -379,6 +393,7 @@ const allChapters = Array.from(new Set(entries.map((e) => e.chapter))).sort((a, 
     position: absolute;
     inset: 0;
     backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
     background: var(--color-paper);
     border: 1px solid var(--color-border);
     display: flex;

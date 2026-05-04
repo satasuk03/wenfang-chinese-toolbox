@@ -5,16 +5,18 @@
   "type": "module",
   "scripts": {
     "dev": "astro dev",
-    "build": "astro build",
+    "build": "npm run hanzi:build && astro build",
     "preview": "astro preview",
     "check": "astro check && tsc --noEmit",
     "lint": "eslint .",
     "format": "prettier --write .",
-    "vocab:build": "python3 scripts/build-vocab.py"
+    "vocab:build": "python3 scripts/build-vocab.py",
+    "hanzi:build": "node scripts/build-hanzi-data.js"
   },
   "dependencies": {
     "@fontsource/ibm-plex-mono": "^5.2.7",
-    "astro": "^5.18.1"
+    "astro": "^5.18.1",
+    "hanzi-writer": "^3.7.3"
   },
   "devDependencies": {
     "@astrojs/check": "^0.9.9",
@@ -26,6 +28,7 @@
     "astro-eslint-parser": "^1.4.0",
     "eslint": "^10.3.0",
     "eslint-plugin-astro": "^1.7.0",
+    "hanzi-writer-data": "^2.0.1",
     "prettier": "^3.8.3",
     "prettier-plugin-astro": "^0.14.1",
     "tailwindcss": "^4.2.4",

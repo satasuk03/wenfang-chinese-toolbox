@@ -1,0 +1,682 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import Masthead from '../../../components/Masthead.astro';
+import Footer from '../../../components/Footer.astro';
+import vocab1A from '../../../data/vocab-1a.json';
+
+const data = vocab1A as {
+  character: string;
+  pinyin: string;
+  partOfSpeech: string;
+  chapter: number | null;
+  meaning_th: string;
+}[];
+
+const entries = data.filter((e) => e.chapter !== null && e.character.length === 1);
+const allChapters = Array.from(new Set(entries.map((e) => e.chapter)))
+  .filter((ch): ch is number => ch !== null)
+  .sort((a, b) => a - b);
+---
+
+<BaseLayout title="Handwriting · Wénfáng">
+  <Masthead />
+  <main id="main">
+    <section class="write">
+      <div class="container">
+        <header class="write-header">
+          <h1>Handwriting</h1>
+          <p class="write-deck">Look at the prompt and write the character stroke by stroke.</p>
+        </header>
+
+        <div class="write-tabs" id="write-tabs">
+          <button type="button" class="write-tab" data-tab="pinyin">Pinyin prompt</button>
+          <button type="button" class="write-tab" data-tab="meaning">Meaning prompt</button>
+        </div>
+
+        <div class="write-scene" id="write-scene">
+          <div class="write-prompt">
+            <div class="write-prompt-main" id="prompt-main"></div>
+            <div class="write-prompt-sub" id="prompt-sub"></div>
+          </div>
+          <div class="write-canvas-wrap">
+            <div class="write-canvas" id="writer-target"></div>
+            <div class="write-overlay" id="write-overlay" style="display: none;"></div>
+          </div>
+          <div class="write-feedback" id="write-feedback"></div>
+        </div>
+
+        <div class="write-controls">
+          <button type="button" id="write-prev">← Prev</button>
+          <span class="write-counter" id="write-counter">—</span>
+          <button type="button" id="write-reveal">Reveal</button>
+          <button type="button" id="write-filter">Filter</button>
+          <button type="button" id="write-next">Next →</button>
+        </div>
+
+        <div class="write-filter-panel" id="filter-panel">
+          <div class="filter-book">Hanyu Jiaocheng 1A</div>
+          <div class="filter-head">
+            <span>Chapters</span>
+            <div class="filter-actions">
+              <button type="button" id="filter-all">All</button>
+              <button type="button" id="filter-none">Clear</button>
+            </div>
+          </div>
+          <div class="filter-chips" id="filter-chips">
+            {
+              allChapters.map((ch) => {
+                const count = entries.filter((e) => e.chapter === ch).length;
+                return (
+                  <label class="filter-chip">
+                    <input type="checkbox" value={ch} checked data-chapter={ch} />
+                    <span>Ch {ch}</span>
+                    <span class="filter-chip-count">{count}</span>
+                  </label>
+                );
+              })
+            }
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  <Footer />
+</BaseLayout>
+
+<script src="/hanzi-writer.min.js" is:inline></script>
+
+<script is:inline define:vars={{ entries, allChapters }}>
+  // ─── State ───
+  const STORAGE_TAB = 'wenfang_handwriting_tab';
+  const STORAGE_CHAPTERS = 'wenfang_handwriting_chapters';
+
+  let activeTab = 'pinyin';
+  try {
+    const savedTab = localStorage.getItem(STORAGE_TAB);
+    if (savedTab === 'pinyin' || savedTab === 'meaning') activeTab = savedTab;
+  } catch {
+    /* ignore */
+  }
+
+  const savedChapters = new Set(allChapters);
+  try {
+    const raw = localStorage.getItem(STORAGE_CHAPTERS);
+    if (raw) {
+      const parsed = JSON.parse(raw);
+      if (Array.isArray(parsed) && parsed.length > 0) {
+        savedChapters.clear();
+        parsed.forEach((c) => savedChapters.add(c));
+      }
+    }
+  } catch {
+    /* ignore */
+  }
+
+  let deck = [];
+  let idx = 0;
+  let writer = null;
+  let loadGen = 0;
+
+  // ─── DOM ───
+  const promptMain = document.getElementById('prompt-main');
+  const promptSub = document.getElementById('prompt-sub');
+  const writerTarget = document.getElementById('writer-target');
+  const overlayEl = document.getElementById('write-overlay');
+  const feedbackEl = document.getElementById('write-feedback');
+  const counterEl = document.getElementById('write-counter');
+  const tabEls = document.querySelectorAll('.write-tab');
+  const filterPanel = document.getElementById('filter-panel');
+  const filterBtn = document.getElementById('write-filter');
+  const chapterInputs = document.querySelectorAll('input[data-chapter]');
+
+  // ─── Helpers ───
+  const shuffle = (arr) => {
+    const a = arr.slice();
+    for (let i = a.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [a[i], a[j]] = [a[j], a[i]];
+    }
+    return a;
+  };
+
+  const rebuildDeck = () => {
+    const filtered = entries.filter((e) => savedChapters.has(e.chapter));
+    deck = shuffle(filtered);
+    idx = 0;
+    renderCard();
+  };
+
+  const startQuiz = () => {
+    if (!writer) return;
+    overlayEl.style.display = 'none';
+
+    writer.quiz({
+      showHintAfterMisses: 3,
+      markStrokeCorrectAfterMisses: 5,
+      onCorrectStroke: (data) => {
+        feedbackEl.textContent = `Strokes remaining: ${data.strokesRemaining}`;
+      },
+      onMistake: (data) => {
+        feedbackEl.textContent = `Mistakes: ${data.totalMistakes}`;
+        if (data.totalMistakes >= 12) {
+          autoReveal();
+        }
+      },
+      onComplete: (data) => {
+        feedbackEl.textContent = `Finished! Total mistakes: ${data.totalMistakes}`;
+        if (data.totalMistakes <= 2) overlayEl.textContent = 'Excellent!';
+        else if (data.totalMistakes <= 5) overlayEl.textContent = 'Well done!';
+        else overlayEl.textContent = 'Keep practicing!';
+        overlayEl.style.display = 'flex';
+      },
+    });
+  };
+
+  const autoReveal = () => {
+    if (!writer) return;
+    try {
+      writer.cancelQuiz();
+    } catch {
+      /* ignore */
+    }
+    feedbackEl.textContent = 'Auto-revealed after too many mistakes.';
+    writer.showCharacter();
+  };
+
+  const reveal = () => {
+    if (!writer || deck.length === 0) return;
+    try {
+      writer.cancelQuiz();
+    } catch {
+      /* ignore */
+    }
+    feedbackEl.textContent = 'Revealed.';
+    writer.animateCharacter();
+  };
+
+  const renderCard = () => {
+    if (deck.length === 0) {
+      promptMain.textContent = '—';
+      promptSub.textContent = '';
+      counterEl.textContent = '0 / 0';
+      feedbackEl.textContent = 'No cards match the current filter.';
+      overlayEl.style.display = 'none';
+      if (writer) {
+        try {
+          writer.cancelQuiz();
+        } catch {
+          /* ignore */
+        }
+      }
+      writerTarget.innerHTML = '';
+      writer = null;
+      return;
+    }
+
+    const c = deck[idx];
+    const gen = ++loadGen;
+
+    // Update prompt
+    if (activeTab === 'pinyin') {
+      promptMain.textContent = c.pinyin;
+      promptMain.className = 'write-prompt-main mode-pinyin';
+      promptSub.textContent = c.meaning_th || '—';
+    } else {
+      promptMain.textContent = c.meaning_th || '—';
+      promptMain.className = 'write-prompt-main mode-meaning';
+      promptSub.textContent = c.pinyin;
+    }
+    counterEl.textContent = `${idx + 1} / ${deck.length}`;
+    overlayEl.style.display = 'none';
+    feedbackEl.textContent = '';
+
+    // Clear old writer
+    if (writer) {
+      try {
+        writer.cancelQuiz();
+      } catch {
+        /* ignore */
+      }
+      writer = null;
+    }
+    writerTarget.innerHTML = '';
+
+    // Create writer and start quiz once data is loaded
+    writer = HanziWriter.create(writerTarget, c.character, {
+      width: 280,
+      height: 280,
+      padding: 18,
+      strokeColor: '#2a2622',
+      outlineColor: '#d4cfc8',
+      drawingColor: '#b83c2b',
+      highlightColor: '#f5e2de',
+      showOutline: true,
+      showCharacter: false,
+      charDataLoader: (ch, onLoad, onError) => {
+        fetch(`/hanzi-data/${encodeURIComponent(ch)}.json`)
+          .then((res) => {
+            if (!res.ok) throw new Error('Not found');
+            return res.json();
+          })
+          .then(onLoad)
+          .catch(onError);
+      },
+      onLoadCharDataSuccess: () => {
+        if (gen !== loadGen) return;
+        startQuiz();
+      },
+      onLoadCharDataError: () => {
+        if (gen !== loadGen) return;
+        feedbackEl.textContent = 'Character data not available.';
+      },
+    });
+  };
+
+  const next = () => {
+    if (deck.length === 0) return;
+    idx = idx < deck.length - 1 ? idx + 1 : 0;
+    renderCard();
+  };
+  const prev = () => {
+    if (deck.length === 0) return;
+    idx = idx > 0 ? idx - 1 : deck.length - 1;
+    renderCard();
+  };
+
+  // ─── Tabs ───
+  const updateTabs = () => {
+    tabEls.forEach((btn) => {
+      btn.classList.toggle('is-active', btn.dataset.tab === activeTab);
+    });
+  };
+
+  tabEls.forEach((btn) => {
+    btn.addEventListener('click', () => {
+      activeTab = btn.dataset.tab;
+      updateTabs();
+      try {
+        localStorage.setItem(STORAGE_TAB, activeTab);
+      } catch {
+        /* ignore */
+      }
+      renderCard();
+    });
+  });
+  updateTabs();
+
+  // ─── Controls ───
+  document.getElementById('write-next').addEventListener('click', next);
+  document.getElementById('write-prev').addEventListener('click', prev);
+  document.getElementById('write-reveal').addEventListener('click', reveal);
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'ArrowRight') next();
+    if (e.key === 'ArrowLeft') prev();
+    if (e.key === ' ' || e.key === 'Enter') {
+      e.preventDefault();
+      reveal();
+    }
+  });
+
+  let touchStartX = 0;
+  const scene = document.getElementById('write-scene');
+  scene?.addEventListener(
+    'touchstart',
+    (e) => {
+      touchStartX = e.changedTouches[0].screenX;
+    },
+    { passive: true },
+  );
+  scene?.addEventListener(
+    'touchend',
+    (e) => {
+      const dx = e.changedTouches[0].screenX - touchStartX;
+      if (dx < -40) next();
+      if (dx > 40) prev();
+    },
+    { passive: true },
+  );
+
+  // ─── Filter ───
+  const syncFilterInputs = () => {
+    chapterInputs.forEach((input) => {
+      input.checked = savedChapters.has(Number(input.value));
+    });
+  };
+  syncFilterInputs();
+
+  const saveChapters = () => {
+    try {
+      localStorage.setItem(STORAGE_CHAPTERS, JSON.stringify(Array.from(savedChapters)));
+    } catch {
+      /* ignore */
+    }
+    rebuildDeck();
+  };
+
+  chapterInputs.forEach((input) => {
+    input.addEventListener('change', () => {
+      const ch = Number(input.value);
+      if (input.checked) savedChapters.add(ch);
+      else savedChapters.delete(ch);
+      saveChapters();
+    });
+  });
+
+  filterBtn.addEventListener('click', () => {
+    const open = filterPanel.dataset.open !== 'true';
+    filterPanel.dataset.open = String(open);
+    filterBtn.classList.toggle('is-active', open);
+  });
+
+  document.getElementById('filter-all').addEventListener('click', () => {
+    allChapters.forEach((ch) => savedChapters.add(ch));
+    syncFilterInputs();
+    saveChapters();
+  });
+  document.getElementById('filter-none').addEventListener('click', () => {
+    savedChapters.clear();
+    syncFilterInputs();
+    saveChapters();
+  });
+
+  // ─── Init ───
+  rebuildDeck();
+</script>
+
+<style>
+  .write {
+    padding: 48px 0 80px;
+  }
+  .write-header {
+    text-align: center;
+    margin-bottom: 24px;
+  }
+  .write-header h1 {
+    font-family: var(--font-display);
+    font-size: clamp(36px, 4vw, 56px);
+    font-weight: 400;
+    color: var(--color-ink);
+    margin-bottom: 6px;
+  }
+  .write-deck {
+    font-size: 15px;
+    color: var(--color-muted);
+  }
+
+  /* ─── Tabs ─── */
+  .write-tabs {
+    display: flex;
+    justify-content: center;
+    gap: 0;
+    margin-bottom: 32px;
+  }
+  .write-tab {
+    background: var(--color-bg);
+    border: 1px solid var(--color-border);
+    padding: 10px 20px;
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--color-muted);
+    cursor: pointer;
+    transition:
+      color 0.15s ease,
+      background 0.15s ease,
+      border-color 0.15s ease;
+  }
+  .write-tab + .write-tab {
+    border-left: 0;
+  }
+  .write-tab:hover {
+    color: var(--color-ink);
+  }
+  .write-tab.is-active {
+    background: var(--color-ink);
+    color: var(--color-bg);
+    border-color: var(--color-ink);
+  }
+
+  /* ─── Scene ─── */
+  .write-scene {
+    width: 100%;
+    max-width: 420px;
+    margin: 0 auto 28px;
+    background: var(--color-paper);
+    border: 1px solid var(--color-border);
+    padding: 28px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    position: relative;
+    user-select: none;
+  }
+
+  .write-prompt {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+  .write-prompt-main {
+    line-height: 1.1;
+  }
+  .write-prompt-main.mode-pinyin {
+    font-family: var(--font-display);
+    font-style: italic;
+    font-size: clamp(32px, 5vw, 56px);
+    color: var(--color-ink);
+    letter-spacing: 0.02em;
+  }
+  .write-prompt-main.mode-meaning {
+    font-family: var(--font-zh);
+    font-size: clamp(28px, 3.5vw, 42px);
+    color: var(--color-ink);
+    padding: 0 8px;
+  }
+  .write-prompt-sub {
+    font-family: var(--font-zh);
+    font-size: clamp(16px, 2vw, 22px);
+    color: var(--color-muted);
+  }
+
+  .write-canvas-wrap {
+    position: relative;
+    width: 280px;
+    height: 280px;
+  }
+  .write-canvas {
+    width: 100%;
+    height: 100%;
+  }
+  .write-canvas :global(svg) {
+    width: 100%;
+    height: 100%;
+  }
+  .write-overlay {
+    position: absolute;
+    inset: 0;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255, 255, 255, 0.85);
+    font-family: var(--font-display);
+    font-style: italic;
+    font-size: 28px;
+    color: var(--color-accent);
+    pointer-events: none;
+  }
+
+  .write-feedback {
+    font-family: var(--font-mono);
+    font-size: 12px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--color-muted);
+    min-height: 18px;
+    text-align: center;
+  }
+
+  /* ─── Controls ─── */
+  .write-controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+  .write-controls button {
+    background: var(--color-bg);
+    border: 1px solid var(--color-border);
+    padding: 10px 20px;
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--color-fg);
+    cursor: pointer;
+    transition: border-color 0.15s ease;
+  }
+  .write-controls button:hover {
+    border-color: var(--color-ink);
+  }
+  .write-controls button.is-active {
+    background: var(--color-ink);
+    color: var(--color-bg);
+    border-color: var(--color-ink);
+  }
+  .write-counter {
+    font-family: var(--font-mono);
+    font-size: 12px;
+    color: var(--color-muted);
+    min-width: 70px;
+    text-align: center;
+  }
+
+  /* ─── Filter panel ─── */
+  .write-filter-panel {
+    max-width: 520px;
+    margin: 20px auto 0;
+    border: 1px solid var(--color-border);
+    background: var(--color-paper);
+    padding: 20px;
+    display: none;
+  }
+  .write-filter-panel[data-open='true'] {
+    display: block;
+  }
+  .filter-book {
+    font-family: var(--font-display);
+    font-size: 16px;
+    font-style: italic;
+    color: var(--color-ink);
+    margin-bottom: 12px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid var(--color-border);
+  }
+  .filter-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--color-fg);
+  }
+  .filter-actions {
+    display: flex;
+    gap: 12px;
+  }
+  .filter-actions button {
+    background: none;
+    border: 0;
+    padding: 0;
+    font: inherit;
+    color: var(--color-muted);
+    cursor: pointer;
+    letter-spacing: inherit;
+    text-transform: inherit;
+    transition: color 0.15s ease;
+  }
+  .filter-actions button:hover {
+    color: var(--color-accent);
+  }
+  .filter-chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+  .filter-chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--color-bg);
+    border: 1px solid var(--color-border);
+    padding: 8px 14px;
+    cursor: pointer;
+    font-family: var(--font-mono);
+    font-size: 11px;
+    color: var(--color-fg);
+    transition: border-color 0.15s ease;
+  }
+  .filter-chip:hover {
+    border-color: var(--color-ink);
+  }
+  .filter-chip input {
+    appearance: none;
+    width: 14px;
+    height: 14px;
+    border: 1px solid var(--color-border);
+    background: var(--color-bg);
+    margin: 0;
+    cursor: pointer;
+    position: relative;
+    transition: border-color 0.15s ease;
+  }
+  .filter-chip input:checked {
+    border-color: var(--color-ink);
+    background: var(--color-ink);
+  }
+  .filter-chip input:checked::after {
+    content: '';
+    position: absolute;
+    left: 4px;
+    top: 1px;
+    width: 4px;
+    height: 8px;
+    border: solid var(--color-bg);
+    border-width: 0 1.5px 1.5px 0;
+    transform: rotate(45deg);
+  }
+  .filter-chip-count {
+    color: var(--color-muted);
+    font-size: 10px;
+  }
+
+  @media (max-width: 560px) {
+    .write {
+      padding: 32px 0 56px;
+    }
+    .write-scene {
+      padding: 20px;
+    }
+    .write-canvas-wrap {
+      width: 240px;
+      height: 240px;
+    }
+    .write-controls {
+      gap: 12px;
+    }
+    .write-controls button {
+      padding: 10px 14px;
+    }
+    .write-filter-panel {
+      margin-left: 0;
+      margin-right: 0;
+    }
+  }
+</style>

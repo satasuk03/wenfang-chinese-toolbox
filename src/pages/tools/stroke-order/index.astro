@@ -13,7 +13,7 @@ const examples = ['你好', '学海无涯', '今天', '中国'];
       <div class="container">
         <header class="stroke-header">
           <h1>Stroke order</h1>
-          <p class="stroke-deck">Paste Chinese characters to see their stroke order.</p>
+          <p class="stroke-deck">Paste Chinese characters to see their stroke order. Click Animate to watch them draw.</p>
         </header>
 
         <form class="stroke-form" id="stroke-form" autocomplete="off">
@@ -46,6 +46,8 @@ const examples = ['你好', '学海无涯', '今天', '中国'];
   <Footer />
 </BaseLayout>
 
+<script src="/hanzi-writer.min.js" is:inline></script>
+
 <script is:inline>
   const form = document.getElementById('stroke-form');
   const input = document.getElementById('stroke-input');
@@ -69,7 +71,117 @@ const examples = ['你好', '学海无涯', '今天', '中国'];
     return out;
   };
 
+  const writerStates = new Map();
+
+  const showImage = (index) => {
+    const card = results.querySelector(`.stroke-card[data-index="${index}"]`);
+    if (!card) return;
+    const img = card.querySelector('img');
+    const fallback = card.querySelector('.stroke-fallback');
+    const writerDiv = card.querySelector('.stroke-writer');
+
+    img.style.display = '';
+    fallback.style.display = '';
+    writerDiv.style.display = 'none';
+    writerDiv.innerHTML = '';
+
+    const char = card.dataset.char;
+    const actions = card.querySelector('.stroke-actions');
+    actions.innerHTML = `<button type="button" class="stroke-btn" data-action="start" data-index="${index}" data-char="${char}">Animate</button>`;
+
+    writerStates.delete(index);
+  };
+
+  const startAnimation = (index, char) => {
+    const card = results.querySelector(`.stroke-card[data-index="${index}"]`);
+    if (!card) return;
+
+    const img = card.querySelector('img');
+    const fallback = card.querySelector('.stroke-fallback');
+    const writerDiv = card.querySelector('.stroke-writer');
+    const actions = card.querySelector('.stroke-actions');
+
+    img.style.display = 'none';
+    fallback.style.display = 'none';
+    writerDiv.style.display = 'flex';
+
+    const writer = HanziWriter.create(writerDiv, char, {
+      width: 300,
+      height: 300,
+      padding: 20,
+      strokeColor: '#2a2622',
+      outlineColor: '#d4cfc8',
+      showCharacter: false,
+      showOutline: true,
+      charDataLoader: (ch, onLoad, onError) => {
+        fetch(`/hanzi-data/${encodeURIComponent(ch)}.json`)
+          .then((res) => {
+            if (!res.ok) throw new Error('Not found');
+            return res.json();
+          })
+          .then(onLoad)
+          .catch(onError);
+      },
+      onLoadCharDataError: () => {
+        writerDiv.innerHTML = '<span class="stroke-writer-error">Not available</span>';
+      },
+    });
+
+    const state = { writer, char, currentStroke: 0, totalStrokes: null };
+    writerStates.set(index, state);
+
+    fetch(`/hanzi-data/${encodeURIComponent(char)}.json`)
+      .then((res) => {
+        if (!res.ok) throw new Error('Not found');
+        return res.json();
+      })
+      .then((data) => {
+        const s = writerStates.get(index);
+        if (s && data && data.strokes) s.totalStrokes = data.strokes.length;
+      })
+      .catch(() => {});
+
+    actions.innerHTML = `
+      <button type="button" class="stroke-btn" data-action="play" data-index="${index}">▶ Play</button>
+      <button type="button" class="stroke-btn" data-action="step" data-index="${index}">+ Step</button>
+      <button type="button" class="stroke-btn" data-action="image" data-index="${index}">Image</button>
+    `;
+  };
+
+  const playAnimation = (index) => {
+    const state = writerStates.get(index);
+    if (!state) return;
+    state.currentStroke = 0;
+    state.writer.animateCharacter();
+  };
+
+  const stepAnimation = (index) => {
+    const state = writerStates.get(index);
+    if (!state) return;
+    if (state.totalStrokes != null && state.currentStroke >= state.totalStrokes) return;
+    state.writer
+      .animateStroke(state.currentStroke)
+      .then(() => {
+        state.currentStroke++;
+      })
+      .catch(() => {});
+  };
+
+  results.addEventListener('click', (e) => {
+    const btn = e.target.closest('.stroke-btn');
+    if (!btn) return;
+    const action = btn.dataset.action;
+    const index = Number(btn.dataset.index);
+    const char = btn.dataset.char;
+
+    if (action === 'start') startAnimation(index, char);
+    else if (action === 'play') playAnimation(index);
+    else if (action === 'step') stepAnimation(index);
+    else if (action === 'image') showImage(index);
+  });
+
   const render = (chars) => {
+    writerStates.clear();
     if (chars.length === 0) {
       results.innerHTML = '';
       emptyState.style.display = 'block';
@@ -77,10 +189,10 @@ const examples = ['你好', '学海无涯', '今天', '中国'];
     }
     emptyState.style.display = 'none';
     results.innerHTML = chars
-      .map(({ ch, cp }) => {
+      .map(({ ch, cp }, i) => {
         const url = `https://www.strokeorder.com/assets/bishun/stroke/${cp}.png`;
         return `
-          <figure class="stroke-card" data-status="loading">
+          <figure class="stroke-card" data-status="loading" data-char="${ch}" data-index="${i}">
             <div class="stroke-card-canvas">
               <img
                 src="${url}"
@@ -91,8 +203,12 @@ const examples = ['你好', '学海无涯', '今天', '中国'];
               />
               <span class="stroke-fallback">${ch}</span>
               <span class="stroke-missing">Not found</span>
+              <div class="stroke-writer"></div>
             </div>
             <figcaption class="stroke-card-label">${ch}</figcaption>
+            <div class="stroke-actions">
+              <button type="button" class="stroke-btn" data-action="start" data-index="${i}" data-char="${ch}">Animate</button>
+            </div>
           </figure>
         `;
       })
@@ -296,6 +412,53 @@ const examples = ['你好', '学海无涯', '今天', '中国'];
     font-size: 20px;
     color: var(--color-ink);
     padding-top: 4px;
+  }
+
+  .stroke-actions {
+    display: flex;
+    gap: 6px;
+    justify-content: center;
+    padding-top: 8px;
+    border-top: 1px solid var(--color-border);
+  }
+  .stroke-btn {
+    background: var(--color-bg);
+    border: 1px solid var(--color-border);
+    padding: 6px 10px;
+    font-family: var(--font-mono);
+    font-size: 10px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--color-fg);
+    cursor: pointer;
+    transition:
+      border-color 0.15s ease,
+      background 0.15s ease;
+    flex: 1;
+  }
+  .stroke-btn:hover {
+    border-color: var(--color-ink);
+    background: var(--color-paper);
+  }
+
+  .stroke-writer {
+    position: absolute;
+    inset: 0;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    background: var(--color-bg);
+  }
+  .stroke-writer svg {
+    width: 100%;
+    height: 100%;
+  }
+  .stroke-writer-error {
+    font-family: var(--font-mono);
+    font-size: 10px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--color-muted);
   }
 
   @media (max-width: 560px) {

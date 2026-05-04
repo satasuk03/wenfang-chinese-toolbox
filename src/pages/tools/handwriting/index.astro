@@ -28,11 +28,6 @@ const allChapters = Array.from(new Set(entries.map((e) => e.chapter)))
           <p class="write-deck">Look at the prompt and write the character stroke by stroke.</p>
         </header>
 
-        <div class="write-tabs" id="write-tabs">
-          <button type="button" class="write-tab" data-tab="pinyin">Pinyin prompt</button>
-          <button type="button" class="write-tab" data-tab="meaning">Meaning prompt</button>
-        </div>
-
         <div class="write-scene" id="write-scene">
           <div class="write-prompt">
             <div class="write-prompt-main" id="prompt-main"></div>
@@ -87,16 +82,7 @@ const allChapters = Array.from(new Set(entries.map((e) => e.chapter)))
 
 <script is:inline define:vars={{ entries, allChapters }}>
   // ─── State ───
-  const STORAGE_TAB = 'wenfang_handwriting_tab';
   const STORAGE_CHAPTERS = 'wenfang_handwriting_chapters';
-
-  let activeTab = 'pinyin';
-  try {
-    const savedTab = localStorage.getItem(STORAGE_TAB);
-    if (savedTab === 'pinyin' || savedTab === 'meaning') activeTab = savedTab;
-  } catch {
-    /* ignore */
-  }
 
   const savedChapters = new Set(allChapters);
   try {
@@ -116,6 +102,7 @@ const allChapters = Array.from(new Set(entries.map((e) => e.chapter)))
   let idx = 0;
   let writer = null;
   let loadGen = 0;
+  let quizState = { completed: false, revealed: false };
 
   // ─── DOM ───
   const promptMain = document.getElementById('prompt-main');
@@ -124,9 +111,9 @@ const allChapters = Array.from(new Set(entries.map((e) => e.chapter)))
   const overlayEl = document.getElementById('write-overlay');
   const feedbackEl = document.getElementById('write-feedback');
   const counterEl = document.getElementById('write-counter');
-  const tabEls = document.querySelectorAll('.write-tab');
   const filterPanel = document.getElementById('filter-panel');
   const filterBtn = document.getElementById('write-filter');
+  const nextBtn = document.getElementById('write-next');
   const chapterInputs = document.querySelectorAll('input[data-chapter]');
 
   // ─── Helpers ───
@@ -146,23 +133,36 @@ const allChapters = Array.from(new Set(entries.map((e) => e.chapter)))
     renderCard();
   };
 
-  const startQuiz = () => {
+  const updateNextLock = () => {
+    const unlocked = quizState.completed || quizState.revealed;
+    nextBtn.classList.toggle('is-locked', !unlocked);
+    nextBtn.disabled = !unlocked;
+  };
+
+  const startQuiz = (expectedGen) => {
     if (!writer) return;
     overlayEl.style.display = 'none';
+    quizState = { completed: false, revealed: false };
+    updateNextLock();
 
     writer.quiz({
       showHintAfterMisses: 3,
       markStrokeCorrectAfterMisses: 5,
       onCorrectStroke: (data) => {
+        if (expectedGen !== loadGen) return;
         feedbackEl.textContent = `Strokes remaining: ${data.strokesRemaining}`;
       },
       onMistake: (data) => {
+        if (expectedGen !== loadGen) return;
         feedbackEl.textContent = `Mistakes: ${data.totalMistakes}`;
         if (data.totalMistakes >= 12) {
-          autoReveal();
+          autoReveal(expectedGen);
         }
       },
       onComplete: (data) => {
+        if (expectedGen !== loadGen) return;
+        quizState.completed = true;
+        updateNextLock();
         feedbackEl.textContent = `Finished! Total mistakes: ${data.totalMistakes}`;
         if (data.totalMistakes <= 2) overlayEl.textContent = 'Excellent!';
         else if (data.totalMistakes <= 5) overlayEl.textContent = 'Well done!';
@@ -172,13 +172,16 @@ const allChapters = Array.from(new Set(entries.map((e) => e.chapter)))
     });
   };
 
-  const autoReveal = () => {
+  const autoReveal = (expectedGen) => {
     if (!writer) return;
+    if (expectedGen !== loadGen) return;
     try {
       writer.cancelQuiz();
     } catch {
       /* ignore */
     }
+    quizState.revealed = true;
+    updateNextLock();
     feedbackEl.textContent = 'Auto-revealed after too many mistakes.';
     writer.showCharacter();
   };
@@ -190,6 +193,8 @@ const allChapters = Array.from(new Set(entries.map((e) => e.chapter)))
     } catch {
       /* ignore */
     }
+    quizState.revealed = true;
+    updateNextLock();
     feedbackEl.textContent = 'Revealed.';
     writer.animateCharacter();
   };
@@ -215,17 +220,13 @@ const allChapters = Array.from(new Set(entries.map((e) => e.chapter)))
 
     const c = deck[idx];
     const gen = ++loadGen;
+    quizState = { completed: false, revealed: false };
+    updateNextLock();
 
     // Update prompt
-    if (activeTab === 'pinyin') {
-      promptMain.textContent = c.pinyin;
-      promptMain.className = 'write-prompt-main mode-pinyin';
-      promptSub.textContent = c.meaning_th || '—';
-    } else {
-      promptMain.textContent = c.meaning_th || '—';
-      promptMain.className = 'write-prompt-main mode-meaning';
-      promptSub.textContent = c.pinyin;
-    }
+    promptMain.textContent = c.pinyin;
+    promptMain.className = 'write-prompt-main mode-pinyin';
+    promptSub.textContent = c.meaning_th || '—';
     counterEl.textContent = `${idx + 1} / ${deck.length}`;
     overlayEl.style.display = 'none';
     feedbackEl.textContent = '';
@@ -263,7 +264,7 @@ const allChapters = Array.from(new Set(entries.map((e) => e.chapter)))
       },
       onLoadCharDataSuccess: () => {
         if (gen !== loadGen) return;
-        startQuiz();
+        startQuiz(gen);
       },
       onLoadCharDataError: () => {
         if (gen !== loadGen) return;
@@ -274,6 +275,10 @@ const allChapters = Array.from(new Set(entries.map((e) => e.chapter)))
 
   const next = () => {
     if (deck.length === 0) return;
+    if (!quizState.completed && !quizState.revealed) {
+      feedbackEl.textContent = 'Finish writing this character first.';
+      return;
+    }
     idx = idx < deck.length - 1 ? idx + 1 : 0;
     renderCard();
   };
@@ -283,59 +288,23 @@ const allChapters = Array.from(new Set(entries.map((e) => e.chapter)))
     renderCard();
   };
 
-  // ─── Tabs ───
-  const updateTabs = () => {
-    tabEls.forEach((btn) => {
-      btn.classList.toggle('is-active', btn.dataset.tab === activeTab);
-    });
-  };
-
-  tabEls.forEach((btn) => {
-    btn.addEventListener('click', () => {
-      activeTab = btn.dataset.tab;
-      updateTabs();
-      try {
-        localStorage.setItem(STORAGE_TAB, activeTab);
-      } catch {
-        /* ignore */
-      }
-      renderCard();
-    });
-  });
-  updateTabs();
-
   // ─── Controls ───
   document.getElementById('write-next').addEventListener('click', next);
   document.getElementById('write-prev').addEventListener('click', prev);
   document.getElementById('write-reveal').addEventListener('click', reveal);
 
   document.addEventListener('keydown', (e) => {
-    if (e.key === 'ArrowRight') next();
-    if (e.key === 'ArrowLeft') prev();
+    if (e.key === 'ArrowRight') {
+      next();
+    }
+    if (e.key === 'ArrowLeft') {
+      prev();
+    }
     if (e.key === ' ' || e.key === 'Enter') {
       e.preventDefault();
       reveal();
     }
   });
-
-  let touchStartX = 0;
-  const scene = document.getElementById('write-scene');
-  scene?.addEventListener(
-    'touchstart',
-    (e) => {
-      touchStartX = e.changedTouches[0].screenX;
-    },
-    { passive: true },
-  );
-  scene?.addEventListener(
-    'touchend',
-    (e) => {
-      const dx = e.changedTouches[0].screenX - touchStartX;
-      if (dx < -40) next();
-      if (dx > 40) prev();
-    },
-    { passive: true },
-  );
 
   // ─── Filter ───
   const syncFilterInputs = () => {
@@ -404,40 +373,6 @@ const allChapters = Array.from(new Set(entries.map((e) => e.chapter)))
     color: var(--color-muted);
   }
 
-  /* ─── Tabs ─── */
-  .write-tabs {
-    display: flex;
-    justify-content: center;
-    gap: 0;
-    margin-bottom: 32px;
-  }
-  .write-tab {
-    background: var(--color-bg);
-    border: 1px solid var(--color-border);
-    padding: 10px 20px;
-    font-family: var(--font-mono);
-    font-size: 11px;
-    letter-spacing: 0.15em;
-    text-transform: uppercase;
-    color: var(--color-muted);
-    cursor: pointer;
-    transition:
-      color 0.15s ease,
-      background 0.15s ease,
-      border-color 0.15s ease;
-  }
-  .write-tab + .write-tab {
-    border-left: 0;
-  }
-  .write-tab:hover {
-    color: var(--color-ink);
-  }
-  .write-tab.is-active {
-    background: var(--color-ink);
-    color: var(--color-bg);
-    border-color: var(--color-ink);
-  }
-
   /* ─── Scene ─── */
   .write-scene {
     width: 100%;
@@ -469,12 +404,6 @@ const allChapters = Array.from(new Set(entries.map((e) => e.chapter)))
     font-size: clamp(32px, 5vw, 56px);
     color: var(--color-ink);
     letter-spacing: 0.02em;
-  }
-  .write-prompt-main.mode-meaning {
-    font-family: var(--font-zh);
-    font-size: clamp(28px, 3.5vw, 42px);
-    color: var(--color-ink);
-    padding: 0 8px;
   }
   .write-prompt-sub {
     font-family: var(--font-zh);
@@ -546,6 +475,18 @@ const allChapters = Array.from(new Set(entries.map((e) => e.chapter)))
     background: var(--color-ink);
     color: var(--color-bg);
     border-color: var(--color-ink);
+  }
+  .write-controls button.is-locked,
+  .write-controls button:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+    border-color: var(--color-border);
+    pointer-events: none;
+    user-select: none;
+  }
+  .write-controls button.is-locked:hover,
+  .write-controls button:disabled:hover {
+    border-color: var(--color-border);
   }
   .write-counter {
     font-family: var(--font-mono);

@@ -43,6 +43,7 @@ const allChapters = Array.from(new Set(entries.map((e) => e.chapter)))
               <div class="flash-card-face flash-card-back">
                 <div class="flash-card-secondary" id="card-secondary"></div>
                 <div class="flash-card-tertiary" id="card-tertiary"></div>
+                <div class="flash-card-quaternary" id="card-quaternary"></div>
               </div>
             </button>
           </div>
@@ -121,6 +122,7 @@ const allChapters = Array.from(new Set(entries.map((e) => e.chapter)))
   const primaryEl = document.getElementById('card-primary');
   const secondaryEl = document.getElementById('card-secondary');
   const tertiaryEl = document.getElementById('card-tertiary');
+  const quaternaryEl = document.getElementById('card-quaternary');
   const counterEl = document.getElementById('card-counter');
   const tabEls = document.querySelectorAll('.flash-tab');
   const filterPanel = document.getElementById('filter-panel');
@@ -150,6 +152,7 @@ const allChapters = Array.from(new Set(entries.map((e) => e.chapter)))
       primaryEl.textContent = '—';
       secondaryEl.textContent = '';
       tertiaryEl.textContent = '';
+      quaternaryEl.textContent = '';
       counterEl.textContent = '0 / 0';
       return;
     }
@@ -162,18 +165,24 @@ const allChapters = Array.from(new Set(entries.map((e) => e.chapter)))
       secondaryEl.textContent = c.pinyin;
       secondaryEl.className = 'flash-card-secondary mode-pinyin';
       tertiaryEl.textContent = c.meaning_th || '—';
+      quaternaryEl.textContent = c.character;
+      quaternaryEl.className = 'flash-card-quaternary mode-zh';
     } else if (activeTab === 'pinyin') {
       primaryEl.textContent = c.pinyin;
       primaryEl.className = 'flash-card-primary mode-pinyin';
       secondaryEl.textContent = c.character;
       secondaryEl.className = 'flash-card-secondary mode-zh';
       tertiaryEl.textContent = c.meaning_th || '—';
+      quaternaryEl.textContent = '';
+      quaternaryEl.className = 'flash-card-quaternary';
     } else {
       primaryEl.textContent = c.meaning_th || '—';
       primaryEl.className = 'flash-card-primary mode-meaning';
       secondaryEl.textContent = c.character;
       secondaryEl.className = 'flash-card-secondary mode-zh';
       tertiaryEl.textContent = c.pinyin;
+      quaternaryEl.textContent = '';
+      quaternaryEl.className = 'flash-card-quaternary';
     }
     counterEl.textContent = `${idx + 1} / ${deck.length}`;
   };
@@ -447,6 +456,13 @@ const allChapters = Array.from(new Set(entries.map((e) => e.chapter)))
     font-size: clamp(18px, 2.2vw, 24px);
     color: var(--color-muted);
     text-align: center;
+  }
+  .flash-card-quaternary {
+    font-family: var(--font-zh);
+    font-size: clamp(28px, 4vw, 48px);
+    color: var(--color-ink);
+    text-align: center;
+    margin-top: 8px;
   }
 
   /* ─── Controls ─── */

@@ -13,7 +13,7 @@ const examples = ['你好', '学海无涯', '今天', '中国'];
       <div class="container">
         <header class="stroke-header">
           <h1>Stroke order</h1>
-          <p class="stroke-deck">Paste Chinese characters to see their stroke order. Click Animate to watch them draw.</p>
+          <p class="stroke-deck">Paste Chinese characters to see their stroke order.</p>
         </header>
 
         <form class="stroke-form" id="stroke-form" autocomplete="off">
@@ -37,7 +37,39 @@ const examples = ['你好', '学海无涯', '今天', '中国'];
           ))}
         </div>
 
-        <div class="stroke-results" id="stroke-results"></div>
+        <div class="stroke-stage" id="stroke-stage">
+          <div class="stroke-scene">
+            <div class="stroke-canvas-wrap" id="canvas-wrap">
+              <div class="stroke-canvas" id="stroke-canvas"></div>
+              <img class="stroke-steps-img" id="stroke-steps-img" alt="" loading="lazy" />
+              <span class="stroke-canvas-fallback" id="canvas-fallback"></span>
+              <span class="stroke-canvas-error" id="canvas-error">Not available</span>
+            </div>
+
+            <div class="stroke-tabs" id="stroke-tabs">
+              <button type="button" class="stroke-tab is-active" data-tab="character">Character</button>
+              <button type="button" class="stroke-tab" data-tab="animate">Animate</button>
+              <button type="button" class="stroke-tab" data-tab="steps">All Steps</button>
+            </div>
+
+            <div class="stroke-animate-controls" id="animate-controls">
+              <button type="button" class="ctrl-btn" id="btn-play">▶ Play</button>
+              <button type="button" class="ctrl-btn" id="btn-step">+ Step</button>
+              <button type="button" class="ctrl-btn" id="btn-reset">Reset</button>
+            </div>
+          </div>
+
+          <div class="stroke-meta">
+            <span class="stroke-char-label" id="char-label"></span>
+            <div class="stroke-nav">
+              <button type="button" class="nav-btn" id="btn-prev">← Prev</button>
+              <span class="stroke-counter" id="stroke-counter">—</span>
+              <button type="button" class="nav-btn" id="btn-next">Next →</button>
+            </div>
+          </div>
+
+          <div class="stroke-chars" id="stroke-chars"></div>
+        </div>
 
         <p class="stroke-empty" id="stroke-empty">Type characters above to see stroke order.</p>
       </div>
@@ -51,8 +83,17 @@ const examples = ['你好', '学海无涯', '今天', '中国'];
 <script is:inline>
   const form = document.getElementById('stroke-form');
   const input = document.getElementById('stroke-input');
-  const results = document.getElementById('stroke-results');
+  const stage = document.getElementById('stroke-stage');
   const emptyState = document.getElementById('stroke-empty');
+  const canvas = document.getElementById('stroke-canvas');
+  const stepsImg = document.getElementById('stroke-steps-img');
+  const canvasFallback = document.getElementById('canvas-fallback');
+  const canvasError = document.getElementById('canvas-error');
+  const charLabel = document.getElementById('char-label');
+  const counterEl = document.getElementById('stroke-counter');
+  const tabsContainer = document.getElementById('stroke-tabs');
+  const animateControls = document.getElementById('animate-controls');
+  const charsStrip = document.getElementById('stroke-chars');
 
   const isHan = (cp) =>
     (cp >= 0x3400 && cp <= 0x4dbf) ||
@@ -71,152 +112,211 @@ const examples = ['你好', '学海无涯', '今天', '中国'];
     return out;
   };
 
-  const writerStates = new Map();
-
-  const showImage = (index) => {
-    const card = results.querySelector(`.stroke-card[data-index="${index}"]`);
-    if (!card) return;
-    const img = card.querySelector('img');
-    const fallback = card.querySelector('.stroke-fallback');
-    const writerDiv = card.querySelector('.stroke-writer');
-
-    img.style.display = '';
-    fallback.style.display = '';
-    writerDiv.style.display = 'none';
-    writerDiv.innerHTML = '';
-
-    const char = card.dataset.char;
-    const actions = card.querySelector('.stroke-actions');
-    actions.innerHTML = `<button type="button" class="stroke-btn" data-action="start" data-index="${index}" data-char="${char}">Animate</button>`;
-
-    writerStates.delete(index);
-  };
-
-  const startAnimation = (index, char) => {
-    const card = results.querySelector(`.stroke-card[data-index="${index}"]`);
-    if (!card) return;
-
-    const img = card.querySelector('img');
-    const fallback = card.querySelector('.stroke-fallback');
-    const writerDiv = card.querySelector('.stroke-writer');
-    const actions = card.querySelector('.stroke-actions');
-
-    img.style.display = 'none';
-    fallback.style.display = 'none';
-    writerDiv.style.display = 'flex';
-
-    const writer = HanziWriter.create(writerDiv, char, {
-      width: 300,
-      height: 300,
-      padding: 20,
-      strokeColor: '#2a2622',
-      outlineColor: '#d4cfc8',
-      showCharacter: false,
-      showOutline: true,
-      charDataLoader: (ch, onLoad, onError) => {
-        fetch(`/hanzi-data/${encodeURIComponent(ch)}.json`)
-          .then((res) => {
-            if (!res.ok) throw new Error('Not found');
-            return res.json();
-          })
-          .then(onLoad)
-          .catch(onError);
-      },
-      onLoadCharDataError: () => {
-        writerDiv.innerHTML = '<span class="stroke-writer-error">Not available</span>';
-      },
-    });
-
-    const state = { writer, char, currentStroke: 0, totalStrokes: null };
-    writerStates.set(index, state);
-
-    fetch(`/hanzi-data/${encodeURIComponent(char)}.json`)
+  let chars = [];
+  let idx = 0;
+  let activeTab = 'character';
+  let writer = null;
+  let currentStroke = 0;
+  let totalStrokes = null;
+  const charDataLoader = (ch, onLoad, onError) => {
+    fetch(`/hanzi-data/${encodeURIComponent(ch)}.json`)
       .then((res) => {
         if (!res.ok) throw new Error('Not found');
         return res.json();
       })
-      .then((data) => {
-        const s = writerStates.get(index);
-        if (s && data && data.strokes) s.totalStrokes = data.strokes.length;
-      })
-      .catch(() => {});
-
-    actions.innerHTML = `
-      <button type="button" class="stroke-btn" data-action="play" data-index="${index}">▶ Play</button>
-      <button type="button" class="stroke-btn" data-action="step" data-index="${index}">+ Step</button>
-      <button type="button" class="stroke-btn" data-action="image" data-index="${index}">Image</button>
-    `;
+      .then(onLoad)
+      .catch(onError);
   };
 
-  const playAnimation = (index) => {
-    const state = writerStates.get(index);
-    if (!state) return;
-    state.currentStroke = 0;
-    state.writer.animateCharacter();
+  const clearWriter = () => {
+    if (writer) {
+      try {
+        writer.cancelQuiz();
+      } catch {
+        /* ignore */
+      }
+      writer = null;
+    }
+    canvas.innerHTML = '';
   };
 
-  const stepAnimation = (index) => {
-    const state = writerStates.get(index);
-    if (!state) return;
-    if (state.totalStrokes != null && state.currentStroke >= state.totalStrokes) return;
-    state.writer
-      .animateStroke(state.currentStroke)
-      .then(() => {
-        state.currentStroke++;
-      })
-      .catch(() => {});
+  const setView = (view, opts = {}) => {
+    const { autoplay = false } = opts;
+    activeTab = view;
+
+    tabsContainer.querySelectorAll('.stroke-tab').forEach((btn) => {
+      btn.classList.toggle('is-active', btn.dataset.tab === view);
+    });
+
+    const char = chars[idx]?.ch;
+    if (!char) return;
+
+    if (view === 'character') {
+      animateControls.style.display = 'none';
+      stepsImg.style.display = 'none';
+      canvas.style.display = 'flex';
+      canvasFallback.style.display = 'none';
+      canvasError.style.display = 'none';
+      clearWriter();
+      writer = HanziWriter.create(canvas, char, {
+        width: 320,
+        height: 320,
+        padding: 20,
+        strokeColor: '#2a2622',
+        outlineColor: '#d4cfc8',
+        showCharacter: true,
+        showOutline: true,
+        charDataLoader,
+        onLoadCharDataError: () => {
+          canvas.innerHTML = '';
+          canvasError.style.display = 'flex';
+        },
+      });
+      fetch(`/hanzi-data/${encodeURIComponent(char)}.json`)
+        .then((r) => (r.ok ? r.json() : null))
+        .then((d) => {
+          if (d && d.strokes) totalStrokes = d.strokes.length;
+        })
+        .catch(() => {});
+    } else if (view === 'animate') {
+      animateControls.style.display = 'flex';
+      stepsImg.style.display = 'none';
+      canvas.style.display = 'flex';
+      canvasFallback.style.display = 'none';
+      canvasError.style.display = 'none';
+      currentStroke = 0;
+      clearWriter();
+      writer = HanziWriter.create(canvas, char, {
+        width: 320,
+        height: 320,
+        padding: 20,
+        strokeColor: '#2a2622',
+        outlineColor: '#d4cfc8',
+        showCharacter: false,
+        showOutline: true,
+        charDataLoader,
+        onLoadCharDataSuccess: () => {
+          if (autoplay && writer && activeTab === 'animate') {
+            writer.animateCharacter();
+          }
+        },
+        onLoadCharDataError: () => {
+          canvas.innerHTML = '';
+          canvasError.style.display = 'flex';
+        },
+      });
+      fetch(`/hanzi-data/${encodeURIComponent(char)}.json`)
+        .then((r) => (r.ok ? r.json() : null))
+        .then((d) => {
+          if (d && d.strokes) totalStrokes = d.strokes.length;
+        })
+        .catch(() => {});
+    } else if (view === 'steps') {
+      animateControls.style.display = 'none';
+      clearWriter();
+      canvas.style.display = 'none';
+      canvasError.style.display = 'none';
+      canvasFallback.style.display = 'none';
+      const { cp, ch } = chars[idx];
+      stepsImg.src = `https://www.strokeorder.com/assets/bishun/stroke/${cp}.png`;
+      stepsImg.alt = `Stroke order for ${ch}`;
+      stepsImg.style.display = 'block';
+      stepsImg.onload = () => {
+        canvasFallback.style.display = 'none';
+      };
+      stepsImg.onerror = () => {
+        stepsImg.style.display = 'none';
+        canvasFallback.textContent = ch;
+        canvasFallback.style.display = 'flex';
+      };
+    }
   };
 
-  results.addEventListener('click', (e) => {
-    const btn = e.target.closest('.stroke-btn');
-    if (!btn) return;
-    const action = btn.dataset.action;
-    const index = Number(btn.dataset.index);
-    const char = btn.dataset.char;
+  const go = (delta) => {
+    if (chars.length === 0) return;
+    idx = (idx + delta + chars.length) % chars.length;
+    showCharacter();
+  };
 
-    if (action === 'start') startAnimation(index, char);
-    else if (action === 'play') playAnimation(index);
-    else if (action === 'step') stepAnimation(index);
-    else if (action === 'image') showImage(index);
-  });
-
-  const render = (chars) => {
-    writerStates.clear();
+  const showCharacter = () => {
     if (chars.length === 0) {
-      results.innerHTML = '';
+      stage.style.display = 'none';
       emptyState.style.display = 'block';
       return;
     }
+    stage.style.display = 'block';
     emptyState.style.display = 'none';
-    results.innerHTML = chars
-      .map(({ ch, cp }, i) => {
-        const url = `https://www.strokeorder.com/assets/bishun/stroke/${cp}.png`;
-        return `
-          <figure class="stroke-card" data-status="loading" data-char="${ch}" data-index="${i}">
-            <div class="stroke-card-canvas">
-              <img
-                src="${url}"
-                alt="Stroke order for ${ch}"
-                loading="lazy"
-                onload="this.closest('.stroke-card').dataset.status='ok'"
-                onerror="this.closest('.stroke-card').dataset.status='missing'"
-              />
-              <span class="stroke-fallback">${ch}</span>
-              <span class="stroke-missing">Not found</span>
-              <div class="stroke-writer"></div>
-            </div>
-            <figcaption class="stroke-card-label">${ch}</figcaption>
-            <div class="stroke-actions">
-              <button type="button" class="stroke-btn" data-action="start" data-index="${i}" data-char="${ch}">Animate</button>
-            </div>
-          </figure>
-        `;
-      })
+
+    const { ch } = chars[idx];
+    charLabel.textContent = ch;
+    counterEl.textContent = `${idx + 1} / ${chars.length}`;
+
+    // Update strip
+    charsStrip.innerHTML = chars
+      .map(
+        ({ ch: c }, i) =>
+          `<button type="button" class="char-pill${i === idx ? ' is-active' : ''}" data-index="${i}">${c}</button>`,
+      )
       .join('');
+
+    setView(activeTab);
   };
 
+  // Tabs
+  tabsContainer.addEventListener('click', (e) => {
+    const btn = e.target.closest('.stroke-tab');
+    if (!btn) return;
+    const isMobile = window.matchMedia('(max-width: 560px)').matches;
+    setView(btn.dataset.tab, { autoplay: btn.dataset.tab === 'animate' && isMobile });
+  });
+
+  // Animation controls
+  document.getElementById('btn-play').addEventListener('click', () => {
+    if (!writer || activeTab !== 'animate') return;
+    currentStroke = 0;
+    writer.animateCharacter();
+  });
+
+  document.getElementById('btn-step').addEventListener('click', () => {
+    if (!writer || activeTab !== 'animate') return;
+    if (totalStrokes != null && currentStroke >= totalStrokes) return;
+    writer
+      .animateStroke(currentStroke)
+      .then(() => {
+        currentStroke++;
+      })
+      .catch(() => {});
+  });
+
+  document.getElementById('btn-reset').addEventListener('click', () => {
+    if (activeTab === 'animate') {
+      setView('animate');
+    }
+  });
+
+  // Navigation
+  document.getElementById('btn-prev').addEventListener('click', () => go(-1));
+  document.getElementById('btn-next').addEventListener('click', () => go(1));
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'ArrowRight') go(1);
+    if (e.key === 'ArrowLeft') go(-1);
+  });
+
+  // Char strip
+  charsStrip.addEventListener('click', (e) => {
+    const btn = e.target.closest('.char-pill');
+    if (!btn) return;
+    idx = Number(btn.dataset.index);
+    showCharacter();
+  });
+
+  // Submit
   const submit = () => {
-    render(splitChars(input.value));
+    chars = splitChars(input.value);
+    idx = 0;
+    activeTab = 'character';
+    showCharacter();
   };
 
   form?.addEventListener('submit', (e) => {
@@ -300,7 +400,7 @@ const examples = ['你好', '学海无涯', '今天', '中国'];
     flex-wrap: wrap;
     justify-content: center;
     gap: 8px;
-    margin-bottom: 48px;
+    margin-bottom: 40px;
   }
   .stroke-example {
     background: var(--color-bg);
@@ -325,56 +425,63 @@ const examples = ['你好', '学海无涯', '今天', '中国'];
     margin-top: 16px;
   }
 
-  .stroke-results {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
-    gap: 16px;
-  }
-  .stroke-results:empty {
+  /* Stage */
+  .stroke-stage {
     display: none;
   }
 
-  .stroke-card {
+  .stroke-scene {
+    width: 100%;
+    max-width: 420px;
+    margin: 0 auto 20px;
     background: var(--color-paper);
     border: 1px solid var(--color-border);
-    padding: 12px;
+    padding: 28px;
     display: flex;
     flex-direction: column;
-    gap: 10px;
-    transition: border-color 0.15s ease;
+    align-items: center;
+    gap: 20px;
   }
-  .stroke-card:hover {
-    border-color: var(--color-ink);
-  }
-  .stroke-card-canvas {
+
+  .stroke-canvas-wrap {
     position: relative;
-    aspect-ratio: 1 / 1;
+    width: 320px;
+    height: 320px;
     background: var(--color-bg);
     border: 1px solid var(--color-border);
     overflow: hidden;
   }
-  .stroke-card-canvas img {
+  .stroke-canvas {
+    position: absolute;
+    inset: 0;
+    display: none;
+    align-items: center;
+    justify-content: center;
+  }
+  .stroke-canvas :global(svg) {
+    width: 100%;
+    height: 100%;
+  }
+  .stroke-steps-img {
     position: absolute;
     inset: 0;
     width: 100%;
     height: 100%;
     object-fit: contain;
-    transition: opacity 0.2s ease;
+    display: none;
   }
-  .stroke-fallback {
+  .stroke-canvas-fallback {
     position: absolute;
     inset: 0;
-    display: flex;
+    display: none;
     align-items: center;
     justify-content: center;
     font-family: var(--font-zh);
-    font-size: 80px;
+    font-size: 120px;
     color: var(--color-soft);
     pointer-events: none;
-    opacity: 1;
-    transition: opacity 0.2s ease;
   }
-  .stroke-missing {
+  .stroke-canvas-error {
     position: absolute;
     inset: 0;
     display: none;
@@ -387,46 +494,56 @@ const examples = ['你好', '学海无涯', '今天', '中国'];
     color: var(--color-muted);
   }
 
-  .stroke-card[data-status='loading'] img {
-    opacity: 0;
-  }
-  .stroke-card[data-status='ok'] img {
-    opacity: 1;
-  }
-  .stroke-card[data-status='ok'] .stroke-fallback {
-    opacity: 0;
-  }
-  .stroke-card[data-status='missing'] img {
-    display: none;
-  }
-  .stroke-card[data-status='missing'] .stroke-fallback {
-    display: none;
-  }
-  .stroke-card[data-status='missing'] .stroke-missing {
+  /* Tabs */
+  .stroke-tabs {
     display: flex;
-  }
-
-  .stroke-card-label {
-    text-align: center;
-    font-family: var(--font-zh);
-    font-size: 20px;
-    color: var(--color-ink);
-    padding-top: 4px;
-  }
-
-  .stroke-actions {
-    display: flex;
-    gap: 6px;
     justify-content: center;
-    padding-top: 8px;
-    border-top: 1px solid var(--color-border);
+    gap: 0;
+    width: 100%;
   }
-  .stroke-btn {
+  .stroke-tab {
+    flex: 1;
     background: var(--color-bg);
     border: 1px solid var(--color-border);
-    padding: 6px 10px;
+    padding: 10px 0;
     font-family: var(--font-mono);
-    font-size: 10px;
+    font-size: 11px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--color-muted);
+    cursor: pointer;
+    transition:
+      color 0.15s ease,
+      background 0.15s ease,
+      border-color 0.15s ease;
+    min-height: 40px;
+  }
+  .stroke-tab + .stroke-tab {
+    border-left: 0;
+  }
+  .stroke-tab:hover {
+    color: var(--color-ink);
+  }
+  .stroke-tab.is-active {
+    background: var(--color-ink);
+    color: var(--color-bg);
+    border-color: var(--color-ink);
+  }
+
+  /* Animate controls */
+  .stroke-animate-controls {
+    display: none;
+    justify-content: center;
+    gap: 10px;
+    width: 100%;
+  }
+  .ctrl-btn {
+    flex: 1;
+    background: var(--color-bg);
+    border: 1px solid var(--color-border);
+    padding: 8px 12px;
+    font-family: var(--font-mono);
+    font-size: 11px;
     letter-spacing: 0.12em;
     text-transform: uppercase;
     color: var(--color-fg);
@@ -434,31 +551,87 @@ const examples = ['你好', '学海无涯', '今天', '中国'];
     transition:
       border-color 0.15s ease,
       background 0.15s ease;
-    flex: 1;
+    min-height: 36px;
   }
-  .stroke-btn:hover {
+  .ctrl-btn:hover {
     border-color: var(--color-ink);
     background: var(--color-paper);
   }
 
-  .stroke-writer {
-    position: absolute;
-    inset: 0;
-    display: none;
-    align-items: center;
+  /* Meta */
+  .stroke-meta {
+    text-align: center;
+    margin-bottom: 16px;
+  }
+  .stroke-char-label {
+    display: block;
+    font-family: var(--font-zh);
+    font-size: 28px;
+    color: var(--color-ink);
+    margin-bottom: 12px;
+  }
+  .stroke-nav {
+    display: flex;
     justify-content: center;
+    align-items: center;
+    gap: 16px;
+  }
+  .nav-btn {
     background: var(--color-bg);
-  }
-  .stroke-writer svg {
-    width: 100%;
-    height: 100%;
-  }
-  .stroke-writer-error {
+    border: 1px solid var(--color-border);
+    padding: 8px 16px;
     font-family: var(--font-mono);
-    font-size: 10px;
-    letter-spacing: 0.15em;
+    font-size: 11px;
+    letter-spacing: 0.12em;
     text-transform: uppercase;
+    color: var(--color-fg);
+    cursor: pointer;
+    transition: border-color 0.15s ease;
+  }
+  .nav-btn:hover {
+    border-color: var(--color-ink);
+  }
+  .nav-btn:disabled {
+    opacity: 0.35;
+    cursor: not-allowed;
+  }
+  .stroke-counter {
+    font-family: var(--font-mono);
+    font-size: 12px;
     color: var(--color-muted);
+    min-width: 60px;
+    text-align: center;
+  }
+
+  /* Char strip */
+  .stroke-chars {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px;
+    max-width: 520px;
+    margin: 0 auto;
+  }
+  .char-pill {
+    background: var(--color-bg);
+    border: 1px solid var(--color-border);
+    padding: 6px 14px;
+    font-family: var(--font-zh);
+    font-size: 18px;
+    color: var(--color-ink);
+    cursor: pointer;
+    transition:
+      border-color 0.15s ease,
+      background 0.15s ease,
+      color 0.15s ease;
+  }
+  .char-pill:hover {
+    border-color: var(--color-ink);
+  }
+  .char-pill.is-active {
+    background: var(--color-ink);
+    color: var(--color-bg);
+    border-color: var(--color-ink);
   }
 
   @media (max-width: 560px) {
@@ -473,15 +646,40 @@ const examples = ['你好', '学海无涯', '今天', '中国'];
       padding: 14px;
       min-height: 48px;
     }
-    .stroke-results {
-      grid-template-columns: repeat(2, 1fr);
-      gap: 12px;
+    .stroke-scene {
+      padding: 20px;
+      max-width: 100%;
     }
-    .stroke-card {
-      padding: 10px;
+    .stroke-canvas-wrap {
+      width: 320px;
+      height: 320px;
     }
-    .stroke-fallback {
-      font-size: 56px;
+    .stroke-canvas :global(svg) {
+      display: block;
+    }
+    .stroke-canvas-fallback {
+      font-size: 96px;
+    }
+    .stroke-tab {
+      font-size: 10px;
+      letter-spacing: 0.1em;
+      min-height: 36px;
+    }
+    .ctrl-btn {
+      font-size: 10px;
+      padding: 6px 8px;
+      min-height: 32px;
+    }
+    .stroke-char-label {
+      font-size: 24px;
+    }
+    .nav-btn {
+      padding: 6px 12px;
+      font-size: 10px;
+    }
+    .char-pill {
+      padding: 5px 12px;
+      font-size: 16px;
     }
   }
 </style>

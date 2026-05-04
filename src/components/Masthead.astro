@@ -1,0 +1,122 @@
+---
+import LangToggle from './LangToggle.astro';
+import { type Locale, t, localizedPath } from '../i18n/ui';
+
+interface Props {
+  locale: Locale;
+  currentPath: string;
+}
+
+const { locale, currentPath } = Astro.props;
+
+const homeHref = '#top';
+const toolsHref = localizedPath(locale, '/tools/');
+const aboutHref = '#about';
+const contactHref = '#contact';
+---
+
+<header class="masthead" id="top">
+  <div class="container masthead-inner">
+    <a href={localizedPath(locale, '/')} class="wordmark" aria-label="Wénfáng — home">
+      <span class="wordmark-cn">文房</span>
+      <span class="wordmark-en">Wén<em>fáng</em> · Studio</span>
+    </a>
+    <nav class="nav" aria-label="Primary">
+      <a href={homeHref} class="dot">{t(locale, 'nav.home')}</a>
+      <a href={toolsHref}>{t(locale, 'nav.tools')}</a>
+      <a href={aboutHref}>{t(locale, 'nav.about')}</a>
+      <a href={contactHref}>{t(locale, 'nav.contact')}</a>
+      <LangToggle locale={locale} currentPath={currentPath} />
+    </nav>
+    <div class="nav-mobile">
+      <LangToggle locale={locale} currentPath={currentPath} />
+    </div>
+  </div>
+  <div class="header-meta">
+    <div class="container header-meta-inner">
+      <span>{t(locale, 'headerMeta.left')}</span>
+      <div class="right">
+        <span>{t(locale, 'headerMeta.right')}</span>
+      </div>
+    </div>
+  </div>
+</header>
+
+<style>
+  .masthead {
+    border-bottom: 1px solid var(--color-border);
+    position: relative;
+    z-index: 2;
+    background: var(--color-bg);
+  }
+  .masthead-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 22px 0;
+  }
+  .wordmark { display: flex; align-items: baseline; gap: 14px; }
+  .wordmark-cn {
+    font-family: var(--font-zh);
+    font-size: 28px;
+    color: var(--color-ink);
+    letter-spacing: 0.04em;
+    line-height: 1;
+  }
+  .wordmark-en {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--color-muted);
+    padding-left: 14px;
+    border-left: 1px solid var(--color-border);
+  }
+  .wordmark-en em { font-style: italic; color: var(--color-fg); }
+
+  .nav { display: flex; gap: 36px; align-items: center; }
+  .nav a {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--color-fg);
+    transition: color 0.15s ease;
+  }
+  .nav a:hover { color: var(--color-accent); }
+  .nav a.dot::before {
+    content: '';
+    display: inline-block;
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: var(--color-accent);
+    margin-right: 8px;
+    vertical-align: middle;
+    transform: translateY(-1px);
+  }
+
+  .nav-mobile { display: none; }
+
+  .header-meta {
+    border-top: 1px solid var(--color-border);
+    border-bottom: 1px solid var(--color-border);
+    font-family: var(--font-mono);
+    font-size: 10.5px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--color-muted);
+    padding: 9px 0;
+  }
+  .header-meta-inner {
+    display: flex;
+    justify-content: space-between;
+    gap: 24px;
+  }
+
+  @media (max-width: 560px) {
+    .nav { display: none; }
+    .nav-mobile { display: flex; }
+    .header-meta { display: none; }
+  }
+</style>

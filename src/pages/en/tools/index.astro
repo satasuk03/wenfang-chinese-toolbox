@@ -1,0 +1,20 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import Masthead from '../../../components/Masthead.astro';
+import Footer from '../../../components/Footer.astro';
+import ComingSoon from '../../../components/ComingSoon.astro';
+
+const locale = 'en' as const;
+const currentPath = '/en/tools/';
+---
+
+<BaseLayout
+  locale={locale}
+  alternates={{ th: '/tools/', en: '/en/tools/' }}
+>
+  <Masthead locale={locale} currentPath={currentPath} />
+  <main id="main">
+    <ComingSoon locale={locale} />
+  </main>
+  <Footer locale={locale} />
+</BaseLayout>

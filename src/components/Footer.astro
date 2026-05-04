@@ -1,0 +1,92 @@
+---
+import { type Locale, t } from '../i18n/ui';
+
+interface Props {
+  locale: Locale;
+}
+
+const { locale } = Astro.props;
+---
+
+<footer class="footer" id="contact">
+  <div class="container footer-inner">
+    <span class="copyright">
+      <span class="small-seal" aria-hidden="true"></span>
+      <em>Wénfáng</em>© {t(locale, 'footer.year')}
+    </span>
+    <div class="footer-social">
+      <a href="https://x.com/ItsmeZecreto" target="_blank" rel="noopener noreferrer">
+        {t(locale, 'footer.linkX')} — <span class="handle">{t(locale, 'footer.handleX')}</span>
+      </a>
+      <a href="https://zeze.app/portfolio" target="_blank" rel="noopener noreferrer">
+        {t(locale, 'footer.linkPortfolio')} — <span class="handle">{t(locale, 'footer.handlePortfolio')}</span>
+      </a>
+    </div>
+  </div>
+</footer>
+
+<style>
+  .footer {
+    border-top: 1.5px solid var(--color-ink);
+    padding: 32px 0;
+    font-family: var(--font-mono);
+    font-size: 10.5px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--color-muted);
+  }
+  .footer-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 14px;
+  }
+  .copyright em {
+    font-style: italic;
+    color: var(--color-fg);
+    text-transform: none;
+    letter-spacing: 0;
+    font-family: var(--font-display);
+    margin-right: 6px;
+  }
+  .small-seal {
+    display: inline-block;
+    width: 14px;
+    height: 14px;
+    background: var(--color-accent);
+    margin-right: 8px;
+    transform: translateY(2px) rotate(-3deg);
+  }
+  .footer-social {
+    display: flex;
+    gap: 28px;
+    align-items: center;
+  }
+  .footer-social a {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--color-muted);
+    transition: color 0.15s ease;
+  }
+  .footer-social a:hover { color: var(--color-accent); }
+  .footer-social a::before {
+    content: '';
+    display: inline-block;
+    width: 5px;
+    height: 5px;
+    background: currentColor;
+    transform: rotate(45deg);
+    opacity: 0.6;
+  }
+  .footer-social a span.handle {
+    font-family: var(--font-display);
+    font-style: italic;
+    text-transform: none;
+    letter-spacing: 0;
+    color: var(--color-fg);
+    font-size: 13px;
+  }
+  .footer-social a:hover span.handle { color: var(--color-accent); }
+</style>

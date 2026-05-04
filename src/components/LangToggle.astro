@@ -1,0 +1,59 @@
+---
+import { type Locale, localizedPath, localeLabel } from '../i18n/ui';
+
+interface Props {
+  locale: Locale;
+  currentPath: string;
+}
+
+const { locale, currentPath } = Astro.props;
+const otherLocale: Locale = locale === 'th' ? 'en' : 'th';
+const otherPath = localizedPath(otherLocale, currentPath);
+---
+
+<div class="lang-toggle" role="group" aria-label="Language">
+  <span class="lang-current" aria-current="true">{localeLabel[locale]}</span>
+  <span class="lang-sep" aria-hidden="true">/</span>
+  <a
+    class="lang-other"
+    href={otherPath}
+    aria-label={otherLocale === 'en' ? 'Switch to English' : 'เปลี่ยนเป็นภาษาไทย'}
+    data-lang-target={otherLocale}
+  >
+    {localeLabel[otherLocale]}
+  </a>
+</div>
+
+<script>
+  document.querySelectorAll<HTMLAnchorElement>('a.lang-other').forEach((a) => {
+    a.addEventListener('click', () => {
+      const target = a.dataset.langTarget;
+      if (target === 'th' || target === 'en') {
+        try {
+          localStorage.setItem('wf_locale', target);
+        } catch {
+          /* storage blocked — degrade silently */
+        }
+      }
+    });
+  });
+</script>
+
+<style>
+  .lang-toggle {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+  }
+  .lang-current { color: var(--color-ink); }
+  .lang-sep    { color: var(--color-border); }
+  .lang-other  {
+    color: var(--color-muted);
+    transition: color 0.15s ease;
+  }
+  .lang-other:hover { color: var(--color-accent); }
+</style>

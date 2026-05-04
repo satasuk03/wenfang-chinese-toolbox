@@ -1,0 +1,104 @@
+---
+import { type Locale, t, tArray } from '../i18n/ui';
+
+interface Props {
+  locale: Locale;
+}
+
+const { locale } = Astro.props;
+const items = tArray<{ title: string; body: string }>(locale, 'principles.items');
+---
+
+<section class="principles" id="about">
+  <div class="container principles-inner">
+    <div>
+      <p class="principles-eyebrow">{t(locale, 'principles.eyebrow')}</p>
+      <h2>
+        {t(locale, 'principles.headlinePre')}<em>{t(locale, 'principles.headlineEm')}</em>
+      </h2>
+    </div>
+    <ol class="principles-list">
+      {items.map((item, i) => (
+        <li>
+          <span class="num">— {String(i + 1).padStart(2, '0')}</span>
+          <h4>{item.title}</h4>
+          <p set:html={item.body} />
+        </li>
+      ))}
+    </ol>
+  </div>
+</section>
+
+<style>
+  .principles {
+    border-top: 1px solid var(--color-border);
+    background: var(--color-bg);
+    padding: 80px 0;
+  }
+  .principles-inner {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 80px;
+    align-items: start;
+  }
+  .principles-eyebrow {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--color-accent);
+    margin-bottom: 14px;
+  }
+  .principles h2 {
+    font-family: var(--font-display);
+    font-size: clamp(30px, 3.2vw, 44px);
+    line-height: 1.05;
+    letter-spacing: -0.02em;
+    color: var(--color-ink);
+    font-weight: 400;
+    text-wrap: balance;
+  }
+  .principles h2 em { color: var(--color-accent); font-style: italic; }
+  .principles-list {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 48px;
+    row-gap: 40px;
+    list-style: none;
+  }
+  .principles-list li { position: relative; padding-left: 48px; }
+  .principles-list .num {
+    position: absolute;
+    left: 0;
+    top: 2px;
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: 0.18em;
+    color: var(--color-accent);
+  }
+  .principles-list h4 {
+    font-family: var(--font-display);
+    font-size: 21px;
+    line-height: 1.25;
+    color: var(--color-ink);
+    margin-bottom: 8px;
+    font-weight: 500;
+  }
+  .principles-list p {
+    font-size: 15px;
+    line-height: 1.6;
+    color: var(--color-muted);
+    text-wrap: pretty;
+  }
+  .principles-list :global(em) {
+    font-family: var(--font-zh);
+    font-style: normal;
+    color: var(--color-fg);
+  }
+
+  @media (max-width: 1080px) { .principles-inner { gap: 48px; } }
+  @media (max-width: 880px) {
+    .principles-inner { grid-template-columns: 1fr; gap: 32px; }
+    .principles-list { grid-template-columns: 1fr; row-gap: 28px; }
+  }
+</style>

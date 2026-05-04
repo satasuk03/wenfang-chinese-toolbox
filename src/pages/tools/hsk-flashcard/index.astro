@@ -1,0 +1,624 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import Masthead from '../../../components/Masthead.astro';
+import Footer from '../../../components/Footer.astro';
+import hskLevel1 from '../../../data/hsk-level-1.json';
+import hskLevel2 from '../../../data/hsk-level-2.json';
+
+const hsk1 = hskLevel1 as {
+  character: string;
+  pinyin: string;
+  partOfSpeech: string;
+  meaning_th: string;
+  example: string;
+  level: number;
+}[];
+
+const hsk2 = hskLevel2 as {
+  character: string;
+  pinyin: string;
+  partOfSpeech: string;
+  meaning_th: string;
+  example: string;
+  level: number;
+}[];
+
+const allLevels = [1, 2];
+---
+
+<BaseLayout title="HSK Flashcards · Wénfáng">
+  <Masthead />
+  <main id="main">
+    <section class="flash">
+      <div class="container">
+        <header class="flash-header">
+          <h1>HSK Flashcards</h1>
+          <p class="flash-deck">Tap the card to flip. Use arrows or swipe to move.</p>
+        </header>
+
+        <div class="flash-tabs" id="flash-tabs">
+          <button type="button" class="flash-tab" data-tab="character">Character</button>
+          <button type="button" class="flash-tab" data-tab="pinyin">Pinyin</button>
+          <button type="button" class="flash-tab" data-tab="meaning">Meaning</button>
+        </div>
+
+        <div class="flash-card-wrap">
+          <div class="flash-card-scene">
+            <div role="button" tabindex="0" class="flash-card" id="flash-card" data-revealed="false" aria-label="Tap to flip">
+              <div class="flash-card-face flash-card-front">
+                <div class="flash-card-primary" id="card-primary"></div>
+              </div>
+              <div class="flash-card-face flash-card-back">
+                <div class="flash-card-secondary" id="card-secondary"></div>
+                <div class="flash-card-tertiary" id="card-tertiary"></div>
+                <div class="flash-card-example" id="card-example"></div>
+                <div class="flash-card-quaternary" id="card-quaternary"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="flash-controls">
+          <button type="button" id="flash-prev">← Prev</button>
+          <span class="flash-counter" id="card-counter">—</span>
+          <button type="button" id="flash-filter">Filter</button>
+          <button type="button" id="flash-next">Next →</button>
+        </div>
+
+        <div class="flash-filter-panel" id="filter-panel">
+          <div class="filter-book">新 HSK 词汇（汉泰）</div>
+          <div class="filter-head">
+            <span>Level</span>
+          </div>
+          <div class="filter-levels" id="filter-levels">
+            <label class="filter-chip">
+              <input type="radio" name="hsk-level" value="1" checked data-level="1" />
+              <span>Level 1</span>
+              <span class="filter-chip-count">{hsk1.length}</span>
+            </label>
+            <label class="filter-chip">
+              <input type="radio" name="hsk-level" value="2" data-level="2" />
+              <span>Level 2</span>
+              <span class="filter-chip-count">{hsk2.length}</span>
+            </label>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  <Footer />
+</BaseLayout>
+
+<script is:inline define:vars={{ hsk1, hsk2, allLevels }}>
+  // ─── State ───
+  const STORAGE_TAB = 'wenfang_hsk_flashcard_tab';
+  const STORAGE_LEVEL = 'wenfang_hsk_flashcard_level';
+
+  let activeTab = 'character';
+  try {
+    const savedTab = localStorage.getItem(STORAGE_TAB);
+    if (savedTab === 'character' || savedTab === 'pinyin' || savedTab === 'meaning') activeTab = savedTab;
+  } catch {
+    /* ignore */
+  }
+
+  let activeLevel = 1;
+  try {
+    const savedLevel = localStorage.getItem(STORAGE_LEVEL);
+    if (savedLevel === '1' || savedLevel === '2') activeLevel = Number(savedLevel);
+  } catch {
+    /* ignore */
+  }
+
+  let deck = [];
+  let idx = 0;
+  let pendingRender = false;
+
+  // ─── DOM ───
+  const cardEl = document.getElementById('flash-card');
+  const primaryEl = document.getElementById('card-primary');
+  const secondaryEl = document.getElementById('card-secondary');
+  const tertiaryEl = document.getElementById('card-tertiary');
+  const exampleEl = document.getElementById('card-example');
+  const quaternaryEl = document.getElementById('card-quaternary');
+  const counterEl = document.getElementById('card-counter');
+  const tabEls = document.querySelectorAll('.flash-tab');
+  const filterPanel = document.getElementById('filter-panel');
+  const filterBtn = document.getElementById('flash-filter');
+  const levelInputs = document.querySelectorAll('input[data-level]');
+
+  // ─── Helpers ───
+  const getEntriesForLevel = (level) => {
+    if (level === 1) return hsk1;
+    if (level === 2) return hsk2;
+    return hsk1;
+  };
+
+  const shuffle = (arr) => {
+    const a = arr.slice();
+    for (let i = a.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [a[i], a[j]] = [a[j], a[i]];
+    }
+    return a;
+  };
+
+  const rebuildDeck = () => {
+    const entries = getEntriesForLevel(activeLevel);
+    deck = shuffle(entries);
+    idx = 0;
+    render();
+  };
+
+  const render = () => {
+    pendingRender = false;
+    if (deck.length === 0) {
+      primaryEl.textContent = '—';
+      secondaryEl.textContent = '';
+      tertiaryEl.textContent = '';
+      exampleEl.textContent = '';
+      exampleEl.style.display = 'none';
+      quaternaryEl.textContent = '';
+      counterEl.textContent = '0 / 0';
+      return;
+    }
+    const c = deck[idx];
+    cardEl.dataset.revealed = 'false';
+
+    if (activeTab === 'character') {
+      primaryEl.textContent = c.character;
+      primaryEl.className = 'flash-card-primary mode-zh';
+      secondaryEl.textContent = c.pinyin;
+      secondaryEl.className = 'flash-card-secondary mode-pinyin';
+      tertiaryEl.textContent = c.meaning_th || '—';
+      exampleEl.textContent = c.example || '';
+      exampleEl.style.display = c.example ? '' : 'none';
+      quaternaryEl.textContent = c.character;
+      quaternaryEl.className = 'flash-card-quaternary mode-zh';
+    } else if (activeTab === 'pinyin') {
+      primaryEl.textContent = c.pinyin;
+      primaryEl.className = 'flash-card-primary mode-pinyin';
+      secondaryEl.textContent = c.character;
+      secondaryEl.className = 'flash-card-secondary mode-zh';
+      tertiaryEl.textContent = c.meaning_th || '—';
+      exampleEl.textContent = c.example || '';
+      exampleEl.style.display = c.example ? '' : 'none';
+      quaternaryEl.textContent = '';
+      quaternaryEl.className = 'flash-card-quaternary';
+    } else {
+      primaryEl.textContent = c.meaning_th || '—';
+      primaryEl.className = 'flash-card-primary mode-meaning';
+      secondaryEl.textContent = c.character;
+      secondaryEl.className = 'flash-card-secondary mode-zh';
+      tertiaryEl.textContent = c.pinyin;
+      exampleEl.textContent = c.example || '';
+      exampleEl.style.display = c.example ? '' : 'none';
+      quaternaryEl.textContent = '';
+      quaternaryEl.className = 'flash-card-quaternary';
+    }
+    counterEl.textContent = `${idx + 1} / ${deck.length}`;
+  };
+
+  const next = () => {
+    if (deck.length === 0 || pendingRender) return;
+    idx = idx < deck.length - 1 ? idx + 1 : 0;
+    if (cardEl.dataset.revealed === 'true') {
+      pendingRender = true;
+      cardEl.dataset.revealed = 'false';
+    } else {
+      render();
+    }
+  };
+  const prev = () => {
+    if (deck.length === 0 || pendingRender) return;
+    idx = idx > 0 ? idx - 1 : deck.length - 1;
+    if (cardEl.dataset.revealed === 'true') {
+      pendingRender = true;
+      cardEl.dataset.revealed = 'false';
+    } else {
+      render();
+    }
+  };
+  const reveal = () => {
+    if (pendingRender) return;
+    cardEl.dataset.revealed = 'true';
+  };
+
+  // ─── Tabs ───
+  const updateTabs = () => {
+    tabEls.forEach((btn) => {
+      btn.classList.toggle('is-active', btn.dataset.tab === activeTab);
+    });
+  };
+
+  tabEls.forEach((btn) => {
+    btn.addEventListener('click', () => {
+      activeTab = btn.dataset.tab;
+      updateTabs();
+      try {
+        localStorage.setItem(STORAGE_TAB, activeTab);
+      } catch {
+        /* ignore */
+      }
+      render();
+    });
+  });
+  updateTabs();
+
+  // ─── Card interaction ───
+  cardEl.addEventListener('transitionend', (e) => {
+    if (e.target !== cardEl || e.propertyName !== 'transform') return;
+    if (pendingRender) render();
+  });
+
+  cardEl.addEventListener('click', () => {
+    if (cardEl.dataset.revealed === 'true') next();
+    else reveal();
+  });
+
+  cardEl.addEventListener('keydown', (e) => {
+    if (e.key === 'Enter' || e.key === ' ') {
+      e.preventDefault();
+      if (cardEl.dataset.revealed === 'true') next();
+      else reveal();
+    }
+  });
+
+  // ─── Filter ───
+  const syncFilterInputs = () => {
+    levelInputs.forEach((input) => {
+      input.checked = Number(input.value) === activeLevel;
+    });
+  };
+  syncFilterInputs();
+
+  const saveLevel = () => {
+    try {
+      localStorage.setItem(STORAGE_LEVEL, String(activeLevel));
+    } catch {
+      /* ignore */
+    }
+    rebuildDeck();
+  };
+
+  levelInputs.forEach((input) => {
+    input.addEventListener('change', () => {
+      if (input.checked) {
+        activeLevel = Number(input.value);
+        saveLevel();
+      }
+    });
+  });
+
+  filterBtn.addEventListener('click', () => {
+    const open = filterPanel.dataset.open !== 'true';
+    filterPanel.dataset.open = String(open);
+    filterBtn.classList.toggle('is-active', open);
+  });
+
+  // ─── Nav ───
+  document.getElementById('flash-next').addEventListener('click', next);
+  document.getElementById('flash-prev').addEventListener('click', prev);
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'ArrowRight') next();
+    if (e.key === 'ArrowLeft') prev();
+    if (e.key === ' ' || e.key === 'Enter') {
+      e.preventDefault();
+      if (cardEl.dataset.revealed === 'true') next();
+      else reveal();
+    }
+  });
+
+  let touchStartX = 0;
+  cardEl.addEventListener('touchstart', (e) => { touchStartX = e.changedTouches[0].screenX; }, { passive: true });
+  cardEl.addEventListener('touchend', (e) => {
+    const dx = e.changedTouches[0].screenX - touchStartX;
+    if (dx < -40) next();
+    if (dx > 40) prev();
+  }, { passive: true });
+
+  // ─── Init ───
+  rebuildDeck();
+</script>
+
+<style>
+  .flash {
+    padding: 48px 0 80px;
+  }
+  .flash-header {
+    text-align: center;
+    margin-bottom: 24px;
+  }
+  .flash-header h1 {
+    font-family: var(--font-display);
+    font-size: clamp(36px, 4vw, 56px);
+    font-weight: 400;
+    color: var(--color-ink);
+    margin-bottom: 6px;
+  }
+  .flash-deck {
+    font-size: 15px;
+    color: var(--color-muted);
+  }
+
+  /* ─── Tabs ─── */
+  .flash-tabs {
+    display: flex;
+    justify-content: center;
+    gap: 0;
+    margin-bottom: 32px;
+  }
+  .flash-tab {
+    background: var(--color-bg);
+    border: 1px solid var(--color-border);
+    padding: 10px 20px;
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--color-muted);
+    cursor: pointer;
+    transition:
+      color 0.15s ease,
+      background 0.15s ease,
+      border-color 0.15s ease;
+  }
+  .flash-tab + .flash-tab {
+    border-left: 0;
+  }
+  .flash-tab:hover {
+    color: var(--color-ink);
+  }
+  .flash-tab.is-active {
+    background: var(--color-ink);
+    color: var(--color-bg);
+    border-color: var(--color-ink);
+  }
+
+  /* ─── Card with 3D flip ─── */
+  .flash-card-wrap {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 28px;
+  }
+  .flash-card-scene {
+    width: 100%;
+    max-width: 420px;
+    aspect-ratio: 1;
+    perspective: 1000px;
+    -webkit-perspective: 1000px;
+  }
+  .flash-card {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transform-style: preserve-3d;
+    -webkit-transform-style: preserve-3d;
+    transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    background: none;
+    border: 0;
+    padding: 0;
+    cursor: pointer;
+    font: inherit;
+    color: inherit;
+  }
+  .flash-card[data-revealed='true'] {
+    transform: rotateY(180deg);
+  }
+
+  .flash-card-face {
+    position: absolute;
+    inset: 0;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    background: var(--color-paper);
+    border: 1px solid var(--color-border);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 32px;
+  }
+  .flash-card-back {
+    transform: rotateY(180deg);
+    gap: 16px;
+  }
+
+  .flash-card-primary {
+    line-height: 1;
+    text-align: center;
+    transition: opacity 0.2s ease;
+  }
+  .flash-card-primary.mode-zh {
+    font-family: var(--font-zh);
+    font-size: clamp(80px, 14vw, 140px);
+    color: var(--color-ink);
+  }
+  .flash-card-primary.mode-pinyin {
+    font-family: var(--font-display);
+    font-style: italic;
+    font-size: clamp(36px, 5vw, 60px);
+    color: var(--color-ink);
+    letter-spacing: 0.02em;
+  }
+  .flash-card-primary.mode-meaning {
+    font-family: var(--font-zh);
+    font-size: clamp(28px, 3.5vw, 42px);
+    color: var(--color-ink);
+    padding: 0 16px;
+  }
+
+  .flash-card-secondary.mode-zh {
+    font-family: var(--font-zh);
+    font-size: clamp(48px, 7vw, 80px);
+    color: var(--color-ink);
+  }
+  .flash-card-secondary.mode-pinyin {
+    font-family: var(--font-display);
+    font-style: italic;
+    font-size: clamp(22px, 3vw, 32px);
+    color: var(--color-muted);
+  }
+  .flash-card-tertiary {
+    font-family: var(--font-zh);
+    font-size: clamp(18px, 2.2vw, 24px);
+    color: var(--color-muted);
+    text-align: center;
+  }
+  .flash-card-example {
+    font-family: var(--font-zh);
+    font-size: clamp(14px, 1.8vw, 18px);
+    color: var(--color-muted);
+    text-align: center;
+    opacity: 0.7;
+    max-width: 100%;
+    word-break: break-word;
+  }
+  .flash-card-quaternary {
+    font-family: var(--font-zh);
+    font-size: clamp(28px, 4vw, 48px);
+    color: var(--color-ink);
+    text-align: center;
+    margin-top: 8px;
+  }
+
+  /* ─── Controls ─── */
+  .flash-controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+  .flash-controls button {
+    background: var(--color-bg);
+    border: 1px solid var(--color-border);
+    padding: 10px 20px;
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--color-fg);
+    cursor: pointer;
+    transition: border-color 0.15s ease;
+  }
+  .flash-controls button:hover {
+    border-color: var(--color-ink);
+  }
+  .flash-controls button.is-active {
+    background: var(--color-ink);
+    color: var(--color-bg);
+    border-color: var(--color-ink);
+  }
+  .flash-counter {
+    font-family: var(--font-mono);
+    font-size: 12px;
+    color: var(--color-muted);
+    min-width: 70px;
+    text-align: center;
+  }
+
+  /* ─── Filter panel ─── */
+  .flash-filter-panel {
+    max-width: 520px;
+    margin: 20px auto 0;
+    border: 1px solid var(--color-border);
+    background: var(--color-paper);
+    padding: 20px;
+    display: none;
+  }
+  .flash-filter-panel[data-open='true'] {
+    display: block;
+  }
+  .filter-book {
+    font-family: var(--font-display);
+    font-size: 16px;
+    font-style: italic;
+    color: var(--color-ink);
+    margin-bottom: 12px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid var(--color-border);
+  }
+  .filter-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--color-fg);
+  }
+  .filter-levels {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+  .filter-chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--color-bg);
+    border: 1px solid var(--color-border);
+    padding: 8px 14px;
+    cursor: pointer;
+    font-family: var(--font-mono);
+    font-size: 11px;
+    color: var(--color-fg);
+    transition: border-color 0.15s ease;
+  }
+  .filter-chip:hover {
+    border-color: var(--color-ink);
+  }
+  .filter-chip input {
+    appearance: none;
+    width: 14px;
+    height: 14px;
+    border: 1px solid var(--color-border);
+    border-radius: 50%;
+    background: var(--color-bg);
+    margin: 0;
+    cursor: pointer;
+    position: relative;
+    transition: border-color 0.15s ease;
+  }
+  .filter-chip input:checked {
+    border-color: var(--color-ink);
+    background: var(--color-ink);
+  }
+  .filter-chip input:checked::after {
+    content: '';
+    position: absolute;
+    left: 4px;
+    top: 4px;
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    background: var(--color-bg);
+  }
+  .filter-chip-count {
+    color: var(--color-muted);
+    font-size: 10px;
+  }
+
+  @media (max-width: 560px) {
+    .flash {
+      padding: 32px 0 56px;
+    }
+    .flash-card-face {
+      padding: 24px;
+    }
+    .flash-controls {
+      gap: 12px;
+    }
+    .flash-controls button {
+      padding: 10px 14px;
+    }
+    .flash-filter-panel {
+      margin-left: 0;
+      margin-right: 0;
+    }
+  }
+</style>

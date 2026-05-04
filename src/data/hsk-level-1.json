@@ -1,0 +1,1202 @@
+[
+  {
+    "character": "爱",
+    "pinyin": "ài",
+    "partOfSpeech": "ก.",
+    "meaning_th": "รัก; ชอบ",
+    "example": "妈妈，我～你。",
+    "level": 1
+  },
+  {
+    "character": "八",
+    "pinyin": "bā",
+    "partOfSpeech": "เลข.",
+    "meaning_th": "แปด",
+    "example": "他儿子今年～岁了。",
+    "level": 1
+  },
+  {
+    "character": "爸爸",
+    "pinyin": "bàba",
+    "partOfSpeech": "น.",
+    "meaning_th": "พ่อ",
+    "example": "我～是医生。",
+    "level": 1
+  },
+  {
+    "character": "杯子",
+    "pinyin": "bēizi",
+    "partOfSpeech": "น.",
+    "meaning_th": "ถ้วย, แก้ว",
+    "example": "～里有茶。",
+    "level": 1
+  },
+  {
+    "character": "北京",
+    "pinyin": "Běijīng",
+    "partOfSpeech": "น.",
+    "meaning_th": "ปักกิ่ง",
+    "example": "我住在～。",
+    "level": 1
+  },
+  {
+    "character": "本",
+    "pinyin": "běn",
+    "partOfSpeech": "ลน.",
+    "meaning_th": "เล่ม",
+    "example": "桌子上有一～书。",
+    "level": 1
+  },
+  {
+    "character": "不客气",
+    "pinyin": "bú kèqi",
+    "partOfSpeech": "",
+    "meaning_th": "ไม่เป็นไร (ตอบรับเมื่ออีกฝ่ายขอบคุณ)",
+    "example": "甲：谢谢你！乙：～。",
+    "level": 1
+  },
+  {
+    "character": "不",
+    "pinyin": "bù",
+    "partOfSpeech": "ว.ิ",
+    "meaning_th": "ไม่",
+    "example": "我～是学生。",
+    "level": 1
+  },
+  {
+    "character": "菜",
+    "pinyin": "cài",
+    "partOfSpeech": "น.",
+    "meaning_th": "ผัก; กับข้าว",
+    "example": "我去超市买点儿～。",
+    "level": 1
+  },
+  {
+    "character": "茶",
+    "pinyin": "chá",
+    "partOfSpeech": "น.",
+    "meaning_th": "น ้าชา, ใบชา",
+    "example": "请喝杯～吧。",
+    "level": 1
+  },
+  {
+    "character": "吃",
+    "pinyin": "chī",
+    "partOfSpeech": "ก.",
+    "meaning_th": "กิน",
+    "example": "请～点儿米饭。",
+    "level": 1
+  },
+  {
+    "character": "出租车",
+    "pinyin": "chūzūchē",
+    "partOfSpeech": "น.",
+    "meaning_th": "รถแท็กซ ี่",
+    "example": "我们坐～去火车站。",
+    "level": 1
+  },
+  {
+    "character": "打电话",
+    "pinyin": "dǎ diànhuà",
+    "partOfSpeech": "",
+    "meaning_th": "โทรศัพท์",
+    "example": "他在～呢。",
+    "level": 1
+  },
+  {
+    "character": "大",
+    "pinyin": "dà",
+    "partOfSpeech": "ค.",
+    "meaning_th": "ใหญ่",
+    "example": "这个苹果很～。",
+    "level": 1
+  },
+  {
+    "character": "的",
+    "pinyin": "de",
+    "partOfSpeech": "ชค.",
+    "meaning_th": "ของ; ใช้เน้นความ",
+    "example": "这是我～书。",
+    "level": 1
+  },
+  {
+    "character": "点",
+    "pinyin": "diǎn",
+    "partOfSpeech": "น.",
+    "meaning_th": "โมง",
+    "example": "现在是下午3～20。",
+    "level": 1
+  },
+  {
+    "character": "电脑",
+    "pinyin": "diànnǎo",
+    "partOfSpeech": "น.",
+    "meaning_th": "คอมพวิ เตอร์",
+    "example": "我买了个～。",
+    "level": 1
+  },
+  {
+    "character": "电视",
+    "pinyin": "diànshì",
+    "partOfSpeech": "น.",
+    "meaning_th": "โทรทัศน์",
+    "example": "妈妈在看～。",
+    "level": 1
+  },
+  {
+    "character": "电影",
+    "pinyin": "diànyǐng",
+    "partOfSpeech": "น.",
+    "meaning_th": "ภาพยนตร ์",
+    "example": "我喜欢看～。",
+    "level": 1
+  },
+  {
+    "character": "东西",
+    "pinyin": "dōngxi",
+    "partOfSpeech": "น.",
+    "meaning_th": "สิ่งของ",
+    "example": "我在商店买了很多～。",
+    "level": 1
+  },
+  {
+    "character": "都",
+    "pinyin": "dōu",
+    "partOfSpeech": "ว.ิ",
+    "meaning_th": "ทุกคน, ทั งหมด, ล้วน",
+    "example": "我们～来了。",
+    "level": 1
+  },
+  {
+    "character": "读",
+    "pinyin": "dú",
+    "partOfSpeech": "ก.",
+    "meaning_th": "อ่าน",
+    "example": "你会～这个汉字吗？\n你喜欢～书吗？",
+    "level": 1
+  },
+  {
+    "character": "对不起",
+    "pinyin": "duìbuqǐ",
+    "partOfSpeech": "",
+    "meaning_th": "ขอโทษ",
+    "example": "甲：～。乙：没关系。",
+    "level": 1
+  },
+  {
+    "character": "多",
+    "pinyin": "duō",
+    "partOfSpeech": "ค., ว.ิ",
+    "meaning_th": "มาก; แค่ไหน, เท่าไหร่",
+    "example": "这里的人很～。",
+    "level": 1
+  },
+  {
+    "character": "多少",
+    "pinyin": "duōshao",
+    "partOfSpeech": "ส.",
+    "meaning_th": "เท่าไหร่",
+    "example": "你们学校有～学生？",
+    "level": 1
+  },
+  {
+    "character": "儿子",
+    "pinyin": "érzi",
+    "partOfSpeech": "น.",
+    "meaning_th": "ลูกชาย",
+    "example": "我～三岁了。",
+    "level": 1
+  },
+  {
+    "character": "二",
+    "pinyin": "èr",
+    "partOfSpeech": "เลข.",
+    "meaning_th": "สอง",
+    "example": "现在十～点了。",
+    "level": 1
+  },
+  {
+    "character": "饭店",
+    "pinyin": "fàndiàn",
+    "partOfSpeech": "น.",
+    "meaning_th": "ร้านอาหาร, โรงแรม",
+    "example": "中午我们去～吃吧。",
+    "level": 1
+  },
+  {
+    "character": "飞机",
+    "pinyin": "fēijī",
+    "partOfSpeech": "น.",
+    "meaning_th": "เครื่องบิน",
+    "example": "我坐～去北京。",
+    "level": 1
+  },
+  {
+    "character": "分钟",
+    "pinyin": "fēnzhōng",
+    "partOfSpeech": "น.",
+    "meaning_th": "นาท ี",
+    "example": "我想休息几～。",
+    "level": 1
+  },
+  {
+    "character": "高兴",
+    "pinyin": "gāoxìng",
+    "partOfSpeech": "ค.",
+    "meaning_th": "ดีใจ",
+    "example": "今天我很～。",
+    "level": 1
+  },
+  {
+    "character": "个",
+    "pinyin": "gè",
+    "partOfSpeech": "ลน.",
+    "meaning_th": "คน, อัน (ลักษณนาม)",
+    "example": "我是一～学生。",
+    "level": 1
+  },
+  {
+    "character": "工作",
+    "pinyin": "gōngzuò",
+    "partOfSpeech": "น., ก.",
+    "meaning_th": "งาน; ท้างาน",
+    "example": "我很喜欢现在的～。",
+    "level": 1
+  },
+  {
+    "character": "汉语",
+    "pinyin": "Hànyǔ",
+    "partOfSpeech": "น.",
+    "meaning_th": "ภาษาจีน",
+    "example": "他在学习～。",
+    "level": 1
+  },
+  {
+    "character": "好",
+    "pinyin": "hǎo",
+    "partOfSpeech": "ค.",
+    "meaning_th": "ด ี; ได้ (ค้าแสดงการขานตอบ)",
+    "example": "今天天气很～。",
+    "level": 1
+  },
+  {
+    "character": "号",
+    "pinyin": "hào",
+    "partOfSpeech": "น.",
+    "meaning_th": "วันที่",
+    "example": "今天是2002年1月1～。",
+    "level": 1
+  },
+  {
+    "character": "喝",
+    "pinyin": "hē",
+    "partOfSpeech": "ก.",
+    "meaning_th": "ดื่ม",
+    "example": "我想～水。",
+    "level": 1
+  },
+  {
+    "character": "和",
+    "pinyin": "hé",
+    "partOfSpeech": "สัน., บ.",
+    "meaning_th": "และ; กับ",
+    "example": "爸爸～妈妈都在家。",
+    "level": 1
+  },
+  {
+    "character": "很",
+    "pinyin": "hěn",
+    "partOfSpeech": "ว.ิ",
+    "meaning_th": "มาก",
+    "example": "李小姐～漂亮。",
+    "level": 1
+  },
+  {
+    "character": "后面",
+    "pinyin": "hòumiàn",
+    "partOfSpeech": "น.",
+    "meaning_th": "ด้านหลัง",
+    "example": "商店在学校～。",
+    "level": 1
+  },
+  {
+    "character": "回",
+    "pinyin": "huí",
+    "partOfSpeech": "ก.",
+    "meaning_th": "กลับ",
+    "example": "我八点～家。",
+    "level": 1
+  },
+  {
+    "character": "会",
+    "pinyin": "huì",
+    "partOfSpeech": "ช.",
+    "meaning_th": "เป็น, สามารถ",
+    "example": "我～开车。",
+    "level": 1
+  },
+  {
+    "character": "几",
+    "pinyin": "jǐ",
+    "partOfSpeech": "ส.",
+    "meaning_th": "กี่, เท่าไหร่",
+    "example": "你有～个儿子？",
+    "level": 1
+  },
+  {
+    "character": "家",
+    "pinyin": "jiā",
+    "partOfSpeech": "น.",
+    "meaning_th": "บ้าน, ครอบครัว",
+    "example": "我～在北京。",
+    "level": 1
+  },
+  {
+    "character": "叫",
+    "pinyin": "jiào",
+    "partOfSpeech": "ก.",
+    "meaning_th": "ชื่อว่า",
+    "example": "我的名字～李明。",
+    "level": 1
+  },
+  {
+    "character": "今天",
+    "pinyin": "jīntiān",
+    "partOfSpeech": "น.",
+    "meaning_th": "วันนี",
+    "example": "我～去北京。",
+    "level": 1
+  },
+  {
+    "character": "九",
+    "pinyin": "jiǔ",
+    "partOfSpeech": "เลข.",
+    "meaning_th": "เก้า",
+    "example": "今天是八月～日。",
+    "level": 1
+  },
+  {
+    "character": "开",
+    "pinyin": "kāi",
+    "partOfSpeech": "ก.",
+    "meaning_th": "ขับ (รถ)",
+    "example": "我～了三年出租车了。",
+    "level": 1
+  },
+  {
+    "character": "看",
+    "pinyin": "kàn",
+    "partOfSpeech": "ก.",
+    "meaning_th": "ด,ู มอง; อ่าน",
+    "example": "你～，那本书在桌子上呢。",
+    "level": 1
+  },
+  {
+    "character": "看见",
+    "pinyin": "kànjiàn",
+    "partOfSpeech": "ก.",
+    "meaning_th": "เห็น",
+    "example": "我没～他。",
+    "level": 1
+  },
+  {
+    "character": "块",
+    "pinyin": "kuài",
+    "partOfSpeech": "ลน.",
+    "meaning_th": "หยวน",
+    "example": "这本书三十～钱。",
+    "level": 1
+  },
+  {
+    "character": "来",
+    "pinyin": "lái",
+    "partOfSpeech": "ก.",
+    "meaning_th": "มา",
+    "example": "他是昨天～这儿的。",
+    "level": 1
+  },
+  {
+    "character": "老师",
+    "pinyin": "lǎoshī",
+    "partOfSpeech": "น.",
+    "meaning_th": "ครู",
+    "example": "他就是我们的汉语～。",
+    "level": 1
+  },
+  {
+    "character": "了",
+    "pinyin": "le",
+    "partOfSpeech": "ชส.",
+    "meaning_th": "แล้ว",
+    "example": "昨天下雨～。",
+    "level": 1
+  },
+  {
+    "character": "冷",
+    "pinyin": "lěng",
+    "partOfSpeech": "ค.",
+    "meaning_th": "หนาว",
+    "example": "今天太～了。",
+    "level": 1
+  },
+  {
+    "character": "里",
+    "pinyin": "lǐ",
+    "partOfSpeech": "น.",
+    "meaning_th": "ใน",
+    "example": "我们都在学校～。",
+    "level": 1
+  },
+  {
+    "character": "零",
+    "pinyin": "líng",
+    "partOfSpeech": "เลข.",
+    "meaning_th": "ศูนย์",
+    "example": "今年是二～一二年。",
+    "level": 1
+  },
+  {
+    "character": "六",
+    "pinyin": "liù",
+    "partOfSpeech": "เลข.",
+    "meaning_th": "หก",
+    "example": "桌子上有～个杯子。",
+    "level": 1
+  },
+  {
+    "character": "妈妈",
+    "pinyin": "māma",
+    "partOfSpeech": "น.",
+    "meaning_th": "แม ่",
+    "example": "我～不在家。",
+    "level": 1
+  },
+  {
+    "character": "吗",
+    "pinyin": "ma",
+    "partOfSpeech": "ชส.",
+    "meaning_th": "ไหม หรือไม่ (ใช้ในประโยคค้าถาม)",
+    "example": "你是中国人～？",
+    "level": 1
+  },
+  {
+    "character": "买",
+    "pinyin": "mǎi",
+    "partOfSpeech": "ก.",
+    "meaning_th": "ซื อ",
+    "example": "我～了一些苹果。",
+    "level": 1
+  },
+  {
+    "character": "没关系",
+    "pinyin": "méi guānxi",
+    "partOfSpeech": "",
+    "meaning_th": "ไม่เป็นไร (ตอบรับเมื่ออีกฝ่ายขอโทษ)",
+    "example": "甲：对不起！乙：～。",
+    "level": 1
+  },
+  {
+    "character": "没有",
+    "pinyin": "méiyǒu",
+    "partOfSpeech": "ก.",
+    "meaning_th": "ไม่ม,ี ไม่เท่า",
+    "example": "我家里～人。\n我～他高。",
+    "level": 1
+  },
+  {
+    "character": "米饭",
+    "pinyin": "mǐfàn",
+    "partOfSpeech": "น.",
+    "meaning_th": "ข้าวสวย",
+    "example": "我爱吃～。",
+    "level": 1
+  },
+  {
+    "character": "明天",
+    "pinyin": "míngtiān",
+    "partOfSpeech": "น.",
+    "meaning_th": "พรุ่งนี",
+    "example": "今天星期日，～是星期一。",
+    "level": 1
+  },
+  {
+    "character": "名字",
+    "pinyin": "míngzi",
+    "partOfSpeech": "น.",
+    "meaning_th": "ชื่อ",
+    "example": "我的～叫李明。",
+    "level": 1
+  },
+  {
+    "character": "哪",
+    "pinyin": "nǎ",
+    "partOfSpeech": "ส.",
+    "meaning_th": "ไหน",
+    "example": "～个杯子是你的？",
+    "level": 1
+  },
+  {
+    "character": "哪儿",
+    "pinyin": "nǎr",
+    "partOfSpeech": "ส.",
+    "meaning_th": "ที่ไหน",
+    "example": "你家在～？",
+    "level": 1
+  },
+  {
+    "character": "那（那儿）",
+    "pinyin": "nà（nàr）",
+    "partOfSpeech": "ส.",
+    "meaning_th": "นั่น; ที่นั่น",
+    "example": "我不认识～个人。",
+    "level": 1
+  },
+  {
+    "character": "呢",
+    "pinyin": "ne",
+    "partOfSpeech": "ชส.",
+    "meaning_th": "ใส่ไว้ท้ายประโยคแสดงการถาม; ใส่ไว้ท้ายประโยคแสดงการเน้นหรือแสดงการกระท้าต่อเนื่อง",
+    "example": "你们家有几个人～？",
+    "level": 1
+  },
+  {
+    "character": "能",
+    "pinyin": "néng",
+    "partOfSpeech": "ช.",
+    "meaning_th": "สามารถ, ได ้",
+    "example": "我～坐在这儿吗？",
+    "level": 1
+  },
+  {
+    "character": "你",
+    "pinyin": "nǐ",
+    "partOfSpeech": "ส.",
+    "meaning_th": "คุณ, เธอ",
+    "example": "～认识这个人吗？",
+    "level": 1
+  },
+  {
+    "character": "年",
+    "pinyin": "nián",
+    "partOfSpeech": "น.",
+    "meaning_th": "ปี",
+    "example": "我在中国住了三～。",
+    "level": 1
+  },
+  {
+    "character": "女儿",
+    "pinyin": "nǚ’ér",
+    "partOfSpeech": "น.",
+    "meaning_th": "ลูกสาว",
+    "example": "我有两个～。",
+    "level": 1
+  },
+  {
+    "character": "朋友",
+    "pinyin": "péngyou",
+    "partOfSpeech": "น.",
+    "meaning_th": "เพื่อน",
+    "example": "他是我的好～。",
+    "level": 1
+  },
+  {
+    "character": "漂亮",
+    "pinyin": "piàoliang",
+    "partOfSpeech": "ค.",
+    "meaning_th": "สวย",
+    "example": "你的衣服真～。",
+    "level": 1
+  },
+  {
+    "character": "苹果",
+    "pinyin": "píngguǒ",
+    "partOfSpeech": "น.",
+    "meaning_th": "แอปเปิ้ล",
+    "example": "你想不想吃个～？",
+    "level": 1
+  },
+  {
+    "character": "七",
+    "pinyin": "qī",
+    "partOfSpeech": "เลข.",
+    "meaning_th": "เจ็ด",
+    "example": "一个星期有～天。",
+    "level": 1
+  },
+  {
+    "character": "钱",
+    "pinyin": "qián",
+    "partOfSpeech": "น.",
+    "meaning_th": "เงิน",
+    "example": "一个苹果三块～。",
+    "level": 1
+  },
+  {
+    "character": "前面",
+    "pinyin": "qiánmiàn",
+    "partOfSpeech": "น.",
+    "meaning_th": "ด้านหน้า",
+    "example": "～那个人是我的同学。",
+    "level": 1
+  },
+  {
+    "character": "请",
+    "pinyin": "qǐng",
+    "partOfSpeech": "ก.",
+    "meaning_th": "เชิญ",
+    "example": "～坐在椅子上。",
+    "level": 1
+  },
+  {
+    "character": "去",
+    "pinyin": "qù",
+    "partOfSpeech": "ก.",
+    "meaning_th": "ไป",
+    "example": "我星期三～中国。",
+    "level": 1
+  },
+  {
+    "character": "热",
+    "pinyin": "rè",
+    "partOfSpeech": "ค.",
+    "meaning_th": "ร้อน",
+    "example": "今天很～。",
+    "level": 1
+  },
+  {
+    "character": "人",
+    "pinyin": "rén",
+    "partOfSpeech": "น.",
+    "meaning_th": "คน",
+    "example": "商店里有很多～。",
+    "level": 1
+  },
+  {
+    "character": "认识",
+    "pinyin": "rènshi",
+    "partOfSpeech": "ก.",
+    "meaning_th": "รู้จัก",
+    "example": "～你很高兴。",
+    "level": 1
+  },
+  {
+    "character": "三",
+    "pinyin": "sān",
+    "partOfSpeech": "เลข.",
+    "meaning_th": "สาม",
+    "example": "我有～本书。",
+    "level": 1
+  },
+  {
+    "character": "商店",
+    "pinyin": "shāngdiàn",
+    "partOfSpeech": "น.",
+    "meaning_th": "ร้านค้า",
+    "example": "她去～买东西了。",
+    "level": 1
+  },
+  {
+    "character": "上",
+    "pinyin": "shàng",
+    "partOfSpeech": "น.",
+    "meaning_th": "ด้านบน",
+    "example": "水果在桌子～。",
+    "level": 1
+  },
+  {
+    "character": "上午",
+    "pinyin": "shàngwǔ",
+    "partOfSpeech": "น.",
+    "meaning_th": "ช่วงเช้า",
+    "example": "现在是～10点。",
+    "level": 1
+  },
+  {
+    "character": "少",
+    "pinyin": "shǎo",
+    "partOfSpeech": "ค.",
+    "meaning_th": "น้อย",
+    "example": "杯子里的水很～。",
+    "level": 1
+  },
+  {
+    "character": "谁",
+    "pinyin": "shéi",
+    "partOfSpeech": "ส.",
+    "meaning_th": "ใคร",
+    "example": "那个人是～？",
+    "level": 1
+  },
+  {
+    "character": "什么",
+    "pinyin": "shénme",
+    "partOfSpeech": "ส.",
+    "meaning_th": "อะไร",
+    "example": "你看见了～？",
+    "level": 1
+  },
+  {
+    "character": "十",
+    "pinyin": "shí",
+    "partOfSpeech": "เลข.",
+    "meaning_th": "สิบ",
+    "example": "现在是～月。",
+    "level": 1
+  },
+  {
+    "character": "时候",
+    "pinyin": "shíhou",
+    "partOfSpeech": "น.",
+    "meaning_th": "ตอนที่",
+    "example": "我回家的～，他在睡觉。",
+    "level": 1
+  },
+  {
+    "character": "是",
+    "pinyin": "shì",
+    "partOfSpeech": "ก.",
+    "meaning_th": "เป็น, คือ; ใช่ (ใช้ในประโยคค้าตอบแสดงการเห็นด้วย)",
+    "example": "他不～学生。",
+    "level": 1
+  },
+  {
+    "character": "书",
+    "pinyin": "shū",
+    "partOfSpeech": "น.",
+    "meaning_th": "หนังสือ",
+    "example": "我喜欢读～。",
+    "level": 1
+  },
+  {
+    "character": "水",
+    "pinyin": "shuǐ",
+    "partOfSpeech": "น.",
+    "meaning_th": "น ้า",
+    "example": "杯子里还有～吗？",
+    "level": 1
+  },
+  {
+    "character": "水果",
+    "pinyin": "shuǐguǒ",
+    "partOfSpeech": "น.",
+    "meaning_th": "ผลไม้",
+    "example": "我想去商店买～。",
+    "level": 1
+  },
+  {
+    "character": "睡觉",
+    "pinyin": "shuìjiào",
+    "partOfSpeech": "ก.",
+    "meaning_th": "นอน, หลับ",
+    "example": "儿子在～呢。",
+    "level": 1
+  },
+  {
+    "character": "说",
+    "pinyin": "shuō",
+    "partOfSpeech": "ก.",
+    "meaning_th": "พูด",
+    "example": "你在～什么？",
+    "level": 1
+  },
+  {
+    "character": "说话",
+    "pinyin": "shuōhuà",
+    "partOfSpeech": "ก.",
+    "meaning_th": "พูดคุย",
+    "example": "他们在～。",
+    "level": 1
+  },
+  {
+    "character": "四",
+    "pinyin": "sì",
+    "partOfSpeech": "เลข.",
+    "meaning_th": "สี่",
+    "example": "我们～个人去看电影。",
+    "level": 1
+  },
+  {
+    "character": "岁",
+    "pinyin": "suì",
+    "partOfSpeech": "ลน.",
+    "meaning_th": "ปี(ใช้ในการแสดงอายุ)",
+    "example": "李医生今年40～。",
+    "level": 1
+  },
+  {
+    "character": "他",
+    "pinyin": "tā",
+    "partOfSpeech": "ส.",
+    "meaning_th": "เขา (ผู้ชาย)",
+    "example": "～是我们的老师。",
+    "level": 1
+  },
+  {
+    "character": "她",
+    "pinyin": "tā",
+    "partOfSpeech": "ส.",
+    "meaning_th": "เขา (ผู้หญิง)",
+    "example": "我认识～的妈妈。",
+    "level": 1
+  },
+  {
+    "character": "太",
+    "pinyin": "tài",
+    "partOfSpeech": "ว.ิ",
+    "meaning_th": "มากเกิน",
+    "example": "这个学校～大了。",
+    "level": 1
+  },
+  {
+    "character": "天气",
+    "pinyin": "tiānqì",
+    "partOfSpeech": "น.",
+    "meaning_th": "อากาศ",
+    "example": "今天的～非常好。",
+    "level": 1
+  },
+  {
+    "character": "听",
+    "pinyin": "tīng",
+    "partOfSpeech": "ก.",
+    "meaning_th": "ฟัง",
+    "example": "你～，谁来了？",
+    "level": 1
+  },
+  {
+    "character": "同学",
+    "pinyin": "tóngxué",
+    "partOfSpeech": "น.",
+    "meaning_th": "เพื่อนนักเรียน",
+    "example": "～们，你们好！",
+    "level": 1
+  },
+  {
+    "character": "喂",
+    "pinyin": "wèi",
+    "partOfSpeech": "อ.",
+    "meaning_th": "ฮัลโหล",
+    "example": "～，李老师在吗？",
+    "level": 1
+  },
+  {
+    "character": "我",
+    "pinyin": "wǒ",
+    "partOfSpeech": "ส.",
+    "meaning_th": "ฉัน, ผม",
+    "example": "～是一个学生。",
+    "level": 1
+  },
+  {
+    "character": "我们",
+    "pinyin": "wǒmen",
+    "partOfSpeech": "ส.",
+    "meaning_th": "พวกเรา",
+    "example": "～都是学生。",
+    "level": 1
+  },
+  {
+    "character": "五",
+    "pinyin": "wǔ",
+    "partOfSpeech": "เลข.",
+    "meaning_th": "ห้า",
+    "example": "今天星期～。",
+    "level": 1
+  },
+  {
+    "character": "喜欢",
+    "pinyin": "xǐhuan",
+    "partOfSpeech": "ก.",
+    "meaning_th": "ชอบ",
+    "example": "我～学汉语。",
+    "level": 1
+  },
+  {
+    "character": "下",
+    "pinyin": "xià",
+    "partOfSpeech": "น., ก.",
+    "meaning_th": "ด้านล่าง; (หิมะ, ฝน) ตก; ถัดไป",
+    "example": "小猫在桌子～面。",
+    "level": 1
+  },
+  {
+    "character": "下午",
+    "pinyin": "xiàwǔ",
+    "partOfSpeech": "น.",
+    "meaning_th": "ช่วงบ่าย",
+    "example": "我今天～不去学校了。",
+    "level": 1
+  },
+  {
+    "character": "下雨",
+    "pinyin": "xià yǔ",
+    "partOfSpeech": "ก.",
+    "meaning_th": "ฝนตก",
+    "example": "昨天～了。",
+    "level": 1
+  },
+  {
+    "character": "先生",
+    "pinyin": "xiānsheng",
+    "partOfSpeech": "น.",
+    "meaning_th": "คุณ (ผู้ชาย)",
+    "example": "你也认识王～？",
+    "level": 1
+  },
+  {
+    "character": "现在",
+    "pinyin": "xiànzài",
+    "partOfSpeech": "น.",
+    "meaning_th": "ตอนนี",
+    "example": "～是12点。",
+    "level": 1
+  },
+  {
+    "character": "想",
+    "pinyin": "xiǎng",
+    "partOfSpeech": "ช., ก.",
+    "meaning_th": "อยาก; คิด",
+    "example": "我～星期六去北京。",
+    "level": 1
+  },
+  {
+    "character": "小",
+    "pinyin": "xiǎo",
+    "partOfSpeech": "ค.",
+    "meaning_th": "เล็ก",
+    "example": "这个苹果太~了。",
+    "level": 1
+  },
+  {
+    "character": "小姐",
+    "pinyin": "xiǎojiě",
+    "partOfSpeech": "น.",
+    "meaning_th": "คุณ (ผู้หญิง)",
+    "example": "～，你叫什么名字？",
+    "level": 1
+  },
+  {
+    "character": "些",
+    "pinyin": "xiē",
+    "partOfSpeech": "ลน.",
+    "meaning_th": "เล็กน้อย, บ้าง",
+    "example": "我买了～苹果。",
+    "level": 1
+  },
+  {
+    "character": "写",
+    "pinyin": "xiě",
+    "partOfSpeech": "ก.",
+    "meaning_th": "เขียน",
+    "example": "你～的字很漂亮。",
+    "level": 1
+  },
+  {
+    "character": "谢谢",
+    "pinyin": "xièxie",
+    "partOfSpeech": "ก.",
+    "meaning_th": "ขอบคุณ, ขอบใจ",
+    "example": "甲：～你。乙：不客气！",
+    "level": 1
+  },
+  {
+    "character": "星期",
+    "pinyin": "xīngqī",
+    "partOfSpeech": "น.",
+    "meaning_th": "สัปดาห์",
+    "example": "一个～有七天。",
+    "level": 1
+  },
+  {
+    "character": "学生",
+    "pinyin": "xuésheng",
+    "partOfSpeech": "น.",
+    "meaning_th": "นักเรียน",
+    "example": "我们学校里的～很多。",
+    "level": 1
+  },
+  {
+    "character": "学习",
+    "pinyin": "xuéxí",
+    "partOfSpeech": "ก.",
+    "meaning_th": "เรียน",
+    "example": "你喜欢～汉语吗？",
+    "level": 1
+  },
+  {
+    "character": "学校",
+    "pinyin": "xuéxiào",
+    "partOfSpeech": "น.",
+    "meaning_th": "โรงเรียน",
+    "example": "我们～很大。",
+    "level": 1
+  },
+  {
+    "character": "一",
+    "pinyin": "yī",
+    "partOfSpeech": "เลข.",
+    "meaning_th": "หนึ่ง",
+    "example": "这儿～个人都没有。",
+    "level": 1
+  },
+  {
+    "character": "一点儿",
+    "pinyin": "yìdiǎnr",
+    "partOfSpeech": "ลน.",
+    "meaning_th": "เล็กน้อย",
+    "example": "我只有～钱。",
+    "level": 1
+  },
+  {
+    "character": "衣服",
+    "pinyin": "yīfu",
+    "partOfSpeech": "น.",
+    "meaning_th": "เสื อผ้า",
+    "example": "我在商店买了很多～。",
+    "level": 1
+  },
+  {
+    "character": "医生",
+    "pinyin": "yīshēng",
+    "partOfSpeech": "น.",
+    "meaning_th": "หมอ",
+    "example": "他是这个医院里的～。",
+    "level": 1
+  },
+  {
+    "character": "医院",
+    "pinyin": "yīyuàn",
+    "partOfSpeech": "น.",
+    "meaning_th": "โรงพยาบาล",
+    "example": "这是一个大～。",
+    "level": 1
+  },
+  {
+    "character": "椅子",
+    "pinyin": "yǐzi",
+    "partOfSpeech": "น.",
+    "meaning_th": "เก้าอี",
+    "example": "小狗在～下面呢。",
+    "level": 1
+  },
+  {
+    "character": "有",
+    "pinyin": "yǒu",
+    "partOfSpeech": "ก.",
+    "meaning_th": "มี; มี",
+    "example": "我～一个女儿。",
+    "level": 1
+  },
+  {
+    "character": "月",
+    "pinyin": "yuè",
+    "partOfSpeech": "น.",
+    "meaning_th": "เดือน",
+    "example": "一年有12个～。",
+    "level": 1
+  },
+  {
+    "character": "再见",
+    "pinyin": "zàijiàn",
+    "partOfSpeech": "",
+    "meaning_th": "ลาก่อน",
+    "example": "妈妈，我去学校了，～。",
+    "level": 1
+  },
+  {
+    "character": "在",
+    "pinyin": "zài",
+    "partOfSpeech": "ก.",
+    "meaning_th": "อยู่ที่",
+    "example": "书～桌子上。",
+    "level": 1
+  },
+  {
+    "character": "怎么",
+    "pinyin": "zěnme",
+    "partOfSpeech": "ส.",
+    "meaning_th": "อย่างไร",
+    "example": "你～去北京？",
+    "level": 1
+  },
+  {
+    "character": "怎么样",
+    "pinyin": "zěnmeyàng",
+    "partOfSpeech": "ส.",
+    "meaning_th": "เป็นอย่างไร",
+    "example": "我们去看电影，～？",
+    "level": 1
+  },
+  {
+    "character": "这（这儿）",
+    "pinyin": "zhè（zhèr）",
+    "partOfSpeech": "ส.",
+    "meaning_th": "นี่, นี , ที่น ี่",
+    "example": "～个人是我的同学。\n我能坐在～儿吗？",
+    "level": 1
+  },
+  {
+    "character": "中国",
+    "pinyin": "Zhōngguó",
+    "partOfSpeech": "น.",
+    "meaning_th": "ประเทศจีน",
+    "example": "我在～学汉语。",
+    "level": 1
+  },
+  {
+    "character": "中午",
+    "pinyin": "zhōngwǔ",
+    "partOfSpeech": "น.",
+    "meaning_th": "ตอนกลางวัน",
+    "example": "我今天～去火车站。",
+    "level": 1
+  },
+  {
+    "character": "住",
+    "pinyin": "zhù",
+    "partOfSpeech": "ก.",
+    "meaning_th": "อยู่, อาศัย",
+    "example": "他在北京～了很多年。",
+    "level": 1
+  },
+  {
+    "character": "桌子",
+    "pinyin": "zhuōzi",
+    "partOfSpeech": "น.",
+    "meaning_th": "โต๊ะ",
+    "example": "电脑在～上。",
+    "level": 1
+  },
+  {
+    "character": "字",
+    "pinyin": "zì",
+    "partOfSpeech": "น.",
+    "meaning_th": "ตัวอักษร",
+    "example": "这个～你认识吗？",
+    "level": 1
+  },
+  {
+    "character": "昨天",
+    "pinyin": "zuótiān",
+    "partOfSpeech": "น.",
+    "meaning_th": "เมื่อวาน",
+    "example": "他～没去学校。",
+    "level": 1
+  },
+  {
+    "character": "坐",
+    "pinyin": "zuò",
+    "partOfSpeech": "ก.",
+    "meaning_th": "นั่ง; โดยสาร",
+    "example": "他一个下午都～在电视前。",
+    "level": 1
+  },
+  {
+    "character": "做",
+    "pinyin": "zuò",
+    "partOfSpeech": "ก.",
+    "meaning_th": "ท้า; ประกอบอาชีพ, ท้างานเป็น...",
+    "example": "今天妈妈～了很多菜。",
+    "level": 1
+  }
+]

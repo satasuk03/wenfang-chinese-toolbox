@@ -1,0 +1,772 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import Masthead from '../../../components/Masthead.astro';
+import Footer from '../../../components/Footer.astro';
+import vocab1A from '../../../data/vocab-1a.json';
+
+interface VocabEntry {
+  character: string;
+  pinyin: string;
+  partOfSpeech: string;
+  chapter: number | null;
+  meaning_th: string;
+}
+
+const data: VocabEntry[] = vocab1A as VocabEntry[];
+
+const books = [
+  {
+    id: '1A',
+    label: '1A',
+    cn: 'Hanyu Jiaocheng 1A',
+    entries: data,
+  },
+];
+
+const allChapters = Array.from(
+  new Set(data.map((e) => e.chapter).filter((c): c is number => c !== null)),
+).sort((a, b) => a - b);
+
+const totalCards = data.length;
+---
+
+<BaseLayout title="Flashcards · Wénfáng">
+  <Masthead />
+  <main id="main">
+    <section class="flash" data-mode="setup">
+      <!-- ─── SETUP VIEW ─── -->
+      <div class="flash-setup">
+        <div class="container">
+          <header class="flash-header">
+            <p class="flash-eyebrow">— Tool 01 · 生词卡</p>
+            <h1>Flashcards.</h1>
+            <p class="flash-deck">
+              Vocabulary cards bound to <em>Hanyu Jiaocheng</em>. Pick a book, choose chapters, and
+              decide which side you'd like to see first.
+            </p>
+          </header>
+
+          <div class="flash-section">
+            <h2 class="flash-section-title"><span>—</span> Book</h2>
+            <div class="flash-chips" id="book-chips">
+              {
+                books.map((book) => (
+                  <button
+                    type="button"
+                    class="chip"
+                    data-book={book.id}
+                    data-selected="true"
+                    aria-pressed="true"
+                  >
+                    <span class="chip-label">{book.label}</span>
+                    <span class="chip-meta">{book.cn}</span>
+                  </button>
+                ))
+              }
+            </div>
+          </div>
+
+          <div class="flash-section">
+            <h2 class="flash-section-title">
+              <span>—</span> Chapters
+              <span class="flash-section-actions">
+                <button type="button" class="link" id="ch-all">All</button>
+                <span aria-hidden="true">/</span>
+                <button type="button" class="link" id="ch-none">None</button>
+              </span>
+            </h2>
+            <div class="flash-chips flash-chips-tight" id="chapter-chips">
+              {
+                allChapters.map((ch) => {
+                  const count = data.filter((e) => e.chapter === ch).length;
+                  return (
+                    <button
+                      type="button"
+                      class="chip chip-small"
+                      data-chapter={ch}
+                      data-selected="true"
+                      aria-pressed="true"
+                    >
+                      <span class="chip-label">{ch}</span>
+                      <span class="chip-meta">{count}</span>
+                    </button>
+                  );
+                })
+              }
+            </div>
+          </div>
+
+          <div class="flash-section">
+            <h2 class="flash-section-title"><span>—</span> Show first</h2>
+            <div class="flash-chips" id="front-chips">
+              <button
+                type="button"
+                class="chip"
+                data-front="character"
+                data-selected="true"
+                aria-pressed="true"
+              >
+                <span class="chip-label" style="font-family: var(--font-zh)">汉</span>
+                <span class="chip-meta">Character</span>
+              </button>
+              <button
+                type="button"
+                class="chip"
+                data-front="pinyin"
+                data-selected="false"
+                aria-pressed="false"
+              >
+                <span class="chip-label" style="font-style: italic; font-family: var(--font-display)"
+                  >hàn</span
+                >
+                <span class="chip-meta">Pinyin</span>
+              </button>
+            </div>
+          </div>
+
+          <div class="flash-summary">
+            <div class="flash-summary-line">
+              <span class="flash-summary-label">Cards in deck</span>
+              <span class="flash-summary-count" id="deck-count">{totalCards}</span>
+            </div>
+            <button type="button" class="flash-start" id="flash-start">
+              Start the deck
+              <span aria-hidden="true">→</span>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- ─── PLAY VIEW ─── -->
+      <div class="flash-play">
+        <div class="container flash-play-inner">
+          <div class="flash-play-meta">
+            <button type="button" class="flash-back" id="flash-back">← Back to setup</button>
+            <div class="flash-progress">
+              <span id="card-book">1A</span>
+              <span aria-hidden="true">·</span>
+              <span>Ch <span id="card-chapter">—</span></span>
+              <span aria-hidden="true">·</span>
+              <span><span id="card-index">0</span> / <span id="card-total">0</span></span>
+            </div>
+          </div>
+
+          <div class="flash-card-wrap">
+            <button
+              type="button"
+              class="flash-card"
+              id="flash-card"
+              data-revealed="false"
+              aria-label="Card. Click to reveal."
+            >
+              <div class="flash-card-meta">
+                <span class="flash-card-meta-left" id="card-meta-pos">—</span>
+                <span class="flash-card-meta-right" id="card-meta-tip">Tap to reveal</span>
+              </div>
+              <div class="flash-card-body">
+                <div class="flash-card-primary" id="card-primary">—</div>
+                <div class="flash-card-secondary" id="card-secondary"></div>
+              </div>
+              <div class="flash-card-foot" id="card-foot"></div>
+            </button>
+          </div>
+
+          <div class="flash-controls">
+            <button type="button" class="flash-ctrl" id="flash-prev" aria-label="Previous">
+              <span class="ctrl-arrow">←</span>
+              <span class="ctrl-label">Prev</span>
+            </button>
+            <button type="button" class="flash-ctrl flash-ctrl-mid" id="flash-shuffle" aria-label="Shuffle">
+              <span class="ctrl-label">Shuffle</span>
+            </button>
+            <button type="button" class="flash-ctrl" id="flash-next" aria-label="Next">
+              <span class="ctrl-label">Next</span>
+              <span class="ctrl-arrow">→</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  <Footer />
+</BaseLayout>
+
+<script is:inline define:vars={{ entries: data }}>
+  const all = entries.filter((e) => e.chapter !== null);
+
+  const root = document.querySelector('.flash');
+
+  const setMode = (mode) => {
+    root.dataset.mode = mode;
+    if (mode === 'play') window.scrollTo({ top: 0, behavior: 'instant' });
+  };
+
+  // ─── Setup state ───
+  const selectedChapters = new Set();
+  let frontMode = 'character';
+  let deck = [];
+  let idx = 0;
+
+  document.querySelectorAll('[data-chapter]').forEach((btn) => {
+    selectedChapters.add(Number(btn.dataset.chapter));
+    btn.addEventListener('click', () => {
+      const ch = Number(btn.dataset.chapter);
+      const next = btn.dataset.selected !== 'true';
+      btn.dataset.selected = String(next);
+      btn.setAttribute('aria-pressed', String(next));
+      if (next) selectedChapters.add(ch);
+      else selectedChapters.delete(ch);
+      updateCount();
+    });
+  });
+
+  document.getElementById('ch-all')?.addEventListener('click', () => {
+    document.querySelectorAll('[data-chapter]').forEach((btn) => {
+      btn.dataset.selected = 'true';
+      btn.setAttribute('aria-pressed', 'true');
+      selectedChapters.add(Number(btn.dataset.chapter));
+    });
+    updateCount();
+  });
+  document.getElementById('ch-none')?.addEventListener('click', () => {
+    document.querySelectorAll('[data-chapter]').forEach((btn) => {
+      btn.dataset.selected = 'false';
+      btn.setAttribute('aria-pressed', 'false');
+    });
+    selectedChapters.clear();
+    updateCount();
+  });
+
+  document.querySelectorAll('[data-front]').forEach((btn) => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('[data-front]').forEach((b) => {
+        b.dataset.selected = 'false';
+        b.setAttribute('aria-pressed', 'false');
+      });
+      btn.dataset.selected = 'true';
+      btn.setAttribute('aria-pressed', 'true');
+      frontMode = btn.dataset.front;
+    });
+  });
+
+  const deckCountEl = document.getElementById('deck-count');
+  const startBtn = document.getElementById('flash-start');
+  const updateCount = () => {
+    const n = all.filter((e) => selectedChapters.has(e.chapter)).length;
+    deckCountEl.textContent = String(n);
+    if (startBtn) startBtn.disabled = n === 0;
+  };
+  updateCount();
+
+  // ─── Play state ───
+  const cardEl = document.getElementById('flash-card');
+  const primaryEl = document.getElementById('card-primary');
+  const secondaryEl = document.getElementById('card-secondary');
+  const footEl = document.getElementById('card-foot');
+  const metaPosEl = document.getElementById('card-meta-pos');
+  const metaTipEl = document.getElementById('card-meta-tip');
+  const idxEl = document.getElementById('card-index');
+  const totalEl = document.getElementById('card-total');
+  const chapterEl = document.getElementById('card-chapter');
+
+  const shuffle = (arr) => {
+    const a = arr.slice();
+    for (let i = a.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [a[i], a[j]] = [a[j], a[i]];
+    }
+    return a;
+  };
+
+  const renderCard = () => {
+    const card = deck[idx];
+    cardEl.dataset.revealed = 'false';
+    if (frontMode === 'character') {
+      primaryEl.textContent = card.character;
+      primaryEl.className = 'flash-card-primary mode-zh';
+    } else {
+      primaryEl.textContent = card.pinyin;
+      primaryEl.className = 'flash-card-primary mode-pinyin';
+    }
+    secondaryEl.textContent = '';
+    footEl.textContent = '';
+    metaPosEl.textContent = card.partOfSpeech || '—';
+    metaTipEl.textContent = 'Tap to reveal';
+    idxEl.textContent = String(idx + 1);
+    totalEl.textContent = String(deck.length);
+    chapterEl.textContent = String(card.chapter);
+  };
+
+  const reveal = () => {
+    if (cardEl.dataset.revealed === 'true') return;
+    const card = deck[idx];
+    cardEl.dataset.revealed = 'true';
+    metaTipEl.textContent = '';
+    if (frontMode === 'character') {
+      secondaryEl.textContent = card.pinyin;
+    } else {
+      primaryEl.textContent = card.character;
+      primaryEl.className = 'flash-card-primary mode-zh';
+      secondaryEl.textContent = card.pinyin;
+    }
+    footEl.textContent = card.meaning_th;
+  };
+
+  const next = () => {
+    idx = idx < deck.length - 1 ? idx + 1 : 0;
+    renderCard();
+  };
+  const prev = () => {
+    idx = idx > 0 ? idx - 1 : deck.length - 1;
+    renderCard();
+  };
+
+  cardEl.addEventListener('click', () => {
+    if (cardEl.dataset.revealed === 'true') next();
+    else reveal();
+  });
+
+  document.getElementById('flash-next')?.addEventListener('click', next);
+  document.getElementById('flash-prev')?.addEventListener('click', prev);
+  document.getElementById('flash-shuffle')?.addEventListener('click', () => {
+    deck = shuffle(deck);
+    idx = 0;
+    renderCard();
+  });
+
+  document.addEventListener('keydown', (e) => {
+    if (root.dataset.mode !== 'play') return;
+    if (e.key === 'ArrowRight') next();
+    else if (e.key === 'ArrowLeft') prev();
+    else if (e.key === ' ' || e.key === 'Enter') {
+      e.preventDefault();
+      if (cardEl.dataset.revealed === 'true') next();
+      else reveal();
+    } else if (e.key === 'Escape') setMode('setup');
+  });
+
+  document.getElementById('flash-back')?.addEventListener('click', () => setMode('setup'));
+
+  document.getElementById('flash-start')?.addEventListener('click', () => {
+    const filtered = all.filter((e) => selectedChapters.has(e.chapter));
+    if (filtered.length === 0) return;
+    deck = shuffle(filtered);
+    idx = 0;
+    renderCard();
+    setMode('play');
+  });
+</script>
+
+<style>
+  .flash {
+    min-height: 70vh;
+    position: relative;
+  }
+  .flash[data-mode='setup'] .flash-play {
+    display: none;
+  }
+  .flash[data-mode='play'] .flash-setup {
+    display: none;
+  }
+
+  /* ─── SETUP ─── */
+  .flash-setup {
+    padding: 80px 0 120px;
+  }
+  .flash-header {
+    max-width: 640px;
+    margin-bottom: 64px;
+  }
+  .flash-eyebrow {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--color-accent);
+    margin-bottom: 24px;
+  }
+  .flash-header h1 {
+    font-family: var(--font-display);
+    font-size: clamp(48px, 5.4vw, 84px);
+    line-height: 1;
+    letter-spacing: -0.025em;
+    color: var(--color-ink);
+    font-weight: 400;
+    margin-bottom: 24px;
+  }
+  .flash-deck {
+    font-size: 18px;
+    line-height: 1.6;
+    color: var(--color-muted);
+    text-wrap: pretty;
+  }
+  .flash-deck em {
+    font-family: var(--font-display);
+    color: var(--color-fg);
+  }
+
+  .flash-section {
+    margin-bottom: 56px;
+  }
+  .flash-section-title {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--color-fg);
+    font-weight: 500;
+    margin-bottom: 24px;
+  }
+  .flash-section-title span:first-child {
+    color: var(--color-accent);
+  }
+  .flash-section-actions {
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: var(--color-muted);
+    font-weight: 400;
+  }
+  .flash-section-actions .link {
+    background: none;
+    border: 0;
+    cursor: pointer;
+    color: var(--color-muted);
+    font: inherit;
+    letter-spacing: inherit;
+    text-transform: inherit;
+    padding: 0;
+    transition: color 0.15s ease;
+  }
+  .flash-section-actions .link:hover {
+    color: var(--color-accent);
+  }
+
+  .flash-chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+  .flash-chips-tight {
+    gap: 8px;
+  }
+
+  .chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    background: var(--color-bg);
+    border: 1px solid var(--color-border);
+    padding: 14px 20px;
+    cursor: pointer;
+    transition:
+      border-color 0.15s ease,
+      background 0.15s ease,
+      color 0.15s ease;
+    font: inherit;
+    color: inherit;
+  }
+  .chip-small {
+    padding: 10px 14px;
+    gap: 8px;
+  }
+  .chip:hover {
+    border-color: var(--color-ink);
+  }
+  .chip[data-selected='true'] {
+    background: var(--color-paper);
+    border-color: var(--color-ink);
+  }
+  .chip-label {
+    font-family: var(--font-display);
+    font-size: 18px;
+    color: var(--color-ink);
+    line-height: 1;
+  }
+  .chip-small .chip-label {
+    font-size: 16px;
+    font-family: var(--font-mono);
+    font-style: normal;
+  }
+  .chip-meta {
+    font-family: var(--font-mono);
+    font-size: 10px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--color-muted);
+  }
+  .chip-small .chip-meta {
+    font-size: 9.5px;
+  }
+
+  .flash-summary {
+    border-top: 1.5px solid var(--color-ink);
+    padding-top: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 32px;
+    flex-wrap: wrap;
+  }
+  .flash-summary-line {
+    display: flex;
+    align-items: baseline;
+    gap: 16px;
+  }
+  .flash-summary-label {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--color-muted);
+  }
+  .flash-summary-count {
+    font-family: var(--font-display);
+    font-size: 36px;
+    color: var(--color-ink);
+    font-style: italic;
+    font-variant-numeric: tabular-nums;
+  }
+  .flash-start {
+    display: inline-flex;
+    align-items: center;
+    gap: 14px;
+    background: var(--color-accent);
+    color: var(--color-bg);
+    border: 0;
+    padding: 18px 32px;
+    font-family: var(--font-mono);
+    font-size: 12px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition:
+      background 0.15s ease,
+      transform 0.15s ease;
+  }
+  .flash-start:hover {
+    background: var(--color-accent-deep);
+  }
+  .flash-start:active {
+    transform: translateY(1px);
+  }
+  .flash-start:disabled {
+    background: var(--color-muted);
+    cursor: not-allowed;
+  }
+  .flash-start span {
+    transition: transform 0.15s ease;
+  }
+  .flash-start:hover span {
+    transform: translateX(4px);
+  }
+
+  /* ─── PLAY ─── */
+  .flash-play {
+    padding: 32px 0 80px;
+  }
+  .flash-play-inner {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+  }
+  .flash-play-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid var(--color-border);
+    padding-bottom: 16px;
+    font-family: var(--font-mono);
+    font-size: 10.5px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--color-muted);
+  }
+  .flash-back {
+    background: none;
+    border: 0;
+    cursor: pointer;
+    font: inherit;
+    color: var(--color-fg);
+    letter-spacing: inherit;
+    text-transform: inherit;
+    padding: 0;
+    transition: color 0.15s ease;
+  }
+  .flash-back:hover {
+    color: var(--color-accent);
+  }
+  .flash-progress {
+    display: flex;
+    gap: 14px;
+    align-items: center;
+  }
+  .flash-progress span {
+    font-variant-numeric: tabular-nums;
+  }
+
+  .flash-card-wrap {
+    display: flex;
+    justify-content: center;
+  }
+  .flash-card {
+    background: var(--color-paper);
+    border: 1px solid var(--color-border);
+    width: 100%;
+    max-width: 520px;
+    aspect-ratio: 4 / 5;
+    padding: 28px;
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+    color: inherit;
+    transition:
+      transform 0.18s ease,
+      box-shadow 0.18s ease;
+    text-align: left;
+    font: inherit;
+  }
+  .flash-card:hover {
+    box-shadow: 0 1px 0 oklch(40% 0.02 60 / 0.06);
+  }
+  .flash-card:active {
+    transform: scale(0.99);
+  }
+  .flash-card-meta {
+    display: flex;
+    justify-content: space-between;
+    font-family: var(--font-mono);
+    font-size: 10px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--color-muted);
+  }
+  .flash-card[data-revealed='true'] .flash-card-meta-right {
+    color: var(--color-accent);
+  }
+  .flash-card-body {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+  }
+  .flash-card-primary {
+    text-align: center;
+    color: var(--color-ink);
+    line-height: 1;
+    text-wrap: balance;
+  }
+  .flash-card-primary.mode-zh {
+    font-family: var(--font-zh);
+    font-size: clamp(80px, 14vw, 160px);
+    letter-spacing: 0.04em;
+  }
+  .flash-card-primary.mode-pinyin {
+    font-family: var(--font-display);
+    font-style: italic;
+    font-size: clamp(48px, 8vw, 88px);
+    letter-spacing: 0.02em;
+  }
+  .flash-card-secondary {
+    font-family: var(--font-display);
+    font-style: italic;
+    font-size: clamp(20px, 2.4vw, 28px);
+    color: var(--color-muted);
+    text-align: center;
+    min-height: 1.3em;
+  }
+  .flash-card-foot {
+    text-align: center;
+    font-family: var(--font-display);
+    font-size: clamp(20px, 2.4vw, 26px);
+    color: var(--color-fg);
+    min-height: 1.4em;
+    border-top: 1px solid var(--color-border);
+    padding-top: 16px;
+  }
+
+  .flash-controls {
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+    align-items: center;
+  }
+  .flash-ctrl {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    background: var(--color-bg);
+    border: 1px solid var(--color-border);
+    padding: 14px 24px;
+    cursor: pointer;
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--color-fg);
+    transition:
+      border-color 0.15s ease,
+      color 0.15s ease;
+    min-width: 120px;
+    justify-content: center;
+  }
+  .flash-ctrl:hover {
+    border-color: var(--color-ink);
+    color: var(--color-accent);
+  }
+  .flash-ctrl-mid {
+    color: var(--color-muted);
+  }
+  .ctrl-arrow {
+    font-family: var(--font-display);
+    font-size: 16px;
+    line-height: 1;
+  }
+
+  @media (max-width: 880px) {
+    .flash-setup {
+      padding: 56px 0 80px;
+    }
+    .flash-header {
+      margin-bottom: 48px;
+    }
+    .flash-section {
+      margin-bottom: 40px;
+    }
+    .flash-summary {
+      flex-direction: column;
+      align-items: stretch;
+      gap: 24px;
+    }
+    .flash-start {
+      justify-content: center;
+    }
+    .flash-card {
+      aspect-ratio: 3 / 4;
+    }
+  }
+  @media (max-width: 560px) {
+    .flash-controls {
+      gap: 8px;
+    }
+    .flash-ctrl {
+      min-width: 0;
+      flex: 1;
+      padding: 12px 12px;
+    }
+    .flash-ctrl-mid .ctrl-label {
+      display: none;
+    }
+    .flash-ctrl-mid::before {
+      content: '⇄';
+      font-size: 16px;
+      letter-spacing: 0;
+    }
+  }
+</style>

@@ -1,0 +1,208 @@
+---
+const tools = [
+  {
+    href: '/tools/flashcards/',
+    number: '01',
+    name: 'Flashcards',
+    cn: '生词卡',
+    deck: 'Vocabulary cards bound to the exact word lists in Hanyu Jiaocheng. Pick a book, pick chapters, choose what you see first.',
+    status: 'live',
+  },
+  {
+    href: null,
+    number: '02',
+    name: 'Stroke order',
+    cn: '笔顺',
+    deck: 'Paste any Chinese character. We play back the stroke order on a 米字格 grid, slowly, the way a teacher would draw it on a board.',
+    status: 'soon',
+  },
+];
+---
+
+<section class="tools" id="tools">
+  <div class="container">
+    <header class="tools-rule">
+      <h2 class="tools-title"><b>Tools</b><em>The Studio · 文房</em></h2>
+      <span class="tools-count">{tools.length} instruments</span>
+    </header>
+    <div class="tool-grid">
+      {
+        tools.map((tool) => {
+          const Wrapper = tool.href ? 'a' : 'div';
+          const wrapperProps = tool.href ? { href: tool.href } : {};
+          return (
+            <Wrapper class="tool" {...wrapperProps}>
+              <div class="tool-head">
+                <span class="tool-number">— {tool.number}</span>
+                <h3 class="tool-name">
+                  {tool.name}
+                  <span class="cn">{tool.cn}</span>
+                </h3>
+              </div>
+              <p class="tool-deck">{tool.deck}</p>
+              <div class="tool-foot">
+                <span class={`status status-${tool.status}`}>
+                  {tool.status === 'live' ? 'Live' : 'Coming soon'}
+                </span>
+                {tool.href && <span class="open">Open →</span>}
+              </div>
+            </Wrapper>
+          );
+        })
+      }
+    </div>
+  </div>
+</section>
+
+<style>
+  .tools {
+    padding: 120px 0 80px;
+  }
+  .tools-rule {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    border-bottom: 1.5px solid var(--color-ink);
+    padding-bottom: 14px;
+  }
+  .tools-title {
+    font-family: var(--font-display);
+    font-size: 14px;
+    font-style: italic;
+    color: var(--color-ink);
+    letter-spacing: 0;
+    font-weight: 400;
+  }
+  .tools-title b {
+    font-style: normal;
+    font-weight: 500;
+    margin-right: 6px;
+  }
+  .tools-title em {
+    color: var(--color-muted);
+    margin-left: 8px;
+  }
+  .tools-count {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--color-muted);
+  }
+  .tool-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+  .tool {
+    display: flex;
+    flex-direction: column;
+    gap: 36px;
+    padding: 56px 48px 44px;
+    border-right: 1px solid var(--color-border);
+    border-bottom: 1px solid var(--color-border);
+    color: inherit;
+    transition: background 0.25s ease;
+  }
+  .tool:nth-child(2n) {
+    border-right: 0;
+  }
+  a.tool:hover {
+    background: var(--color-paper);
+  }
+  div.tool {
+    opacity: 0.6;
+    cursor: not-allowed;
+  }
+  .tool-head {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+  }
+  .tool-number {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--color-accent);
+  }
+  .tool-name {
+    font-family: var(--font-display);
+    font-size: clamp(30px, 3vw, 42px);
+    line-height: 1.05;
+    letter-spacing: -0.02em;
+    color: var(--color-ink);
+    font-weight: 400;
+    text-wrap: balance;
+  }
+  .tool-name .cn {
+    display: block;
+    font-family: var(--font-zh);
+    font-size: 0.5em;
+    color: var(--color-muted);
+    margin-top: 10px;
+    letter-spacing: 0.06em;
+  }
+  .tool-deck {
+    font-size: 16px;
+    line-height: 1.65;
+    color: var(--color-muted);
+    max-width: 46ch;
+    text-wrap: pretty;
+    flex: 1;
+  }
+  .tool-foot {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid var(--color-border);
+    padding-top: 20px;
+    font-family: var(--font-mono);
+    font-size: 10.5px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--color-muted);
+  }
+  .status {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .status-live {
+    color: var(--color-accent);
+  }
+  .status-live::before {
+    content: '';
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--color-accent);
+    animation: pulse 2.4s ease-in-out infinite;
+  }
+  .status-soon::before {
+    content: '';
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--color-muted);
+    opacity: 0.4;
+  }
+
+  @media (max-width: 880px) {
+    .tools {
+      padding: 80px 0 56px;
+    }
+    .tool-grid {
+      grid-template-columns: 1fr;
+    }
+    .tool {
+      border-right: 0;
+      padding: 44px 32px 36px;
+    }
+  }
+  @media (max-width: 560px) {
+    .tool {
+      padding: 36px 24px 28px;
+      gap: 28px;
+    }
+  }
+</style>

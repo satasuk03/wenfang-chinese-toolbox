@@ -108,6 +108,7 @@ const allChapters = Array.from(new Set(entries.map((e) => e.chapter))).sort((a, 
 
   let deck = [];
   let idx = 0;
+  let pendingRender = false;
 
   // ─── DOM ───
   const cardEl = document.getElementById('flash-card');
@@ -138,6 +139,7 @@ const allChapters = Array.from(new Set(entries.map((e) => e.chapter))).sort((a, 
   };
 
   const render = () => {
+    pendingRender = false;
     if (deck.length === 0) {
       primaryEl.textContent = '—';
       secondaryEl.textContent = '';
@@ -171,16 +173,27 @@ const allChapters = Array.from(new Set(entries.map((e) => e.chapter))).sort((a, 
   };
 
   const next = () => {
-    if (deck.length === 0) return;
+    if (deck.length === 0 || pendingRender) return;
     idx = idx < deck.length - 1 ? idx + 1 : 0;
-    render();
+    if (cardEl.dataset.revealed === 'true') {
+      pendingRender = true;
+      cardEl.dataset.revealed = 'false';
+    } else {
+      render();
+    }
   };
   const prev = () => {
-    if (deck.length === 0) return;
+    if (deck.length === 0 || pendingRender) return;
     idx = idx > 0 ? idx - 1 : deck.length - 1;
-    render();
+    if (cardEl.dataset.revealed === 'true') {
+      pendingRender = true;
+      cardEl.dataset.revealed = 'false';
+    } else {
+      render();
+    }
   };
   const reveal = () => {
+    if (pendingRender) return;
     cardEl.dataset.revealed = 'true';
   };
 
@@ -202,6 +215,11 @@ const allChapters = Array.from(new Set(entries.map((e) => e.chapter))).sort((a, 
   updateTabs();
 
   // ─── Card interaction ───
+  cardEl.addEventListener('transitionend', (e) => {
+    if (e.target !== cardEl || e.propertyName !== 'transform') return;
+    if (pendingRender) render();
+  });
+
   cardEl.addEventListener('click', () => {
     if (cardEl.dataset.revealed === 'true') next();
     else reveal();

@@ -4,26 +4,29 @@ import Masthead from '../../../components/Masthead.astro';
 import Footer from '../../../components/Footer.astro';
 import hskLevel1 from '../../../data/hsk-level-1.json';
 import hskLevel2 from '../../../data/hsk-level-2.json';
+import hskLevel3 from '../../../data/vocab-hsk3.json';
+import hskLevel4 from '../../../data/vocab-hsk4.json';
 
-const hsk1 = hskLevel1 as {
+type Entry = {
   character: string;
   pinyin: string;
   partOfSpeech: string;
   meaning_th: string;
   example: string;
   level: number;
-}[];
+};
 
-const hsk2 = hskLevel2 as {
-  character: string;
-  pinyin: string;
-  partOfSpeech: string;
-  meaning_th: string;
-  example: string;
-  level: number;
-}[];
+const hsk1 = hskLevel1 as Entry[];
+const hsk2 = hskLevel2 as Entry[];
+const hsk3 = hskLevel3 as Entry[];
+const hsk4 = hskLevel4 as Entry[];
 
-const allLevels = [1, 2];
+const levels = [
+  { id: 1, name: 'Level 1', entries: hsk1 },
+  { id: 2, name: 'Level 2', entries: hsk2 },
+  { id: 3, name: 'Level 3', entries: hsk3 },
+  { id: 4, name: 'Level 4', entries: hsk4 },
+];
 ---
 
 <BaseLayout title="HSK Flashcards · Wénfáng">
@@ -44,7 +47,14 @@ const allLevels = [1, 2];
 
         <div class="flash-card-wrap">
           <div class="flash-card-scene">
-            <div role="button" tabindex="0" class="flash-card" id="flash-card" data-revealed="false" aria-label="Tap to flip">
+            <div
+              role="button"
+              tabindex="0"
+              class="flash-card"
+              id="flash-card"
+              data-revealed="false"
+              aria-label="Tap to flip"
+            >
               <div class="flash-card-face flash-card-front">
                 <div class="flash-card-primary" id="card-primary"></div>
               </div>
@@ -71,16 +81,21 @@ const allLevels = [1, 2];
             <span>Level</span>
           </div>
           <div class="filter-levels" id="filter-levels">
-            <label class="filter-chip">
-              <input type="radio" name="hsk-level" value="1" checked data-level="1" />
-              <span>Level 1</span>
-              <span class="filter-chip-count">{hsk1.length}</span>
-            </label>
-            <label class="filter-chip">
-              <input type="radio" name="hsk-level" value="2" data-level="2" />
-              <span>Level 2</span>
-              <span class="filter-chip-count">{hsk2.length}</span>
-            </label>
+            {
+              levels.map((lv) => (
+                <label class="filter-chip">
+                  <input
+                    type="radio"
+                    name="hsk-level"
+                    value={lv.id}
+                    checked={lv.id === 1}
+                    data-level={lv.id}
+                  />
+                  <span>{lv.name}</span>
+                  <span class="filter-chip-count">{lv.entries.length}</span>
+                </label>
+              ))
+            }
           </div>
         </div>
       </div>
@@ -89,7 +104,7 @@ const allLevels = [1, 2];
   <Footer />
 </BaseLayout>
 
-<script is:inline define:vars={{ hsk1, hsk2, allLevels }}>
+<script is:inline define:vars={{ hsk1, hsk2, hsk3, hsk4 }}>
   // ─── State ───
   const STORAGE_TAB = 'wenfang_hsk_flashcard_tab';
   const STORAGE_LEVEL = 'wenfang_hsk_flashcard_level';
@@ -105,7 +120,8 @@ const allLevels = [1, 2];
   let activeLevel = 1;
   try {
     const savedLevel = localStorage.getItem(STORAGE_LEVEL);
-    if (savedLevel === '1' || savedLevel === '2') activeLevel = Number(savedLevel);
+    if (savedLevel === '1' || savedLevel === '2' || savedLevel === '3' || savedLevel === '4')
+      activeLevel = Number(savedLevel);
   } catch {
     /* ignore */
   }
@@ -131,6 +147,8 @@ const allLevels = [1, 2];
   const getEntriesForLevel = (level) => {
     if (level === 1) return hsk1;
     if (level === 2) return hsk2;
+    if (level === 3) return hsk3;
+    if (level === 4) return hsk4;
     return hsk1;
   };
 
@@ -311,12 +329,18 @@ const allLevels = [1, 2];
   });
 
   let touchStartX = 0;
-  cardEl.addEventListener('touchstart', (e) => { touchStartX = e.changedTouches[0].screenX; }, { passive: true });
-  cardEl.addEventListener('touchend', (e) => {
-    const dx = e.changedTouches[0].screenX - touchStartX;
-    if (dx < -40) next();
-    if (dx > 40) prev();
+  cardEl.addEventListener('touchstart', (e) => {
+    touchStartX = e.changedTouches[0].screenX;
   }, { passive: true });
+  cardEl.addEventListener(
+    'touchend',
+    (e) => {
+      const dx = e.changedTouches[0].screenX - touchStartX;
+      if (dx < -40) next();
+      if (dx > 40) prev();
+    },
+    { passive: true }
+  );
 
   // ─── Init ───
   rebuildDeck();

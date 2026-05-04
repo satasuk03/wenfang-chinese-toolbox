@@ -36,7 +36,7 @@ const allChapters = Array.from(new Set(entries.map((e) => e.chapter)))
 
         <div class="flash-card-wrap">
           <div class="flash-card-scene">
-            <button type="button" class="flash-card" id="flash-card" data-revealed="false" aria-label="Tap to flip">
+            <div role="button" tabindex="0" class="flash-card" id="flash-card" data-revealed="false" aria-label="Tap to flip">
               <div class="flash-card-face flash-card-front">
                 <div class="flash-card-primary" id="card-primary"></div>
               </div>
@@ -45,7 +45,7 @@ const allChapters = Array.from(new Set(entries.map((e) => e.chapter)))
                 <div class="flash-card-tertiary" id="card-tertiary"></div>
                 <div class="flash-card-quaternary" id="card-quaternary"></div>
               </div>
-            </button>
+            </div>
           </div>
         </div>
 
@@ -242,6 +242,14 @@ const allChapters = Array.from(new Set(entries.map((e) => e.chapter)))
   cardEl.addEventListener('click', () => {
     if (cardEl.dataset.revealed === 'true') next();
     else reveal();
+  });
+
+  cardEl.addEventListener('keydown', (e) => {
+    if (e.key === 'Enter' || e.key === ' ') {
+      e.preventDefault();
+      if (cardEl.dataset.revealed === 'true') next();
+      else reveal();
+    }
   });
 
   // ─── Filter ───

@@ -1,1 +1,2270 @@
-[{"character":"测试","pinyin":"cèshì","partOfSpeech":"动","chapter":1,"meaning_th":"ทดสอบ"}]
+[
+  {
+    "character": "阿拉伯文",
+    "pinyin": "Ālābówén",
+    "partOfSpeech": "名",
+    "chapter": 6,
+    "meaning_th": ""
+  },
+  {
+    "character": "阿拉伯语",
+    "pinyin": "Ālābóyǔ",
+    "partOfSpeech": "名",
+    "chapter": 3,
+    "meaning_th": ""
+  },
+  {
+    "character": "啊",
+    "pinyin": "à",
+    "partOfSpeech": "叹",
+    "chapter": 14,
+    "meaning_th": ""
+  },
+  {
+    "character": "八",
+    "pinyin": "bā",
+    "partOfSpeech": "数",
+    "chapter": 1,
+    "meaning_th": "แปด"
+  },
+  {
+    "character": "爸爸",
+    "pinyin": "bàba",
+    "partOfSpeech": "名",
+    "chapter": 2,
+    "meaning_th": ""
+  },
+  {
+    "character": "白",
+    "pinyin": "bái",
+    "partOfSpeech": "形",
+    "chapter": 1,
+    "meaning_th": ""
+  },
+  {
+    "character": "百",
+    "pinyin": "bǎi",
+    "partOfSpeech": "数",
+    "chapter": 9,
+    "meaning_th": ""
+  },
+  {
+    "character": "班",
+    "pinyin": "bān",
+    "partOfSpeech": "名",
+    "chapter": 12,
+    "meaning_th": ""
+  },
+  {
+    "character": "办公",
+    "pinyin": "bàngōng",
+    "partOfSpeech": "动",
+    "chapter": 10,
+    "meaning_th": "งานสำนักงาน"
+  },
+  {
+    "character": "办公室",
+    "pinyin": "bàngōngshì",
+    "partOfSpeech": "名",
+    "chapter": 10,
+    "meaning_th": "สำนักงาน"
+  },
+  {
+    "character": "包子",
+    "pinyin": "bāozi",
+    "partOfSpeech": "名",
+    "chapter": 7,
+    "meaning_th": "ซาลาเปา"
+  },
+  {
+    "character": "杯",
+    "pinyin": "bēi",
+    "partOfSpeech": "名",
+    "chapter": 14,
+    "meaning_th": ""
+  },
+  {
+    "character": "本",
+    "pinyin": "běn",
+    "partOfSpeech": "量",
+    "chapter": 13,
+    "meaning_th": ""
+  },
+  {
+    "character": "笔",
+    "pinyin": "bǐ",
+    "partOfSpeech": "名",
+    "chapter": 13,
+    "meaning_th": ""
+  },
+  {
+    "character": "比较",
+    "pinyin": "bǐjiào",
+    "partOfSpeech": "副、动",
+    "chapter": 12,
+    "meaning_th": ""
+  },
+  {
+    "character": "别的",
+    "pinyin": "biéde",
+    "partOfSpeech": "代",
+    "chapter": 8,
+    "meaning_th": "อย่างอื่น"
+  },
+  {
+    "character": "不",
+    "pinyin": "bù",
+    "partOfSpeech": "副",
+    "chapter": 1,
+    "meaning_th": "ไม่"
+  },
+  {
+    "character": "不客气",
+    "pinyin": "bú kèqi",
+    "partOfSpeech": "",
+    "chapter": 5,
+    "meaning_th": "ไม่เป็นไร"
+  },
+  {
+    "character": "茶",
+    "pinyin": "chá",
+    "partOfSpeech": "名",
+    "chapter": 5,
+    "meaning_th": ""
+  },
+  {
+    "character": "茶叶",
+    "pinyin": "cháyè",
+    "partOfSpeech": "名",
+    "chapter": 13,
+    "meaning_th": ""
+  },
+  {
+    "character": "车",
+    "pinyin": "chē",
+    "partOfSpeech": "名",
+    "chapter": 14,
+    "meaning_th": ""
+  },
+  {
+    "character": "吃",
+    "pinyin": "chī",
+    "partOfSpeech": "动",
+    "chapter": 7,
+    "meaning_th": ""
+  },
+  {
+    "character": "出租车",
+    "pinyin": "chūzūchē",
+    "partOfSpeech": "名",
+    "chapter": 14,
+    "meaning_th": "แท็กซี่"
+  },
+  {
+    "character": "词典",
+    "pinyin": "cídiǎn",
+    "partOfSpeech": "名",
+    "chapter": 13,
+    "meaning_th": ""
+  },
+  {
+    "character": "大",
+    "pinyin": "dà",
+    "partOfSpeech": "形",
+    "chapter": 1,
+    "meaning_th": ""
+  },
+  {
+    "character": "大概",
+    "pinyin": "dàgài",
+    "partOfSpeech": "副",
+    "chapter": 15,
+    "meaning_th": ""
+  },
+  {
+    "character": "大学",
+    "pinyin": "dàxué",
+    "partOfSpeech": "名",
+    "chapter": 12,
+    "meaning_th": ""
+  },
+  {
+    "character": "大夫",
+    "pinyin": "dàifu",
+    "partOfSpeech": "名",
+    "chapter": 15,
+    "meaning_th": ""
+  },
+  {
+    "character": "但是",
+    "pinyin": "dànshì",
+    "partOfSpeech": "连",
+    "chapter": 12,
+    "meaning_th": "แต่"
+  },
+  {
+    "character": "蛋",
+    "pinyin": "dàn",
+    "partOfSpeech": "名",
+    "chapter": 7,
+    "meaning_th": ""
+  },
+  {
+    "character": "德国",
+    "pinyin": "Déguó",
+    "partOfSpeech": "名",
+    "chapter": 6,
+    "meaning_th": ""
+  },
+  {
+    "character": "德文",
+    "pinyin": "Déwén",
+    "partOfSpeech": "名",
+    "chapter": 6,
+    "meaning_th": ""
+  },
+  {
+    "character": "德语",
+    "pinyin": "Déyǔ",
+    "partOfSpeech": "名",
+    "chapter": 3,
+    "meaning_th": ""
+  },
+  {
+    "character": "的",
+    "pinyin": "de",
+    "partOfSpeech": "助",
+    "chapter": 6,
+    "meaning_th": ""
+  },
+  {
+    "character": "等",
+    "pinyin": "děng",
+    "partOfSpeech": "动",
+    "chapter": 9,
+    "meaning_th": ""
+  },
+  {
+    "character": "弟弟",
+    "pinyin": "dìdi",
+    "partOfSpeech": "名",
+    "chapter": 2,
+    "meaning_th": ""
+  },
+  {
+    "character": "点儿",
+    "pinyin": "diǎnr",
+    "partOfSpeech": "量",
+    "chapter": 14,
+    "meaning_th": ""
+  },
+  {
+    "character": "电",
+    "pinyin": "diàn",
+    "partOfSpeech": "名",
+    "chapter": 10,
+    "meaning_th": ""
+  },
+  {
+    "character": "电话",
+    "pinyin": "diànhuà",
+    "partOfSpeech": "名",
+    "chapter": 10,
+    "meaning_th": ""
+  },
+  {
+    "character": "都",
+    "pinyin": "dōu",
+    "partOfSpeech": "副",
+    "chapter": 11,
+    "meaning_th": ""
+  },
+  {
+    "character": "读",
+    "pinyin": "dú",
+    "partOfSpeech": "动",
+    "chapter": 12,
+    "meaning_th": ""
+  },
+  {
+    "character": "对",
+    "pinyin": "duì",
+    "partOfSpeech": "形",
+    "chapter": 3,
+    "meaning_th": ""
+  },
+  {
+    "character": "对不起",
+    "pinyin": "duì bu qǐ",
+    "partOfSpeech": "",
+    "chapter": 4,
+    "meaning_th": ""
+  },
+  {
+    "character": "多",
+    "pinyin": "duō",
+    "partOfSpeech": "数",
+    "chapter": 15,
+    "meaning_th": ""
+  },
+  {
+    "character": "多",
+    "pinyin": "duō",
+    "partOfSpeech": "形",
+    "chapter": 8,
+    "meaning_th": ""
+  },
+  {
+    "character": "多少",
+    "pinyin": "duōshao",
+    "partOfSpeech": "代",
+    "chapter": 8,
+    "meaning_th": ""
+  },
+  {
+    "character": "俄国",
+    "pinyin": "Éguó",
+    "partOfSpeech": "名",
+    "chapter": 6,
+    "meaning_th": "รัสเซีย"
+  },
+  {
+    "character": "俄文",
+    "pinyin": "Éwén",
+    "partOfSpeech": "名",
+    "chapter": 6,
+    "meaning_th": "ภาษารัสเซีย"
+  },
+  {
+    "character": "俄语",
+    "pinyin": "Éyǔ",
+    "partOfSpeech": "名",
+    "chapter": 3,
+    "meaning_th": "ภาษารัสเซีย"
+  },
+  {
+    "character": "二",
+    "pinyin": "èr",
+    "partOfSpeech": "数",
+    "chapter": 4,
+    "meaning_th": "สอง"
+  },
+  {
+    "character": "发音",
+    "pinyin": "fāyīn",
+    "partOfSpeech": "名",
+    "chapter": 6,
+    "meaning_th": ""
+  },
+  {
+    "character": "法国",
+    "pinyin": "Fǎguó",
+    "partOfSpeech": "名",
+    "chapter": 6,
+    "meaning_th": ""
+  },
+  {
+    "character": "法文",
+    "pinyin": "Fǎwén",
+    "partOfSpeech": "名",
+    "chapter": 6,
+    "meaning_th": ""
+  },
+  {
+    "character": "法语",
+    "pinyin": "Fǎyǔ",
+    "partOfSpeech": "名",
+    "chapter": 3,
+    "meaning_th": ""
+  },
+  {
+    "character": "饭",
+    "pinyin": "fàn",
+    "partOfSpeech": "名",
+    "chapter": 7,
+    "meaning_th": ""
+  },
+  {
+    "character": "房间",
+    "pinyin": "fángjiān",
+    "partOfSpeech": "名",
+    "chapter": 10,
+    "meaning_th": ""
+  },
+  {
+    "character": "分",
+    "pinyin": "fēn",
+    "partOfSpeech": "量",
+    "chapter": 8,
+    "meaning_th": "นาที"
+  },
+  {
+    "character": "刚",
+    "pinyin": "gāng",
+    "partOfSpeech": "副",
+    "chapter": 14,
+    "meaning_th": "เพิ่ง"
+  },
+  {
+    "character": "港币",
+    "pinyin": "gǎngbì",
+    "partOfSpeech": "名",
+    "chapter": 9,
+    "meaning_th": ""
+  },
+  {
+    "character": "哥哥",
+    "pinyin": "gēge",
+    "partOfSpeech": "名",
+    "chapter": 2,
+    "meaning_th": ""
+  },
+  {
+    "character": "个",
+    "pinyin": "gè",
+    "partOfSpeech": "量",
+    "chapter": 7,
+    "meaning_th": "ลักษณะนาม"
+  },
+  {
+    "character": "给",
+    "pinyin": "gěi",
+    "partOfSpeech": "动",
+    "chapter": 8,
+    "meaning_th": ""
+  },
+  {
+    "character": "给",
+    "pinyin": "gěi",
+    "partOfSpeech": "介",
+    "chapter": 12,
+    "meaning_th": ""
+  },
+  {
+    "character": "工作",
+    "pinyin": "gōngzuò",
+    "partOfSpeech": "名、动",
+    "chapter": 5,
+    "meaning_th": ""
+  },
+  {
+    "character": "公斤",
+    "pinyin": "gōngjīn",
+    "partOfSpeech": "量",
+    "chapter": 8,
+    "meaning_th": "กิโลกรัม"
+  },
+  {
+    "character": "公司",
+    "pinyin": "gōngsī",
+    "partOfSpeech": "名",
+    "chapter": 15,
+    "meaning_th": "บริษัท"
+  },
+  {
+    "character": "光盘",
+    "pinyin": "guāngpán",
+    "partOfSpeech": "名",
+    "chapter": 13,
+    "meaning_th": "ซีดี"
+  },
+  {
+    "character": "贵",
+    "pinyin": "guì",
+    "partOfSpeech": "形",
+    "chapter": 8,
+    "meaning_th": ""
+  },
+  {
+    "character": "贵姓",
+    "pinyin": "guìxìng",
+    "partOfSpeech": "名",
+    "chapter": 6,
+    "meaning_th": ""
+  },
+  {
+    "character": "国",
+    "pinyin": "guó",
+    "partOfSpeech": "名",
+    "chapter": 6,
+    "meaning_th": ""
+  },
+  {
+    "character": "还",
+    "pinyin": "hái",
+    "partOfSpeech": "副",
+    "chapter": 8,
+    "meaning_th": ""
+  },
+  {
+    "character": "还是",
+    "pinyin": "háishì",
+    "partOfSpeech": "连",
+    "chapter": 14,
+    "meaning_th": ""
+  },
+  {
+    "character": "韩国",
+    "pinyin": "Hánguó",
+    "partOfSpeech": "名",
+    "chapter": 6,
+    "meaning_th": ""
+  },
+  {
+    "character": "韩国语",
+    "pinyin": "Hánguóyǔ",
+    "partOfSpeech": "名",
+    "chapter": 3,
+    "meaning_th": ""
+  },
+  {
+    "character": "韩文",
+    "pinyin": "Hánwén",
+    "partOfSpeech": "名",
+    "chapter": 6,
+    "meaning_th": ""
+  },
+  {
+    "character": "汉语",
+    "pinyin": "Hànyǔ",
+    "partOfSpeech": "名",
+    "chapter": 2,
+    "meaning_th": ""
+  },
+  {
+    "character": "好",
+    "pinyin": "hǎo",
+    "partOfSpeech": "形",
+    "chapter": 1,
+    "meaning_th": ""
+  },
+  {
+    "character": "好久",
+    "pinyin": "hǎojiǔ",
+    "partOfSpeech": "名",
+    "chapter": 14,
+    "meaning_th": ""
+  },
+  {
+    "character": "号",
+    "pinyin": "hào",
+    "partOfSpeech": "名",
+    "chapter": 10,
+    "meaning_th": ""
+  },
+  {
+    "character": "号码",
+    "pinyin": "hàomǎ",
+    "partOfSpeech": "名",
+    "chapter": 10,
+    "meaning_th": ""
+  },
+  {
+    "character": "喝",
+    "pinyin": "hē",
+    "partOfSpeech": "动",
+    "chapter": 5,
+    "meaning_th": ""
+  },
+  {
+    "character": "和",
+    "pinyin": "hé",
+    "partOfSpeech": "连",
+    "chapter": 11,
+    "meaning_th": ""
+  },
+  {
+    "character": "黑",
+    "pinyin": "hēi",
+    "partOfSpeech": "形",
+    "chapter": 13,
+    "meaning_th": ""
+  },
+  {
+    "character": "很",
+    "pinyin": "hěn",
+    "partOfSpeech": "副",
+    "chapter": 2,
+    "meaning_th": ""
+  },
+  {
+    "character": "红",
+    "pinyin": "hóng",
+    "partOfSpeech": "形",
+    "chapter": 13,
+    "meaning_th": ""
+  },
+  {
+    "character": "话",
+    "pinyin": "huà",
+    "partOfSpeech": "名",
+    "chapter": 10,
+    "meaning_th": ""
+  },
+  {
+    "character": "欢迎",
+    "pinyin": "huānyíng",
+    "partOfSpeech": "动",
+    "chapter": 11,
+    "meaning_th": ""
+  },
+  {
+    "character": "换",
+    "pinyin": "huàn",
+    "partOfSpeech": "动",
+    "chapter": 9,
+    "meaning_th": ""
+  },
+  {
+    "character": "回",
+    "pinyin": "huí",
+    "partOfSpeech": "动",
+    "chapter": 4,
+    "meaning_th": ""
+  },
+  {
+    "character": "鸡",
+    "pinyin": "jī",
+    "partOfSpeech": "名",
+    "chapter": 7,
+    "meaning_th": ""
+  },
+  {
+    "character": "鸡蛋",
+    "pinyin": "jīdàn",
+    "partOfSpeech": "名",
+    "chapter": 7,
+    "meaning_th": ""
+  },
+  {
+    "character": "几",
+    "pinyin": "jǐ",
+    "partOfSpeech": "代",
+    "chapter": 4,
+    "meaning_th": "กี่"
+  },
+  {
+    "character": "寄",
+    "pinyin": "jì",
+    "partOfSpeech": "动",
+    "chapter": 3,
+    "meaning_th": ""
+  },
+  {
+    "character": "家",
+    "pinyin": "jiā",
+    "partOfSpeech": "名、量",
+    "chapter": 10,
+    "meaning_th": ""
+  },
+  {
+    "character": "见",
+    "pinyin": "jiàn",
+    "partOfSpeech": "动",
+    "chapter": 3,
+    "meaning_th": ""
+  },
+  {
+    "character": "件",
+    "pinyin": "jiàn",
+    "partOfSpeech": "量",
+    "chapter": 13,
+    "meaning_th": "ชิ้น"
+  },
+  {
+    "character": "角（毛）",
+    "pinyin": "jiǎo (máo)",
+    "partOfSpeech": "量",
+    "chapter": 8,
+    "meaning_th": ""
+  },
+  {
+    "character": "饺子",
+    "pinyin": "jiǎozi",
+    "partOfSpeech": "名",
+    "chapter": 7,
+    "meaning_th": ""
+  },
+  {
+    "character": "叫",
+    "pinyin": "jiào",
+    "partOfSpeech": "动",
+    "chapter": 6,
+    "meaning_th": ""
+  },
+  {
+    "character": "教授",
+    "pinyin": "jiàoshòu",
+    "partOfSpeech": "名",
+    "chapter": 11,
+    "meaning_th": ""
+  },
+  {
+    "character": "她",
+    "pinyin": "tā",
+    "partOfSpeech": "代",
+    "chapter": 2,
+    "meaning_th": ""
+  },
+  {
+    "character": "姐姐",
+    "pinyin": "jiějie",
+    "partOfSpeech": "名",
+    "chapter": 15,
+    "meaning_th": ""
+  },
+  {
+    "character": "介绍",
+    "pinyin": "jièshào",
+    "partOfSpeech": "动",
+    "chapter": 11,
+    "meaning_th": "แนะนำ"
+  },
+  {
+    "character": "今天",
+    "pinyin": "jīntiān",
+    "partOfSpeech": "名",
+    "chapter": 4,
+    "meaning_th": "วันนี้"
+  },
+  {
+    "character": "斤",
+    "pinyin": "jīn",
+    "partOfSpeech": "量",
+    "chapter": 8,
+    "meaning_th": ""
+  },
+  {
+    "character": "进",
+    "pinyin": "jìn",
+    "partOfSpeech": "动",
+    "chapter": 5,
+    "meaning_th": ""
+  },
+  {
+    "character": "九",
+    "pinyin": "jiǔ",
+    "partOfSpeech": "数",
+    "chapter": 3,
+    "meaning_th": "เก้า"
+  },
+  {
+    "character": "酒",
+    "pinyin": "jiǔ",
+    "partOfSpeech": "名",
+    "chapter": 7,
+    "meaning_th": ""
+  },
+  {
+    "character": "旧",
+    "pinyin": "jiù",
+    "partOfSpeech": "形",
+    "chapter": 13,
+    "meaning_th": ""
+  },
+  {
+    "character": "橘子",
+    "pinyin": "júzi",
+    "partOfSpeech": "名",
+    "chapter": 8,
+    "meaning_th": ""
+  },
+  {
+    "character": "觉得",
+    "pinyin": "juéde",
+    "partOfSpeech": "动",
+    "chapter": 12,
+    "meaning_th": ""
+  },
+  {
+    "character": "咖啡",
+    "pinyin": "kāfēi",
+    "partOfSpeech": "名",
+    "chapter": 14,
+    "meaning_th": ""
+  },
+  {
+    "character": "开",
+    "pinyin": "kāi",
+    "partOfSpeech": "动",
+    "chapter": 14,
+    "meaning_th": ""
+  },
+  {
+    "character": "开学",
+    "pinyin": "kāi xué",
+    "partOfSpeech": "",
+    "chapter": 14,
+    "meaning_th": ""
+  },
+  {
+    "character": "看",
+    "pinyin": "kàn",
+    "partOfSpeech": "动",
+    "chapter": 15,
+    "meaning_th": ""
+  },
+  {
+    "character": "客气",
+    "pinyin": "kèqi",
+    "partOfSpeech": "形",
+    "chapter": 5,
+    "meaning_th": ""
+  },
+  {
+    "character": "口",
+    "pinyin": "kǒu",
+    "partOfSpeech": "名、量",
+    "chapter": 1,
+    "meaning_th": ""
+  },
+  {
+    "character": "块（元）",
+    "pinyin": "kuài (yuán)",
+    "partOfSpeech": "量",
+    "chapter": 8,
+    "meaning_th": ""
+  },
+  {
+    "character": "来",
+    "pinyin": "lái",
+    "partOfSpeech": "动",
+    "chapter": 14,
+    "meaning_th": ""
+  },
+  {
+    "character": "蓝",
+    "pinyin": "lán",
+    "partOfSpeech": "形",
+    "chapter": 14,
+    "meaning_th": ""
+  },
+  {
+    "character": "老师",
+    "pinyin": "lǎoshī",
+    "partOfSpeech": "名",
+    "chapter": 5,
+    "meaning_th": ""
+  },
+  {
+    "character": "里",
+    "pinyin": "lǐ",
+    "partOfSpeech": "名",
+    "chapter": 13,
+    "meaning_th": ""
+  },
+  {
+    "character": "俩",
+    "pinyin": "liǎ",
+    "partOfSpeech": "数",
+    "chapter": 11,
+    "meaning_th": "สองคน"
+  },
+  {
+    "character": "两",
+    "pinyin": "liǎng",
+    "partOfSpeech": "数",
+    "chapter": 8,
+    "meaning_th": "สอง"
+  },
+  {
+    "character": "辆",
+    "pinyin": "liàng",
+    "partOfSpeech": "量",
+    "chapter": 14,
+    "meaning_th": ""
+  },
+  {
+    "character": "了",
+    "pinyin": "le",
+    "partOfSpeech": "助",
+    "chapter": 8,
+    "meaning_th": "แล้ว"
+  },
+  {
+    "character": "零",
+    "pinyin": "líng",
+    "partOfSpeech": "数",
+    "chapter": 10,
+    "meaning_th": ""
+  },
+  {
+    "character": "留学",
+    "pinyin": "liúxué",
+    "partOfSpeech": "动",
+    "chapter": 11,
+    "meaning_th": ""
+  },
+  {
+    "character": "留学生",
+    "pinyin": "liúxuéshēng",
+    "partOfSpeech": "名",
+    "chapter": 11,
+    "meaning_th": ""
+  },
+  {
+    "character": "六",
+    "pinyin": "liù",
+    "partOfSpeech": "数",
+    "chapter": 3,
+    "meaning_th": "หก"
+  },
+  {
+    "character": "楼",
+    "pinyin": "lóu",
+    "partOfSpeech": "名",
+    "chapter": 10,
+    "meaning_th": ""
+  },
+  {
+    "character": "律师",
+    "pinyin": "lǜshī",
+    "partOfSpeech": "名",
+    "chapter": 15,
+    "meaning_th": ""
+  },
+  {
+    "character": "妈妈",
+    "pinyin": "māma",
+    "partOfSpeech": "名",
+    "chapter": 2,
+    "meaning_th": ""
+  },
+  {
+    "character": "马",
+    "pinyin": "mǎ",
+    "partOfSpeech": "名",
+    "chapter": 1,
+    "meaning_th": ""
+  },
+  {
+    "character": "马马虎虎",
+    "pinyin": "mǎmahūhū",
+    "partOfSpeech": "形",
+    "chapter": 14,
+    "meaning_th": ""
+  },
+  {
+    "character": "吗",
+    "pinyin": "ma",
+    "partOfSpeech": "助",
+    "chapter": 2,
+    "meaning_th": ""
+  },
+  {
+    "character": "买",
+    "pinyin": "mǎi",
+    "partOfSpeech": "动",
+    "chapter": 8,
+    "meaning_th": "ซื้อ"
+  },
+  {
+    "character": "卖",
+    "pinyin": "mài",
+    "partOfSpeech": "动",
+    "chapter": 8,
+    "meaning_th": ""
+  },
+  {
+    "character": "馒头",
+    "pinyin": "mántou",
+    "partOfSpeech": "名",
+    "chapter": 7,
+    "meaning_th": ""
+  },
+  {
+    "character": "忙",
+    "pinyin": "máng",
+    "partOfSpeech": "形",
+    "chapter": 2,
+    "meaning_th": ""
+  },
+  {
+    "character": "没（有）",
+    "pinyin": "méi（yǒu）",
+    "partOfSpeech": "动、副",
+    "chapter": 13,
+    "meaning_th": ""
+  },
+  {
+    "character": "没关系",
+    "pinyin": "méi guānxi",
+    "partOfSpeech": "",
+    "chapter": 4,
+    "meaning_th": ""
+  },
+  {
+    "character": "没什么",
+    "pinyin": "méi shénme",
+    "partOfSpeech": "",
+    "chapter": 11,
+    "meaning_th": ""
+  },
+  {
+    "character": "美国",
+    "pinyin": "Měiguó",
+    "partOfSpeech": "名",
+    "chapter": 6,
+    "meaning_th": ""
+  },
+  {
+    "character": "美元",
+    "pinyin": "měiyuán",
+    "partOfSpeech": "名",
+    "chapter": 9,
+    "meaning_th": ""
+  },
+  {
+    "character": "妹妹",
+    "pinyin": "mèimei",
+    "partOfSpeech": "名",
+    "chapter": 2,
+    "meaning_th": ""
+  },
+  {
+    "character": "门",
+    "pinyin": "mén",
+    "partOfSpeech": "名",
+    "chapter": 10,
+    "meaning_th": ""
+  },
+  {
+    "character": "米",
+    "pinyin": "mǐ",
+    "partOfSpeech": "名",
+    "chapter": 7,
+    "meaning_th": ""
+  },
+  {
+    "character": "米饭",
+    "pinyin": "mǐfàn",
+    "partOfSpeech": "名",
+    "chapter": 7,
+    "meaning_th": ""
+  },
+  {
+    "character": "秘书",
+    "pinyin": "mìshū",
+    "partOfSpeech": "名",
+    "chapter": 11,
+    "meaning_th": ""
+  },
+  {
+    "character": "面条儿",
+    "pinyin": "miàntiáor",
+    "partOfSpeech": "名",
+    "chapter": 7,
+    "meaning_th": ""
+  },
+  {
+    "character": "名字",
+    "pinyin": "míngzi",
+    "partOfSpeech": "名",
+    "chapter": 6,
+    "meaning_th": ""
+  },
+  {
+    "character": "明天",
+    "pinyin": "míngtiān",
+    "partOfSpeech": "名",
+    "chapter": 3,
+    "meaning_th": ""
+  },
+  {
+    "character": "摩托车",
+    "pinyin": "mótuōchē",
+    "partOfSpeech": "名",
+    "chapter": 14,
+    "meaning_th": ""
+  },
+  {
+    "character": "哪",
+    "pinyin": "nǎ",
+    "partOfSpeech": "代",
+    "chapter": 6,
+    "meaning_th": ""
+  },
+  {
+    "character": "哪儿",
+    "pinyin": "nǎr",
+    "partOfSpeech": "代",
+    "chapter": 4,
+    "meaning_th": ""
+  },
+  {
+    "character": "那",
+    "pinyin": "nà",
+    "partOfSpeech": "代",
+    "chapter": 6,
+    "meaning_th": ""
+  },
+  {
+    "character": "那儿",
+    "pinyin": "nàr",
+    "partOfSpeech": "代",
+    "chapter": 4,
+    "meaning_th": ""
+  },
+  {
+    "character": "那些",
+    "pinyin": "nàxiē",
+    "partOfSpeech": "代",
+    "chapter": 7,
+    "meaning_th": ""
+  },
+  {
+    "character": "男",
+    "pinyin": "nán",
+    "partOfSpeech": "形",
+    "chapter": 2,
+    "meaning_th": ""
+  },
+  {
+    "character": "难",
+    "pinyin": "nán",
+    "partOfSpeech": "形",
+    "chapter": 2,
+    "meaning_th": ""
+  },
+  {
+    "character": "呢",
+    "pinyin": "ne",
+    "partOfSpeech": "助",
+    "chapter": 10,
+    "meaning_th": ""
+  },
+  {
+    "character": "你",
+    "pinyin": "nǐ",
+    "partOfSpeech": "代",
+    "chapter": 1,
+    "meaning_th": "คุณ"
+  },
+  {
+    "character": "你好",
+    "pinyin": "nǐ hǎo",
+    "partOfSpeech": "",
+    "chapter": null,
+    "meaning_th": "สวัสดี"
+  },
+  {
+    "character": "你们",
+    "pinyin": "nǐmen",
+    "partOfSpeech": "代",
+    "chapter": 11,
+    "meaning_th": "พวกคุณ"
+  },
+  {
+    "character": "您",
+    "pinyin": "nín",
+    "partOfSpeech": "代",
+    "chapter": 5,
+    "meaning_th": ""
+  },
+  {
+    "character": "女",
+    "pinyin": "nǚ",
+    "partOfSpeech": "形",
+    "chapter": 1,
+    "meaning_th": ""
+  },
+  {
+    "character": "欧元",
+    "pinyin": "ōuyuán",
+    "partOfSpeech": "名",
+    "chapter": 9,
+    "meaning_th": ""
+  },
+  {
+    "character": "朋友",
+    "pinyin": "péngyou",
+    "partOfSpeech": "名",
+    "chapter": 6,
+    "meaning_th": ""
+  },
+  {
+    "character": "啤酒",
+    "pinyin": "píjiǔ",
+    "partOfSpeech": "名",
+    "chapter": 7,
+    "meaning_th": ""
+  },
+  {
+    "character": "苹果",
+    "pinyin": "píngguǒ",
+    "partOfSpeech": "名",
+    "chapter": 8,
+    "meaning_th": ""
+  },
+  {
+    "character": "瓶",
+    "pinyin": "píng",
+    "partOfSpeech": "名、量",
+    "chapter": 13,
+    "meaning_th": ""
+  },
+  {
+    "character": "七",
+    "pinyin": "qī",
+    "partOfSpeech": "数",
+    "chapter": 3,
+    "meaning_th": "เจ็ด"
+  },
+  {
+    "character": "汽车",
+    "pinyin": "qìchē",
+    "partOfSpeech": "名",
+    "chapter": 14,
+    "meaning_th": ""
+  },
+  {
+    "character": "千",
+    "pinyin": "qiān",
+    "partOfSpeech": "数",
+    "chapter": 9,
+    "meaning_th": ""
+  },
+  {
+    "character": "钱",
+    "pinyin": "qián",
+    "partOfSpeech": "名",
+    "chapter": 3,
+    "meaning_th": ""
+  },
+  {
+    "character": "轻",
+    "pinyin": "qīng",
+    "partOfSpeech": "形",
+    "chapter": 13,
+    "meaning_th": ""
+  },
+  {
+    "character": "请",
+    "pinyin": "qǐng",
+    "partOfSpeech": "动",
+    "chapter": 5,
+    "meaning_th": ""
+  },
+  {
+    "character": "请问",
+    "pinyin": "qǐngwèn",
+    "partOfSpeech": "动",
+    "chapter": 6,
+    "meaning_th": ""
+  },
+  {
+    "character": "取",
+    "pinyin": "qǔ",
+    "partOfSpeech": "动",
+    "chapter": 3,
+    "meaning_th": ""
+  },
+  {
+    "character": "去",
+    "pinyin": "qù",
+    "partOfSpeech": "动",
+    "chapter": 3,
+    "meaning_th": ""
+  },
+  {
+    "character": "全",
+    "pinyin": "quán",
+    "partOfSpeech": "形、副",
+    "chapter": 15,
+    "meaning_th": "ทั้งหมด"
+  },
+  {
+    "character": "人",
+    "pinyin": "rén",
+    "partOfSpeech": "名",
+    "chapter": 6,
+    "meaning_th": "คน"
+  },
+  {
+    "character": "人民",
+    "pinyin": "rénmín",
+    "partOfSpeech": "名",
+    "chapter": 9,
+    "meaning_th": "ประชาชน"
+  },
+  {
+    "character": "人民币",
+    "pinyin": "rénmínbì",
+    "partOfSpeech": "名",
+    "chapter": 9,
+    "meaning_th": "เงินหยวน"
+  },
+  {
+    "character": "日",
+    "pinyin": "rì",
+    "partOfSpeech": "名",
+    "chapter": 5,
+    "meaning_th": ""
+  },
+  {
+    "character": "日本(国)",
+    "pinyin": "Rìběn (guó)",
+    "partOfSpeech": "名",
+    "chapter": 6,
+    "meaning_th": ""
+  },
+  {
+    "character": "日文",
+    "pinyin": "Rìwén",
+    "partOfSpeech": "名",
+    "chapter": 6,
+    "meaning_th": ""
+  },
+  {
+    "character": "日用品",
+    "pinyin": "rìyòngpǐn",
+    "partOfSpeech": "名",
+    "chapter": 13,
+    "meaning_th": ""
+  },
+  {
+    "character": "日语",
+    "pinyin": "Rìyǔ",
+    "partOfSpeech": "名",
+    "chapter": 3,
+    "meaning_th": ""
+  },
+  {
+    "character": "日元",
+    "pinyin": "rìyuán",
+    "partOfSpeech": "名",
+    "chapter": 9,
+    "meaning_th": ""
+  },
+  {
+    "character": "容易",
+    "pinyin": "róngyì",
+    "partOfSpeech": "形",
+    "chapter": 12,
+    "meaning_th": ""
+  },
+  {
+    "character": "三",
+    "pinyin": "sān",
+    "partOfSpeech": "数",
+    "chapter": 4,
+    "meaning_th": "สาม"
+  },
+  {
+    "character": "商店",
+    "pinyin": "shāngdiàn",
+    "partOfSpeech": "名",
+    "chapter": 15,
+    "meaning_th": ""
+  },
+  {
+    "character": "上午",
+    "pinyin": "shàngwǔ",
+    "partOfSpeech": "名",
+    "chapter": 9,
+    "meaning_th": "ตอนเช้า"
+  },
+  {
+    "character": "少",
+    "pinyin": "shǎo",
+    "partOfSpeech": "形",
+    "chapter": 8,
+    "meaning_th": ""
+  },
+  {
+    "character": "身体",
+    "pinyin": "shēntǐ",
+    "partOfSpeech": "名",
+    "chapter": 5,
+    "meaning_th": ""
+  },
+  {
+    "character": "十",
+    "pinyin": "shí",
+    "partOfSpeech": "数",
+    "chapter": 5,
+    "meaning_th": "สิบ"
+  },
+  {
+    "character": "什么",
+    "pinyin": "shénme",
+    "partOfSpeech": "代",
+    "chapter": 6,
+    "meaning_th": "อะไร"
+  },
+  {
+    "character": "食堂",
+    "pinyin": "shítáng",
+    "partOfSpeech": "名",
+    "chapter": 7,
+    "meaning_th": ""
+  },
+  {
+    "character": "是",
+    "pinyin": "shì",
+    "partOfSpeech": "动",
+    "chapter": 5,
+    "meaning_th": ""
+  },
+  {
+    "character": "手",
+    "pinyin": "shǒu",
+    "partOfSpeech": "名",
+    "chapter": 10,
+    "meaning_th": ""
+  },
+  {
+    "character": "手机",
+    "pinyin": "shǒujī",
+    "partOfSpeech": "名",
+    "chapter": 10,
+    "meaning_th": ""
+  },
+  {
+    "character": "书",
+    "pinyin": "shū",
+    "partOfSpeech": "名",
+    "chapter": 6,
+    "meaning_th": "หนังสือ"
+  },
+  {
+    "character": "数",
+    "pinyin": "shǔ",
+    "partOfSpeech": "动",
+    "chapter": 9,
+    "meaning_th": ""
+  },
+  {
+    "character": "谁",
+    "pinyin": "shéi / shuí",
+    "partOfSpeech": "代",
+    "chapter": 6,
+    "meaning_th": ""
+  },
+  {
+    "character": "水",
+    "pinyin": "shuǐ",
+    "partOfSpeech": "名",
+    "chapter": 13,
+    "meaning_th": ""
+  },
+  {
+    "character": "水果",
+    "pinyin": "shuǐguǒ",
+    "partOfSpeech": "名",
+    "chapter": 8,
+    "meaning_th": ""
+  },
+  {
+    "character": "说",
+    "pinyin": "shuō",
+    "partOfSpeech": "动",
+    "chapter": 12,
+    "meaning_th": ""
+  },
+  {
+    "character": "四",
+    "pinyin": "sì",
+    "partOfSpeech": "数",
+    "chapter": 4,
+    "meaning_th": ""
+  },
+  {
+    "character": "他",
+    "pinyin": "tā",
+    "partOfSpeech": "代",
+    "chapter": 2,
+    "meaning_th": "เขา"
+  },
+  {
+    "character": "他们",
+    "pinyin": "tāmen",
+    "partOfSpeech": "代",
+    "chapter": 11,
+    "meaning_th": "พวกเขา"
+  },
+  {
+    "character": "太",
+    "pinyin": "tài",
+    "partOfSpeech": "副",
+    "chapter": 2,
+    "meaning_th": ""
+  },
+  {
+    "character": "汤",
+    "pinyin": "tāng",
+    "partOfSpeech": "名",
+    "chapter": 7,
+    "meaning_th": ""
+  },
+  {
+    "character": "天",
+    "pinyin": "tiān",
+    "partOfSpeech": "名",
+    "chapter": 4,
+    "meaning_th": ""
+  },
+  {
+    "character": "听",
+    "pinyin": "tīng",
+    "partOfSpeech": "动",
+    "chapter": 12,
+    "meaning_th": ""
+  },
+  {
+    "character": "同屋",
+    "pinyin": "tóngwū",
+    "partOfSpeech": "名",
+    "chapter": 12,
+    "meaning_th": ""
+  },
+  {
+    "character": "同学",
+    "pinyin": "tóngxué",
+    "partOfSpeech": "名",
+    "chapter": 12,
+    "meaning_th": ""
+  },
+  {
+    "character": "图书馆",
+    "pinyin": "túshūguǎn",
+    "partOfSpeech": "名",
+    "chapter": 9,
+    "meaning_th": ""
+  },
+  {
+    "character": "外国",
+    "pinyin": "wàiguó",
+    "partOfSpeech": "名",
+    "chapter": 15,
+    "meaning_th": ""
+  },
+  {
+    "character": "外贸",
+    "pinyin": "wàimào",
+    "partOfSpeech": "名",
+    "chapter": 15,
+    "meaning_th": ""
+  },
+  {
+    "character": "碗",
+    "pinyin": "wǎn",
+    "partOfSpeech": "名",
+    "chapter": 7,
+    "meaning_th": ""
+  },
+  {
+    "character": "万",
+    "pinyin": "wàn",
+    "partOfSpeech": "数",
+    "chapter": 9,
+    "meaning_th": "หมื่น"
+  },
+  {
+    "character": "位",
+    "pinyin": "wèi",
+    "partOfSpeech": "量",
+    "chapter": 11,
+    "meaning_th": "ท่าน"
+  },
+  {
+    "character": "文",
+    "pinyin": "wén",
+    "partOfSpeech": "名",
+    "chapter": 6,
+    "meaning_th": ""
+  },
+  {
+    "character": "问",
+    "pinyin": "wèn",
+    "partOfSpeech": "动",
+    "chapter": 6,
+    "meaning_th": ""
+  },
+  {
+    "character": "我",
+    "pinyin": "wǒ",
+    "partOfSpeech": "代",
+    "chapter": 4,
+    "meaning_th": ""
+  },
+  {
+    "character": "我们",
+    "pinyin": "wǒmen",
+    "partOfSpeech": "代",
+    "chapter": 11,
+    "meaning_th": ""
+  },
+  {
+    "character": "五",
+    "pinyin": "wǔ",
+    "partOfSpeech": "数",
+    "chapter": 1,
+    "meaning_th": "ห้า"
+  },
+  {
+    "character": "西班牙文",
+    "pinyin": "Xībānyáwén",
+    "partOfSpeech": "名",
+    "chapter": 6,
+    "meaning_th": ""
+  },
+  {
+    "character": "西班牙语",
+    "pinyin": "Xībānyáyǔ",
+    "partOfSpeech": "名",
+    "chapter": 3,
+    "meaning_th": ""
+  },
+  {
+    "character": "西药",
+    "pinyin": "xīyào",
+    "partOfSpeech": "名",
+    "chapter": 13,
+    "meaning_th": ""
+  },
+  {
+    "character": "下午",
+    "pinyin": "xiàwǔ",
+    "partOfSpeech": "名",
+    "chapter": 9,
+    "meaning_th": "ตอนบ่าย"
+  },
+  {
+    "character": "先",
+    "pinyin": "xiān",
+    "partOfSpeech": "副",
+    "chapter": 11,
+    "meaning_th": "ก่อน"
+  },
+  {
+    "character": "先生",
+    "pinyin": "xiānsheng",
+    "partOfSpeech": "名",
+    "chapter": 9,
+    "meaning_th": "คุณ"
+  },
+  {
+    "character": "香水",
+    "pinyin": "xiāngshuǐ",
+    "partOfSpeech": "名",
+    "chapter": 13,
+    "meaning_th": ""
+  },
+  {
+    "character": "箱子",
+    "pinyin": "xiāngzi",
+    "partOfSpeech": "名",
+    "chapter": 13,
+    "meaning_th": ""
+  },
+  {
+    "character": "小",
+    "pinyin": "xiǎo",
+    "partOfSpeech": "形",
+    "chapter": 15,
+    "meaning_th": ""
+  },
+  {
+    "character": "小姐",
+    "pinyin": "xiǎojiě",
+    "partOfSpeech": "名",
+    "chapter": 9,
+    "meaning_th": ""
+  },
+  {
+    "character": "校长",
+    "pinyin": "xiàozhǎng",
+    "partOfSpeech": "名",
+    "chapter": 11,
+    "meaning_th": ""
+  },
+  {
+    "character": "些",
+    "pinyin": "xiē",
+    "partOfSpeech": "量",
+    "chapter": 7,
+    "meaning_th": "บ้าง"
+  },
+  {
+    "character": "写",
+    "pinyin": "xiě",
+    "partOfSpeech": "动",
+    "chapter": 12,
+    "meaning_th": "เขียน"
+  },
+  {
+    "character": "谢谢",
+    "pinyin": "xièxie",
+    "partOfSpeech": "动",
+    "chapter": 5,
+    "meaning_th": ""
+  },
+  {
+    "character": "新",
+    "pinyin": "xīn",
+    "partOfSpeech": "形",
+    "chapter": 12,
+    "meaning_th": ""
+  },
+  {
+    "character": "信",
+    "pinyin": "xìn",
+    "partOfSpeech": "名",
+    "chapter": 3,
+    "meaning_th": "จดหมาย"
+  },
+  {
+    "character": "星期",
+    "pinyin": "xīngqī",
+    "partOfSpeech": "名",
+    "chapter": 4,
+    "meaning_th": ""
+  },
+  {
+    "character": "星期二",
+    "pinyin": "xīngqī'èr",
+    "partOfSpeech": "名",
+    "chapter": 4,
+    "meaning_th": ""
+  },
+  {
+    "character": "星期六",
+    "pinyin": "xīngqīliù",
+    "partOfSpeech": "名",
+    "chapter": 4,
+    "meaning_th": ""
+  },
+  {
+    "character": "星期三",
+    "pinyin": "xīngqīsān",
+    "partOfSpeech": "名",
+    "chapter": 4,
+    "meaning_th": ""
+  },
+  {
+    "character": "星期四",
+    "pinyin": "xīngqīsì",
+    "partOfSpeech": "名",
+    "chapter": 4,
+    "meaning_th": ""
+  },
+  {
+    "character": "星期天",
+    "pinyin": "xīngqītiān",
+    "partOfSpeech": "名",
+    "chapter": 4,
+    "meaning_th": ""
+  },
+  {
+    "character": "星期五",
+    "pinyin": "xīngqīwǔ",
+    "partOfSpeech": "名",
+    "chapter": 4,
+    "meaning_th": ""
+  },
+  {
+    "character": "星期一",
+    "pinyin": "xīngqīyī",
+    "partOfSpeech": "名",
+    "chapter": 4,
+    "meaning_th": ""
+  },
+  {
+    "character": "姓",
+    "pinyin": "xìng",
+    "partOfSpeech": "动、名",
+    "chapter": 6,
+    "meaning_th": ""
+  },
+  {
+    "character": "学",
+    "pinyin": "xué",
+    "partOfSpeech": "动",
+    "chapter": 3,
+    "meaning_th": ""
+  },
+  {
+    "character": "学生",
+    "pinyin": "xuésheng",
+    "partOfSpeech": "名",
+    "chapter": 11,
+    "meaning_th": ""
+  },
+  {
+    "character": "学习",
+    "pinyin": "xuéxí",
+    "partOfSpeech": "动",
+    "chapter": 6,
+    "meaning_th": ""
+  },
+  {
+    "character": "学校",
+    "pinyin": "xuéxiào",
+    "partOfSpeech": "名",
+    "chapter": 4,
+    "meaning_th": ""
+  },
+  {
+    "character": "颜色",
+    "pinyin": "yánsè",
+    "partOfSpeech": "名",
+    "chapter": 14,
+    "meaning_th": ""
+  },
+  {
+    "character": "药",
+    "pinyin": "yào",
+    "partOfSpeech": "名",
+    "chapter": 13,
+    "meaning_th": ""
+  },
+  {
+    "character": "要",
+    "pinyin": "yào",
+    "partOfSpeech": "动",
+    "chapter": 7,
+    "meaning_th": ""
+  },
+  {
+    "character": "要",
+    "pinyin": "yào",
+    "partOfSpeech": "能愿",
+    "chapter": 9,
+    "meaning_th": ""
+  },
+  {
+    "character": "也",
+    "pinyin": "yě",
+    "partOfSpeech": "副",
+    "chapter": 1,
+    "meaning_th": "ด้วย"
+  },
+  {
+    "character": "一",
+    "pinyin": "yī",
+    "partOfSpeech": "数",
+    "chapter": 1,
+    "meaning_th": "หนึ่ง"
+  },
+  {
+    "character": "一共",
+    "pinyin": "yígòng",
+    "partOfSpeech": "副",
+    "chapter": 8,
+    "meaning_th": "รวมกัน"
+  },
+  {
+    "character": "一会儿",
+    "pinyin": "yíhuìr",
+    "partOfSpeech": "数量、副",
+    "chapter": 9,
+    "meaning_th": "สักครู่"
+  },
+  {
+    "character": "一下儿",
+    "pinyin": "yíxiàr",
+    "partOfSpeech": "数量",
+    "chapter": 11,
+    "meaning_th": "สักหน่อย"
+  },
+  {
+    "character": "一些",
+    "pinyin": "yìxiē",
+    "partOfSpeech": "数量",
+    "chapter": 7,
+    "meaning_th": "บางอย่าง"
+  },
+  {
+    "character": "医院",
+    "pinyin": "yīyuàn",
+    "partOfSpeech": "名",
+    "chapter": 15,
+    "meaning_th": "โรงพยาบาล"
+  },
+  {
+    "character": "椅子",
+    "pinyin": "yǐzi",
+    "partOfSpeech": "名",
+    "chapter": 13,
+    "meaning_th": ""
+  },
+  {
+    "character": "银行",
+    "pinyin": "yínháng",
+    "partOfSpeech": "名",
+    "chapter": 3,
+    "meaning_th": ""
+  },
+  {
+    "character": "英国",
+    "pinyin": "Yīngguó",
+    "partOfSpeech": "名",
+    "chapter": 6,
+    "meaning_th": ""
+  },
+  {
+    "character": "英文",
+    "pinyin": "Yīngwén",
+    "partOfSpeech": "名",
+    "chapter": 6,
+    "meaning_th": ""
+  },
+  {
+    "character": "英语",
+    "pinyin": "Yīngyǔ",
+    "partOfSpeech": "名",
+    "chapter": 3,
+    "meaning_th": ""
+  },
+  {
+    "character": "营业员",
+    "pinyin": "yíngyèyuán",
+    "partOfSpeech": "名",
+    "chapter": 9,
+    "meaning_th": ""
+  },
+  {
+    "character": "邮包",
+    "pinyin": "yóubāo",
+    "partOfSpeech": "名",
+    "chapter": 6,
+    "meaning_th": ""
+  },
+  {
+    "character": "邮局",
+    "pinyin": "yóujú",
+    "partOfSpeech": "名",
+    "chapter": 3,
+    "meaning_th": ""
+  },
+  {
+    "character": "有",
+    "pinyin": "yǒu",
+    "partOfSpeech": "动",
+    "chapter": 13,
+    "meaning_th": ""
+  },
+  {
+    "character": "有（一）点儿",
+    "pinyin": "yǒu（yì）diǎnr",
+    "partOfSpeech": "",
+    "chapter": 14,
+    "meaning_th": ""
+  },
+  {
+    "character": "雨",
+    "pinyin": "yǔ",
+    "partOfSpeech": "名",
+    "chapter": 13,
+    "meaning_th": ""
+  },
+  {
+    "character": "雨伞",
+    "pinyin": "yǔsǎn",
+    "partOfSpeech": "名",
+    "chapter": 13,
+    "meaning_th": ""
+  },
+  {
+    "character": "语法",
+    "pinyin": "yǔfǎ",
+    "partOfSpeech": "名",
+    "chapter": 12,
+    "meaning_th": ""
+  },
+  {
+    "character": "语言",
+    "pinyin": "yǔyán",
+    "partOfSpeech": "名",
+    "chapter": 12,
+    "meaning_th": ""
+  },
+  {
+    "character": "杂志",
+    "pinyin": "zázhì",
+    "partOfSpeech": "名",
+    "chapter": 6,
+    "meaning_th": ""
+  },
+  {
+    "character": "再见",
+    "pinyin": "zàijiàn",
+    "partOfSpeech": "动",
+    "chapter": 4,
+    "meaning_th": "ลาก่อน"
+  },
+  {
+    "character": "在",
+    "pinyin": "zài",
+    "partOfSpeech": "动、介",
+    "chapter": 10,
+    "meaning_th": ""
+  },
+  {
+    "character": "怎么",
+    "pinyin": "zěnme",
+    "partOfSpeech": "代",
+    "chapter": 8,
+    "meaning_th": ""
+  },
+  {
+    "character": "怎么样",
+    "pinyin": "zěnmeyàng",
+    "partOfSpeech": "代",
+    "chapter": 12,
+    "meaning_th": ""
+  },
+  {
+    "character": "张",
+    "pinyin": "zhāng",
+    "partOfSpeech": "量",
+    "chapter": 13,
+    "meaning_th": ""
+  },
+  {
+    "character": "找",
+    "pinyin": "zhǎo",
+    "partOfSpeech": "动",
+    "chapter": 8,
+    "meaning_th": ""
+  },
+  {
+    "character": "找",
+    "pinyin": "zhǎo",
+    "partOfSpeech": "动",
+    "chapter": 10,
+    "meaning_th": ""
+  },
+  {
+    "character": "照片",
+    "pinyin": "zhàopiàn",
+    "partOfSpeech": "名",
+    "chapter": 15,
+    "meaning_th": ""
+  },
+  {
+    "character": "这",
+    "pinyin": "zhè",
+    "partOfSpeech": "代",
+    "chapter": 5,
+    "meaning_th": ""
+  },
+  {
+    "character": "这儿",
+    "pinyin": "zhèr",
+    "partOfSpeech": "代",
+    "chapter": 13,
+    "meaning_th": ""
+  },
+  {
+    "character": "这些",
+    "pinyin": "zhèxiē",
+    "partOfSpeech": "代",
+    "chapter": 7,
+    "meaning_th": ""
+  },
+  {
+    "character": "支",
+    "pinyin": "zhī",
+    "partOfSpeech": "量",
+    "chapter": 13,
+    "meaning_th": ""
+  },
+  {
+    "character": "知道",
+    "pinyin": "zhīdào",
+    "partOfSpeech": "动",
+    "chapter": 10,
+    "meaning_th": ""
+  },
+  {
+    "character": "职员",
+    "pinyin": "zhíyuán",
+    "partOfSpeech": "名",
+    "chapter": 10,
+    "meaning_th": ""
+  },
+  {
+    "character": "只",
+    "pinyin": "zhǐ",
+    "partOfSpeech": "副",
+    "chapter": 15,
+    "meaning_th": ""
+  },
+  {
+    "character": "中国",
+    "pinyin": "Zhōngguó",
+    "partOfSpeech": "名",
+    "chapter": 6,
+    "meaning_th": "ประเทศจีน"
+  },
+  {
+    "character": "中文",
+    "pinyin": "Zhōngwén",
+    "partOfSpeech": "名",
+    "chapter": 6,
+    "meaning_th": "ภาษาจีน"
+  },
+  {
+    "character": "中午",
+    "pinyin": "zhōngwǔ",
+    "partOfSpeech": "名",
+    "chapter": 7,
+    "meaning_th": "เที่ยงวัน"
+  },
+  {
+    "character": "中药",
+    "pinyin": "zhōngyào",
+    "partOfSpeech": "名",
+    "chapter": 13,
+    "meaning_th": "ยาจีน"
+  },
+  {
+    "character": "重",
+    "pinyin": "zhòng",
+    "partOfSpeech": "形",
+    "chapter": 13,
+    "meaning_th": ""
+  },
+  {
+    "character": "住",
+    "pinyin": "zhù",
+    "partOfSpeech": "动",
+    "chapter": 10,
+    "meaning_th": "อยู่"
+  },
+  {
+    "character": "自行车",
+    "pinyin": "zìxíngchē",
+    "partOfSpeech": "名",
+    "chapter": 14,
+    "meaning_th": ""
+  },
+  {
+    "character": "最近",
+    "pinyin": "zuìjìn",
+    "partOfSpeech": "名",
+    "chapter": 14,
+    "meaning_th": ""
+  },
+  {
+    "character": "昨天",
+    "pinyin": "zuótiān",
+    "partOfSpeech": "名",
+    "chapter": 4,
+    "meaning_th": ""
+  },
+  {
+    "character": "坐",
+    "pinyin": "zuò",
+    "partOfSpeech": "动",
+    "chapter": 5,
+    "meaning_th": ""
+  },
+  {
+    "character": "做",
+    "pinyin": "zuò",
+    "partOfSpeech": "动",
+    "chapter": 15,
+    "meaning_th": "ทำ"
+  },
+  {
+    "character": "爱德华",
+    "pinyin": "Àidéhuá",
+    "partOfSpeech": "",
+    "chapter": 14,
+    "meaning_th": ""
+  },
+  {
+    "character": "北京",
+    "pinyin": "Běijīng",
+    "partOfSpeech": "",
+    "chapter": 3,
+    "meaning_th": "ปักกิ่ง"
+  },
+  {
+    "character": "北京语言大学",
+    "pinyin": "Běijīng Yǔyán Dàxué",
+    "partOfSpeech": "",
+    "chapter": 12,
+    "meaning_th": "มหาวิทยาลัยภาษาปักกิ่ง"
+  },
+  {
+    "character": "关",
+    "pinyin": "Guān",
+    "partOfSpeech": "",
+    "chapter": 14,
+    "meaning_th": "ปิด"
+  },
+  {
+    "character": "李昌浩",
+    "pinyin": "Lǐ chānghào",
+    "partOfSpeech": "",
+    "chapter": 10,
+    "meaning_th": ""
+  },
+  {
+    "character": "林",
+    "pinyin": "Lín",
+    "partOfSpeech": "",
+    "chapter": 12,
+    "meaning_th": ""
+  },
+  {
+    "character": "罗兰",
+    "pinyin": "Luólán",
+    "partOfSpeech": "",
+    "chapter": 11,
+    "meaning_th": ""
+  },
+  {
+    "character": "马",
+    "pinyin": "Mǎ",
+    "partOfSpeech": "",
+    "chapter": 11,
+    "meaning_th": ""
+  },
+  {
+    "character": "玛丽",
+    "pinyin": "Mǎlì",
+    "partOfSpeech": "",
+    "chapter": 7,
+    "meaning_th": ""
+  },
+  {
+    "character": "麦克",
+    "pinyin": "Màikè",
+    "partOfSpeech": "",
+    "chapter": 6,
+    "meaning_th": ""
+  },
+  {
+    "character": "天安门",
+    "pinyin": "Tiān'ānmén",
+    "partOfSpeech": "",
+    "chapter": 4,
+    "meaning_th": ""
+  },
+  {
+    "character": "田芳",
+    "pinyin": "Tián Fāng",
+    "partOfSpeech": "",
+    "chapter": 11,
+    "meaning_th": ""
+  },
+  {
+    "character": "王",
+    "pinyin": "Wáng",
+    "partOfSpeech": "",
+    "chapter": 5,
+    "meaning_th": ""
+  },
+  {
+    "character": "张东",
+    "pinyin": "Zhāng Dōng",
+    "partOfSpeech": "",
+    "chapter": 6,
+    "meaning_th": ""
+  }
+]

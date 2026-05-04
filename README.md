@@ -56,6 +56,23 @@ npm install -D wrangler
 npx wrangler pages deploy dist --project-name=wenfang
 ```
 
+## Vocabulary data
+
+Source CSV: `vocabs/1.csv` (Hanyu Jiaocheng 1A, ~324 entries).
+Generated JSON: `src/data/vocab-1a.json`.
+
+To regenerate the JSON from the CSV (uses any cached Thai translations from
+`.cache/vocab-translations.json`, leaves blanks for entries without one):
+
+```bash
+npm run vocab:build
+```
+
+To add Thai translations, edit `src/data/vocab-1a.json` directly — fill in
+`meaning_th` per entry — or populate `.cache/vocab-translations.json` (a
+`{ "<chinese>": "<thai>", ... }` map) and rerun the build script. Cards with
+empty `meaning_th` show "— translation pending —" instead of the gloss.
+
 ## Project structure
 
 ```

@@ -96,3 +96,4 @@ Implementation plan: `docs/superpowers/plans/2026-05-04-landing-page.md`.
 - `/` is Thai. A pre-paint inline script redirects to `/en/` if `localStorage.wf_locale === 'en'` or if the browser's `navigator.language` starts with `en` (and no stored preference exists).
 - The masthead `LangToggle` (EN / ไทย) overrides at any time and persists the choice in `localStorage`.
 - The toggle preserves the current page when switching locales (`/tools/` ↔ `/en/tools/`).
+# wenfang-chinese-toolbox

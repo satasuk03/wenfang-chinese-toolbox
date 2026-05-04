@@ -4,185 +4,77 @@ import Masthead from '../../../components/Masthead.astro';
 import Footer from '../../../components/Footer.astro';
 import vocab1A from '../../../data/vocab-1a.json';
 
-interface VocabEntry {
+const data = vocab1A as {
   character: string;
   pinyin: string;
   partOfSpeech: string;
   chapter: number | null;
   meaning_th: string;
-}
+}[];
 
-const data: VocabEntry[] = vocab1A as VocabEntry[];
-
-const books = [
-  {
-    id: '1A',
-    label: '1A',
-    cn: 'Hanyu Jiaocheng 1A',
-    entries: data,
-  },
-];
-
-const allChapters = Array.from(
-  new Set(data.map((e) => e.chapter).filter((c): c is number => c !== null)),
-).sort((a, b) => a - b);
-
-const totalCards = data.length;
+const entries = data.filter((e) => e.chapter !== null);
+const allChapters = Array.from(new Set(entries.map((e) => e.chapter))).sort((a, b) => a - b);
 ---
 
 <BaseLayout title="Flashcards · Wénfáng">
   <Masthead />
   <main id="main">
-    <section class="flash" data-mode="setup">
-      <!-- ─── SETUP VIEW ─── -->
-      <div class="flash-setup">
-        <div class="container">
-          <header class="flash-header">
-            <p class="flash-eyebrow">— Tool 01 · 生词卡</p>
-            <h1>Flashcards.</h1>
-            <p class="flash-deck">
-              Vocabulary cards bound to <em>Hanyu Jiaocheng</em>. Pick a book, choose chapters, and
-              decide which side you'd like to see first.
-            </p>
-          </header>
+    <section class="flash">
+      <div class="container">
+        <header class="flash-header">
+          <h1>Flashcards</h1>
+          <p class="flash-deck">Tap the card to flip. Use arrows or swipe to move.</p>
+        </header>
 
-          <div class="flash-section">
-            <h2 class="flash-section-title"><span>—</span> Book</h2>
-            <div class="flash-chips" id="book-chips">
-              {
-                books.map((book) => (
-                  <button
-                    type="button"
-                    class="chip"
-                    data-book={book.id}
-                    data-selected="true"
-                    aria-pressed="true"
-                  >
-                    <span class="chip-label">{book.label}</span>
-                    <span class="chip-meta">{book.cn}</span>
-                  </button>
-                ))
-              }
-            </div>
-          </div>
+        <div class="flash-tabs" id="flash-tabs">
+          <button type="button" class="flash-tab" data-tab="character">Character</button>
+          <button type="button" class="flash-tab" data-tab="pinyin">Pinyin</button>
+          <button type="button" class="flash-tab" data-tab="meaning">Meaning</button>
+        </div>
 
-          <div class="flash-section">
-            <h2 class="flash-section-title">
-              <span>—</span> Chapters
-              <span class="flash-section-actions">
-                <button type="button" class="link" id="ch-all">All</button>
-                <span aria-hidden="true">/</span>
-                <button type="button" class="link" id="ch-none">None</button>
-              </span>
-            </h2>
-            <div class="flash-chips flash-chips-tight" id="chapter-chips">
-              {
-                allChapters.map((ch) => {
-                  const count = data.filter((e) => e.chapter === ch).length;
-                  return (
-                    <button
-                      type="button"
-                      class="chip chip-small"
-                      data-chapter={ch}
-                      data-selected="true"
-                      aria-pressed="true"
-                    >
-                      <span class="chip-label">{ch}</span>
-                      <span class="chip-meta">{count}</span>
-                    </button>
-                  );
-                })
-              }
-            </div>
-          </div>
-
-          <div class="flash-section">
-            <h2 class="flash-section-title"><span>—</span> Show first</h2>
-            <div class="flash-chips" id="front-chips">
-              <button
-                type="button"
-                class="chip"
-                data-front="character"
-                data-selected="true"
-                aria-pressed="true"
-              >
-                <span class="chip-label" style="font-family: var(--font-zh)">汉</span>
-                <span class="chip-meta">Character</span>
-              </button>
-              <button
-                type="button"
-                class="chip"
-                data-front="pinyin"
-                data-selected="false"
-                aria-pressed="false"
-              >
-                <span class="chip-label" style="font-style: italic; font-family: var(--font-display)"
-                  >hàn</span
-                >
-                <span class="chip-meta">Pinyin</span>
-              </button>
-            </div>
-          </div>
-
-          <div class="flash-summary">
-            <div class="flash-summary-line">
-              <span class="flash-summary-label">Cards in deck</span>
-              <span class="flash-summary-count" id="deck-count">{totalCards}</span>
-            </div>
-            <button type="button" class="flash-start" id="flash-start">
-              Start the deck
-              <span aria-hidden="true">→</span>
+        <div class="flash-card-wrap">
+          <div class="flash-card-scene">
+            <button type="button" class="flash-card" id="flash-card" data-revealed="false" aria-label="Tap to flip">
+              <div class="flash-card-face flash-card-front">
+                <div class="flash-card-primary" id="card-primary"></div>
+              </div>
+              <div class="flash-card-face flash-card-back">
+                <div class="flash-card-secondary" id="card-secondary"></div>
+                <div class="flash-card-tertiary" id="card-tertiary"></div>
+              </div>
             </button>
           </div>
         </div>
-      </div>
 
-      <!-- ─── PLAY VIEW ─── -->
-      <div class="flash-play">
-        <div class="container flash-play-inner">
-          <div class="flash-play-meta">
-            <button type="button" class="flash-back" id="flash-back">← Back to setup</button>
-            <div class="flash-progress">
-              <span id="card-book">1A</span>
-              <span aria-hidden="true">·</span>
-              <span>Ch <span id="card-chapter">—</span></span>
-              <span aria-hidden="true">·</span>
-              <span><span id="card-index">0</span> / <span id="card-total">0</span></span>
+        <div class="flash-controls">
+          <button type="button" id="flash-prev">← Prev</button>
+          <span class="flash-counter" id="card-counter">—</span>
+          <button type="button" id="flash-filter">Filter</button>
+          <button type="button" id="flash-next">Next →</button>
+        </div>
+
+        <div class="flash-filter-panel" id="filter-panel">
+          <div class="filter-book">Hanyu Jiaocheng 1A</div>
+          <div class="filter-head">
+            <span>Chapters</span>
+            <div class="filter-actions">
+              <button type="button" id="filter-all">All</button>
+              <button type="button" id="filter-none">Clear</button>
             </div>
           </div>
-
-          <div class="flash-card-wrap">
-            <button
-              type="button"
-              class="flash-card"
-              id="flash-card"
-              data-revealed="false"
-              aria-label="Card. Click to reveal."
-            >
-              <div class="flash-card-meta">
-                <span class="flash-card-meta-left" id="card-meta-pos">—</span>
-                <span class="flash-card-meta-right" id="card-meta-tip">Tap to reveal</span>
-              </div>
-              <div class="flash-card-body">
-                <div class="flash-card-primary" id="card-primary">—</div>
-                <div class="flash-card-secondary" id="card-secondary"></div>
-              </div>
-              <div class="flash-card-foot" id="card-foot"></div>
-            </button>
-          </div>
-
-          <div class="flash-controls">
-            <button type="button" class="flash-ctrl" id="flash-prev" aria-label="Previous">
-              <span class="ctrl-arrow">←</span>
-              <span class="ctrl-label">Prev</span>
-            </button>
-            <button type="button" class="flash-ctrl flash-ctrl-mid" id="flash-shuffle" aria-label="Shuffle">
-              <span class="ctrl-label">Shuffle</span>
-            </button>
-            <button type="button" class="flash-ctrl" id="flash-next" aria-label="Next">
-              <span class="ctrl-label">Next</span>
-              <span class="ctrl-arrow">→</span>
-            </button>
+          <div class="filter-chips" id="filter-chips">
+            {
+              allChapters.map((ch) => {
+                const count = entries.filter((e) => e.chapter === ch).length;
+                return (
+                  <label class="filter-chip">
+                    <input type="checkbox" value={ch} checked data-chapter={ch} />
+                    <span>Ch {ch}</span>
+                    <span class="filter-chip-count">{count}</span>
+                  </label>
+                );
+              })
+            }
           </div>
         </div>
       </div>
@@ -191,84 +83,44 @@ const totalCards = data.length;
   <Footer />
 </BaseLayout>
 
-<script is:inline define:vars={{ entries: data }}>
-  const all = entries.filter((e) => e.chapter !== null);
+<script is:inline define:vars={{ entries, allChapters }}>
+  // ─── State ───
+  const STORAGE_TAB = 'wenfang_flashcard_tab';
+  const STORAGE_CHAPTERS = 'wenfang_flashcard_chapters';
 
-  const root = document.querySelector('.flash');
+  let activeTab = 'character';
+  try {
+    const savedTab = localStorage.getItem(STORAGE_TAB);
+    if (savedTab === 'character' || savedTab === 'pinyin' || savedTab === 'meaning') activeTab = savedTab;
+  } catch {}
 
-  const setMode = (mode) => {
-    root.dataset.mode = mode;
-    if (mode === 'play') window.scrollTo({ top: 0, behavior: 'instant' });
-  };
+  const savedChapters = new Set(allChapters);
+  try {
+    const raw = localStorage.getItem(STORAGE_CHAPTERS);
+    if (raw) {
+      const parsed = JSON.parse(raw);
+      if (Array.isArray(parsed) && parsed.length > 0) {
+        savedChapters.clear();
+        parsed.forEach((c) => savedChapters.add(c));
+      }
+    }
+  } catch {}
 
-  // ─── Setup state ───
-  const selectedChapters = new Set();
-  let frontMode = 'character';
   let deck = [];
   let idx = 0;
 
-  document.querySelectorAll('[data-chapter]').forEach((btn) => {
-    selectedChapters.add(Number(btn.dataset.chapter));
-    btn.addEventListener('click', () => {
-      const ch = Number(btn.dataset.chapter);
-      const next = btn.dataset.selected !== 'true';
-      btn.dataset.selected = String(next);
-      btn.setAttribute('aria-pressed', String(next));
-      if (next) selectedChapters.add(ch);
-      else selectedChapters.delete(ch);
-      updateCount();
-    });
-  });
-
-  document.getElementById('ch-all')?.addEventListener('click', () => {
-    document.querySelectorAll('[data-chapter]').forEach((btn) => {
-      btn.dataset.selected = 'true';
-      btn.setAttribute('aria-pressed', 'true');
-      selectedChapters.add(Number(btn.dataset.chapter));
-    });
-    updateCount();
-  });
-  document.getElementById('ch-none')?.addEventListener('click', () => {
-    document.querySelectorAll('[data-chapter]').forEach((btn) => {
-      btn.dataset.selected = 'false';
-      btn.setAttribute('aria-pressed', 'false');
-    });
-    selectedChapters.clear();
-    updateCount();
-  });
-
-  document.querySelectorAll('[data-front]').forEach((btn) => {
-    btn.addEventListener('click', () => {
-      document.querySelectorAll('[data-front]').forEach((b) => {
-        b.dataset.selected = 'false';
-        b.setAttribute('aria-pressed', 'false');
-      });
-      btn.dataset.selected = 'true';
-      btn.setAttribute('aria-pressed', 'true');
-      frontMode = btn.dataset.front;
-    });
-  });
-
-  const deckCountEl = document.getElementById('deck-count');
-  const startBtn = document.getElementById('flash-start');
-  const updateCount = () => {
-    const n = all.filter((e) => selectedChapters.has(e.chapter)).length;
-    deckCountEl.textContent = String(n);
-    if (startBtn) startBtn.disabled = n === 0;
-  };
-  updateCount();
-
-  // ─── Play state ───
+  // ─── DOM ───
   const cardEl = document.getElementById('flash-card');
   const primaryEl = document.getElementById('card-primary');
   const secondaryEl = document.getElementById('card-secondary');
-  const footEl = document.getElementById('card-foot');
-  const metaPosEl = document.getElementById('card-meta-pos');
-  const metaTipEl = document.getElementById('card-meta-tip');
-  const idxEl = document.getElementById('card-index');
-  const totalEl = document.getElementById('card-total');
-  const chapterEl = document.getElementById('card-chapter');
+  const tertiaryEl = document.getElementById('card-tertiary');
+  const counterEl = document.getElementById('card-counter');
+  const tabEls = document.querySelectorAll('.flash-tab');
+  const filterPanel = document.getElementById('filter-panel');
+  const filterBtn = document.getElementById('flash-filter');
+  const chapterInputs = document.querySelectorAll('input[data-chapter]');
 
+  // ─── Helpers ───
   const shuffle = (arr) => {
     const a = arr.slice();
     for (let i = a.length - 1; i > 0; i--) {
@@ -278,503 +130,446 @@ const totalCards = data.length;
     return a;
   };
 
-  const renderCard = () => {
-    const card = deck[idx];
-    cardEl.dataset.revealed = 'false';
-    if (frontMode === 'character') {
-      primaryEl.textContent = card.character;
-      primaryEl.className = 'flash-card-primary mode-zh';
-    } else {
-      primaryEl.textContent = card.pinyin;
-      primaryEl.className = 'flash-card-primary mode-pinyin';
-    }
-    secondaryEl.textContent = '';
-    footEl.textContent = '';
-    metaPosEl.textContent = card.partOfSpeech || '—';
-    metaTipEl.textContent = 'Tap to reveal';
-    idxEl.textContent = String(idx + 1);
-    totalEl.textContent = String(deck.length);
-    chapterEl.textContent = String(card.chapter);
+  const rebuildDeck = () => {
+    const filtered = entries.filter((e) => savedChapters.has(e.chapter));
+    deck = shuffle(filtered);
+    idx = 0;
+    render();
   };
 
-  const reveal = () => {
-    if (cardEl.dataset.revealed === 'true') return;
-    const card = deck[idx];
-    cardEl.dataset.revealed = 'true';
-    metaTipEl.textContent = '';
-    if (frontMode === 'character') {
-      secondaryEl.textContent = card.pinyin;
-    } else {
-      primaryEl.textContent = card.character;
-      primaryEl.className = 'flash-card-primary mode-zh';
-      secondaryEl.textContent = card.pinyin;
+  const render = () => {
+    if (deck.length === 0) {
+      primaryEl.textContent = '—';
+      secondaryEl.textContent = '';
+      tertiaryEl.textContent = '';
+      counterEl.textContent = '0 / 0';
+      return;
     }
-    footEl.textContent = card.meaning_th || '— translation pending —';
-    footEl.dataset.empty = card.meaning_th ? 'false' : 'true';
+    const c = deck[idx];
+    cardEl.dataset.revealed = 'false';
+
+    if (activeTab === 'character') {
+      primaryEl.textContent = c.character;
+      primaryEl.className = 'flash-card-primary mode-zh';
+      secondaryEl.textContent = c.pinyin;
+      secondaryEl.className = 'flash-card-secondary mode-pinyin';
+      tertiaryEl.textContent = c.meaning_th || '—';
+    } else if (activeTab === 'pinyin') {
+      primaryEl.textContent = c.pinyin;
+      primaryEl.className = 'flash-card-primary mode-pinyin';
+      secondaryEl.textContent = c.character;
+      secondaryEl.className = 'flash-card-secondary mode-zh';
+      tertiaryEl.textContent = c.meaning_th || '—';
+    } else {
+      primaryEl.textContent = c.meaning_th || '—';
+      primaryEl.className = 'flash-card-primary mode-meaning';
+      secondaryEl.textContent = c.character;
+      secondaryEl.className = 'flash-card-secondary mode-zh';
+      tertiaryEl.textContent = c.pinyin;
+    }
+    counterEl.textContent = `${idx + 1} / ${deck.length}`;
   };
 
   const next = () => {
+    if (deck.length === 0) return;
     idx = idx < deck.length - 1 ? idx + 1 : 0;
-    renderCard();
+    render();
   };
   const prev = () => {
+    if (deck.length === 0) return;
     idx = idx > 0 ? idx - 1 : deck.length - 1;
-    renderCard();
+    render();
+  };
+  const reveal = () => {
+    cardEl.dataset.revealed = 'true';
   };
 
+  // ─── Tabs ───
+  const updateTabs = () => {
+    tabEls.forEach((btn) => {
+      btn.classList.toggle('is-active', btn.dataset.tab === activeTab);
+    });
+  };
+
+  tabEls.forEach((btn) => {
+    btn.addEventListener('click', () => {
+      activeTab = btn.dataset.tab;
+      updateTabs();
+      try { localStorage.setItem(STORAGE_TAB, activeTab); } catch {}
+      render();
+    });
+  });
+  updateTabs();
+
+  // ─── Card interaction ───
   cardEl.addEventListener('click', () => {
     if (cardEl.dataset.revealed === 'true') next();
     else reveal();
   });
 
-  document.getElementById('flash-next')?.addEventListener('click', next);
-  document.getElementById('flash-prev')?.addEventListener('click', prev);
-  document.getElementById('flash-shuffle')?.addEventListener('click', () => {
-    deck = shuffle(deck);
-    idx = 0;
-    renderCard();
+  // ─── Filter ───
+  const syncFilterInputs = () => {
+    chapterInputs.forEach((input) => {
+      input.checked = savedChapters.has(Number(input.value));
+    });
+  };
+  syncFilterInputs();
+
+  const saveChapters = () => {
+    try {
+      localStorage.setItem(STORAGE_CHAPTERS, JSON.stringify(Array.from(savedChapters)));
+    } catch {}
+    rebuildDeck();
+  };
+
+  chapterInputs.forEach((input) => {
+    input.addEventListener('change', () => {
+      const ch = Number(input.value);
+      if (input.checked) savedChapters.add(ch);
+      else savedChapters.delete(ch);
+      saveChapters();
+    });
   });
 
+  filterBtn.addEventListener('click', () => {
+    const open = filterPanel.dataset.open !== 'true';
+    filterPanel.dataset.open = String(open);
+    filterBtn.classList.toggle('is-active', open);
+  });
+
+  document.getElementById('filter-all').addEventListener('click', () => {
+    allChapters.forEach((ch) => savedChapters.add(ch));
+    syncFilterInputs();
+    saveChapters();
+  });
+  document.getElementById('filter-none').addEventListener('click', () => {
+    savedChapters.clear();
+    syncFilterInputs();
+    saveChapters();
+  });
+
+  // ─── Nav ───
+  document.getElementById('flash-next').addEventListener('click', next);
+  document.getElementById('flash-prev').addEventListener('click', prev);
+
   document.addEventListener('keydown', (e) => {
-    if (root.dataset.mode !== 'play') return;
     if (e.key === 'ArrowRight') next();
-    else if (e.key === 'ArrowLeft') prev();
-    else if (e.key === ' ' || e.key === 'Enter') {
+    if (e.key === 'ArrowLeft') prev();
+    if (e.key === ' ' || e.key === 'Enter') {
       e.preventDefault();
       if (cardEl.dataset.revealed === 'true') next();
       else reveal();
-    } else if (e.key === 'Escape') setMode('setup');
+    }
   });
 
-  document.getElementById('flash-back')?.addEventListener('click', () => setMode('setup'));
+  let touchStartX = 0;
+  cardEl.addEventListener('touchstart', (e) => { touchStartX = e.changedTouches[0].screenX; }, { passive: true });
+  cardEl.addEventListener('touchend', (e) => {
+    const dx = e.changedTouches[0].screenX - touchStartX;
+    if (dx < -40) next();
+    if (dx > 40) prev();
+  }, { passive: true });
 
-  document.getElementById('flash-start')?.addEventListener('click', () => {
-    const filtered = all.filter((e) => selectedChapters.has(e.chapter));
-    if (filtered.length === 0) return;
-    deck = shuffle(filtered);
-    idx = 0;
-    renderCard();
-    setMode('play');
-  });
+  // ─── Init ───
+  rebuildDeck();
 </script>
 
 <style>
   .flash {
-    min-height: 70vh;
-    position: relative;
-  }
-  .flash[data-mode='setup'] .flash-play {
-    display: none;
-  }
-  .flash[data-mode='play'] .flash-setup {
-    display: none;
-  }
-
-  /* ─── SETUP ─── */
-  .flash-setup {
-    padding: 80px 0 120px;
+    padding: 48px 0 80px;
   }
   .flash-header {
-    max-width: 640px;
-    margin-bottom: 64px;
-  }
-  .flash-eyebrow {
-    font-family: var(--font-mono);
-    font-size: 11px;
-    letter-spacing: 0.22em;
-    text-transform: uppercase;
-    color: var(--color-accent);
+    text-align: center;
     margin-bottom: 24px;
   }
   .flash-header h1 {
     font-family: var(--font-display);
-    font-size: clamp(48px, 5.4vw, 84px);
-    line-height: 1;
-    letter-spacing: -0.025em;
-    color: var(--color-ink);
+    font-size: clamp(36px, 4vw, 56px);
     font-weight: 400;
-    margin-bottom: 24px;
+    color: var(--color-ink);
+    margin-bottom: 6px;
   }
   .flash-deck {
-    font-size: 18px;
-    line-height: 1.6;
+    font-size: 15px;
     color: var(--color-muted);
-    text-wrap: pretty;
-  }
-  .flash-deck em {
-    font-family: var(--font-display);
-    color: var(--color-fg);
   }
 
-  .flash-section {
-    margin-bottom: 56px;
-  }
-  .flash-section-title {
+  /* ─── Tabs ─── */
+  .flash-tabs {
     display: flex;
-    align-items: center;
-    gap: 14px;
-    font-family: var(--font-mono);
-    font-size: 11px;
-    letter-spacing: 0.22em;
-    text-transform: uppercase;
-    color: var(--color-fg);
-    font-weight: 500;
-    margin-bottom: 24px;
+    justify-content: center;
+    gap: 0;
+    margin-bottom: 32px;
   }
-  .flash-section-title span:first-child {
-    color: var(--color-accent);
-  }
-  .flash-section-actions {
-    margin-left: auto;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    color: var(--color-muted);
-    font-weight: 400;
-  }
-  .flash-section-actions .link {
-    background: none;
-    border: 0;
-    cursor: pointer;
-    color: var(--color-muted);
-    font: inherit;
-    letter-spacing: inherit;
-    text-transform: inherit;
-    padding: 0;
-    transition: color 0.15s ease;
-  }
-  .flash-section-actions .link:hover {
-    color: var(--color-accent);
-  }
-
-  .flash-chips {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 12px;
-  }
-  .flash-chips-tight {
-    gap: 8px;
-  }
-
-  .chip {
-    display: inline-flex;
-    align-items: center;
-    gap: 12px;
+  .flash-tab {
     background: var(--color-bg);
     border: 1px solid var(--color-border);
-    padding: 14px 20px;
-    cursor: pointer;
-    transition:
-      border-color 0.15s ease,
-      background 0.15s ease,
-      color 0.15s ease;
-    font: inherit;
-    color: inherit;
-  }
-  .chip-small {
-    padding: 10px 14px;
-    gap: 8px;
-  }
-  .chip:hover {
-    border-color: var(--color-ink);
-  }
-  .chip[data-selected='true'] {
-    background: var(--color-paper);
-    border-color: var(--color-ink);
-  }
-  .chip-label {
-    font-family: var(--font-display);
-    font-size: 18px;
-    color: var(--color-ink);
-    line-height: 1;
-  }
-  .chip-small .chip-label {
-    font-size: 16px;
-    font-family: var(--font-mono);
-    font-style: normal;
-  }
-  .chip-meta {
-    font-family: var(--font-mono);
-    font-size: 10px;
-    letter-spacing: 0.18em;
-    text-transform: uppercase;
-    color: var(--color-muted);
-  }
-  .chip-small .chip-meta {
-    font-size: 9.5px;
-  }
-
-  .flash-summary {
-    border-top: 1.5px solid var(--color-ink);
-    padding-top: 28px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 32px;
-    flex-wrap: wrap;
-  }
-  .flash-summary-line {
-    display: flex;
-    align-items: baseline;
-    gap: 16px;
-  }
-  .flash-summary-label {
+    padding: 10px 20px;
     font-family: var(--font-mono);
     font-size: 11px;
-    letter-spacing: 0.22em;
+    letter-spacing: 0.15em;
     text-transform: uppercase;
     color: var(--color-muted);
-  }
-  .flash-summary-count {
-    font-family: var(--font-display);
-    font-size: 36px;
-    color: var(--color-ink);
-    font-style: italic;
-    font-variant-numeric: tabular-nums;
-  }
-  .flash-start {
-    display: inline-flex;
-    align-items: center;
-    gap: 14px;
-    background: var(--color-accent);
-    color: var(--color-bg);
-    border: 0;
-    padding: 18px 32px;
-    font-family: var(--font-mono);
-    font-size: 12px;
-    letter-spacing: 0.22em;
-    text-transform: uppercase;
     cursor: pointer;
     transition:
+      color 0.15s ease,
       background 0.15s ease,
-      transform 0.15s ease;
+      border-color 0.15s ease;
   }
-  .flash-start:hover {
-    background: var(--color-accent-deep);
+  .flash-tab + .flash-tab {
+    border-left: 0;
   }
-  .flash-start:active {
-    transform: translateY(1px);
+  .flash-tab:hover {
+    color: var(--color-ink);
   }
-  .flash-start:disabled {
-    background: var(--color-muted);
-    cursor: not-allowed;
-  }
-  .flash-start span {
-    transition: transform 0.15s ease;
-  }
-  .flash-start:hover span {
-    transform: translateX(4px);
+  .flash-tab.is-active {
+    background: var(--color-ink);
+    color: var(--color-bg);
+    border-color: var(--color-ink);
   }
 
-  /* ─── PLAY ─── */
-  .flash-play {
-    padding: 32px 0 80px;
-  }
-  .flash-play-inner {
-    display: flex;
-    flex-direction: column;
-    gap: 32px;
-  }
-  .flash-play-meta {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    border-bottom: 1px solid var(--color-border);
-    padding-bottom: 16px;
-    font-family: var(--font-mono);
-    font-size: 10.5px;
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
-    color: var(--color-muted);
-  }
-  .flash-back {
-    background: none;
-    border: 0;
-    cursor: pointer;
-    font: inherit;
-    color: var(--color-fg);
-    letter-spacing: inherit;
-    text-transform: inherit;
-    padding: 0;
-    transition: color 0.15s ease;
-  }
-  .flash-back:hover {
-    color: var(--color-accent);
-  }
-  .flash-progress {
-    display: flex;
-    gap: 14px;
-    align-items: center;
-  }
-  .flash-progress span {
-    font-variant-numeric: tabular-nums;
-  }
-
+  /* ─── Card with 3D flip ─── */
   .flash-card-wrap {
     display: flex;
     justify-content: center;
+    margin-bottom: 28px;
+  }
+  .flash-card-scene {
+    width: 100%;
+    max-width: 420px;
+    aspect-ratio: 1;
+    perspective: 1000px;
   }
   .flash-card {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    background: none;
+    border: 0;
+    padding: 0;
+    cursor: pointer;
+    font: inherit;
+    color: inherit;
+  }
+  .flash-card[data-revealed='true'] {
+    transform: rotateY(180deg);
+  }
+
+  .flash-card-face {
+    position: absolute;
+    inset: 0;
+    backface-visibility: hidden;
     background: var(--color-paper);
     border: 1px solid var(--color-border);
-    width: 100%;
-    max-width: 520px;
-    aspect-ratio: 4 / 5;
-    padding: 28px;
-    display: flex;
-    flex-direction: column;
-    cursor: pointer;
-    color: inherit;
-    transition:
-      transform 0.18s ease,
-      box-shadow 0.18s ease;
-    text-align: left;
-    font: inherit;
-  }
-  .flash-card:hover {
-    box-shadow: 0 1px 0 oklch(40% 0.02 60 / 0.06);
-  }
-  .flash-card:active {
-    transform: scale(0.99);
-  }
-  .flash-card-meta {
-    display: flex;
-    justify-content: space-between;
-    font-family: var(--font-mono);
-    font-size: 10px;
-    letter-spacing: 0.18em;
-    text-transform: uppercase;
-    color: var(--color-muted);
-  }
-  .flash-card[data-revealed='true'] .flash-card-meta-right {
-    color: var(--color-accent);
-  }
-  .flash-card-body {
-    flex: 1;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: 16px;
+    padding: 32px;
   }
+  .flash-card-back {
+    transform: rotateY(180deg);
+    gap: 20px;
+  }
+
   .flash-card-primary {
-    text-align: center;
-    color: var(--color-ink);
     line-height: 1;
-    text-wrap: balance;
+    text-align: center;
+    transition: opacity 0.2s ease;
   }
   .flash-card-primary.mode-zh {
     font-family: var(--font-zh);
-    font-size: clamp(80px, 14vw, 160px);
-    letter-spacing: 0.04em;
+    font-size: clamp(80px, 14vw, 140px);
+    color: var(--color-ink);
   }
   .flash-card-primary.mode-pinyin {
     font-family: var(--font-display);
     font-style: italic;
-    font-size: clamp(48px, 8vw, 88px);
+    font-size: clamp(36px, 5vw, 60px);
+    color: var(--color-ink);
     letter-spacing: 0.02em;
   }
-  .flash-card-secondary {
-    font-family: var(--font-display);
-    font-style: italic;
-    font-size: clamp(20px, 2.4vw, 28px);
-    color: var(--color-muted);
-    text-align: center;
-    min-height: 1.3em;
-  }
-  .flash-card-foot {
-    text-align: center;
-    font-family: var(--font-display);
-    font-size: clamp(20px, 2.4vw, 26px);
-    color: var(--color-fg);
-    min-height: 1.4em;
-    border-top: 1px solid var(--color-border);
-    padding-top: 16px;
-  }
-  .flash-card-foot[data-empty='true'] {
-    font-family: var(--font-mono);
-    font-size: 11px;
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
-    color: var(--color-muted);
+  .flash-card-primary.mode-meaning {
+    font-family: var(--font-zh);
+    font-size: clamp(28px, 3.5vw, 42px);
+    color: var(--color-ink);
+    padding: 0 16px;
   }
 
+  .flash-card-secondary.mode-zh {
+    font-family: var(--font-zh);
+    font-size: clamp(48px, 7vw, 80px);
+    color: var(--color-ink);
+  }
+  .flash-card-secondary.mode-pinyin {
+    font-family: var(--font-display);
+    font-style: italic;
+    font-size: clamp(22px, 3vw, 32px);
+    color: var(--color-muted);
+  }
+  .flash-card-tertiary {
+    font-family: var(--font-zh);
+    font-size: clamp(18px, 2.2vw, 24px);
+    color: var(--color-muted);
+    text-align: center;
+  }
+
+  /* ─── Controls ─── */
   .flash-controls {
     display: flex;
-    gap: 12px;
     justify-content: center;
     align-items: center;
+    gap: 16px;
+    flex-wrap: wrap;
   }
-  .flash-ctrl {
-    display: inline-flex;
-    align-items: center;
-    gap: 12px;
+  .flash-controls button {
     background: var(--color-bg);
     border: 1px solid var(--color-border);
-    padding: 14px 24px;
+    padding: 10px 20px;
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--color-fg);
+    cursor: pointer;
+    transition: border-color 0.15s ease;
+  }
+  .flash-controls button:hover {
+    border-color: var(--color-ink);
+  }
+  .flash-controls button.is-active {
+    background: var(--color-ink);
+    color: var(--color-bg);
+    border-color: var(--color-ink);
+  }
+  .flash-counter {
+    font-family: var(--font-mono);
+    font-size: 12px;
+    color: var(--color-muted);
+    min-width: 70px;
+    text-align: center;
+  }
+
+  /* ─── Filter panel ─── */
+  .flash-filter-panel {
+    max-width: 520px;
+    margin: 20px auto 0;
+    border: 1px solid var(--color-border);
+    background: var(--color-paper);
+    padding: 20px;
+    display: none;
+  }
+  .flash-filter-panel[data-open='true'] {
+    display: block;
+  }
+  .filter-book {
+    font-family: var(--font-display);
+    font-size: 16px;
+    font-style: italic;
+    color: var(--color-ink);
+    margin-bottom: 12px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid var(--color-border);
+  }
+  .filter-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--color-fg);
+  }
+  .filter-actions {
+    display: flex;
+    gap: 12px;
+  }
+  .filter-actions button {
+    background: none;
+    border: 0;
+    padding: 0;
+    font: inherit;
+    color: var(--color-muted);
+    cursor: pointer;
+    letter-spacing: inherit;
+    text-transform: inherit;
+    transition: color 0.15s ease;
+  }
+  .filter-actions button:hover {
+    color: var(--color-accent);
+  }
+  .filter-chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+  .filter-chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--color-bg);
+    border: 1px solid var(--color-border);
+    padding: 8px 14px;
     cursor: pointer;
     font-family: var(--font-mono);
     font-size: 11px;
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
     color: var(--color-fg);
-    transition:
-      border-color 0.15s ease,
-      color 0.15s ease;
-    min-width: 120px;
-    justify-content: center;
+    transition: border-color 0.15s ease;
   }
-  .flash-ctrl:hover {
+  .filter-chip:hover {
     border-color: var(--color-ink);
-    color: var(--color-accent);
   }
-  .flash-ctrl-mid {
+  .filter-chip input {
+    appearance: none;
+    width: 14px;
+    height: 14px;
+    border: 1px solid var(--color-border);
+    background: var(--color-bg);
+    margin: 0;
+    cursor: pointer;
+    position: relative;
+    transition: border-color 0.15s ease;
+  }
+  .filter-chip input:checked {
+    border-color: var(--color-ink);
+    background: var(--color-ink);
+  }
+  .filter-chip input:checked::after {
+    content: '';
+    position: absolute;
+    left: 4px;
+    top: 1px;
+    width: 4px;
+    height: 8px;
+    border: solid var(--color-bg);
+    border-width: 0 1.5px 1.5px 0;
+    transform: rotate(45deg);
+  }
+  .filter-chip-count {
     color: var(--color-muted);
-  }
-  .ctrl-arrow {
-    font-family: var(--font-display);
-    font-size: 16px;
-    line-height: 1;
+    font-size: 10px;
   }
 
-  @media (max-width: 880px) {
-    .flash-setup {
-      padding: 56px 0 80px;
-    }
-    .flash-header {
-      margin-bottom: 48px;
-    }
-    .flash-section {
-      margin-bottom: 40px;
-    }
-    .flash-summary {
-      flex-direction: column;
-      align-items: stretch;
-      gap: 24px;
-    }
-    .flash-start {
-      justify-content: center;
-    }
-    .flash-card {
-      aspect-ratio: 3 / 4;
-    }
-  }
   @media (max-width: 560px) {
+    .flash {
+      padding: 32px 0 56px;
+    }
+    .flash-card-face {
+      padding: 24px;
+    }
     .flash-controls {
-      gap: 8px;
+      gap: 12px;
     }
-    .flash-ctrl {
-      min-width: 0;
-      flex: 1;
-      padding: 12px 12px;
+    .flash-controls button {
+      padding: 10px 14px;
     }
-    .flash-ctrl-mid .ctrl-label {
-      display: none;
-    }
-    .flash-ctrl-mid::before {
-      content: '⇄';
-      font-size: 16px;
-      letter-spacing: 0;
+    .flash-filter-panel {
+      margin-left: 0;
+      margin-right: 0;
     }
   }
 </style>

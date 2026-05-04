@@ -4,21 +4,21 @@
     "pinyin": "Ālābówén",
     "partOfSpeech": "名",
     "chapter": 6,
-    "meaning_th": ""
+    "meaning_th": "ภาษาอาหรับ (ตัวเขียน)"
   },
   {
     "character": "阿拉伯语",
     "pinyin": "Ālābóyǔ",
     "partOfSpeech": "名",
     "chapter": 3,
-    "meaning_th": ""
+    "meaning_th": "ภาษาอาหรับ"
   },
   {
     "character": "啊",
     "pinyin": "à",
     "partOfSpeech": "叹",
     "chapter": 14,
-    "meaning_th": ""
+    "meaning_th": "อ่า"
   },
   {
     "character": "八",
@@ -32,42 +32,42 @@
     "pinyin": "bàba",
     "partOfSpeech": "名",
     "chapter": 2,
-    "meaning_th": ""
+    "meaning_th": "พ่อ"
   },
   {
     "character": "白",
     "pinyin": "bái",
     "partOfSpeech": "形",
     "chapter": 1,
-    "meaning_th": ""
+    "meaning_th": "สีขาว"
   },
   {
     "character": "百",
     "pinyin": "bǎi",
     "partOfSpeech": "数",
     "chapter": 9,
-    "meaning_th": ""
+    "meaning_th": "ร้อย"
   },
   {
     "character": "班",
     "pinyin": "bān",
     "partOfSpeech": "名",
     "chapter": 12,
-    "meaning_th": ""
+    "meaning_th": "ชั้นเรียน"
   },
   {
     "character": "办公",
     "pinyin": "bàngōng",
     "partOfSpeech": "动",
     "chapter": 10,
-    "meaning_th": "งานสำนักงาน"
+    "meaning_th": "ทำงาน (สำนักงาน)"
   },
   {
     "character": "办公室",
     "pinyin": "bàngōngshì",
     "partOfSpeech": "名",
     "chapter": 10,
-    "meaning_th": "สำนักงาน"
+    "meaning_th": "ห้องทำงาน"
   },
   {
     "character": "包子",
@@ -81,28 +81,28 @@
     "pinyin": "bēi",
     "partOfSpeech": "名",
     "chapter": 14,
-    "meaning_th": ""
+    "meaning_th": "แก้ว"
   },
   {
     "character": "本",
     "pinyin": "běn",
     "partOfSpeech": "量",
     "chapter": 13,
-    "meaning_th": ""
+    "meaning_th": "เล่ม"
   },
   {
     "character": "笔",
     "pinyin": "bǐ",
     "partOfSpeech": "名",
     "chapter": 13,
-    "meaning_th": ""
+    "meaning_th": "ปากกา"
   },
   {
     "character": "比较",
     "pinyin": "bǐjiào",
     "partOfSpeech": "副、动",
     "chapter": 12,
-    "meaning_th": ""
+    "meaning_th": "เปรียบเทียบ"
   },
   {
     "character": "别的",
@@ -123,35 +123,35 @@
     "pinyin": "bú kèqi",
     "partOfSpeech": "",
     "chapter": 5,
-    "meaning_th": "ไม่เป็นไร"
+    "meaning_th": "ไม่ต้องเกรงใจ"
   },
   {
     "character": "茶",
     "pinyin": "chá",
     "partOfSpeech": "名",
     "chapter": 5,
-    "meaning_th": ""
+    "meaning_th": "ชา"
   },
   {
     "character": "茶叶",
     "pinyin": "cháyè",
     "partOfSpeech": "名",
     "chapter": 13,
-    "meaning_th": ""
+    "meaning_th": "ใบชา"
   },
   {
     "character": "车",
     "pinyin": "chē",
     "partOfSpeech": "名",
     "chapter": 14,
-    "meaning_th": ""
+    "meaning_th": "รถ"
   },
   {
     "character": "吃",
     "pinyin": "chī",
     "partOfSpeech": "动",
     "chapter": 7,
-    "meaning_th": ""
+    "meaning_th": "กิน"
   },
   {
     "character": "出租车",
@@ -165,35 +165,35 @@
     "pinyin": "cídiǎn",
     "partOfSpeech": "名",
     "chapter": 13,
-    "meaning_th": ""
+    "meaning_th": "พจนานุกรม"
   },
   {
     "character": "大",
     "pinyin": "dà",
     "partOfSpeech": "形",
     "chapter": 1,
-    "meaning_th": ""
+    "meaning_th": "ใหญ่"
   },
   {
     "character": "大概",
     "pinyin": "dàgài",
     "partOfSpeech": "副",
     "chapter": 15,
-    "meaning_th": ""
+    "meaning_th": "โดยประมาณ"
   },
   {
     "character": "大学",
     "pinyin": "dàxué",
     "partOfSpeech": "名",
     "chapter": 12,
-    "meaning_th": ""
+    "meaning_th": "มหาวิทยาลัย"
   },
   {
     "character": "大夫",
     "pinyin": "dàifu",
     "partOfSpeech": "名",
     "chapter": 15,
-    "meaning_th": ""
+    "meaning_th": "หมอ"
   },
   {
     "character": "但是",
@@ -207,119 +207,119 @@
     "pinyin": "dàn",
     "partOfSpeech": "名",
     "chapter": 7,
-    "meaning_th": ""
+    "meaning_th": "ไข่"
   },
   {
     "character": "德国",
     "pinyin": "Déguó",
     "partOfSpeech": "名",
     "chapter": 6,
-    "meaning_th": ""
+    "meaning_th": "เยอรมนี"
   },
   {
     "character": "德文",
     "pinyin": "Déwén",
     "partOfSpeech": "名",
     "chapter": 6,
-    "meaning_th": ""
+    "meaning_th": "ภาษาเยอรมัน (ตัวเขียน)"
   },
   {
     "character": "德语",
     "pinyin": "Déyǔ",
     "partOfSpeech": "名",
     "chapter": 3,
-    "meaning_th": ""
+    "meaning_th": "ภาษาเยอรมัน"
   },
   {
     "character": "的",
     "pinyin": "de",
     "partOfSpeech": "助",
     "chapter": 6,
-    "meaning_th": ""
+    "meaning_th": "ของ"
   },
   {
     "character": "等",
     "pinyin": "děng",
     "partOfSpeech": "动",
     "chapter": 9,
-    "meaning_th": ""
+    "meaning_th": "รอ"
   },
   {
     "character": "弟弟",
     "pinyin": "dìdi",
     "partOfSpeech": "名",
     "chapter": 2,
-    "meaning_th": ""
+    "meaning_th": "น้องชาย"
   },
   {
     "character": "点儿",
     "pinyin": "diǎnr",
     "partOfSpeech": "量",
     "chapter": 14,
-    "meaning_th": ""
+    "meaning_th": "นิดหน่อย"
   },
   {
     "character": "电",
     "pinyin": "diàn",
     "partOfSpeech": "名",
     "chapter": 10,
-    "meaning_th": ""
+    "meaning_th": "ไฟฟ้า"
   },
   {
     "character": "电话",
     "pinyin": "diànhuà",
     "partOfSpeech": "名",
     "chapter": 10,
-    "meaning_th": ""
+    "meaning_th": "โทรศัพท์"
   },
   {
     "character": "都",
     "pinyin": "dōu",
     "partOfSpeech": "副",
     "chapter": 11,
-    "meaning_th": ""
+    "meaning_th": "ทั้งหมด"
   },
   {
     "character": "读",
     "pinyin": "dú",
     "partOfSpeech": "动",
     "chapter": 12,
-    "meaning_th": ""
+    "meaning_th": "อ่าน"
   },
   {
     "character": "对",
     "pinyin": "duì",
     "partOfSpeech": "形",
     "chapter": 3,
-    "meaning_th": ""
+    "meaning_th": "ถูกต้อง"
   },
   {
     "character": "对不起",
     "pinyin": "duì bu qǐ",
     "partOfSpeech": "",
     "chapter": 4,
-    "meaning_th": ""
+    "meaning_th": "ขอโทษ"
   },
   {
     "character": "多",
     "pinyin": "duō",
     "partOfSpeech": "数",
     "chapter": 15,
-    "meaning_th": ""
+    "meaning_th": "มาก"
   },
   {
     "character": "多",
     "pinyin": "duō",
     "partOfSpeech": "形",
     "chapter": 8,
-    "meaning_th": ""
+    "meaning_th": "มาก"
   },
   {
     "character": "多少",
     "pinyin": "duōshao",
     "partOfSpeech": "代",
     "chapter": 8,
-    "meaning_th": ""
+    "meaning_th": "เท่าไหร่"
   },
   {
     "character": "俄国",
@@ -333,7 +333,7 @@
     "pinyin": "Éwén",
     "partOfSpeech": "名",
     "chapter": 6,
-    "meaning_th": "ภาษารัสเซีย"
+    "meaning_th": "ภาษารัสเซีย (ตัวเขียน)"
   },
   {
     "character": "俄语",
@@ -354,42 +354,42 @@
     "pinyin": "fāyīn",
     "partOfSpeech": "名",
     "chapter": 6,
-    "meaning_th": ""
+    "meaning_th": "การออกเสียง"
   },
   {
     "character": "法国",
     "pinyin": "Fǎguó",
     "partOfSpeech": "名",
     "chapter": 6,
-    "meaning_th": ""
+    "meaning_th": "ฝรั่งเศส"
   },
   {
     "character": "法文",
     "pinyin": "Fǎwén",
     "partOfSpeech": "名",
     "chapter": 6,
-    "meaning_th": ""
+    "meaning_th": "ภาษาฝรั่งเศส (ตัวเขียน)"
   },
   {
     "character": "法语",
     "pinyin": "Fǎyǔ",
     "partOfSpeech": "名",
     "chapter": 3,
-    "meaning_th": ""
+    "meaning_th": "ภาษาฝรั่งเศส"
   },
   {
     "character": "饭",
     "pinyin": "fàn",
     "partOfSpeech": "名",
     "chapter": 7,
-    "meaning_th": ""
+    "meaning_th": "ข้าว"
   },
   {
     "character": "房间",
     "pinyin": "fángjiān",
     "partOfSpeech": "名",
     "chapter": 10,
-    "meaning_th": ""
+    "meaning_th": "ห้อง"
   },
   {
     "character": "分",
@@ -403,49 +403,49 @@
     "pinyin": "gāng",
     "partOfSpeech": "副",
     "chapter": 14,
-    "meaning_th": "เพิ่ง"
+    "meaning_th": "พึ่ง"
   },
   {
     "character": "港币",
     "pinyin": "gǎngbì",
     "partOfSpeech": "名",
     "chapter": 9,
-    "meaning_th": ""
+    "meaning_th": "ดอลลาร์ฮ่องกง"
   },
   {
     "character": "哥哥",
     "pinyin": "gēge",
     "partOfSpeech": "名",
     "chapter": 2,
-    "meaning_th": ""
+    "meaning_th": "พี่ชาย"
   },
   {
     "character": "个",
     "pinyin": "gè",
     "partOfSpeech": "量",
     "chapter": 7,
-    "meaning_th": "ลักษณะนาม"
+    "meaning_th": "คน/อัน"
   },
   {
     "character": "给",
     "pinyin": "gěi",
     "partOfSpeech": "动",
     "chapter": 8,
-    "meaning_th": ""
+    "meaning_th": "ให้"
   },
   {
     "character": "给",
     "pinyin": "gěi",
     "partOfSpeech": "介",
     "chapter": 12,
-    "meaning_th": ""
+    "meaning_th": "ให้"
   },
   {
     "character": "工作",
     "pinyin": "gōngzuò",
     "partOfSpeech": "名、动",
     "chapter": 5,
-    "meaning_th": ""
+    "meaning_th": "งาน"
   },
   {
     "character": "公斤",
@@ -473,168 +473,168 @@
     "pinyin": "guì",
     "partOfSpeech": "形",
     "chapter": 8,
-    "meaning_th": ""
+    "meaning_th": "แพง"
   },
   {
     "character": "贵姓",
     "pinyin": "guìxìng",
     "partOfSpeech": "名",
     "chapter": 6,
-    "meaning_th": ""
+    "meaning_th": "นามสกุลอะไร"
   },
   {
     "character": "国",
     "pinyin": "guó",
     "partOfSpeech": "名",
     "chapter": 6,
-    "meaning_th": ""
+    "meaning_th": "ประเทศ"
   },
   {
     "character": "还",
     "pinyin": "hái",
     "partOfSpeech": "副",
     "chapter": 8,
-    "meaning_th": ""
+    "meaning_th": "ยัง"
   },
   {
     "character": "还是",
     "pinyin": "háishì",
     "partOfSpeech": "连",
     "chapter": 14,
-    "meaning_th": ""
+    "meaning_th": "หรือ"
   },
   {
     "character": "韩国",
     "pinyin": "Hánguó",
     "partOfSpeech": "名",
     "chapter": 6,
-    "meaning_th": ""
+    "meaning_th": "เกาหลีใต้"
   },
   {
     "character": "韩国语",
     "pinyin": "Hánguóyǔ",
     "partOfSpeech": "名",
     "chapter": 3,
-    "meaning_th": ""
+    "meaning_th": "ภาษาเกาหลี"
   },
   {
     "character": "韩文",
     "pinyin": "Hánwén",
     "partOfSpeech": "名",
     "chapter": 6,
-    "meaning_th": ""
+    "meaning_th": "ภาษาเกาหลี (ตัวเขียน)"
   },
   {
     "character": "汉语",
     "pinyin": "Hànyǔ",
     "partOfSpeech": "名",
     "chapter": 2,
-    "meaning_th": ""
+    "meaning_th": "ภาษาจีน"
   },
   {
     "character": "好",
     "pinyin": "hǎo",
     "partOfSpeech": "形",
     "chapter": 1,
-    "meaning_th": ""
+    "meaning_th": "ดี"
   },
   {
     "character": "好久",
     "pinyin": "hǎojiǔ",
     "partOfSpeech": "名",
     "chapter": 14,
-    "meaning_th": ""
+    "meaning_th": "นาน"
   },
   {
     "character": "号",
     "pinyin": "hào",
     "partOfSpeech": "名",
     "chapter": 10,
-    "meaning_th": ""
+    "meaning_th": "วันที่"
   },
   {
     "character": "号码",
     "pinyin": "hàomǎ",
     "partOfSpeech": "名",
     "chapter": 10,
-    "meaning_th": ""
+    "meaning_th": "หมายเลข"
   },
   {
     "character": "喝",
     "pinyin": "hē",
     "partOfSpeech": "动",
     "chapter": 5,
-    "meaning_th": ""
+    "meaning_th": "ดื่ม"
   },
   {
     "character": "和",
     "pinyin": "hé",
     "partOfSpeech": "连",
     "chapter": 11,
-    "meaning_th": ""
+    "meaning_th": "และ"
   },
   {
     "character": "黑",
     "pinyin": "hēi",
     "partOfSpeech": "形",
     "chapter": 13,
-    "meaning_th": ""
+    "meaning_th": "สีดำ"
   },
   {
     "character": "很",
     "pinyin": "hěn",
     "partOfSpeech": "副",
     "chapter": 2,
-    "meaning_th": ""
+    "meaning_th": "มาก"
   },
   {
     "character": "红",
     "pinyin": "hóng",
     "partOfSpeech": "形",
     "chapter": 13,
-    "meaning_th": ""
+    "meaning_th": "สีแดง"
   },
   {
     "character": "话",
     "pinyin": "huà",
     "partOfSpeech": "名",
     "chapter": 10,
-    "meaning_th": ""
+    "meaning_th": "คำพูด"
   },
   {
     "character": "欢迎",
     "pinyin": "huānyíng",
     "partOfSpeech": "动",
     "chapter": 11,
-    "meaning_th": ""
+    "meaning_th": "ยินดีต้อนรับ"
   },
   {
     "character": "换",
     "pinyin": "huàn",
     "partOfSpeech": "动",
     "chapter": 9,
-    "meaning_th": ""
+    "meaning_th": "แลก"
   },
   {
     "character": "回",
     "pinyin": "huí",
     "partOfSpeech": "动",
     "chapter": 4,
-    "meaning_th": ""
+    "meaning_th": "กลับ"
   },
   {
     "character": "鸡",
     "pinyin": "jī",
     "partOfSpeech": "名",
     "chapter": 7,
-    "meaning_th": ""
+    "meaning_th": "ไก่"
   },
   {
     "character": "鸡蛋",
     "pinyin": "jīdàn",
     "partOfSpeech": "名",
     "chapter": 7,
-    "meaning_th": ""
+    "meaning_th": "ไข่ไก่"
   },
   {
     "character": "几",
@@ -648,21 +648,21 @@
     "pinyin": "jì",
     "partOfSpeech": "动",
     "chapter": 3,
-    "meaning_th": ""
+    "meaning_th": "ส่ง"
   },
   {
     "character": "家",
     "pinyin": "jiā",
     "partOfSpeech": "名、量",
     "chapter": 10,
-    "meaning_th": ""
+    "meaning_th": "บ้าน"
   },
   {
     "character": "见",
     "pinyin": "jiàn",
     "partOfSpeech": "动",
     "chapter": 3,
-    "meaning_th": ""
+    "meaning_th": "พบ"
   },
   {
     "character": "件",
@@ -676,42 +676,42 @@
     "pinyin": "jiǎo (máo)",
     "partOfSpeech": "量",
     "chapter": 8,
-    "meaning_th": ""
+    "meaning_th": "เหรียญสิบเฟิ่น"
   },
   {
     "character": "饺子",
     "pinyin": "jiǎozi",
     "partOfSpeech": "名",
     "chapter": 7,
-    "meaning_th": ""
+    "meaning_th": "เกี๊ยว"
   },
   {
     "character": "叫",
     "pinyin": "jiào",
     "partOfSpeech": "动",
     "chapter": 6,
-    "meaning_th": ""
+    "meaning_th": "เรียก"
   },
   {
     "character": "教授",
     "pinyin": "jiàoshòu",
     "partOfSpeech": "名",
     "chapter": 11,
-    "meaning_th": ""
+    "meaning_th": "ศาสตราจารย์"
   },
   {
     "character": "她",
     "pinyin": "tā",
     "partOfSpeech": "代",
     "chapter": 2,
-    "meaning_th": ""
+    "meaning_th": "เธอ"
   },
   {
     "character": "姐姐",
     "pinyin": "jiějie",
     "partOfSpeech": "名",
     "chapter": 15,
-    "meaning_th": ""
+    "meaning_th": "พี่สาว"
   },
   {
     "character": "介绍",
@@ -732,14 +732,14 @@
     "pinyin": "jīn",
     "partOfSpeech": "量",
     "chapter": 8,
-    "meaning_th": ""
+    "meaning_th": "จิ้น"
   },
   {
     "character": "进",
     "pinyin": "jìn",
     "partOfSpeech": "动",
     "chapter": 5,
-    "meaning_th": ""
+    "meaning_th": "เข้า"
   },
   {
     "character": "九",
@@ -753,105 +753,105 @@
     "pinyin": "jiǔ",
     "partOfSpeech": "名",
     "chapter": 7,
-    "meaning_th": ""
+    "meaning_th": "เหล้า"
   },
   {
     "character": "旧",
     "pinyin": "jiù",
     "partOfSpeech": "形",
     "chapter": 13,
-    "meaning_th": ""
+    "meaning_th": "เก่า"
   },
   {
     "character": "橘子",
     "pinyin": "júzi",
     "partOfSpeech": "名",
     "chapter": 8,
-    "meaning_th": ""
+    "meaning_th": "ส้ม"
   },
   {
     "character": "觉得",
     "pinyin": "juéde",
     "partOfSpeech": "动",
     "chapter": 12,
-    "meaning_th": ""
+    "meaning_th": "รู้สึกว่า"
   },
   {
     "character": "咖啡",
     "pinyin": "kāfēi",
     "partOfSpeech": "名",
     "chapter": 14,
-    "meaning_th": ""
+    "meaning_th": "กาแฟ"
   },
   {
     "character": "开",
     "pinyin": "kāi",
     "partOfSpeech": "动",
     "chapter": 14,
-    "meaning_th": ""
+    "meaning_th": "เปิด"
   },
   {
     "character": "开学",
     "pinyin": "kāi xué",
     "partOfSpeech": "",
     "chapter": 14,
-    "meaning_th": ""
+    "meaning_th": "เปิดเทอม"
   },
   {
     "character": "看",
     "pinyin": "kàn",
     "partOfSpeech": "动",
     "chapter": 15,
-    "meaning_th": ""
+    "meaning_th": "ดู"
   },
   {
     "character": "客气",
     "pinyin": "kèqi",
     "partOfSpeech": "形",
     "chapter": 5,
-    "meaning_th": ""
+    "meaning_th": "เกรงใจ"
   },
   {
     "character": "口",
     "pinyin": "kǒu",
     "partOfSpeech": "名、量",
     "chapter": 1,
-    "meaning_th": ""
+    "meaning_th": "ปาก"
   },
   {
     "character": "块（元）",
     "pinyin": "kuài (yuán)",
     "partOfSpeech": "量",
     "chapter": 8,
-    "meaning_th": ""
+    "meaning_th": "หยวน"
   },
   {
     "character": "来",
     "pinyin": "lái",
     "partOfSpeech": "动",
     "chapter": 14,
-    "meaning_th": ""
+    "meaning_th": "มา"
   },
   {
     "character": "蓝",
     "pinyin": "lán",
     "partOfSpeech": "形",
     "chapter": 14,
-    "meaning_th": ""
+    "meaning_th": "สีน้ำเงิน"
   },
   {
     "character": "老师",
     "pinyin": "lǎoshī",
     "partOfSpeech": "名",
     "chapter": 5,
-    "meaning_th": ""
+    "meaning_th": "ครู"
   },
   {
     "character": "里",
     "pinyin": "lǐ",
     "partOfSpeech": "名",
     "chapter": 13,
-    "meaning_th": ""
+    "meaning_th": "ใน"
   },
   {
     "character": "俩",
@@ -872,7 +872,7 @@
     "pinyin": "liàng",
     "partOfSpeech": "量",
     "chapter": 14,
-    "meaning_th": ""
+    "meaning_th": "คัน"
   },
   {
     "character": "了",
@@ -886,21 +886,21 @@
     "pinyin": "líng",
     "partOfSpeech": "数",
     "chapter": 10,
-    "meaning_th": ""
+    "meaning_th": "ศูนย์"
   },
   {
     "character": "留学",
     "pinyin": "liúxué",
     "partOfSpeech": "动",
     "chapter": 11,
-    "meaning_th": ""
+    "meaning_th": "เรียนต่อต่างประเทศ"
   },
   {
     "character": "留学生",
     "pinyin": "liúxuéshēng",
     "partOfSpeech": "名",
     "chapter": 11,
-    "meaning_th": ""
+    "meaning_th": "นักเรียนต่างชาติ"
   },
   {
     "character": "六",
@@ -914,42 +914,42 @@
     "pinyin": "lóu",
     "partOfSpeech": "名",
     "chapter": 10,
-    "meaning_th": ""
+    "meaning_th": "ตึก"
   },
   {
     "character": "律师",
     "pinyin": "lǜshī",
     "partOfSpeech": "名",
     "chapter": 15,
-    "meaning_th": ""
+    "meaning_th": "ทนายความ"
   },
   {
     "character": "妈妈",
     "pinyin": "māma",
     "partOfSpeech": "名",
     "chapter": 2,
-    "meaning_th": ""
+    "meaning_th": "แม่"
   },
   {
     "character": "马",
     "pinyin": "mǎ",
     "partOfSpeech": "名",
     "chapter": 1,
-    "meaning_th": ""
+    "meaning_th": "ม้า"
   },
   {
     "character": "马马虎虎",
     "pinyin": "mǎmahūhū",
     "partOfSpeech": "形",
     "chapter": 14,
-    "meaning_th": ""
+    "meaning_th": "พอใช้"
   },
   {
     "character": "吗",
     "pinyin": "ma",
     "partOfSpeech": "助",
     "chapter": 2,
-    "meaning_th": ""
+    "meaning_th": "หรือไม่"
   },
   {
     "character": "买",
@@ -963,175 +963,175 @@
     "pinyin": "mài",
     "partOfSpeech": "动",
     "chapter": 8,
-    "meaning_th": ""
+    "meaning_th": "ขาย"
   },
   {
     "character": "馒头",
     "pinyin": "mántou",
     "partOfSpeech": "名",
     "chapter": 7,
-    "meaning_th": ""
+    "meaning_th": "หมวนโถว"
   },
   {
     "character": "忙",
     "pinyin": "máng",
     "partOfSpeech": "形",
     "chapter": 2,
-    "meaning_th": ""
+    "meaning_th": "ยุ่ง"
   },
   {
     "character": "没（有）",
     "pinyin": "méi（yǒu）",
     "partOfSpeech": "动、副",
     "chapter": 13,
-    "meaning_th": ""
+    "meaning_th": "ไม่มี"
   },
   {
     "character": "没关系",
     "pinyin": "méi guānxi",
     "partOfSpeech": "",
     "chapter": 4,
-    "meaning_th": ""
+    "meaning_th": "ไม่เป็นไร"
   },
   {
     "character": "没什么",
     "pinyin": "méi shénme",
     "partOfSpeech": "",
     "chapter": 11,
-    "meaning_th": ""
+    "meaning_th": "ไม่มีอะไร"
   },
   {
     "character": "美国",
     "pinyin": "Měiguó",
     "partOfSpeech": "名",
     "chapter": 6,
-    "meaning_th": ""
+    "meaning_th": "สหรัฐอเมริกา"
   },
   {
     "character": "美元",
     "pinyin": "měiyuán",
     "partOfSpeech": "名",
     "chapter": 9,
-    "meaning_th": ""
+    "meaning_th": "ดอลลาร์สหรัฐ"
   },
   {
     "character": "妹妹",
     "pinyin": "mèimei",
     "partOfSpeech": "名",
     "chapter": 2,
-    "meaning_th": ""
+    "meaning_th": "น้องสาว"
   },
   {
     "character": "门",
     "pinyin": "mén",
     "partOfSpeech": "名",
     "chapter": 10,
-    "meaning_th": ""
+    "meaning_th": "ประตู"
   },
   {
     "character": "米",
     "pinyin": "mǐ",
     "partOfSpeech": "名",
     "chapter": 7,
-    "meaning_th": ""
+    "meaning_th": "ข้าว"
   },
   {
     "character": "米饭",
     "pinyin": "mǐfàn",
     "partOfSpeech": "名",
     "chapter": 7,
-    "meaning_th": ""
+    "meaning_th": "ข้าวสวย"
   },
   {
     "character": "秘书",
     "pinyin": "mìshū",
     "partOfSpeech": "名",
     "chapter": 11,
-    "meaning_th": ""
+    "meaning_th": "เลขานุการ"
   },
   {
     "character": "面条儿",
     "pinyin": "miàntiáor",
     "partOfSpeech": "名",
     "chapter": 7,
-    "meaning_th": ""
+    "meaning_th": "เส้นก๋วยเตี๋ยว"
   },
   {
     "character": "名字",
     "pinyin": "míngzi",
     "partOfSpeech": "名",
     "chapter": 6,
-    "meaning_th": ""
+    "meaning_th": "ชื่อ"
   },
   {
     "character": "明天",
     "pinyin": "míngtiān",
     "partOfSpeech": "名",
     "chapter": 3,
-    "meaning_th": ""
+    "meaning_th": "พรุ่งนี้"
   },
   {
     "character": "摩托车",
     "pinyin": "mótuōchē",
     "partOfSpeech": "名",
     "chapter": 14,
-    "meaning_th": ""
+    "meaning_th": "รถจักรยานยนต์"
   },
   {
     "character": "哪",
     "pinyin": "nǎ",
     "partOfSpeech": "代",
     "chapter": 6,
-    "meaning_th": ""
+    "meaning_th": "ไหน"
   },
   {
     "character": "哪儿",
     "pinyin": "nǎr",
     "partOfSpeech": "代",
     "chapter": 4,
-    "meaning_th": ""
+    "meaning_th": "ที่ไหน"
   },
   {
     "character": "那",
     "pinyin": "nà",
     "partOfSpeech": "代",
     "chapter": 6,
-    "meaning_th": ""
+    "meaning_th": "นั้น"
   },
   {
     "character": "那儿",
     "pinyin": "nàr",
     "partOfSpeech": "代",
     "chapter": 4,
-    "meaning_th": ""
+    "meaning_th": "ที่นั่น"
   },
   {
     "character": "那些",
     "pinyin": "nàxiē",
     "partOfSpeech": "代",
     "chapter": 7,
-    "meaning_th": ""
+    "meaning_th": "พวกนั้น"
   },
   {
     "character": "男",
     "pinyin": "nán",
     "partOfSpeech": "形",
     "chapter": 2,
-    "meaning_th": ""
+    "meaning_th": "ชาย"
   },
   {
     "character": "难",
     "pinyin": "nán",
     "partOfSpeech": "形",
     "chapter": 2,
-    "meaning_th": ""
+    "meaning_th": "ยาก"
   },
   {
     "character": "呢",
     "pinyin": "ne",
     "partOfSpeech": "助",
     "chapter": 10,
-    "meaning_th": ""
+    "meaning_th": "นะ"
   },
   {
     "character": "你",
@@ -1159,49 +1159,49 @@
     "pinyin": "nín",
     "partOfSpeech": "代",
     "chapter": 5,
-    "meaning_th": ""
+    "meaning_th": "ท่าน"
   },
   {
     "character": "女",
     "pinyin": "nǚ",
     "partOfSpeech": "形",
     "chapter": 1,
-    "meaning_th": ""
+    "meaning_th": "หญิง"
   },
   {
     "character": "欧元",
     "pinyin": "ōuyuán",
     "partOfSpeech": "名",
     "chapter": 9,
-    "meaning_th": ""
+    "meaning_th": "ยูโร"
   },
   {
     "character": "朋友",
     "pinyin": "péngyou",
     "partOfSpeech": "名",
     "chapter": 6,
-    "meaning_th": ""
+    "meaning_th": "เพื่อน"
   },
   {
     "character": "啤酒",
     "pinyin": "píjiǔ",
     "partOfSpeech": "名",
     "chapter": 7,
-    "meaning_th": ""
+    "meaning_th": "เบียร์"
   },
   {
     "character": "苹果",
     "pinyin": "píngguǒ",
     "partOfSpeech": "名",
     "chapter": 8,
-    "meaning_th": ""
+    "meaning_th": "แอปเปิ้ล"
   },
   {
     "character": "瓶",
     "pinyin": "píng",
     "partOfSpeech": "名、量",
     "chapter": 13,
-    "meaning_th": ""
+    "meaning_th": "ขวด"
   },
   {
     "character": "七",
@@ -1215,56 +1215,56 @@
     "pinyin": "qìchē",
     "partOfSpeech": "名",
     "chapter": 14,
-    "meaning_th": ""
+    "meaning_th": "รถยนต์"
   },
   {
     "character": "千",
     "pinyin": "qiān",
     "partOfSpeech": "数",
     "chapter": 9,
-    "meaning_th": ""
+    "meaning_th": "พัน"
   },
   {
     "character": "钱",
     "pinyin": "qián",
     "partOfSpeech": "名",
     "chapter": 3,
-    "meaning_th": ""
+    "meaning_th": "เงิน"
   },
   {
     "character": "轻",
     "pinyin": "qīng",
     "partOfSpeech": "形",
     "chapter": 13,
-    "meaning_th": ""
+    "meaning_th": "เบา"
   },
   {
     "character": "请",
     "pinyin": "qǐng",
     "partOfSpeech": "动",
     "chapter": 5,
-    "meaning_th": ""
+    "meaning_th": "เชิญ"
   },
   {
     "character": "请问",
     "pinyin": "qǐngwèn",
     "partOfSpeech": "动",
     "chapter": 6,
-    "meaning_th": ""
+    "meaning_th": "ขอถาม"
   },
   {
     "character": "取",
     "pinyin": "qǔ",
     "partOfSpeech": "动",
     "chapter": 3,
-    "meaning_th": ""
+    "meaning_th": "รับ"
   },
   {
     "character": "去",
     "pinyin": "qù",
     "partOfSpeech": "动",
     "chapter": 3,
-    "meaning_th": ""
+    "meaning_th": "ไป"
   },
   {
     "character": "全",
@@ -1292,56 +1292,56 @@
     "pinyin": "rénmínbì",
     "partOfSpeech": "名",
     "chapter": 9,
-    "meaning_th": "เงินหยวน"
+    "meaning_th": "หยวน"
   },
   {
     "character": "日",
     "pinyin": "rì",
     "partOfSpeech": "名",
     "chapter": 5,
-    "meaning_th": ""
+    "meaning_th": "วัน"
   },
   {
     "character": "日本(国)",
     "pinyin": "Rìběn (guó)",
     "partOfSpeech": "名",
     "chapter": 6,
-    "meaning_th": ""
+    "meaning_th": "ญี่ปุ่น"
   },
   {
     "character": "日文",
     "pinyin": "Rìwén",
     "partOfSpeech": "名",
     "chapter": 6,
-    "meaning_th": ""
+    "meaning_th": "ภาษาญี่ปุ่น (ตัวเขียน)"
   },
   {
     "character": "日用品",
     "pinyin": "rìyòngpǐn",
     "partOfSpeech": "名",
     "chapter": 13,
-    "meaning_th": ""
+    "meaning_th": "ของใช้"
   },
   {
     "character": "日语",
     "pinyin": "Rìyǔ",
     "partOfSpeech": "名",
     "chapter": 3,
-    "meaning_th": ""
+    "meaning_th": "ภาษาญี่ปุ่น"
   },
   {
     "character": "日元",
     "pinyin": "rìyuán",
     "partOfSpeech": "名",
     "chapter": 9,
-    "meaning_th": ""
+    "meaning_th": "เยน"
   },
   {
     "character": "容易",
     "pinyin": "róngyì",
     "partOfSpeech": "形",
     "chapter": 12,
-    "meaning_th": ""
+    "meaning_th": "ง่าย"
   },
   {
     "character": "三",
@@ -1355,7 +1355,7 @@
     "pinyin": "shāngdiàn",
     "partOfSpeech": "名",
     "chapter": 15,
-    "meaning_th": ""
+    "meaning_th": "ร้านค้า"
   },
   {
     "character": "上午",
@@ -1369,14 +1369,14 @@
     "pinyin": "shǎo",
     "partOfSpeech": "形",
     "chapter": 8,
-    "meaning_th": ""
+    "meaning_th": "น้อย"
   },
   {
     "character": "身体",
     "pinyin": "shēntǐ",
     "partOfSpeech": "名",
     "chapter": 5,
-    "meaning_th": ""
+    "meaning_th": "ร่างกาย"
   },
   {
     "character": "十",
@@ -1397,28 +1397,28 @@
     "pinyin": "shítáng",
     "partOfSpeech": "名",
     "chapter": 7,
-    "meaning_th": ""
+    "meaning_th": "โรงอาหาร"
   },
   {
     "character": "是",
     "pinyin": "shì",
     "partOfSpeech": "动",
     "chapter": 5,
-    "meaning_th": ""
+    "meaning_th": "เป็น"
   },
   {
     "character": "手",
     "pinyin": "shǒu",
     "partOfSpeech": "名",
     "chapter": 10,
-    "meaning_th": ""
+    "meaning_th": "มือ"
   },
   {
     "character": "手机",
     "pinyin": "shǒujī",
     "partOfSpeech": "名",
     "chapter": 10,
-    "meaning_th": ""
+    "meaning_th": "โทรศัพท์มือถือ"
   },
   {
     "character": "书",
@@ -1432,42 +1432,42 @@
     "pinyin": "shǔ",
     "partOfSpeech": "动",
     "chapter": 9,
-    "meaning_th": ""
+    "meaning_th": "นับ"
   },
   {
     "character": "谁",
     "pinyin": "shéi / shuí",
     "partOfSpeech": "代",
     "chapter": 6,
-    "meaning_th": ""
+    "meaning_th": "ใคร"
   },
   {
     "character": "水",
     "pinyin": "shuǐ",
     "partOfSpeech": "名",
     "chapter": 13,
-    "meaning_th": ""
+    "meaning_th": "น้ำ"
   },
   {
     "character": "水果",
     "pinyin": "shuǐguǒ",
     "partOfSpeech": "名",
     "chapter": 8,
-    "meaning_th": ""
+    "meaning_th": "ผลไม้"
   },
   {
     "character": "说",
     "pinyin": "shuō",
     "partOfSpeech": "动",
     "chapter": 12,
-    "meaning_th": ""
+    "meaning_th": "พูด"
   },
   {
     "character": "四",
     "pinyin": "sì",
     "partOfSpeech": "数",
     "chapter": 4,
-    "meaning_th": ""
+    "meaning_th": "สี่"
   },
   {
     "character": "他",
@@ -1488,70 +1488,70 @@
     "pinyin": "tài",
     "partOfSpeech": "副",
     "chapter": 2,
-    "meaning_th": ""
+    "meaning_th": "มากเกินไป"
   },
   {
     "character": "汤",
     "pinyin": "tāng",
     "partOfSpeech": "名",
     "chapter": 7,
-    "meaning_th": ""
+    "meaning_th": "ซุป"
   },
   {
     "character": "天",
     "pinyin": "tiān",
     "partOfSpeech": "名",
     "chapter": 4,
-    "meaning_th": ""
+    "meaning_th": "วัน"
   },
   {
     "character": "听",
     "pinyin": "tīng",
     "partOfSpeech": "动",
     "chapter": 12,
-    "meaning_th": ""
+    "meaning_th": "ฟัง"
   },
   {
     "character": "同屋",
     "pinyin": "tóngwū",
     "partOfSpeech": "名",
     "chapter": 12,
-    "meaning_th": ""
+    "meaning_th": "เพื่อนร่วมห้อง"
   },
   {
     "character": "同学",
     "pinyin": "tóngxué",
     "partOfSpeech": "名",
     "chapter": 12,
-    "meaning_th": ""
+    "meaning_th": "เพื่อนร่วมเรียน"
   },
   {
     "character": "图书馆",
     "pinyin": "túshūguǎn",
     "partOfSpeech": "名",
     "chapter": 9,
-    "meaning_th": ""
+    "meaning_th": "ห้องสมุด"
   },
   {
     "character": "外国",
     "pinyin": "wàiguó",
     "partOfSpeech": "名",
     "chapter": 15,
-    "meaning_th": ""
+    "meaning_th": "ต่างประเทศ"
   },
   {
     "character": "外贸",
     "pinyin": "wàimào",
     "partOfSpeech": "名",
     "chapter": 15,
-    "meaning_th": ""
+    "meaning_th": "การค้าต่างประเทศ"
   },
   {
     "character": "碗",
     "pinyin": "wǎn",
     "partOfSpeech": "名",
     "chapter": 7,
-    "meaning_th": ""
+    "meaning_th": "ชาม"
   },
   {
     "character": "万",
@@ -1572,28 +1572,28 @@
     "pinyin": "wén",
     "partOfSpeech": "名",
     "chapter": 6,
-    "meaning_th": ""
+    "meaning_th": "ตัวหนังสือ"
   },
   {
     "character": "问",
     "pinyin": "wèn",
     "partOfSpeech": "动",
     "chapter": 6,
-    "meaning_th": ""
+    "meaning_th": "ถาม"
   },
   {
     "character": "我",
     "pinyin": "wǒ",
     "partOfSpeech": "代",
     "chapter": 4,
-    "meaning_th": ""
+    "meaning_th": "ฉัน"
   },
   {
     "character": "我们",
     "pinyin": "wǒmen",
     "partOfSpeech": "代",
     "chapter": 11,
-    "meaning_th": ""
+    "meaning_th": "พวกเรา"
   },
   {
     "character": "五",
@@ -1607,21 +1607,21 @@
     "pinyin": "Xībānyáwén",
     "partOfSpeech": "名",
     "chapter": 6,
-    "meaning_th": ""
+    "meaning_th": "ภาษาสเปน (ตัวเขียน)"
   },
   {
     "character": "西班牙语",
     "pinyin": "Xībānyáyǔ",
     "partOfSpeech": "名",
     "chapter": 3,
-    "meaning_th": ""
+    "meaning_th": "ภาษาสเปน"
   },
   {
     "character": "西药",
     "pinyin": "xīyào",
     "partOfSpeech": "名",
     "chapter": 13,
-    "meaning_th": ""
+    "meaning_th": "ยาตะวันตก"
   },
   {
     "character": "下午",
@@ -1649,42 +1649,42 @@
     "pinyin": "xiāngshuǐ",
     "partOfSpeech": "名",
     "chapter": 13,
-    "meaning_th": ""
+    "meaning_th": "น้ำหอม"
   },
   {
     "character": "箱子",
     "pinyin": "xiāngzi",
     "partOfSpeech": "名",
     "chapter": 13,
-    "meaning_th": ""
+    "meaning_th": "กระเป๋า"
   },
   {
     "character": "小",
     "pinyin": "xiǎo",
     "partOfSpeech": "形",
     "chapter": 15,
-    "meaning_th": ""
+    "meaning_th": "เล็ก"
   },
   {
     "character": "小姐",
     "pinyin": "xiǎojiě",
     "partOfSpeech": "名",
     "chapter": 9,
-    "meaning_th": ""
+    "meaning_th": "นางสาว"
   },
   {
     "character": "校长",
     "pinyin": "xiàozhǎng",
     "partOfSpeech": "名",
     "chapter": 11,
-    "meaning_th": ""
+    "meaning_th": "ครูใหญ่"
   },
   {
     "character": "些",
     "pinyin": "xiē",
     "partOfSpeech": "量",
     "chapter": 7,
-    "meaning_th": "บ้าง"
+    "meaning_th": "บาง"
   },
   {
     "character": "写",
@@ -1698,14 +1698,14 @@
     "pinyin": "xièxie",
     "partOfSpeech": "动",
     "chapter": 5,
-    "meaning_th": ""
+    "meaning_th": "ขอบคุณ"
   },
   {
     "character": "新",
     "pinyin": "xīn",
     "partOfSpeech": "形",
     "chapter": 12,
-    "meaning_th": ""
+    "meaning_th": "ใหม่"
   },
   {
     "character": "信",
@@ -1719,119 +1719,119 @@
     "pinyin": "xīngqī",
     "partOfSpeech": "名",
     "chapter": 4,
-    "meaning_th": ""
+    "meaning_th": "สัปดาห์"
   },
   {
     "character": "星期二",
     "pinyin": "xīngqī'èr",
     "partOfSpeech": "名",
     "chapter": 4,
-    "meaning_th": ""
+    "meaning_th": "วันอังคาร"
   },
   {
     "character": "星期六",
     "pinyin": "xīngqīliù",
     "partOfSpeech": "名",
     "chapter": 4,
-    "meaning_th": ""
+    "meaning_th": "วันเสาร์"
   },
   {
     "character": "星期三",
     "pinyin": "xīngqīsān",
     "partOfSpeech": "名",
     "chapter": 4,
-    "meaning_th": ""
+    "meaning_th": "วันพุธ"
   },
   {
     "character": "星期四",
     "pinyin": "xīngqīsì",
     "partOfSpeech": "名",
     "chapter": 4,
-    "meaning_th": ""
+    "meaning_th": "วันพฤหัสบดี"
   },
   {
     "character": "星期天",
     "pinyin": "xīngqītiān",
     "partOfSpeech": "名",
     "chapter": 4,
-    "meaning_th": ""
+    "meaning_th": "วันอาทิตย์"
   },
   {
     "character": "星期五",
     "pinyin": "xīngqīwǔ",
     "partOfSpeech": "名",
     "chapter": 4,
-    "meaning_th": ""
+    "meaning_th": "วันศุกร์"
   },
   {
     "character": "星期一",
     "pinyin": "xīngqīyī",
     "partOfSpeech": "名",
     "chapter": 4,
-    "meaning_th": ""
+    "meaning_th": "วันจันทร์"
   },
   {
     "character": "姓",
     "pinyin": "xìng",
     "partOfSpeech": "动、名",
     "chapter": 6,
-    "meaning_th": ""
+    "meaning_th": "นามสกุล"
   },
   {
     "character": "学",
     "pinyin": "xué",
     "partOfSpeech": "动",
     "chapter": 3,
-    "meaning_th": ""
+    "meaning_th": "เรียน"
   },
   {
     "character": "学生",
     "pinyin": "xuésheng",
     "partOfSpeech": "名",
     "chapter": 11,
-    "meaning_th": ""
+    "meaning_th": "นักเรียน"
   },
   {
     "character": "学习",
     "pinyin": "xuéxí",
     "partOfSpeech": "动",
     "chapter": 6,
-    "meaning_th": ""
+    "meaning_th": "เรียน"
   },
   {
     "character": "学校",
     "pinyin": "xuéxiào",
     "partOfSpeech": "名",
     "chapter": 4,
-    "meaning_th": ""
+    "meaning_th": "โรงเรียน"
   },
   {
     "character": "颜色",
     "pinyin": "yánsè",
     "partOfSpeech": "名",
     "chapter": 14,
-    "meaning_th": ""
+    "meaning_th": "สี"
   },
   {
     "character": "药",
     "pinyin": "yào",
     "partOfSpeech": "名",
     "chapter": 13,
-    "meaning_th": ""
+    "meaning_th": "ยา"
   },
   {
     "character": "要",
     "pinyin": "yào",
     "partOfSpeech": "动",
     "chapter": 7,
-    "meaning_th": ""
+    "meaning_th": "ต้องการ"
   },
   {
     "character": "要",
     "pinyin": "yào",
     "partOfSpeech": "能愿",
     "chapter": 9,
-    "meaning_th": ""
+    "meaning_th": "ต้องการ"
   },
   {
     "character": "也",
@@ -1852,7 +1852,7 @@
     "pinyin": "yígòng",
     "partOfSpeech": "副",
     "chapter": 8,
-    "meaning_th": "รวมกัน"
+    "meaning_th": "รวมทั้งหมด"
   },
   {
     "character": "一会儿",
@@ -1866,14 +1866,14 @@
     "pinyin": "yíxiàr",
     "partOfSpeech": "数量",
     "chapter": 11,
-    "meaning_th": "สักหน่อย"
+    "meaning_th": "หน่อย"
   },
   {
     "character": "一些",
     "pinyin": "yìxiē",
     "partOfSpeech": "数量",
     "chapter": 7,
-    "meaning_th": "บางอย่าง"
+    "meaning_th": "บางส่วน"
   },
   {
     "character": "医院",
@@ -1887,105 +1887,105 @@
     "pinyin": "yǐzi",
     "partOfSpeech": "名",
     "chapter": 13,
-    "meaning_th": ""
+    "meaning_th": "เก้าอี้"
   },
   {
     "character": "银行",
     "pinyin": "yínháng",
     "partOfSpeech": "名",
     "chapter": 3,
-    "meaning_th": ""
+    "meaning_th": "ธนาคาร"
   },
   {
     "character": "英国",
     "pinyin": "Yīngguó",
     "partOfSpeech": "名",
     "chapter": 6,
-    "meaning_th": ""
+    "meaning_th": "อังกฤษ"
   },
   {
     "character": "英文",
     "pinyin": "Yīngwén",
     "partOfSpeech": "名",
     "chapter": 6,
-    "meaning_th": ""
+    "meaning_th": "ภาษาอังกฤษ (ตัวเขียน)"
   },
   {
     "character": "英语",
     "pinyin": "Yīngyǔ",
     "partOfSpeech": "名",
     "chapter": 3,
-    "meaning_th": ""
+    "meaning_th": "ภาษาอังกฤษ"
   },
   {
     "character": "营业员",
     "pinyin": "yíngyèyuán",
     "partOfSpeech": "名",
     "chapter": 9,
-    "meaning_th": ""
+    "meaning_th": "พนักงานขาย"
   },
   {
     "character": "邮包",
     "pinyin": "yóubāo",
     "partOfSpeech": "名",
     "chapter": 6,
-    "meaning_th": ""
+    "meaning_th": "พัสดุ"
   },
   {
     "character": "邮局",
     "pinyin": "yóujú",
     "partOfSpeech": "名",
     "chapter": 3,
-    "meaning_th": ""
+    "meaning_th": "ที่ทำการไปรษณีย์"
   },
   {
     "character": "有",
     "pinyin": "yǒu",
     "partOfSpeech": "动",
     "chapter": 13,
-    "meaning_th": ""
+    "meaning_th": "มี"
   },
   {
     "character": "有（一）点儿",
     "pinyin": "yǒu（yì）diǎnr",
     "partOfSpeech": "",
     "chapter": 14,
-    "meaning_th": ""
+    "meaning_th": "ค่อนข้าง"
   },
   {
     "character": "雨",
     "pinyin": "yǔ",
     "partOfSpeech": "名",
     "chapter": 13,
-    "meaning_th": ""
+    "meaning_th": "ฝน"
   },
   {
     "character": "雨伞",
     "pinyin": "yǔsǎn",
     "partOfSpeech": "名",
     "chapter": 13,
-    "meaning_th": ""
+    "meaning_th": "ร่ม"
   },
   {
     "character": "语法",
     "pinyin": "yǔfǎ",
     "partOfSpeech": "名",
     "chapter": 12,
-    "meaning_th": ""
+    "meaning_th": "ไวยากรณ์"
   },
   {
     "character": "语言",
     "pinyin": "yǔyán",
     "partOfSpeech": "名",
     "chapter": 12,
-    "meaning_th": ""
+    "meaning_th": "ภาษา"
   },
   {
     "character": "杂志",
     "pinyin": "zázhì",
     "partOfSpeech": "名",
     "chapter": 6,
-    "meaning_th": ""
+    "meaning_th": "นิตยสาร"
   },
   {
     "character": "再见",
@@ -1999,119 +1999,119 @@
     "pinyin": "zài",
     "partOfSpeech": "动、介",
     "chapter": 10,
-    "meaning_th": ""
+    "meaning_th": "อยู่"
   },
   {
     "character": "怎么",
     "pinyin": "zěnme",
     "partOfSpeech": "代",
     "chapter": 8,
-    "meaning_th": ""
+    "meaning_th": "อย่างไร"
   },
   {
     "character": "怎么样",
     "pinyin": "zěnmeyàng",
     "partOfSpeech": "代",
     "chapter": 12,
-    "meaning_th": ""
+    "meaning_th": "เป็นยังไง"
   },
   {
     "character": "张",
     "pinyin": "zhāng",
     "partOfSpeech": "量",
     "chapter": 13,
-    "meaning_th": ""
+    "meaning_th": "แผ่น"
   },
   {
     "character": "找",
     "pinyin": "zhǎo",
     "partOfSpeech": "动",
     "chapter": 8,
-    "meaning_th": ""
+    "meaning_th": "หา"
   },
   {
     "character": "找",
     "pinyin": "zhǎo",
     "partOfSpeech": "动",
     "chapter": 10,
-    "meaning_th": ""
+    "meaning_th": "หา"
   },
   {
     "character": "照片",
     "pinyin": "zhàopiàn",
     "partOfSpeech": "名",
     "chapter": 15,
-    "meaning_th": ""
+    "meaning_th": "รูปถ่าย"
   },
   {
     "character": "这",
     "pinyin": "zhè",
     "partOfSpeech": "代",
     "chapter": 5,
-    "meaning_th": ""
+    "meaning_th": "นี้"
   },
   {
     "character": "这儿",
     "pinyin": "zhèr",
     "partOfSpeech": "代",
     "chapter": 13,
-    "meaning_th": ""
+    "meaning_th": "ที่นี่"
   },
   {
     "character": "这些",
     "pinyin": "zhèxiē",
     "partOfSpeech": "代",
     "chapter": 7,
-    "meaning_th": ""
+    "meaning_th": "พวกนี้"
   },
   {
     "character": "支",
     "pinyin": "zhī",
     "partOfSpeech": "量",
     "chapter": 13,
-    "meaning_th": ""
+    "meaning_th": "ด้าม"
   },
   {
     "character": "知道",
     "pinyin": "zhīdào",
     "partOfSpeech": "动",
     "chapter": 10,
-    "meaning_th": ""
+    "meaning_th": "รู้"
   },
   {
     "character": "职员",
     "pinyin": "zhíyuán",
     "partOfSpeech": "名",
     "chapter": 10,
-    "meaning_th": ""
+    "meaning_th": "พนักงาน"
   },
   {
     "character": "只",
     "pinyin": "zhǐ",
     "partOfSpeech": "副",
     "chapter": 15,
-    "meaning_th": ""
+    "meaning_th": "เท่านั้น"
   },
   {
     "character": "中国",
     "pinyin": "Zhōngguó",
     "partOfSpeech": "名",
     "chapter": 6,
-    "meaning_th": "ประเทศจีน"
+    "meaning_th": "จีน"
   },
   {
     "character": "中文",
     "pinyin": "Zhōngwén",
     "partOfSpeech": "名",
     "chapter": 6,
-    "meaning_th": "ภาษาจีน"
+    "meaning_th": "ภาษาจีน (ตัวเขียน)"
   },
   {
     "character": "中午",
     "pinyin": "zhōngwǔ",
     "partOfSpeech": "名",
     "chapter": 7,
-    "meaning_th": "เที่ยงวัน"
+    "meaning_th": "เที่ยง"
   },
   {
     "character": "中药",
@@ -2125,42 +2125,42 @@
     "pinyin": "zhòng",
     "partOfSpeech": "形",
     "chapter": 13,
-    "meaning_th": ""
+    "meaning_th": "หนัก"
   },
   {
     "character": "住",
     "pinyin": "zhù",
     "partOfSpeech": "动",
     "chapter": 10,
-    "meaning_th": "อยู่"
+    "meaning_th": "อาศัย"
   },
   {
     "character": "自行车",
     "pinyin": "zìxíngchē",
     "partOfSpeech": "名",
     "chapter": 14,
-    "meaning_th": ""
+    "meaning_th": "จักรยาน"
   },
   {
     "character": "最近",
     "pinyin": "zuìjìn",
     "partOfSpeech": "名",
     "chapter": 14,
-    "meaning_th": ""
+    "meaning_th": "เร็วๆ นี้"
   },
   {
     "character": "昨天",
     "pinyin": "zuótiān",
     "partOfSpeech": "名",
     "chapter": 4,
-    "meaning_th": ""
+    "meaning_th": "เมื่อวาน"
   },
   {
     "character": "坐",
     "pinyin": "zuò",
     "partOfSpeech": "动",
     "chapter": 5,
-    "meaning_th": ""
+    "meaning_th": "นั่ง"
   },
   {
     "character": "做",
@@ -2174,7 +2174,7 @@
     "pinyin": "Àidéhuá",
     "partOfSpeech": "",
     "chapter": 14,
-    "meaning_th": ""
+    "meaning_th": "เอ็ดเวิร์ด"
   },
   {
     "character": "北京",
@@ -2195,76 +2195,76 @@
     "pinyin": "Guān",
     "partOfSpeech": "",
     "chapter": 14,
-    "meaning_th": "ปิด"
+    "meaning_th": "กวน"
   },
   {
     "character": "李昌浩",
     "pinyin": "Lǐ chānghào",
     "partOfSpeech": "",
     "chapter": 10,
-    "meaning_th": ""
+    "meaning_th": "หลี่ ชางฮ่าว"
   },
   {
     "character": "林",
     "pinyin": "Lín",
     "partOfSpeech": "",
     "chapter": 12,
-    "meaning_th": ""
+    "meaning_th": "หลิน"
   },
   {
     "character": "罗兰",
     "pinyin": "Luólán",
     "partOfSpeech": "",
     "chapter": 11,
-    "meaning_th": ""
+    "meaning_th": "ลั่วหลาน"
   },
   {
     "character": "马",
     "pinyin": "Mǎ",
     "partOfSpeech": "",
     "chapter": 11,
-    "meaning_th": ""
+    "meaning_th": "ม้า"
   },
   {
     "character": "玛丽",
     "pinyin": "Mǎlì",
     "partOfSpeech": "",
     "chapter": 7,
-    "meaning_th": ""
+    "meaning_th": "แมรี่"
   },
   {
     "character": "麦克",
     "pinyin": "Màikè",
     "partOfSpeech": "",
     "chapter": 6,
-    "meaning_th": ""
+    "meaning_th": "ไมค์"
   },
   {
     "character": "天安门",
     "pinyin": "Tiān'ānmén",
     "partOfSpeech": "",
     "chapter": 4,
-    "meaning_th": ""
+    "meaning_th": "เทียนอันเหมิน"
   },
   {
     "character": "田芳",
     "pinyin": "Tián Fāng",
     "partOfSpeech": "",
     "chapter": 11,
-    "meaning_th": ""
+    "meaning_th": "เถียน ฟาง"
   },
   {
     "character": "王",
     "pinyin": "Wáng",
     "partOfSpeech": "",
     "chapter": 5,
-    "meaning_th": ""
+    "meaning_th": "หวัง"
   },
   {
     "character": "张东",
     "pinyin": "Zhāng Dōng",
     "partOfSpeech": "",
     "chapter": 6,
-    "meaning_th": ""
+    "meaning_th": "จาง ตง"
   }
 ]

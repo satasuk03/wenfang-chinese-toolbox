@@ -2,8 +2,7 @@
 """
 Build src/data/vocab-1a.json from vocabs/1.csv.
 
-Uses any existing Thai translations from .cache/vocab-translations.json,
-leaves meaning_th empty for entries not yet translated.
+CSV columns: character, part_of_speech, pinyin, chapter, th_translation
 
 Usage:
     python3 scripts/build-vocab.py
@@ -15,27 +14,21 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 SRC_CSV = ROOT / "vocabs" / "1.csv"
 OUT_JSON = ROOT / "src" / "data" / "vocab-1a.json"
-CACHE = ROOT / ".cache" / "vocab-translations.json"
 
 
 def main():
-    cache: dict[str, str] = {}
-    if CACHE.exists():
-        cache = json.loads(CACHE.read_text(encoding="utf-8"))
-
     with SRC_CSV.open(encoding="utf-8") as f:
         rows = [r for r in csv.DictReader(f) if r["character"].strip()]
 
     out = []
     for r in rows:
-        ch = r["character"]
         out.append(
             {
-                "character": ch,
+                "character": r["character"],
                 "pinyin": r["pinyin"],
                 "partOfSpeech": r["part_of_speech"],
                 "chapter": int(r["chapter"]) if r["chapter"].strip().isdigit() else None,
-                "meaning_th": cache.get(ch, ""),
+                "meaning_th": r.get("th_translation", "").strip(),
             }
         )
 
@@ -46,7 +39,10 @@ def main():
     )
 
     translated = sum(1 for r in out if r["meaning_th"])
-    print(f"Wrote {len(out)} entries to {OUT_JSON.relative_to(ROOT)} ({translated} translated, {len(out) - translated} pending)")
+    print(
+        f"Wrote {len(out)} entries to {OUT_JSON.relative_to(ROOT)} "
+        f"({translated} translated, {len(out) - translated} pending)"
+    )
 
 
 if __name__ == "__main__":

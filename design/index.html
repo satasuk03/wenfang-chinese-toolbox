@@ -1,0 +1,811 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>文房 — Wénfáng · Quiet tools for studying Chinese.</title>
+<meta name="description" content="A small library of focused, single-purpose tools for students of Chinese — Hanyu Jiaocheng flashcards and stroke-order playback." />
+<style>
+  :root{
+    --bg:        oklch(96.5% 0.013 80);
+    --paper:     oklch(98.5% 0.008 80);
+    --surface:   oklch(99.2% 0.005 80);
+    --fg:        oklch(18% 0.018 60);
+    --ink:       oklch(14% 0.02 60);
+    --muted:     oklch(46% 0.014 55);
+    --soft:      oklch(62% 0.012 55);
+    --border:    oklch(86% 0.014 75);
+    --rule:      oklch(78% 0.014 70);
+    --accent:    oklch(50% 0.205 30);   /* 印泥红 — seal red */
+    --accent-deep: oklch(40% 0.21 30);
+    --accent-soft: oklch(94% 0.05 30);
+
+    --font-display: 'Iowan Old Style','Charter','Source Han Serif SC','Songti SC','Times New Roman',Georgia,serif;
+    --font-body:    -apple-system,BlinkMacSystemFont,'SF Pro Text','Segoe UI','PingFang SC',system-ui,sans-serif;
+    --font-zh:      'Source Han Serif SC','Songti SC','STSong','SimSun',serif;
+    --font-mono:    'JetBrains Mono','IBM Plex Mono',ui-monospace,Menlo,monospace;
+  }
+  [class*=meta], [class*=number], [class*=count], [class*=foot], .nav, .header-meta, .principles-list .num, .footer { font-variant-numeric: tabular-nums; }
+
+  *,*::before,*::after{ box-sizing:border-box; margin:0; padding:0; }
+  html,body{ background:var(--bg); color:var(--fg); }
+  body{
+    font-family:var(--font-body);
+    font-size:17px;
+    line-height:1.55;
+    -webkit-font-smoothing:antialiased;
+    text-rendering:optimizeLegibility;
+    overflow-x:hidden;
+  }
+  img{ display:block; max-width:100%; }
+  a{ color:inherit; text-decoration:none; }
+  .container{ max-width:1280px; margin:0 auto; padding:0 40px; }
+
+  /* ─── grain on the page (very subtle paper texture) ─── */
+  body::before{
+    content:'';
+    position:fixed; inset:0;
+    pointer-events:none;
+    background-image:
+      radial-gradient(oklch(30% 0.02 60 / 0.025) 1px, transparent 1.2px);
+    background-size: 3px 3px;
+    z-index:1;
+    mix-blend-mode:multiply;
+  }
+
+  /* ─── masthead ─── */
+  .masthead{ border-bottom:1px solid var(--border); position:relative; z-index:2; background:var(--bg); }
+  .masthead-inner{
+    display:flex; justify-content:space-between; align-items:center;
+    padding:22px 0;
+  }
+  .wordmark{ display:flex; align-items:baseline; gap:14px; }
+  .wordmark-cn{
+    font-family:var(--font-zh);
+    font-size:28px;
+    color:var(--ink);
+    letter-spacing:0.04em;
+    line-height:1;
+  }
+  .wordmark-en{
+    font-family:var(--font-mono);
+    font-size:11px;
+    letter-spacing:0.22em;
+    text-transform:uppercase;
+    color:var(--muted);
+    padding-left:14px;
+    border-left:1px solid var(--border);
+  }
+  .wordmark-en em{ font-style:italic; color:var(--fg); }
+  .nav{ display:flex; gap:36px; }
+  .nav a{
+    font-family:var(--font-mono);
+    font-size:11px; letter-spacing:0.18em; text-transform:uppercase;
+    color:var(--fg);
+    transition:color .15s ease;
+    position:relative;
+  }
+  .nav a:hover{ color:var(--accent); }
+  .nav a.dot::before{
+    content:''; display:inline-block;
+    width:5px; height:5px; border-radius:50%;
+    background:var(--accent);
+    margin-right:8px; vertical-align:middle;
+    transform:translateY(-1px);
+  }
+  .header-meta{
+    border-top:1px solid var(--border);
+    border-bottom:1px solid var(--border);
+    font-family:var(--font-mono);
+    font-size:10.5px; letter-spacing:0.18em; text-transform:uppercase;
+    color:var(--muted);
+    padding:9px 0;
+  }
+  .header-meta-inner{ display:flex; justify-content:space-between; gap:24px; }
+  .header-meta .right{ display:flex; gap:0; }
+
+  /* ─── hero ─── */
+  .hero{ position:relative; padding:96px 0 120px; }
+  .hero-inner{
+    display:grid;
+    grid-template-columns: 1.15fr 1fr;
+    gap:72px;
+    align-items:end;
+  }
+  .hero-text{ padding-bottom:18px; max-width:640px; }
+  .hero-eyebrow{
+    display:flex; align-items:center; gap:14px;
+    font-family:var(--font-mono);
+    font-size:11px; letter-spacing:0.22em; text-transform:uppercase;
+    color:var(--muted);
+    margin-bottom:36px;
+  }
+  .hero-eyebrow::before{
+    content:''; width:38px; height:1px;
+    background:var(--accent); display:inline-block;
+  }
+  .hero-eyebrow .accent{ color:var(--accent); }
+  .hero-headline{
+    font-family:var(--font-display);
+    font-size:clamp(48px, 6.6vw, 104px);
+    line-height:0.96;
+    letter-spacing:-0.025em;
+    color:var(--ink);
+    text-wrap:balance;
+    margin-bottom:36px;
+    font-weight:400;
+  }
+  .hero-headline em{
+    font-style:italic;
+    color:var(--accent);
+  }
+  .hero-headline .swash{
+    display:inline-block;
+    transform:translateY(0.04em);
+  }
+  .hero-deck{
+    font-size:19px; line-height:1.6;
+    color:var(--muted);
+    max-width:42ch;
+    margin-bottom:48px;
+    text-wrap:pretty;
+  }
+  .hero-deck b{ color:var(--fg); font-weight:500; }
+
+  .hero-meta{
+    display:grid;
+    grid-template-columns: repeat(3, 1fr);
+    border-top:1px solid var(--border);
+    padding-top:18px;
+    max-width:480px;
+  }
+  .hero-meta dt{
+    font-family:var(--font-mono);
+    font-size:10px; letter-spacing:0.2em; text-transform:uppercase;
+    color:var(--muted);
+    margin-bottom:6px;
+  }
+  .hero-meta dd{
+    font-family:var(--font-display);
+    font-size:18px;
+    color:var(--ink);
+    font-style:italic;
+  }
+
+  /* hero image */
+  .hero-image{
+    position:relative;
+    align-self:end;
+  }
+  .hero-image-frame{
+    position:relative;
+    background:var(--paper);
+    border:1px solid var(--border);
+    overflow:hidden;
+    aspect-ratio: 2 / 3;
+  }
+  .hero-image-frame img{
+    width:100%; height:100%; object-fit:cover;
+    object-position: center center;
+  }
+  .hero-image-fallback{
+    width:100%; aspect-ratio: 2 / 3;
+    background:
+      radial-gradient(ellipse 60% 40% at 50% 50%, oklch(40% 0.02 60 / 0.5), transparent 70%),
+      radial-gradient(ellipse 80% 30% at 50% 90%, oklch(20% 0.02 60 / 0.4), transparent 70%),
+      var(--paper);
+    display:flex; align-items:center; justify-content:center;
+    font-family:var(--font-mono); font-size:11px; letter-spacing:0.2em;
+    text-transform:uppercase; color:var(--muted);
+  }
+  .hero-image-caption{
+    margin-top:14px;
+    font-family:var(--font-mono);
+    font-size:10.5px; letter-spacing:0.2em; text-transform:uppercase;
+    color:var(--muted);
+    display:flex; justify-content:space-between;
+  }
+
+  /* ─── tip of the day (paper band) ─── */
+  .tip{
+    position:relative;
+    background:var(--paper);
+    border-top:1px solid var(--border);
+    border-bottom:1px solid var(--border);
+    padding:96px 0 104px;
+  }
+  .tip::before{
+    content:'今';
+    position:absolute;
+    top:24px; left:50%; transform:translateX(-50%);
+    font-family:var(--font-zh);
+    font-size:240px; line-height:1;
+    color:oklch(40% 0.02 60 / 0.025);
+    pointer-events:none;
+    z-index:0;
+  }
+  .tip-inner{ position:relative; z-index:1; text-align:center; max-width:760px; margin:0 auto; }
+  .tip-eyebrow{
+    display:inline-flex; align-items:center; gap:14px;
+    font-family:var(--font-mono);
+    font-size:10.5px; letter-spacing:0.28em; text-transform:uppercase;
+    color:var(--accent);
+    margin-bottom:40px;
+  }
+  .tip-eyebrow::before, .tip-eyebrow::after{
+    content:''; width:44px; height:1px;
+    background:currentColor;
+  }
+  .tip-display{
+    font-family:var(--font-zh);
+    font-size:clamp(80px, 11vw, 168px);
+    line-height:1;
+    letter-spacing:0.06em;
+    color:var(--ink);
+    margin-bottom:32px;
+    font-weight:400;
+  }
+  .tip-display .syl{ display:inline-block; }
+  .tip-pinyin{
+    font-family:var(--font-display);
+    font-style:italic;
+    font-size:clamp(20px, 2vw, 26px);
+    color:var(--muted);
+    margin-bottom:28px;
+    letter-spacing:0.08em;
+  }
+  .tip-translation{
+    font-family:var(--font-display);
+    font-size:clamp(22px, 2.4vw, 30px);
+    line-height:1.35;
+    font-style:italic;
+    color:var(--fg);
+    margin-bottom:36px;
+    text-wrap:balance;
+  }
+  .tip-translation::before, .tip-translation::after{
+    color:var(--accent);
+    font-style:normal;
+    font-weight:500;
+  }
+  .tip-translation::before{ content:'“ '; }
+  .tip-translation::after{ content:' ”'; }
+  .tip-note{
+    max-width:54ch;
+    margin:0 auto 32px;
+    font-size:16px;
+    line-height:1.7;
+    color:var(--muted);
+    text-wrap:pretty;
+  }
+  .tip-note em{
+    font-family:var(--font-zh);
+    font-style:normal;
+    color:var(--fg);
+  }
+  .tip-meta{
+    display:inline-flex; gap:18px; align-items:center;
+    font-family:var(--font-mono);
+    font-size:10.5px; letter-spacing:0.22em; text-transform:uppercase;
+    color:var(--muted);
+    border-top:1px solid var(--border);
+    padding-top:18px;
+  }
+  .tip-meta .accent-dot{
+    width:5px; height:5px; border-radius:50%;
+    background:var(--accent); display:inline-block;
+  }
+
+  /* ─── tools ─── */
+  .tools{ padding:120px 0 80px; }
+  .tools-rule{
+    display:flex; justify-content:space-between; align-items:baseline;
+    border-bottom:1.5px solid var(--ink);
+    padding-bottom:14px;
+    margin-bottom:0;
+  }
+  .tools-title{
+    font-family:var(--font-display);
+    font-size:14px;
+    font-style:italic;
+    color:var(--ink);
+    letter-spacing:0;
+  }
+  .tools-title b{ font-style:normal; font-weight:500; margin-right:6px; }
+  .tools-count{
+    font-family:var(--font-mono);
+    font-size:11px; letter-spacing:0.2em; text-transform:uppercase;
+    color:var(--muted);
+  }
+
+  .tool-grid{
+    display:grid;
+    grid-template-columns: 1fr 1fr;
+  }
+  .tool{
+    border-right:1px solid var(--border);
+    border-bottom:1px solid var(--border);
+    padding:56px 48px 44px;
+    display:flex; flex-direction:column; gap:36px;
+    position:relative;
+    transition: background .25s ease;
+  }
+  .tool:nth-child(2n){ border-right:0; }
+  .tool:hover{ background:var(--paper); }
+  .tool-head{ display:flex; flex-direction:column; gap:18px; }
+  .tool-number{
+    font-family:var(--font-mono);
+    font-size:11px; letter-spacing:0.22em; text-transform:uppercase;
+    color:var(--accent);
+    display:flex; align-items:center; gap:10px;
+  }
+  .tool-number::before{
+    content:''; width:24px; height:1px; background:var(--accent);
+  }
+  .tool-name{
+    font-family:var(--font-display);
+    font-size:clamp(30px, 3vw, 42px);
+    line-height:1.05;
+    letter-spacing:-0.02em;
+    color:var(--ink);
+    font-weight:400;
+    text-wrap:balance;
+  }
+  .tool-name .cn{
+    display:block;
+    font-family:var(--font-zh);
+    font-size:0.5em;
+    color:var(--muted);
+    margin-top:10px;
+    letter-spacing:0.06em;
+    font-style:normal;
+  }
+  .tool-deck{
+    font-size:16px; line-height:1.65;
+    color:var(--muted);
+    max-width:46ch;
+    text-wrap:pretty;
+  }
+
+  .tool-preview{
+    flex:1;
+    background: var(--bg);
+    border:1px solid var(--border);
+    min-height:300px;
+    padding:32px;
+    display:flex; align-items:center; justify-content:center;
+    position:relative;
+    overflow:hidden;
+  }
+  .tool-preview::before{
+    /* faint grid */
+    content:'';
+    position:absolute; inset:0;
+    background-image:
+      linear-gradient(to right,  oklch(60% 0.02 60 / 0.04) 1px, transparent 1px),
+      linear-gradient(to bottom, oklch(60% 0.02 60 / 0.04) 1px, transparent 1px);
+    background-size: 24px 24px;
+    pointer-events:none;
+  }
+
+  .tool-foot{
+    display:flex; justify-content:space-between; align-items:center;
+    border-top:1px solid var(--border);
+    padding-top:20px;
+    font-family:var(--font-mono);
+    font-size:10.5px; letter-spacing:0.2em; text-transform:uppercase;
+    color:var(--muted);
+  }
+  .tool-foot .status{ color:var(--accent); display:flex; align-items:center; gap:8px; }
+  .tool-foot .status::before{
+    content:''; width:6px; height:6px; border-radius:50%;
+    background:var(--accent);
+    animation: pulse 2.4s ease-in-out infinite;
+  }
+  @keyframes pulse {
+    0%,100%{ opacity:1; transform:scale(1); }
+    50%{ opacity:0.45; transform:scale(0.85); }
+  }
+
+  /* ─── flashcard preview ─── */
+  .flashcard-stack{
+    position:relative;
+    width:240px;
+    height:300px;
+  }
+  .flashcard{
+    position:absolute;
+    inset:0;
+    background:var(--paper);
+    border:1px solid var(--border);
+    padding:20px;
+    display:flex; flex-direction:column;
+    transition:transform .3s ease;
+  }
+  .flashcard.back-2{
+    transform: rotate(-4deg) translate(-14px, -6px);
+    background:var(--surface);
+    z-index:1;
+  }
+  .flashcard.back-1{
+    transform: rotate(2.5deg) translate(8px, 4px);
+    background:var(--surface);
+    z-index:2;
+  }
+  .flashcard.front{
+    transform: rotate(-1deg);
+    z-index:3;
+    box-shadow: 0 1px 0 oklch(40% 0.02 60 / 0.04);
+  }
+  .flashcard-meta{
+    display:flex; justify-content:space-between;
+    font-family:var(--font-mono);
+    font-size:9.5px; letter-spacing:0.16em; text-transform:uppercase;
+    color:var(--muted);
+    margin-bottom:8px;
+  }
+  .flashcard-meta .vol{ color:var(--ink); }
+  .flashcard-char{
+    flex:1;
+    display:flex; align-items:center; justify-content:center;
+    font-family:var(--font-zh);
+    font-size:120px;
+    line-height:1;
+    color:var(--ink);
+    margin-top:-4px;
+  }
+  .flashcard-pinyin{
+    font-family:var(--font-display);
+    font-style:italic;
+    font-size:18px;
+    color:var(--muted);
+    text-align:center;
+  }
+  .flashcard-pinyin .tone{ color:var(--accent); }
+  .flashcard-foot{
+    display:flex; justify-content:space-between;
+    font-family:var(--font-mono);
+    font-size:9px; letter-spacing:0.14em; text-transform:uppercase;
+    color:var(--muted);
+    border-top:1px solid var(--border);
+    padding-top:8px;
+    margin-top:8px;
+  }
+
+  /* ─── stroke order preview ─── */
+  .stroke-block{ display:flex; flex-direction:column; align-items:center; gap:16px; }
+  .stroke-canvas{
+    position:relative;
+    width:240px; height:240px;
+    background:var(--paper);
+    border:1px solid var(--border);
+    display:flex; align-items:center; justify-content:center;
+  }
+  .stroke-canvas::before, .stroke-canvas::after{
+    /* mi-zi grid 米字格 — used in calligraphy practice */
+    content:'';
+    position:absolute; inset:0; pointer-events:none;
+  }
+  .stroke-canvas::before{
+    background-image:
+      linear-gradient(to right,  transparent calc(50% - 0.5px), oklch(60% 0.02 60 / 0.18) calc(50% - 0.5px), oklch(60% 0.02 60 / 0.18) calc(50% + 0.5px), transparent calc(50% + 0.5px)),
+      linear-gradient(to bottom, transparent calc(50% - 0.5px), oklch(60% 0.02 60 / 0.18) calc(50% - 0.5px), oklch(60% 0.02 60 / 0.18) calc(50% + 0.5px), transparent calc(50% + 0.5px));
+  }
+  .stroke-canvas::after{
+    background-image:
+      linear-gradient(45deg,
+        transparent calc(50% - 0.5px),
+        oklch(60% 0.02 60 / 0.12) calc(50% - 0.5px),
+        oklch(60% 0.02 60 / 0.12) calc(50% + 0.5px),
+        transparent calc(50% + 0.5px)
+      ),
+      linear-gradient(-45deg,
+        transparent calc(50% - 0.5px),
+        oklch(60% 0.02 60 / 0.12) calc(50% - 0.5px),
+        oklch(60% 0.02 60 / 0.12) calc(50% + 0.5px),
+        transparent calc(50% + 0.5px)
+      );
+  }
+  .stroke-char{
+    font-family:var(--font-zh);
+    font-size:200px;
+    line-height:1;
+    color:var(--ink);
+    position:relative;
+    z-index:1;
+    font-weight:400;
+  }
+  .stroke-num{
+    position:absolute;
+    width:22px; height:22px;
+    border-radius:50%;
+    background:var(--accent);
+    color:var(--bg);
+    font-family:var(--font-mono);
+    font-size:10.5px;
+    font-weight:600;
+    display:flex; align-items:center; justify-content:center;
+    z-index:2;
+    box-shadow: 0 0 0 3px var(--paper);
+  }
+  .stroke-num.n1 { top:18%;  left:50%; transform:translateX(-50%); }
+  .stroke-num.n2 { top:32%;  left:24%; }
+  .stroke-num.n3 { top:34%;  right:30%; }
+  .stroke-num.n4 { top:62%;  left:20%; }
+  .stroke-num.n5 { top:62%;  right:18%; }
+  .stroke-caption{
+    display:flex; gap:14px; align-items:center;
+    font-family:var(--font-mono);
+    font-size:10.5px; letter-spacing:0.2em; text-transform:uppercase;
+    color:var(--muted);
+  }
+  .stroke-caption .char{
+    font-family:var(--font-zh); font-size:14px; letter-spacing:0;
+    color:var(--ink); text-transform:none;
+  }
+  .stroke-caption .pinyin{
+    font-family:var(--font-display); font-style:italic;
+    text-transform:none; letter-spacing:0;
+    color:var(--ink);
+  }
+
+  /* ─── secondary band: principles ─── */
+  .principles{
+    border-top:1px solid var(--border);
+    background:var(--bg);
+    padding:80px 0;
+  }
+  .principles-inner{
+    display:grid;
+    grid-template-columns: 1fr 2fr;
+    gap:80px;
+    align-items:start;
+  }
+  .principles-eyebrow{
+    font-family:var(--font-mono);
+    font-size:11px; letter-spacing:0.22em; text-transform:uppercase;
+    color:var(--accent);
+    margin-bottom:14px;
+  }
+  .principles h2{
+    font-family:var(--font-display);
+    font-size:clamp(30px, 3.2vw, 44px);
+    line-height:1.05;
+    letter-spacing:-0.02em;
+    color:var(--ink);
+    font-weight:400;
+    text-wrap:balance;
+  }
+  .principles h2 em{ color:var(--accent); font-style:italic; }
+  .principles-list{
+    display:grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap:48px;
+    row-gap:40px;
+    list-style:none;
+  }
+  .principles-list li{ position:relative; padding-left:48px; }
+  .principles-list .num{
+    position:absolute; left:0; top:2px;
+    font-family:var(--font-mono);
+    font-size:11px; letter-spacing:0.18em;
+    color:var(--accent);
+  }
+  .principles-list h4{
+    font-family:var(--font-display);
+    font-size:21px; line-height:1.25;
+    color:var(--ink);
+    margin-bottom:8px;
+    font-weight:500;
+  }
+  .principles-list p{
+    font-size:15px; line-height:1.6;
+    color:var(--muted);
+    text-wrap:pretty;
+  }
+
+  /* ─── footer ─── */
+  .footer{
+    border-top:1.5px solid var(--ink);
+    padding:32px 0;
+    font-family:var(--font-mono);
+    font-size:10.5px; letter-spacing:0.2em; text-transform:uppercase;
+    color:var(--muted);
+  }
+  .footer-inner{
+    display:flex; justify-content:space-between; align-items:center;
+    flex-wrap:wrap; gap:14px;
+  }
+  .footer .copyright em{ font-style:italic; color:var(--fg); text-transform:none; letter-spacing:0; font-family:var(--font-display); margin-right:6px; }
+  .footer .small-seal{
+    display:inline-block;
+    width:14px; height:14px;
+    background:var(--accent);
+    margin-right:8px;
+    transform:translateY(2px) rotate(-3deg);
+  }
+  .footer-social{ display:flex; gap:28px; align-items:center; }
+  .footer-social a{
+    display:inline-flex; align-items:center; gap:8px;
+    color:var(--muted);
+    transition: color .15s ease;
+    position:relative;
+  }
+  .footer-social a:hover{ color:var(--accent); }
+  .footer-social a::before{
+    content:''; display:inline-block;
+    width:5px; height:5px;
+    background:currentColor;
+    transform:rotate(45deg);
+    opacity:.6;
+  }
+  .footer-social a span.handle{
+    font-family:var(--font-display);
+    font-style:italic;
+    text-transform:none;
+    letter-spacing:0;
+    color:var(--fg);
+    font-size:13px;
+  }
+  .footer-social a:hover span.handle{ color:var(--accent); }
+
+  /* ─── responsive ─── */
+  @media (max-width: 1080px){
+    .hero{ padding:72px 0 96px; }
+    .hero-inner{ gap:48px; }
+    .principles-inner{ gap:48px; }
+  }
+  @media (max-width: 880px){
+    .container{ padding:0 28px; }
+    .hero{ padding:56px 0 72px; }
+    .hero-inner{ grid-template-columns:1fr; gap:48px; }
+    .hero-image{ order:-1; max-width:440px; }
+    .hero-text{ padding-bottom:0; }
+    .tip{ padding:72px 0 80px; }
+    .tip::before{ font-size:160px; }
+    .tools{ padding:80px 0 56px; }
+    .tool-grid{ grid-template-columns:1fr; }
+    .tool{ border-right:0; padding:44px 32px 36px; }
+    .principles-inner{ grid-template-columns:1fr; gap:32px; }
+    .principles-list{ grid-template-columns:1fr; row-gap:28px; }
+  }
+  @media (max-width: 560px){
+    .container{ padding:0 20px; }
+    .nav{ display:none; }
+    .header-meta{ display:none; }
+    .hero-eyebrow{ flex-wrap:wrap; gap:10px; margin-bottom:24px; }
+    .hero-eyebrow::before{ width:24px; }
+    .hero-headline{ margin-bottom:24px; }
+    .hero-deck{ font-size:17px; margin-bottom:32px; }
+    .hero-meta{ grid-template-columns:1fr 1fr; row-gap:16px; max-width:none; }
+    .tip-display{ letter-spacing:0.04em; }
+    .tool{ padding:36px 24px 28px; gap:28px; }
+    .tool-preview{ min-height:260px; padding:24px; }
+    .flashcard-stack{ width:200px; height:260px; }
+    .flashcard-char{ font-size:96px; }
+    .stroke-canvas{ width:200px; height:200px; }
+    .stroke-char{ font-size:160px; }
+  }
+</style>
+</head>
+<body>
+
+<header class="masthead">
+  <div class="container masthead-inner">
+    <a href="/" class="wordmark" aria-label="Wenfang — home">
+      <span class="wordmark-cn">文房</span>
+      <span class="wordmark-en">Wén<em>fáng</em> · Studio</span>
+    </a>
+    <nav class="nav" aria-label="Primary">
+      <a href="#tip" class="dot">Today</a>
+      <a href="tools.html">Tools</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
+  <div class="header-meta">
+    <div class="container header-meta-inner">
+      <span>Free &amp; open</span>
+      <div class="right">
+        <span>Made by Zeze</span>
+      </div>
+    </div>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="container hero-inner">
+    <div class="hero-text">
+      <p class="hero-eyebrow">
+        <span>The Studio</span>
+        <span>·</span>
+        <span class="accent">Vol. 01</span>
+      </p>
+      <h1 class="hero-headline">
+        Quiet tools for studying <em>Chinese.</em>
+      </h1>
+      <p class="hero-deck">
+        A small library of focused, single-purpose instruments — <b>flashcards bound to the textbook on your shelf</b>, stroke-order playback for any character you can paste in. Built slowly, kept honest, kept free.
+      </p>
+      <dl class="hero-meta">
+        <div><dt>Tools</dt><dd>Two</dd></div>
+        <div><dt>Levels</dt><dd>HSK 1–6</dd></div>
+        <div><dt>Cost</dt><dd>None</dd></div>
+      </dl>
+    </div>
+    <figure class="hero-image">
+      <div class="hero-image-frame">
+        <img id="heroImg" src="assets/hero-inkwash.png" alt="Inkwash brush painting of a young xian-style scholar standing on a misty mountain peak" onerror="this.style.display='none';this.parentNode.querySelector('.hero-image-fallback')?.style.setProperty('display','flex')" />
+        <div class="hero-image-fallback" style="display:none;position:absolute;inset:0">
+          山 · Mountain
+        </div>
+      </div>
+      <figcaption class="hero-image-caption">
+        <span>Plate I.</span>
+        <span>Mountain · Inkwash · 2026</span>
+      </figcaption>
+    </figure>
+  </div>
+</section>
+
+<section class="tip" id="tip">
+  <div class="container tip-inner">
+    <p class="tip-eyebrow">今日一語 · Today's word</p>
+    <h2 class="tip-display">
+      <span class="syl">学</span><span class="syl">海</span><span class="syl">无</span><span class="syl">涯</span>
+    </h2>
+    <p class="tip-pinyin">xué hǎi wú yá</p>
+    <p class="tip-translation">The sea of learning has no shore.</p>
+    <p class="tip-note">From a couplet attributed to the Tang scholar <em>韩愈</em> (Han Yu, 768–824). The full saying — <em>学海无涯苦作舟</em> — "the sea of learning has no shore; let toil be your boat" — has been a refrain for Chinese students for a thousand years. A useful thing to keep on the wall above a desk.</p>
+    <p class="tip-meta">
+      <span class="accent-dot" aria-hidden="true"></span>
+      Tip 001
+      <span>·</span>
+      Refreshes daily
+    </p>
+  </div>
+</section>
+
+<section class="principles" id="about">
+  <div class="container principles-inner">
+    <div>
+      <p class="principles-eyebrow">— On the studio</p>
+      <h2>Built like a stationery shop, not <em>a startup.</em></h2>
+    </div>
+    <ol class="principles-list">
+      <li>
+        <span class="num">— 01</span>
+        <h4>One thing per tool.</h4>
+        <p>Each instrument does a single job and stops. No accounts, no streaks, no leaderboard. The textbook on your shelf already sets the curriculum.</p>
+      </li>
+      <li>
+        <span class="num">— 02</span>
+        <h4>Match the textbook.</h4>
+        <p>Cards are bound to the exact vocabulary list of <em>Hanyu Jiaocheng</em> volumes 1A through 3B. The tool follows your study, not its own.</p>
+      </li>
+      <li>
+        <span class="num">— 03</span>
+        <h4>Honest defaults.</h4>
+        <p>If we don't have stroke data for a character, we say so plainly. A short, true note is worth more than a generated GIF that's wrong.</p>
+      </li>
+      <li>
+        <span class="num">— 04</span>
+        <h4>Quiet on the page.</h4>
+        <p>No popovers, no notifications, no banner ads, no dark patterns. Cream paper, one accent, generous margins. Study in peace.</p>
+      </li>
+    </ol>
+  </div>
+</section>
+
+<footer class="footer" id="contact">
+  <div class="container footer-inner">
+    <span class="copyright"><span class="small-seal" aria-hidden="true"></span><em>Wénfáng</em>© 2026</span>
+    <div class="footer-social">
+      <a href="https://x.com/ItsmeZecreto" target="_blank" rel="noopener noreferrer">X — <span class="handle">@ItsmeZecreto</span></a>
+      <a href="https://zeze.app/portfolio" target="_blank" rel="noopener noreferrer">Portfolio — <span class="handle">zeze.app</span></a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

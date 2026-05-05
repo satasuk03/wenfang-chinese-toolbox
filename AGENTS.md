@@ -178,9 +178,9 @@ Colors and fonts are defined as Tailwind v4 theme tokens in `src/styles/global.c
 - `--color-accent`: oklch(50% 0.205 30) — accent red
 
 ### Typography
-- `--font-display`: Iowan Old Style, Charter, Source Han Serif SC, Georgia, serif
+- `--font-display`: Iowan Old Style, Charter, LXGW WenKai TC, Georgia, serif
 - `--font-body`: system-ui sans stack
-- `--font-zh`: Source Han Serif SC, Songti SC, STSong, SimSun, serif
+- `--font-zh`: LXGW WenKai TC, Songti SC, STSong, SimSun, serif
 - `--font-mono`: JetBrains Mono, IBM Plex Mono, ui-monospace, Menlo, monospace
 
 ### Breakpoints

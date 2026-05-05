@@ -24,3 +24,4 @@
 - Input Tokens: 15M
 - Output Tokens: 200k
 - มีงงๆบ้าง ต้องไปดู code เองนิดหน่อย
+(ไม่รวมที่ OCR คำศัพท์นะ จาก HSK)

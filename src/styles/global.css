@@ -1,5 +1,12 @@
-@import url('https://fonts.googleapis.com/css2?family=LXGW+WenKai+TC&family=Noto+Serif+SC:wght@200..900&display=swap');
 @import 'tailwindcss';
+
+@font-face {
+  font-family: 'cwTeXKai';
+  src: url('/fonts/cwTeXKai-zhonly.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
 
 @theme {
   /* Palette — OKLCH from design/index.html */
@@ -18,12 +25,12 @@
 
   /* Typography */
   --font-display:
-    'Iowan Old Style', 'Charter', 'LXGW WenKai TC', 'Songti SC', 'Times New Roman', Georgia,
+    'Iowan Old Style', 'Charter', 'cwTeXKai', 'Songti SC', 'Times New Roman', Georgia,
     serif;
   --font-body:
     -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Segoe UI', 'PingFang SC', system-ui,
     sans-serif;
-  --font-zh: 'LXGW WenKai TC', 'Songti SC', 'STSong', 'SimSun', serif;
+  --font-zh: 'cwTeXKai', 'Songti SC', 'STSong', 'SimSun', serif;
   --font-mono: 'JetBrains Mono', 'IBM Plex Mono', ui-monospace, Menlo, monospace;
 
   /* Breakpoints — match design/index.html exactly */

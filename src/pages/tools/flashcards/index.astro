@@ -13,9 +13,12 @@ const data = vocab1A as {
 }[];
 
 const entries = data.filter((e) => e.chapter !== null);
-const allChapters = Array.from(new Set(entries.map((e) => e.chapter)))
+const bookEntries = entries.filter((e) => e.chapter !== 0);
+const extraEntries = entries.filter((e) => e.chapter === 0);
+const allChapters = Array.from(new Set(bookEntries.map((e) => e.chapter)))
   .filter((ch): ch is number => ch !== null)
   .sort((a, b) => a - b);
+const extraCount = extraEntries.length;
 ---
 
 <BaseLayout title="Flashcards · Wénfáng">
@@ -68,7 +71,7 @@ const allChapters = Array.from(new Set(entries.map((e) => e.chapter)))
           <div class="filter-chips" id="filter-chips">
             {
               allChapters.map((ch) => {
-                const count = entries.filter((e) => e.chapter === ch).length;
+                const count = bookEntries.filter((e) => e.chapter === ch).length;
                 return (
                   <label class="filter-chip">
                     <input type="checkbox" value={ch} checked data-chapter={ch} />
@@ -79,6 +82,22 @@ const allChapters = Array.from(new Set(entries.map((e) => e.chapter)))
               })
             }
           </div>
+
+          {extraCount > 0 && (
+            <>
+              <div class="filter-divider" />
+              <div class="filter-head" style="margin-top: 16px;">
+                <span>Extra Vocab 1A</span>
+              </div>
+              <div class="filter-chips">
+                <label class="filter-chip">
+                  <input type="checkbox" value={0} checked data-chapter={0} />
+                  <span>Extra 1A</span>
+                  <span class="filter-chip-count">{extraCount}</span>
+                </label>
+              </div>
+            </>
+          )}
         </div>
       </div>
     </section>
@@ -86,7 +105,7 @@ const allChapters = Array.from(new Set(entries.map((e) => e.chapter)))
   <Footer />
 </BaseLayout>
 
-<script is:inline define:vars={{ entries, allChapters }}>
+<script is:inline define:vars={{ entries, allChapters, hasExtra: extraCount > 0 }}>
   // ─── State ───
   const STORAGE_TAB = 'wenfang_flashcard_tab';
   const STORAGE_CHAPTERS = 'wenfang_flashcard_chapters';
@@ -100,6 +119,7 @@ const allChapters = Array.from(new Set(entries.map((e) => e.chapter)))
   }
 
   const savedChapters = new Set(allChapters);
+  if (hasExtra) savedChapters.add(0);
   try {
     const raw = localStorage.getItem(STORAGE_CHAPTERS);
     if (raw) {
@@ -286,6 +306,7 @@ const allChapters = Array.from(new Set(entries.map((e) => e.chapter)))
 
   document.getElementById('filter-all').addEventListener('click', () => {
     allChapters.forEach((ch) => savedChapters.add(ch));
+    if (hasExtra) savedChapters.add(0);
     syncFilterInputs();
     saveChapters();
   });
@@ -609,6 +630,11 @@ const allChapters = Array.from(new Set(entries.map((e) => e.chapter)))
   .filter-chip-count {
     color: var(--color-muted);
     font-size: 10px;
+  }
+  .filter-divider {
+    height: 1px;
+    background: var(--color-border);
+    margin: 16px 0;
   }
 
   @media (max-width: 560px) {

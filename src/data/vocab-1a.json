@@ -2266,5 +2266,82 @@
     "partOfSpeech": "",
     "chapter": 6,
     "meaning_th": "จาง ตง"
+  },
+  {
+    "character": "凌晨",
+    "pinyin": "língchén",
+    "partOfSpeech": "名",
+    "chapter": 0,
+    "meaning_th": "ช่วงเวลา ตี 1 ตี 2 ..."
+  },
+  {
+    "character": "午夜",
+    "pinyin": "wǔyè",
+    "partOfSpeech": "名",
+    "chapter": 0,
+    "meaning_th": "เที่ยงคืน"
+  },
+  {
+    "character": "晚上",
+    "pinyin": "wǎnshang",
+    "partOfSpeech": "名",
+    "chapter": 0,
+    "meaning_th": "กลางคืน/เย็น (17:00–23:59)"
+  },
+  {
+    "character": "早上",
+    "pinyin": "zǎoshang",
+    "partOfSpeech": "名",
+    "chapter": 0,
+    "meaning_th": "เช้า (06:00–09:00)"
+  },
+  {
+    "character": "七一一",
+    "pinyin": "qī yāo yāo",
+    "partOfSpeech": "名",
+    "chapter": 0,
+    "meaning_th": "7-Eleven (711)"
+  },
+  {
+    "character": "大米",
+    "pinyin": "dàmǐ",
+    "partOfSpeech": "名",
+    "chapter": 0,
+    "meaning_th": "ข้าวสาร"
+  },
+  {
+    "character": "香米",
+    "pinyin": "xiāngmǐ",
+    "partOfSpeech": "名",
+    "chapter": 0,
+    "meaning_th": "ข้าวหอม"
+  },
+  {
+    "character": "鸭",
+    "pinyin": "yā",
+    "partOfSpeech": "名",
+    "chapter": 0,
+    "meaning_th": "เป็ด"
+  },
+  {
+    "character": "男朋友",
+    "pinyin": "nánpéngyou",
+    "partOfSpeech": "名",
+    "chapter": 0,
+    "meaning_th": "แฟน (ชาย)"
+  },
+  {
+    "character": "女朋友",
+    "pinyin": "nǚpéngyou",
+    "partOfSpeech": "名",
+    "chapter": 0,
+    "meaning_th": "แฟน (หญิง)"
+  },
+  {
+    "character": "白酒",
+    "pinyin": "báijiǔ",
+    "partOfSpeech": "名",
+    "chapter": 0,
+    "meaning_th": "เหล้าขาว"
   }
 ]

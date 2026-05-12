@@ -1,0 +1,6178 @@
+[
+  {
+    "character": "啊",
+    "pinyin": "a",
+    "partOfSpeech": "",
+    "meaning_th": "อ่า;อา",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "爱情",
+    "pinyin": "àiqíng",
+    "partOfSpeech": "",
+    "meaning_th": "ความรัก",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "爱人",
+    "pinyin": "ài rén",
+    "partOfSpeech": "",
+    "meaning_th": "คู่รัก;คู่ครอง",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "安静",
+    "pinyin": "ānjìng",
+    "partOfSpeech": "",
+    "meaning_th": "เงียบสงบ",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "安全",
+    "pinyin": "ānquán",
+    "partOfSpeech": "",
+    "meaning_th": "ปลอดภัย",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "白色",
+    "pinyin": "bái sè",
+    "partOfSpeech": "",
+    "meaning_th": "สีขาว",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "班长",
+    "pinyin": "bān zhǎng",
+    "partOfSpeech": "",
+    "meaning_th": "หัวหน้าห้อง",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "办",
+    "pinyin": "bàn",
+    "partOfSpeech": "",
+    "meaning_th": "จัดการ;ทำ",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "办法",
+    "pinyin": "bànfǎ",
+    "partOfSpeech": "",
+    "meaning_th": "วิธีการ",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "办公室",
+    "pinyin": "bàngōngshì",
+    "partOfSpeech": "",
+    "meaning_th": "สำนักงาน",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "半夜",
+    "pinyin": "bàn yè",
+    "partOfSpeech": "",
+    "meaning_th": "เที่ยงคืน;กลางดึก",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "帮助",
+    "pinyin": "bāngzhù",
+    "partOfSpeech": "",
+    "meaning_th": "ช่วยเหลือ",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "饱",
+    "pinyin": "bǎo",
+    "partOfSpeech": "",
+    "meaning_th": "อิ่ม",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "报名",
+    "pinyin": "bàomíng",
+    "partOfSpeech": "",
+    "meaning_th": "สมัคร",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "报纸",
+    "pinyin": "bàozhǐ",
+    "partOfSpeech": "",
+    "meaning_th": "หนังสือพิมพ์",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "北方",
+    "pinyin": "běifāng",
+    "partOfSpeech": "",
+    "meaning_th": "ทิศเหนือ",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "背（动）",
+    "pinyin": "bēi",
+    "partOfSpeech": "",
+    "meaning_th": "แบก;หาม",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "比如",
+    "pinyin": "bǐrú",
+    "partOfSpeech": "",
+    "meaning_th": "เช่น;เช่นเดียวกับ",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "比如说",
+    "pinyin": "bǐ rú shuō",
+    "partOfSpeech": "",
+    "meaning_th": "เช่นเช่น;ยกตัวอย่าง",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "笔",
+    "pinyin": "bǐ",
+    "partOfSpeech": "",
+    "meaning_th": "ปากกา",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "笔记",
+    "pinyin": "bǐ jì",
+    "partOfSpeech": "",
+    "meaning_th": "จดบันทึก",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "笔记本",
+    "pinyin": "bǐjìběn",
+    "partOfSpeech": "",
+    "meaning_th": "สมุดบันทึก",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "必须",
+    "pinyin": "bìxū",
+    "partOfSpeech": "",
+    "meaning_th": "จำเป็นต้อง",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "边",
+    "pinyin": "biān",
+    "partOfSpeech": "",
+    "meaning_th": "ข้าง;ด้าน",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "变",
+    "pinyin": "biàn",
+    "partOfSpeech": "",
+    "meaning_th": "เปลี่ยน",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "变成",
+    "pinyin": "biàn chéng",
+    "partOfSpeech": "",
+    "meaning_th": "กลายเป็น",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "遍",
+    "pinyin": "biàn",
+    "partOfSpeech": "",
+    "meaning_th": "ครั้ง;ทั่ว",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "表",
+    "pinyin": "biǎo",
+    "partOfSpeech": "",
+    "meaning_th": "ตาราง;นาฬิกา",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "表示",
+    "pinyin": "biǎoshì",
+    "partOfSpeech": "",
+    "meaning_th": "แสดง;แสดงว่า",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "不错",
+    "pinyin": "bú cuò",
+    "partOfSpeech": "",
+    "meaning_th": "ไม่เลว;ดี",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "不但",
+    "pinyin": "bú dàn",
+    "partOfSpeech": "",
+    "meaning_th": "ไม่เพียง",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "不够",
+    "pinyin": "bú gòu",
+    "partOfSpeech": "",
+    "meaning_th": "ไม่พอ",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "不过",
+    "pinyin": "búguò",
+    "partOfSpeech": "",
+    "meaning_th": "แต่;อย่างไรก็ตาม",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "不太",
+    "pinyin": "bú tài",
+    "partOfSpeech": "",
+    "meaning_th": "ไม่ค่อย",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "不要",
+    "pinyin": "bú yào",
+    "partOfSpeech": "",
+    "meaning_th": "อย่า;ไม่ต้อง",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "不好意思",
+    "pinyin": "bù hǎo yì sī",
+    "partOfSpeech": "",
+    "meaning_th": "เสียใจ;อาย",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "不久",
+    "pinyin": "bù jiǔ",
+    "partOfSpeech": "",
+    "meaning_th": "ไม่นาน",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "不满",
+    "pinyin": "bù mǎn",
+    "partOfSpeech": "",
+    "meaning_th": "ไม่พอใจ",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "不如",
+    "pinyin": "bùrú",
+    "partOfSpeech": "",
+    "meaning_th": "ไม่เท่า",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "不少",
+    "pinyin": "bù shǎo",
+    "partOfSpeech": "",
+    "meaning_th": "ไม่น้อย",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "不同",
+    "pinyin": "bù tóng",
+    "partOfSpeech": "",
+    "meaning_th": "ต่างกัน",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "不行",
+    "pinyin": "bù xíng",
+    "partOfSpeech": "",
+    "meaning_th": "ไม่ได้;ไม่ดี",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "不一定",
+    "pinyin": "bù yī dìng",
+    "partOfSpeech": "",
+    "meaning_th": "ไม่แน่",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "不一会儿",
+    "pinyin": "bù yī huìr",
+    "partOfSpeech": "",
+    "meaning_th": "ไม่ช้า",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "部分",
+    "pinyin": "bùfen",
+    "partOfSpeech": "",
+    "meaning_th": "ส่วน;บางส่วน",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "才（副）",
+    "pinyin": "cái",
+    "partOfSpeech": "",
+    "meaning_th": "เพิ่ง;ถึง",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "菜单",
+    "pinyin": "càidān",
+    "partOfSpeech": "",
+    "meaning_th": "เมนู",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "参观",
+    "pinyin": "cānguān",
+    "partOfSpeech": "",
+    "meaning_th": "เข้าชม",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "参加",
+    "pinyin": "cānjiā",
+    "partOfSpeech": "",
+    "meaning_th": "เข้าร่วม",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "草",
+    "pinyin": "cǎo",
+    "partOfSpeech": "",
+    "meaning_th": "หญ้า",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "草地",
+    "pinyin": "cǎo dì",
+    "partOfSpeech": "",
+    "meaning_th": "สนามหญ้า",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "层",
+    "pinyin": "céng",
+    "partOfSpeech": "",
+    "meaning_th": "ชั้น",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "查",
+    "pinyin": "chá",
+    "partOfSpeech": "",
+    "meaning_th": "ตรวจสอบ",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "差不多",
+    "pinyin": "chàbuduō",
+    "partOfSpeech": "",
+    "meaning_th": "เกือบ;เกือบเท่า",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "长",
+    "pinyin": "cháng",
+    "partOfSpeech": "",
+    "meaning_th": "ยาว;เติบโต",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "常见",
+    "pinyin": "cháng jiàn",
+    "partOfSpeech": "",
+    "meaning_th": "พบบ่อย",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "常用",
+    "pinyin": "cháng yòng",
+    "partOfSpeech": "",
+    "meaning_th": "ใช้บ่อย",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "场",
+    "pinyin": "chǎng",
+    "partOfSpeech": "",
+    "meaning_th": "สนาม;สถานที่",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "超过",
+    "pinyin": "chāoguò",
+    "partOfSpeech": "",
+    "meaning_th": "เกิน;มากกว่า",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "超市",
+    "pinyin": "chāoshì",
+    "partOfSpeech": "",
+    "meaning_th": "ซูเปอร์มาร์เก็ต",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "车辆",
+    "pinyin": "chē liàng",
+    "partOfSpeech": "",
+    "meaning_th": "ยานพาหนะ",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "称¹（动）",
+    "pinyin": "chēng",
+    "partOfSpeech": "",
+    "meaning_th": "เรียก;ชั่ง",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "成（动）",
+    "pinyin": "chéng",
+    "partOfSpeech": "",
+    "meaning_th": "สำเร็จ;เป็น",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "成绩",
+    "pinyin": "chéngjì",
+    "partOfSpeech": "",
+    "meaning_th": "ผลการเรียน",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "成为",
+    "pinyin": "chéngwéi",
+    "partOfSpeech": "",
+    "meaning_th": "กลายเป็น",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "重复",
+    "pinyin": "chóngfù",
+    "partOfSpeech": "",
+    "meaning_th": "ทำซ้ำ",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "重新",
+    "pinyin": "chóngxīn",
+    "partOfSpeech": "",
+    "meaning_th": "ใหม่;เริ่มใหม่",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "出发",
+    "pinyin": "chūfā",
+    "partOfSpeech": "",
+    "meaning_th": "ออกเดินทาง",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "出国",
+    "pinyin": "chū guó",
+    "partOfSpeech": "",
+    "meaning_th": "ออกนอกประเทศ",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "出口（名）",
+    "pinyin": "chū kǒu",
+    "partOfSpeech": "",
+    "meaning_th": "ทางออก;ส่งออก",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "出门",
+    "pinyin": "chū mén",
+    "partOfSpeech": "",
+    "meaning_th": "ออกจากบ้าน",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "出生",
+    "pinyin": "chūshēng",
+    "partOfSpeech": "",
+    "meaning_th": "เกิด",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "出现",
+    "pinyin": "chūxiàn",
+    "partOfSpeech": "",
+    "meaning_th": "ปรากฏ",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "出院",
+    "pinyin": "chū yuàn",
+    "partOfSpeech": "",
+    "meaning_th": "ออกจากโรงพยาบาล",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "出租",
+    "pinyin": "chū zū",
+    "partOfSpeech": "",
+    "meaning_th": "ให้เช่า",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "出租车",
+    "pinyin": "chūzūchē",
+    "partOfSpeech": "",
+    "meaning_th": "แท็กซี่",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "船",
+    "pinyin": "chuán",
+    "partOfSpeech": "",
+    "meaning_th": "เรือ",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "吹",
+    "pinyin": "chuī",
+    "partOfSpeech": "",
+    "meaning_th": "เป่า;พัด",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "春节",
+    "pinyin": "chūn jié",
+    "partOfSpeech": "",
+    "meaning_th": "ตรุษจีน",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "春天",
+    "pinyin": "chūn tiān",
+    "partOfSpeech": "",
+    "meaning_th": "ฤดูใบไม้ผลิ",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "词",
+    "pinyin": "cí",
+    "partOfSpeech": "",
+    "meaning_th": "คำ",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "词典",
+    "pinyin": "cídiǎn",
+    "partOfSpeech": "",
+    "meaning_th": "พจนานุกรม",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "词语",
+    "pinyin": "cíyǔ",
+    "partOfSpeech": "",
+    "meaning_th": "คำศัพท์",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "从小",
+    "pinyin": "cóng xiǎo",
+    "partOfSpeech": "",
+    "meaning_th": "ตั้งแต่เด็ก",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "答应",
+    "pinyin": "dāying",
+    "partOfSpeech": "",
+    "meaning_th": "ตอบตกลง;สัญญา",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "打工",
+    "pinyin": "dǎgōng",
+    "partOfSpeech": "",
+    "meaning_th": "ทำงาน",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "打算",
+    "pinyin": "dǎsuàn",
+    "partOfSpeech": "",
+    "meaning_th": "วางแผน",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "打印",
+    "pinyin": "dǎyìn",
+    "partOfSpeech": "",
+    "meaning_th": "พิมพ์",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "大部分",
+    "pinyin": "dà bù fèn",
+    "partOfSpeech": "",
+    "meaning_th": "ส่วนใหญ่",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "大大",
+    "pinyin": "dà dà",
+    "partOfSpeech": "",
+    "meaning_th": "มาก;อย่างมาก",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "大多数",
+    "pinyin": "dà duō shù",
+    "partOfSpeech": "",
+    "meaning_th": "คนส่วนใหญ่",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "大海",
+    "pinyin": "dà hǎi",
+    "partOfSpeech": "",
+    "meaning_th": "ทะเล",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "大家",
+    "pinyin": "dàjiā",
+    "partOfSpeech": "",
+    "meaning_th": "ทุกคน",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "大量",
+    "pinyin": "dà liàng",
+    "partOfSpeech": "",
+    "meaning_th": "จำนวนมาก",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "大门",
+    "pinyin": "dà mén",
+    "partOfSpeech": "",
+    "meaning_th": "ประตูใหญ่",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "大人",
+    "pinyin": "dà rén",
+    "partOfSpeech": "",
+    "meaning_th": "ผู้ใหญ่",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "大声",
+    "pinyin": "dà shēng",
+    "partOfSpeech": "",
+    "meaning_th": "เสียงดัง",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "大小",
+    "pinyin": "dà xiǎo",
+    "partOfSpeech": "",
+    "meaning_th": "ขนาด",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "大衣",
+    "pinyin": "dà yī",
+    "partOfSpeech": "",
+    "meaning_th": "เสื้อโค้ต",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "大自然",
+    "pinyin": "dà zì rán",
+    "partOfSpeech": "",
+    "meaning_th": "ธรรมชาติ",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "带",
+    "pinyin": "dài",
+    "partOfSpeech": "",
+    "meaning_th": "พา;พก",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "带来",
+    "pinyin": "dài lái",
+    "partOfSpeech": "",
+    "meaning_th": "นำมา",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "单位",
+    "pinyin": "dānwèi",
+    "partOfSpeech": "",
+    "meaning_th": "หน่วย",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "但",
+    "pinyin": "dàn",
+    "partOfSpeech": "",
+    "meaning_th": "แต่",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "但是",
+    "pinyin": "dàn shì",
+    "partOfSpeech": "",
+    "meaning_th": "แต่",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "蛋",
+    "pinyin": "dàn",
+    "partOfSpeech": "",
+    "meaning_th": "ไข่",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "当",
+    "pinyin": "dāng",
+    "partOfSpeech": "",
+    "meaning_th": "เมื่อ;เป็น",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "当时",
+    "pinyin": "dāngshí",
+    "partOfSpeech": "",
+    "meaning_th": "ขณะนั้น",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "倒",
+    "pinyin": "dǎo",
+    "partOfSpeech": "",
+    "meaning_th": "กลับ;เท",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "到处",
+    "pinyin": "dàochù",
+    "partOfSpeech": "",
+    "meaning_th": "ทุกที่",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "倒",
+    "pinyin": "dào",
+    "partOfSpeech": "",
+    "meaning_th": "กลับ;เท",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "道",
+    "pinyin": "dào",
+    "partOfSpeech": "",
+    "meaning_th": "ทาง;วิธี",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "道理",
+    "pinyin": "dàolǐ",
+    "partOfSpeech": "",
+    "meaning_th": "เหตุผล",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "道路",
+    "pinyin": "dào lù",
+    "partOfSpeech": "",
+    "meaning_th": "ถนน",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "得",
+    "pinyin": "dé",
+    "partOfSpeech": "",
+    "meaning_th": "ได้",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "得出",
+    "pinyin": "dé chū",
+    "partOfSpeech": "",
+    "meaning_th": "ได้รับ",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "的话",
+    "pinyin": "de huà",
+    "partOfSpeech": "",
+    "meaning_th": "ถ้า",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "得",
+    "pinyin": "de",
+    "partOfSpeech": "",
+    "meaning_th": "ได้",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "灯",
+    "pinyin": "dēng",
+    "partOfSpeech": "",
+    "meaning_th": "ไฟ;โคมไฟ",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "等（助、名）",
+    "pinyin": "děng",
+    "partOfSpeech": "",
+    "meaning_th": "รอ;พวก",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "等到",
+    "pinyin": "děng dào",
+    "partOfSpeech": "",
+    "meaning_th": "รอจนกระทั่ง",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "等于",
+    "pinyin": "děngyú",
+    "partOfSpeech": "",
+    "meaning_th": "เท่ากับ",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "低",
+    "pinyin": "dī",
+    "partOfSpeech": "",
+    "meaning_th": "ต่ำ",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "地球",
+    "pinyin": "dìqiú",
+    "partOfSpeech": "",
+    "meaning_th": "โลก",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "地铁",
+    "pinyin": "dìtiě",
+    "partOfSpeech": "",
+    "meaning_th": "รถไฟใต้ดิน",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "地铁站",
+    "pinyin": "dì tiě zhàn",
+    "partOfSpeech": "",
+    "meaning_th": "สถานีรถไฟใต้ดิน",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "点头",
+    "pinyin": "diǎn tóu",
+    "partOfSpeech": "",
+    "meaning_th": "พยักหน้า",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "店",
+    "pinyin": "diàn",
+    "partOfSpeech": "",
+    "meaning_th": "ร้าน",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "掉",
+    "pinyin": "diào",
+    "partOfSpeech": "",
+    "meaning_th": "หล่น;ทิ้ง",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "东北",
+    "pinyin": "dōng běi",
+    "partOfSpeech": "",
+    "meaning_th": "ตะวันออกเฉียงเหนือ",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "东方",
+    "pinyin": "dōng fāng",
+    "partOfSpeech": "",
+    "meaning_th": "ตะวันออก",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "东南",
+    "pinyin": "dōng nán",
+    "partOfSpeech": "",
+    "meaning_th": "ตะวันออกเฉียงใต้",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "冬天",
+    "pinyin": "dōng tiān",
+    "partOfSpeech": "",
+    "meaning_th": "ฤดูหนาว",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "懂",
+    "pinyin": "dǒng",
+    "partOfSpeech": "",
+    "meaning_th": "เข้าใจ",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "懂得",
+    "pinyin": "dǒng de",
+    "partOfSpeech": "",
+    "meaning_th": "เข้าใจ;รู้",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "动物",
+    "pinyin": "dòngwù",
+    "partOfSpeech": "",
+    "meaning_th": "สัตว์",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "动物园",
+    "pinyin": "dòng wù yuán",
+    "partOfSpeech": "",
+    "meaning_th": "สวนสัตว์",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "读音",
+    "pinyin": "dú yīn",
+    "partOfSpeech": "",
+    "meaning_th": "การอ่าน",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "度",
+    "pinyin": "dù",
+    "partOfSpeech": "",
+    "meaning_th": "องศา;ระดับ",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "短",
+    "pinyin": "duǎn",
+    "partOfSpeech": "",
+    "meaning_th": "สั้น",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "短信",
+    "pinyin": "duǎnxìn",
+    "partOfSpeech": "",
+    "meaning_th": "ข้อความ",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "段",
+    "pinyin": "duàn",
+    "partOfSpeech": "",
+    "meaning_th": "ตอน;ช่วง",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "队",
+    "pinyin": "duì",
+    "partOfSpeech": "",
+    "meaning_th": "ทีม;แถว",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "队长",
+    "pinyin": "duì zhǎng",
+    "partOfSpeech": "",
+    "meaning_th": "หัวหน้าทีม",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "对（介、动）",
+    "pinyin": "duì",
+    "partOfSpeech": "",
+    "meaning_th": "ถูกต้อง;ให้",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "对话",
+    "pinyin": "duìhuà",
+    "partOfSpeech": "",
+    "meaning_th": "บทสนทนา",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "对面",
+    "pinyin": "duìmiàn",
+    "partOfSpeech": "",
+    "meaning_th": "ฝั่งตรงข้าม",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "多（副）",
+    "pinyin": "duō",
+    "partOfSpeech": "",
+    "meaning_th": "มาก;กว่า",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "多久",
+    "pinyin": "duō jiǔ",
+    "partOfSpeech": "",
+    "meaning_th": "นานเท่าไหร่",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "多么",
+    "pinyin": "duōme",
+    "partOfSpeech": "",
+    "meaning_th": "เพียงใด",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "多数",
+    "pinyin": "duō shù",
+    "partOfSpeech": "",
+    "meaning_th": "ส่วนใหญ่",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "多云",
+    "pinyin": "duō yún",
+    "partOfSpeech": "",
+    "meaning_th": "เมฆมาก",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "而且",
+    "pinyin": "ér qiě",
+    "partOfSpeech": "",
+    "meaning_th": "และ;อีกทั้ง",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "发",
+    "pinyin": "fā",
+    "partOfSpeech": "",
+    "meaning_th": "ส่ง;แจก",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "发现",
+    "pinyin": "fāxiàn",
+    "partOfSpeech": "",
+    "meaning_th": "ค้นพบ",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "饭馆",
+    "pinyin": "fàn guǎn",
+    "partOfSpeech": "",
+    "meaning_th": "ร้านอาหาร",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "方便",
+    "pinyin": "fāngbiàn",
+    "partOfSpeech": "",
+    "meaning_th": "สะดวก",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "方便面",
+    "pinyin": "fāng biàn miàn",
+    "partOfSpeech": "",
+    "meaning_th": "บะหมี่กึ่งสำเร็จรูป",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "方法",
+    "pinyin": "fāngfǎ",
+    "partOfSpeech": "",
+    "meaning_th": "วิธี",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "方面",
+    "pinyin": "fāngmiàn",
+    "partOfSpeech": "",
+    "meaning_th": "ด้าน",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "方向",
+    "pinyin": "fāngxiàng",
+    "partOfSpeech": "",
+    "meaning_th": "ทิศทาง",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "放下",
+    "pinyin": "fàng xià",
+    "partOfSpeech": "",
+    "meaning_th": "วางลง",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "放心",
+    "pinyin": "fàngxīn",
+    "partOfSpeech": "",
+    "meaning_th": "มั่นใจ;ไร้กังวล",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "分（动）",
+    "pinyin": "fēn",
+    "partOfSpeech": "",
+    "meaning_th": "แบ่ง;นาที",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "分开",
+    "pinyin": "fēn kāi",
+    "partOfSpeech": "",
+    "meaning_th": "แยก",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "分数",
+    "pinyin": "fēn shù",
+    "partOfSpeech": "",
+    "meaning_th": "คะแนน",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "分钟",
+    "pinyin": "fēnzhōng",
+    "partOfSpeech": "",
+    "meaning_th": "นาที",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "份",
+    "pinyin": "fèn",
+    "partOfSpeech": "",
+    "meaning_th": "ส่วน;ฉบับ",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "封（量）",
+    "pinyin": "fēng",
+    "partOfSpeech": "",
+    "meaning_th": "ซอง;ฉบับ",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "服务",
+    "pinyin": "fú wù",
+    "partOfSpeech": "",
+    "meaning_th": "บริการ",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "复习",
+    "pinyin": "fùxí",
+    "partOfSpeech": "",
+    "meaning_th": "ทบทวน",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "该（动）",
+    "pinyin": "gāi",
+    "partOfSpeech": "",
+    "meaning_th": "ควร;น่าจะ",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "改",
+    "pinyin": "gǎi",
+    "partOfSpeech": "",
+    "meaning_th": "แก้ไข",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "改变",
+    "pinyin": "gǎibiàn",
+    "partOfSpeech": "",
+    "meaning_th": "เปลี่ยนแปลง",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "干杯",
+    "pinyin": "gānbēi",
+    "partOfSpeech": "",
+    "meaning_th": "ชนแก้ว",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "感到",
+    "pinyin": "gǎn dào",
+    "partOfSpeech": "",
+    "meaning_th": "รู้สึก",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "感动",
+    "pinyin": "gǎndòng",
+    "partOfSpeech": "",
+    "meaning_th": "ประทับใจ",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "感觉",
+    "pinyin": "gǎnjué",
+    "partOfSpeech": "",
+    "meaning_th": "ความรู้สึก",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "感谢",
+    "pinyin": "gǎnxiè",
+    "partOfSpeech": "",
+    "meaning_th": "ขอบคุณ",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "干活儿",
+    "pinyin": "gànhuór",
+    "partOfSpeech": "",
+    "meaning_th": "ทำงาน",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "刚",
+    "pinyin": "gāng",
+    "partOfSpeech": "",
+    "meaning_th": "เพิ่ง",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "刚才",
+    "pinyin": "gāngcái",
+    "partOfSpeech": "",
+    "meaning_th": "เมื่อกี้",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "刚刚",
+    "pinyin": "gāng gāng",
+    "partOfSpeech": "",
+    "meaning_th": "เพิ่ง;พอดี",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "高级",
+    "pinyin": "gāojí",
+    "partOfSpeech": "",
+    "meaning_th": "ขั้นสูง;หรูหรา",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "高中",
+    "pinyin": "gāo zhōng",
+    "partOfSpeech": "",
+    "meaning_th": "มัธยมปลาย",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "个子",
+    "pinyin": "gèzi",
+    "partOfSpeech": "",
+    "meaning_th": "ส่วนสูง",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "更",
+    "pinyin": "gèng",
+    "partOfSpeech": "",
+    "meaning_th": "ยิ่ง;มากกว่า",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "公共汽车",
+    "pinyin": "gōnggòngqìchē",
+    "partOfSpeech": "",
+    "meaning_th": "รถประจำทาง",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "公交车",
+    "pinyin": "gōng jiāo chē",
+    "partOfSpeech": "",
+    "meaning_th": "รถโดยสาร",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "公斤",
+    "pinyin": "gōngjīn",
+    "partOfSpeech": "",
+    "meaning_th": "กิโลกรัม",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "公里",
+    "pinyin": "gōnglǐ",
+    "partOfSpeech": "",
+    "meaning_th": "กิโลเมตร",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "公路",
+    "pinyin": "gōng lù",
+    "partOfSpeech": "",
+    "meaning_th": "ถนน",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "公平",
+    "pinyin": "gōngpíng",
+    "partOfSpeech": "",
+    "meaning_th": "ยุติธรรม",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "公司",
+    "pinyin": "gōngsī",
+    "partOfSpeech": "",
+    "meaning_th": "บริษัท",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "公园",
+    "pinyin": "gōngyuán",
+    "partOfSpeech": "",
+    "meaning_th": "สวนสาธารณะ",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "狗",
+    "pinyin": "gǒu",
+    "partOfSpeech": "",
+    "meaning_th": "สุนัข;หมา",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "够",
+    "pinyin": "gòu",
+    "partOfSpeech": "",
+    "meaning_th": "พอ",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "故事",
+    "pinyin": "gùshi",
+    "partOfSpeech": "",
+    "meaning_th": "เรื่องราว",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "故意",
+    "pinyin": "gùyì",
+    "partOfSpeech": "",
+    "meaning_th": "จงใจ",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "顾客",
+    "pinyin": "gùkè",
+    "partOfSpeech": "",
+    "meaning_th": "ลูกค้า",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "关机",
+    "pinyin": "guān jī",
+    "partOfSpeech": "",
+    "meaning_th": "ปิดเครื่อง",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "关心",
+    "pinyin": "guānxīn",
+    "partOfSpeech": "",
+    "meaning_th": "เป็นห่วง",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "观点",
+    "pinyin": "guāndiǎn",
+    "partOfSpeech": "",
+    "meaning_th": "ทัศนคติ;ความคิดเห็น",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "广场",
+    "pinyin": "guǎngchǎng",
+    "partOfSpeech": "",
+    "meaning_th": "จัตุรัส",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "广告",
+    "pinyin": "guǎnggào",
+    "partOfSpeech": "",
+    "meaning_th": "โฆษณา",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "国际",
+    "pinyin": "guójì",
+    "partOfSpeech": "",
+    "meaning_th": "นานาชาติ",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "过来",
+    "pinyin": "guò lái",
+    "partOfSpeech": "",
+    "meaning_th": "มา",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "过年",
+    "pinyin": "guò nián",
+    "partOfSpeech": "",
+    "meaning_th": "ฉลองปีใหม่",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "过去（动）",
+    "pinyin": "guò qù",
+    "partOfSpeech": "",
+    "meaning_th": "ผ่านไป",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "过",
+    "pinyin": "guò",
+    "partOfSpeech": "",
+    "meaning_th": "ผ่าน;เกิน",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "海",
+    "pinyin": "hǎi",
+    "partOfSpeech": "",
+    "meaning_th": "ทะเล",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "海边",
+    "pinyin": "hǎi biān",
+    "partOfSpeech": "",
+    "meaning_th": "ริมทะเล",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "喊",
+    "pinyin": "hǎn",
+    "partOfSpeech": "",
+    "meaning_th": "ตะโกน;เรียก",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "好（副）",
+    "pinyin": "hǎo",
+    "partOfSpeech": "",
+    "meaning_th": "ดี;มาก",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "好处",
+    "pinyin": "hǎochu",
+    "partOfSpeech": "",
+    "meaning_th": "ประโยชน์",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "好多",
+    "pinyin": "hǎo duō",
+    "partOfSpeech": "",
+    "meaning_th": "มากมาย",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "好久",
+    "pinyin": "hǎo jiǔ",
+    "partOfSpeech": "",
+    "meaning_th": "นาน",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "好人",
+    "pinyin": "hǎo rén",
+    "partOfSpeech": "",
+    "meaning_th": "คนดี",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "好事",
+    "pinyin": "hǎo shì",
+    "partOfSpeech": "",
+    "meaning_th": "เรื่องดี",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "好像",
+    "pinyin": "hǎoxiàng",
+    "partOfSpeech": "",
+    "meaning_th": "เหมือนกับ",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "合适",
+    "pinyin": "héshì",
+    "partOfSpeech": "",
+    "meaning_th": "เหมาะสม",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "河",
+    "pinyin": "hé",
+    "partOfSpeech": "",
+    "meaning_th": "แม่น้ำ",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "黑",
+    "pinyin": "hēi",
+    "partOfSpeech": "",
+    "meaning_th": "ดำ",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "黑板",
+    "pinyin": "hēibǎn",
+    "partOfSpeech": "",
+    "meaning_th": "กระดานดำ",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "黑色",
+    "pinyin": "hēi sè",
+    "partOfSpeech": "",
+    "meaning_th": "สีดำ",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "红",
+    "pinyin": "hóng",
+    "partOfSpeech": "",
+    "meaning_th": "แดง",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "红色",
+    "pinyin": "hóng sè",
+    "partOfSpeech": "",
+    "meaning_th": "สีแดง",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "后来",
+    "pinyin": "hòulái",
+    "partOfSpeech": "",
+    "meaning_th": "ต่อมา;ภายหลัง",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "忽然",
+    "pinyin": "hūrán",
+    "partOfSpeech": "",
+    "meaning_th": "ทันใดนั้น",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "湖",
+    "pinyin": "hú",
+    "partOfSpeech": "",
+    "meaning_th": "ทะเลสาบ",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "护照",
+    "pinyin": "hùzhào",
+    "partOfSpeech": "",
+    "meaning_th": "หนังสือเดินทาง",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "花（动）",
+    "pinyin": "huā",
+    "partOfSpeech": "",
+    "meaning_th": "ใช้;สิ้นเปลือง",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "花园",
+    "pinyin": "huā yuán",
+    "partOfSpeech": "",
+    "meaning_th": "สวน",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "画",
+    "pinyin": "huà",
+    "partOfSpeech": "",
+    "meaning_th": "วาด;ภาพ",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "画家",
+    "pinyin": "huà jiā",
+    "partOfSpeech": "",
+    "meaning_th": "จิตรกร",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "画儿",
+    "pinyin": "huàr",
+    "partOfSpeech": "",
+    "meaning_th": "รูปวาด",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "坏处",
+    "pinyin": "huài chù",
+    "partOfSpeech": "",
+    "meaning_th": "โทษ;ข้อเสีย",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "坏人",
+    "pinyin": "huài rén",
+    "partOfSpeech": "",
+    "meaning_th": "คนเลว",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "欢迎",
+    "pinyin": "huānyíng",
+    "partOfSpeech": "",
+    "meaning_th": "ยินดีต้อนรับ",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "换",
+    "pinyin": "huàn",
+    "partOfSpeech": "",
+    "meaning_th": "เปลี่ยน",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "黄",
+    "pinyin": "huáng",
+    "partOfSpeech": "",
+    "meaning_th": "เหลือง",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "黄色",
+    "pinyin": "huáng sè",
+    "partOfSpeech": "",
+    "meaning_th": "สีเหลือง",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "回（量）",
+    "pinyin": "huí",
+    "partOfSpeech": "",
+    "meaning_th": "ครั้ง",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "回国",
+    "pinyin": "huí guó",
+    "partOfSpeech": "",
+    "meaning_th": "กลับประเทศ",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "会（名）",
+    "pinyin": "huì",
+    "partOfSpeech": "",
+    "meaning_th": "ประชุม",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "活动",
+    "pinyin": "huódòng",
+    "partOfSpeech": "",
+    "meaning_th": "กิจกรรม",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "或",
+    "pinyin": "huò",
+    "partOfSpeech": "",
+    "meaning_th": "หรือ",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "或者",
+    "pinyin": "huòzhě",
+    "partOfSpeech": "",
+    "meaning_th": "หรือ",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "机会",
+    "pinyin": "jīhuì",
+    "partOfSpeech": "",
+    "meaning_th": "โอกาส",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "鸡",
+    "pinyin": "jī",
+    "partOfSpeech": "",
+    "meaning_th": "ไก่",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "级",
+    "pinyin": "jí",
+    "partOfSpeech": "",
+    "meaning_th": "ระดับ;ชั้น",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "急",
+    "pinyin": "jí",
+    "partOfSpeech": "",
+    "meaning_th": "เร่งด่วน;ร้อนใจ",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "计划",
+    "pinyin": "jìhuà",
+    "partOfSpeech": "",
+    "meaning_th": "แผน",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "计算机",
+    "pinyin": "jì suàn jī",
+    "partOfSpeech": "",
+    "meaning_th": "คอมพิวเตอร์",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "加",
+    "pinyin": "jiā",
+    "partOfSpeech": "",
+    "meaning_th": "บวก;เพิ่ม",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "加油",
+    "pinyin": "jiā yóu",
+    "partOfSpeech": "",
+    "meaning_th": "สู้ๆ;เติมน้ำมัน",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "家（科学家）",
+    "pinyin": "jiā",
+    "partOfSpeech": "",
+    "meaning_th": "นัก;ผู้เชี่ยวชาญ",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "家庭",
+    "pinyin": "jiātíng",
+    "partOfSpeech": "",
+    "meaning_th": "ครอบครัว",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "家长",
+    "pinyin": "jiā zhǎng",
+    "partOfSpeech": "",
+    "meaning_th": "ผู้ปกครอง",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "假",
+    "pinyin": "jiǎ",
+    "partOfSpeech": "",
+    "meaning_th": "ปลอม;วันหยุด",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "假期",
+    "pinyin": "jià qī",
+    "partOfSpeech": "",
+    "meaning_th": "วันหยุด",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "检查",
+    "pinyin": "jiǎnchá",
+    "partOfSpeech": "",
+    "meaning_th": "ตรวจ",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "见到",
+    "pinyin": "jiàn dào",
+    "partOfSpeech": "",
+    "meaning_th": "พบ;เจอ",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "见过",
+    "pinyin": "jiàn guò",
+    "partOfSpeech": "",
+    "meaning_th": "เคยพบ",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "件",
+    "pinyin": "jiàn",
+    "partOfSpeech": "",
+    "meaning_th": "ชิ้น;เรื่อง",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "健康",
+    "pinyin": "jiànkāng",
+    "partOfSpeech": "",
+    "meaning_th": "สุขภาพดี",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "讲",
+    "pinyin": "jiǎng",
+    "partOfSpeech": "",
+    "meaning_th": "พูด;อธิบาย",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "讲话",
+    "pinyin": "jiǎng huà",
+    "partOfSpeech": "",
+    "meaning_th": "พูด;สุนทรพจน์",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "交",
+    "pinyin": "jiāo",
+    "partOfSpeech": "",
+    "meaning_th": "ส่ง;มอบ",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "交给",
+    "pinyin": "jiāo gěi",
+    "partOfSpeech": "",
+    "meaning_th": "มอบให้",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "交朋友",
+    "pinyin": "jiāo péng yǒu",
+    "partOfSpeech": "",
+    "meaning_th": "คบเพื่อน",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "交通",
+    "pinyin": "jiāotōng",
+    "partOfSpeech": "",
+    "meaning_th": "การจราจร",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "角",
+    "pinyin": "jiǎo",
+    "partOfSpeech": "",
+    "meaning_th": "มุม;เขา",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "角度",
+    "pinyin": "jiǎodù",
+    "partOfSpeech": "",
+    "meaning_th": "มุมมอง",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "饺子",
+    "pinyin": "jiǎozi",
+    "partOfSpeech": "",
+    "meaning_th": "เกี๊ยว",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "脚",
+    "pinyin": "jiǎo",
+    "partOfSpeech": "",
+    "meaning_th": "เท้า",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "叫作",
+    "pinyin": "jiào zuò",
+    "partOfSpeech": "",
+    "meaning_th": "เรียกว่า",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "教师",
+    "pinyin": "jiào shī",
+    "partOfSpeech": "",
+    "meaning_th": "ครู",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "教室",
+    "pinyin": "jiàoshì",
+    "partOfSpeech": "",
+    "meaning_th": "ห้องเรียน",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "教学",
+    "pinyin": "jiào xué",
+    "partOfSpeech": "",
+    "meaning_th": "การสอน",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "教育",
+    "pinyin": "jiàoyù",
+    "partOfSpeech": "",
+    "meaning_th": "การศึกษา",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "接",
+    "pinyin": "jiē",
+    "partOfSpeech": "",
+    "meaning_th": "รับ;ต่อ",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "接到",
+    "pinyin": "jiē dào",
+    "partOfSpeech": "",
+    "meaning_th": "ได้รับ",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "接受",
+    "pinyin": "jiēshòu",
+    "partOfSpeech": "",
+    "meaning_th": "ยอมรับ",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "接下来",
+    "pinyin": "jiē xià lái",
+    "partOfSpeech": "",
+    "meaning_th": "ถัดไป",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "接着",
+    "pinyin": "jiēzhe",
+    "partOfSpeech": "",
+    "meaning_th": "ต่อจากนั้น",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "街",
+    "pinyin": "jiē",
+    "partOfSpeech": "",
+    "meaning_th": "ถนน;ตรอก",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "节（名、量）",
+    "pinyin": "jié",
+    "partOfSpeech": "",
+    "meaning_th": "เทศกาล;ข้อ",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "节目",
+    "pinyin": "jiémù",
+    "partOfSpeech": "",
+    "meaning_th": "รายการ",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "节日",
+    "pinyin": "jiérì",
+    "partOfSpeech": "",
+    "meaning_th": "วันเทศกาล",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "结果",
+    "pinyin": "jiéguǒ",
+    "partOfSpeech": "",
+    "meaning_th": "ผลลัพธ์",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "借",
+    "pinyin": "jiè",
+    "partOfSpeech": "",
+    "meaning_th": "ยืม",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "斤",
+    "pinyin": "jīn",
+    "partOfSpeech": "",
+    "meaning_th": "จิ้น",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "今后",
+    "pinyin": "jīn hòu",
+    "partOfSpeech": "",
+    "meaning_th": "ต่อจากนี้",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "进入",
+    "pinyin": "jìn rù",
+    "partOfSpeech": "",
+    "meaning_th": "เข้า",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "进行",
+    "pinyin": "jìnxíng",
+    "partOfSpeech": "",
+    "meaning_th": "ดำเนินการ",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "近",
+    "pinyin": "jìn",
+    "partOfSpeech": "",
+    "meaning_th": "ใกล้",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "经常",
+    "pinyin": "jīngcháng",
+    "partOfSpeech": "",
+    "meaning_th": "บ่อย;ประจำ",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "经过",
+    "pinyin": "jīngguò",
+    "partOfSpeech": "",
+    "meaning_th": "ผ่านไป",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "经理",
+    "pinyin": "jīnglǐ",
+    "partOfSpeech": "",
+    "meaning_th": "ผู้จัดการ",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "酒",
+    "pinyin": "jiǔ",
+    "partOfSpeech": "",
+    "meaning_th": "สุรา;เหล้า;ไวน์",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "酒店",
+    "pinyin": "jiǔ diàn",
+    "partOfSpeech": "",
+    "meaning_th": "โรงแรม",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "就要",
+    "pinyin": "jiù yào",
+    "partOfSpeech": "",
+    "meaning_th": "ใกล้จะ;กำลังจะ",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "举",
+    "pinyin": "jǔ",
+    "partOfSpeech": "",
+    "meaning_th": "ยก;ชู",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "举手",
+    "pinyin": "jǔ shǒu",
+    "partOfSpeech": "",
+    "meaning_th": "ยกมือ",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "举行",
+    "pinyin": "jǔxíng",
+    "partOfSpeech": "",
+    "meaning_th": "จัด;จัดงาน;จัดขึ้น",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "句",
+    "pinyin": "jù",
+    "partOfSpeech": "",
+    "meaning_th": "ประโยค;วลี",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "句子",
+    "pinyin": "jùzi",
+    "partOfSpeech": "",
+    "meaning_th": "ประโยค",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "卡",
+    "pinyin": "kǎ",
+    "partOfSpeech": "",
+    "meaning_th": "บัตร;การ์ด",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "开机",
+    "pinyin": "kāi jī",
+    "partOfSpeech": "",
+    "meaning_th": "เปิดเครื่อง",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "开心",
+    "pinyin": "kāixīn",
+    "partOfSpeech": "",
+    "meaning_th": "มีความสุข;สุขใจ",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "开学",
+    "pinyin": "kāi xué",
+    "partOfSpeech": "",
+    "meaning_th": "เปิดเทอม;เปิดภาคเรียน",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "看法",
+    "pinyin": "kànfǎ",
+    "partOfSpeech": "",
+    "meaning_th": "ความคิดเห็น;ทัศนะ",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "考生",
+    "pinyin": "kǎo shēng",
+    "partOfSpeech": "",
+    "meaning_th": "ผู้สอบ;นักสอบ",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "靠",
+    "pinyin": "kào",
+    "partOfSpeech": "",
+    "meaning_th": "พิง;อาศัย;ตาม",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "科",
+    "pinyin": "kē",
+    "partOfSpeech": "",
+    "meaning_th": "วิชา;สาขา;แผนก",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "科学",
+    "pinyin": "kēxué",
+    "partOfSpeech": "",
+    "meaning_th": "วิทยาศาสตร์",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "可爱",
+    "pinyin": "kě'ài",
+    "partOfSpeech": "",
+    "meaning_th": "น่ารัก",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "可能",
+    "pinyin": "kěnéng",
+    "partOfSpeech": "",
+    "meaning_th": "อาจ;เป็นไปได้",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "可怕",
+    "pinyin": "kěpà",
+    "partOfSpeech": "",
+    "meaning_th": "น่ากลัว;น่าสะพรึง",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "可是",
+    "pinyin": "kěshì",
+    "partOfSpeech": "",
+    "meaning_th": "แต่;ทว่า",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "可以",
+    "pinyin": "kěyǐ",
+    "partOfSpeech": "",
+    "meaning_th": "ได้;อาจ;สามารถ",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "克",
+    "pinyin": "kè",
+    "partOfSpeech": "",
+    "meaning_th": "กรัม",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "刻（量）",
+    "pinyin": "kè",
+    "partOfSpeech": "",
+    "meaning_th": "สองสิบนาที;หนึ่งในสี่ชั่วโมง",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "客人",
+    "pinyin": "kèrén",
+    "partOfSpeech": "",
+    "meaning_th": "แขก;ลูกค้า",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "课堂",
+    "pinyin": "kè táng",
+    "partOfSpeech": "",
+    "meaning_th": "ห้องเรียน;ในชั้นเรียน",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "空气",
+    "pinyin": "kōngqì",
+    "partOfSpeech": "",
+    "meaning_th": "อากาศ",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "哭",
+    "pinyin": "kū",
+    "partOfSpeech": "",
+    "meaning_th": "ร้องไห้;รำพัน",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "快餐",
+    "pinyin": "kuài cān",
+    "partOfSpeech": "",
+    "meaning_th": "อาหารจานด่วน;ฟาสต์ฟู้ด",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "快点儿",
+    "pinyin": "kuài diǎnr",
+    "partOfSpeech": "",
+    "meaning_th": "เร็วหน่อย;เร็วเข้า",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "快乐",
+    "pinyin": "kuàilè",
+    "partOfSpeech": "",
+    "meaning_th": "มีความสุข;สนุกสนาน",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "快要",
+    "pinyin": "kuài yào",
+    "partOfSpeech": "",
+    "meaning_th": "ใกล้จะ;เกือบจะ",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "筷子",
+    "pinyin": "kuàizi",
+    "partOfSpeech": "",
+    "meaning_th": "ตะเกียบ",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "拉",
+    "pinyin": "lā",
+    "partOfSpeech": "",
+    "meaning_th": "ดึง;ลาก",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "来自",
+    "pinyin": "láizì",
+    "partOfSpeech": "",
+    "meaning_th": "มาจาก",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "蓝",
+    "pinyin": "lán",
+    "partOfSpeech": "",
+    "meaning_th": "สีน้ำเงิน;สีฟ้า",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "蓝色",
+    "pinyin": "lán sè",
+    "partOfSpeech": "",
+    "meaning_th": "สีน้ำเงิน;สีฟ้า",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "篮球",
+    "pinyin": "lán qiú",
+    "partOfSpeech": "",
+    "meaning_th": "บาสเกตบอล;ลูกบาส",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "老（副）",
+    "pinyin": "lǎo",
+    "partOfSpeech": "",
+    "meaning_th": "เสมอ;ตลอด",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "老（老王）",
+    "pinyin": "lǎo  （ lǎo wáng ）",
+    "partOfSpeech": "",
+    "meaning_th": "คุณ;ท่าน (คำนำหน้าชื่อ)",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "老年",
+    "pinyin": "lǎo nián",
+    "partOfSpeech": "",
+    "meaning_th": "วัยชรา;สูงอายุ",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "老朋友",
+    "pinyin": "lǎo péng yǒu",
+    "partOfSpeech": "",
+    "meaning_th": "เพื่อนเก่า",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "老是",
+    "pinyin": "lǎo shì",
+    "partOfSpeech": "",
+    "meaning_th": "เสมอ;ตลอดเวลา",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "离",
+    "pinyin": "lí",
+    "partOfSpeech": "",
+    "meaning_th": "ห่างจาก;ออกจาก",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "离开",
+    "pinyin": "líkāi",
+    "partOfSpeech": "",
+    "meaning_th": "ออกจาก;จากไป",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "礼物",
+    "pinyin": "lǐwù",
+    "partOfSpeech": "",
+    "meaning_th": "ของขวัญ",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "里头",
+    "pinyin": "lǐ",
+    "partOfSpeech": "",
+    "meaning_th": "ข้างใน;ภายใน",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "理想",
+    "pinyin": "lǐxiǎng",
+    "partOfSpeech": "",
+    "meaning_th": "อุดมคติ;ความฝัน",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "例如",
+    "pinyin": "lìrú",
+    "partOfSpeech": "",
+    "meaning_th": "เช่น;ตัวอย่างเช่น",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "例子",
+    "pinyin": "lì zi",
+    "partOfSpeech": "",
+    "meaning_th": "ตัวอย่าง;กรณี",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "脸",
+    "pinyin": "liǎn",
+    "partOfSpeech": "",
+    "meaning_th": "หน้า;ใบหน้า",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "练",
+    "pinyin": "liàn",
+    "partOfSpeech": "",
+    "meaning_th": "ฝึก;ฝึกฝน",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "练习",
+    "pinyin": "liànxí",
+    "partOfSpeech": "",
+    "meaning_th": "ฝึก;ฝึกฝน;แบบฝึกหัด",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "凉",
+    "pinyin": "liáng",
+    "partOfSpeech": "",
+    "meaning_th": "เย็น;ชื้น",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "凉快",
+    "pinyin": "liángkuai",
+    "partOfSpeech": "",
+    "meaning_th": "เย็นสบาย",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "两（量）",
+    "pinyin": "liǎng",
+    "partOfSpeech": "",
+    "meaning_th": "สอง;คู่",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "亮",
+    "pinyin": "liàng",
+    "partOfSpeech": "",
+    "meaning_th": "สว่าง;งดงาม",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "辆",
+    "pinyin": "liàng",
+    "partOfSpeech": "",
+    "meaning_th": "คัน (ล้อรถ)",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "零下",
+    "pinyin": "líng xià",
+    "partOfSpeech": "",
+    "meaning_th": "ติดลบ",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "留",
+    "pinyin": "liú",
+    "partOfSpeech": "",
+    "meaning_th": "ทิ้งไว้;เก็บไว้",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "留下",
+    "pinyin": "liú xià",
+    "partOfSpeech": "",
+    "meaning_th": "ทิ้งไว้;เก็บไว้",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "留学生",
+    "pinyin": "liú xué shēng",
+    "partOfSpeech": "",
+    "meaning_th": "นักศึกษาต่างชาติ",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "流",
+    "pinyin": "liú",
+    "partOfSpeech": "",
+    "meaning_th": "ไหล;รั่ว",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "流利",
+    "pinyin": "liúlì",
+    "partOfSpeech": "",
+    "meaning_th": "คล่อง;ลื่นไหล",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "流行",
+    "pinyin": "liúxíng",
+    "partOfSpeech": "",
+    "meaning_th": "นิยม;ฮิต;ระบาด",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "路边",
+    "pinyin": "lù biān",
+    "partOfSpeech": "",
+    "meaning_th": "ริมถนน",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "旅客",
+    "pinyin": "lǚ kè",
+    "partOfSpeech": "",
+    "meaning_th": "นักเดินทาง;ผู้โดยสาร",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "旅行",
+    "pinyin": "lǚxíng",
+    "partOfSpeech": "",
+    "meaning_th": "เดินทาง;ท่องเที่ยว",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "旅游",
+    "pinyin": "lǚyóu",
+    "partOfSpeech": "",
+    "meaning_th": "ท่องเที่ยว;เที่ยว",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "绿",
+    "pinyin": "lǜ",
+    "partOfSpeech": "",
+    "meaning_th": "สีเขียว",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "绿色",
+    "pinyin": "lǜ sè",
+    "partOfSpeech": "",
+    "meaning_th": "สีเขียว",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "卖",
+    "pinyin": "mài",
+    "partOfSpeech": "",
+    "meaning_th": "ขาย",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "满",
+    "pinyin": "mǎn",
+    "partOfSpeech": "",
+    "meaning_th": "เต็ม;พรึ่บ",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "满意",
+    "pinyin": "mǎnyì",
+    "partOfSpeech": "",
+    "meaning_th": "พอใจ;พึงพอใจ",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "猫",
+    "pinyin": "māo",
+    "partOfSpeech": "",
+    "meaning_th": "แมว",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "米（量）",
+    "pinyin": "mǐ",
+    "partOfSpeech": "",
+    "meaning_th": "เมตร",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "面¹（名、量）",
+    "pinyin": "miàn ¹",
+    "partOfSpeech": "",
+    "meaning_th": "ด้าน;พื้นผิว;หน้า",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "面²（名）",
+    "pinyin": "miàn ²",
+    "partOfSpeech": "",
+    "meaning_th": "บะหมี่",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "面前",
+    "pinyin": "miàn qián",
+    "partOfSpeech": "",
+    "meaning_th": "ต่อหน้า;เบื้องหน้า",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "名",
+    "pinyin": "míng",
+    "partOfSpeech": "",
+    "meaning_th": "ชื่อ;ชื่อเสียง",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "名称",
+    "pinyin": "míng chēng",
+    "partOfSpeech": "",
+    "meaning_th": "ชื่อ;ชื่อเรียก",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "名单",
+    "pinyin": "míng dān",
+    "partOfSpeech": "",
+    "meaning_th": "รายชื่อ;บัญชีรายชื่อ",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "明星",
+    "pinyin": "míngxīng",
+    "partOfSpeech": "",
+    "meaning_th": "ดารา;คนดัง",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "目的",
+    "pinyin": "mùdì",
+    "partOfSpeech": "",
+    "meaning_th": "จุดมุ่งหมาย;เป้าหมาย",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "拿出",
+    "pinyin": "ná chū",
+    "partOfSpeech": "",
+    "meaning_th": "นำออก;หยิบออก",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "拿到",
+    "pinyin": "ná dào",
+    "partOfSpeech": "",
+    "meaning_th": "ได้รับ;รับมา",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "那（连）",
+    "pinyin": "nà",
+    "partOfSpeech": "",
+    "meaning_th": "นั้น;ฉะนั้น",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "那会儿",
+    "pinyin": "nà huìr",
+    "partOfSpeech": "",
+    "meaning_th": "ตอนนั้น;ในยุคนั้น",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "那么",
+    "pinyin": "nà",
+    "partOfSpeech": "",
+    "meaning_th": "อย่างนั้น;ถ้าอย่างนั้น",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "那时候｜那时",
+    "pinyin": "nà shí",
+    "partOfSpeech": "",
+    "meaning_th": "ตอนนั้น;เวลานั้น",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "那样",
+    "pinyin": "nà yàng",
+    "partOfSpeech": "",
+    "meaning_th": "อย่างนั้น;แบบนั้น",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "南方",
+    "pinyin": "nán fāng",
+    "partOfSpeech": "",
+    "meaning_th": "ทิศใต้;ภาคใต้",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "难过",
+    "pinyin": "nánguò",
+    "partOfSpeech": "",
+    "meaning_th": "เสียใจ;โศกเศร้า;ลำบาก",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "难看",
+    "pinyin": "nán kàn",
+    "partOfSpeech": "",
+    "meaning_th": "น่าเกลียด;ไม่สวย",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "难受",
+    "pinyin": "nánshòu",
+    "partOfSpeech": "",
+    "meaning_th": "ทรมาน;ไม่สบาย;อึดอัด",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "难题",
+    "pinyin": "nán tí",
+    "partOfSpeech": "",
+    "meaning_th": "ปัญหายาก;ข้อยาก",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "难听",
+    "pinyin": "nán tīng",
+    "partOfSpeech": "",
+    "meaning_th": "ไม่ไพเราะ;ฟังไม่ขึ้น",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "能够",
+    "pinyin": "néng gòu",
+    "partOfSpeech": "",
+    "meaning_th": "สามารถ;เป็นไปได้",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "年级",
+    "pinyin": "niánjí",
+    "partOfSpeech": "",
+    "meaning_th": "ระดับชั้น;ชั้นปี",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "年轻",
+    "pinyin": "niánqīng",
+    "partOfSpeech": "",
+    "meaning_th": "หนุ่มสาว;อ่อนวัย",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "鸟",
+    "pinyin": "niǎo",
+    "partOfSpeech": "",
+    "meaning_th": "นก",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "弄",
+    "pinyin": "nòng",
+    "partOfSpeech": "",
+    "meaning_th": "ทำ;จัดการ",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "努力",
+    "pinyin": "nǔlì",
+    "partOfSpeech": "",
+    "meaning_th": "พยายาม;ตั้งใจ",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "爬",
+    "pinyin": "pá",
+    "partOfSpeech": "",
+    "meaning_th": "ปีน;คลาน",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "爬山",
+    "pinyin": "páshān",
+    "partOfSpeech": "",
+    "meaning_th": "ปีนเขา",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "怕（动）",
+    "pinyin": "pà",
+    "partOfSpeech": "",
+    "meaning_th": "กลัว;เกรง",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "排（名、量）",
+    "pinyin": "pái",
+    "partOfSpeech": "",
+    "meaning_th": "แถว;แถวตอน;คัดออก",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "排队",
+    "pinyin": "páiduì",
+    "partOfSpeech": "",
+    "meaning_th": "ต่อแถว;เข้าแถว",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "排球",
+    "pinyin": "pái qiú",
+    "partOfSpeech": "",
+    "meaning_th": "วอลเลย์บอล",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "碰",
+    "pinyin": "pèng",
+    "partOfSpeech": "",
+    "meaning_th": "ชน;กระทบ",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "碰到",
+    "pinyin": "pèng dào",
+    "partOfSpeech": "",
+    "meaning_th": "บังเอิญเจอ;ชน",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "碰见",
+    "pinyin": "pèng jiàn",
+    "partOfSpeech": "",
+    "meaning_th": "บังเอิญพบ",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "篇",
+    "pinyin": "piān",
+    "partOfSpeech": "",
+    "meaning_th": "บท;บทความ;ฉบับ",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "便宜",
+    "pinyin": "piányi",
+    "partOfSpeech": "",
+    "meaning_th": "ถูก;ราคาถูก",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "片",
+    "pinyin": "piàn",
+    "partOfSpeech": "",
+    "meaning_th": "แผ่น;ชิ้น",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "漂亮",
+    "pinyin": "piàoliang",
+    "partOfSpeech": "",
+    "meaning_th": "สวย;งดงาม",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "平",
+    "pinyin": "píng",
+    "partOfSpeech": "",
+    "meaning_th": "ราบ;เรียบ;ธรรมดา",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "平安",
+    "pinyin": "píng'ān",
+    "partOfSpeech": "",
+    "meaning_th": "ปลอดภัย;สวัสดี",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "平常",
+    "pinyin": "píngcháng",
+    "partOfSpeech": "",
+    "meaning_th": "ธรรมดา;ปกติ",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "平等",
+    "pinyin": "píngděng",
+    "partOfSpeech": "",
+    "meaning_th": "เสมอภาค;เท่าเทียม",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "平时",
+    "pinyin": "píngshí",
+    "partOfSpeech": "",
+    "meaning_th": "ปกติ;ตอนปกติ",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "瓶",
+    "pinyin": "píng",
+    "partOfSpeech": "",
+    "meaning_th": "ขวด",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "瓶子",
+    "pinyin": "píngzi",
+    "partOfSpeech": "",
+    "meaning_th": "ขวด",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "普通",
+    "pinyin": "pǔ tōng",
+    "partOfSpeech": "",
+    "meaning_th": "ธรรมดา;ทั่วไป",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "普通话",
+    "pinyin": "pǔtōnghuà",
+    "partOfSpeech": "",
+    "meaning_th": "ภาษาจีนกลาง",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "其他",
+    "pinyin": "qítā",
+    "partOfSpeech": "",
+    "meaning_th": "อื่น;อื่นๆ",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "其中",
+    "pinyin": "qízhōng",
+    "partOfSpeech": "",
+    "meaning_th": "ในนั้น;ระหว่างนั้น",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "骑",
+    "pinyin": "qí",
+    "partOfSpeech": "",
+    "meaning_th": "ขี่",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "骑车",
+    "pinyin": "qí chē",
+    "partOfSpeech": "",
+    "meaning_th": "ขี่จักรยาน",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "起飞",
+    "pinyin": "qǐfēi",
+    "partOfSpeech": "",
+    "meaning_th": "บินขึ้น;ออกเดินทาง",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "气",
+    "pinyin": "qì",
+    "partOfSpeech": "",
+    "meaning_th": "อากาศ;ก๊าซ;โกรธ",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "气温",
+    "pinyin": "qì wēn",
+    "partOfSpeech": "",
+    "meaning_th": "อุณหภูมิ",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "千",
+    "pinyin": "qiān",
+    "partOfSpeech": "",
+    "meaning_th": "พัน",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "千克",
+    "pinyin": "qiān kè",
+    "partOfSpeech": "",
+    "meaning_th": "กิโลกรัม",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "前年",
+    "pinyin": "qián nián",
+    "partOfSpeech": "",
+    "meaning_th": "ปะปี;สองปีก่อน",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "墙",
+    "pinyin": "qiáng",
+    "partOfSpeech": "",
+    "meaning_th": "ผนัง;กำแพง",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "青年",
+    "pinyin": "qīng nián",
+    "partOfSpeech": "",
+    "meaning_th": "เยาวชน;หนุ่มสาว",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "青少年",
+    "pinyin": "qīngshàonián",
+    "partOfSpeech": "",
+    "meaning_th": "วัยรุ่น;เยาวชน",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "轻",
+    "pinyin": "qīng",
+    "partOfSpeech": "",
+    "meaning_th": "เบา;อ่อนโยน",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "清楚",
+    "pinyin": "qīngchu",
+    "partOfSpeech": "",
+    "meaning_th": "ชัดเจน;เข้าใจ",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "晴",
+    "pinyin": "qíng",
+    "partOfSpeech": "",
+    "meaning_th": "แจ่มใส;ไม่มีเมฆ",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "晴天",
+    "pinyin": "qíng tiān",
+    "partOfSpeech": "",
+    "meaning_th": "วันแจ่มใส",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "请客",
+    "pinyin": "qǐng kè",
+    "partOfSpeech": "",
+    "meaning_th": "เลี้ยง;ชวน",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "请求",
+    "pinyin": "qǐngqiú",
+    "partOfSpeech": "",
+    "meaning_th": "ขอร้อง;ร้องขอ",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "秋天",
+    "pinyin": "qiū tiān",
+    "partOfSpeech": "",
+    "meaning_th": "ฤดูใบไม้ร่วง",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "求",
+    "pinyin": "qiú",
+    "partOfSpeech": "",
+    "meaning_th": "ขอ;อ้อนวอน;แสวงหา",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "球场",
+    "pinyin": "qiú chǎng",
+    "partOfSpeech": "",
+    "meaning_th": "สนามกีฬา",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "球队",
+    "pinyin": "qiú duì",
+    "partOfSpeech": "",
+    "meaning_th": "ทีมกีฬา",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "球鞋",
+    "pinyin": "qiú xié",
+    "partOfSpeech": "",
+    "meaning_th": "รองเท้ากีฬา",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "取",
+    "pinyin": "qǔ",
+    "partOfSpeech": "",
+    "meaning_th": "เอา;รับ;ถอน",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "取得",
+    "pinyin": "qǔ dé",
+    "partOfSpeech": "",
+    "meaning_th": "ได้รับ;ประสบความสำเร็จ",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "全",
+    "pinyin": "quán",
+    "partOfSpeech": "",
+    "meaning_th": "ทั้งหมด;สมบูรณ์",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "全部",
+    "pinyin": "quánbù",
+    "partOfSpeech": "",
+    "meaning_th": "ทั้งหมด;ทั้งสิ้น",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "全国",
+    "pinyin": "quán guó",
+    "partOfSpeech": "",
+    "meaning_th": "ทั่วประเทศ",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "全家",
+    "pinyin": "quán jiā",
+    "partOfSpeech": "",
+    "meaning_th": "ทั้งบ้าน;ทั้งครอบครัว",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "全年",
+    "pinyin": "quán nián",
+    "partOfSpeech": "",
+    "meaning_th": "ทั้งปี;ตลอดปี",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "全身",
+    "pinyin": "quán shēn",
+    "partOfSpeech": "",
+    "meaning_th": "ทั่วร่างกาย",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "全体",
+    "pinyin": "quán tǐ",
+    "partOfSpeech": "",
+    "meaning_th": "ทุกคน;ทั้งหมด",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "然后",
+    "pinyin": "ránhòu",
+    "partOfSpeech": "",
+    "meaning_th": "แล้ว;หลังจากนั้น",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "让",
+    "pinyin": "ràng",
+    "partOfSpeech": "",
+    "meaning_th": "ให้;ยอม;ถูก",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "热情",
+    "pinyin": "rèqíng",
+    "partOfSpeech": "",
+    "meaning_th": "กระตือรือร้น;อบอุ่น",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "人口",
+    "pinyin": "rénkǒu",
+    "partOfSpeech": "",
+    "meaning_th": "ประชากร;จำนวนคน",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "人们",
+    "pinyin": "rén men",
+    "partOfSpeech": "",
+    "meaning_th": "ผู้คน;มวลชน",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "人数",
+    "pinyin": "rén shù",
+    "partOfSpeech": "",
+    "meaning_th": "จำนวนคน",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "认为",
+    "pinyin": "rènwéi",
+    "partOfSpeech": "",
+    "meaning_th": "คิดว่า;ถือว่า",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "日报",
+    "pinyin": "rì bào",
+    "partOfSpeech": "",
+    "meaning_th": "หนังสือพิมพ์รายวัน",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "日子",
+    "pinyin": "rìzi",
+    "partOfSpeech": "",
+    "meaning_th": "วัน;ชีวิต",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "如果",
+    "pinyin": "rúguǒ",
+    "partOfSpeech": "",
+    "meaning_th": "ถ้า;หาก",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "入口",
+    "pinyin": "rùkǒu",
+    "partOfSpeech": "",
+    "meaning_th": "ทางเข้า",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "商量",
+    "pinyin": "shāngliang",
+    "partOfSpeech": "",
+    "meaning_th": "ปรึกษา;เจรจา",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "商人",
+    "pinyin": "shāng rén",
+    "partOfSpeech": "",
+    "meaning_th": "พ่อค้า;นักธุรกิจ",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "上周",
+    "pinyin": "shàng zhōu",
+    "partOfSpeech": "",
+    "meaning_th": "อาทิตย์ที่แล้ว;สัปดาห์ที่แล้ว",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "少数",
+    "pinyin": "shǎo shù",
+    "partOfSpeech": "",
+    "meaning_th": "ชนกลุ่มน้อย;จำนวนน้อย",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "少年",
+    "pinyin": "shào nián",
+    "partOfSpeech": "",
+    "meaning_th": "เยาวชน;เด็กหนุ่ม",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "身边",
+    "pinyin": "shēn biān",
+    "partOfSpeech": "",
+    "meaning_th": "ข้างกาย;ใกล้ชิด",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "什么样",
+    "pinyin": "shén",
+    "partOfSpeech": "",
+    "meaning_th": "อย่างไร;แบบไหน",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "生（动）",
+    "pinyin": "shēng",
+    "partOfSpeech": "",
+    "meaning_th": "เกิด;คลอด",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "生词",
+    "pinyin": "shēng cí",
+    "partOfSpeech": "",
+    "meaning_th": "คำใหม่;คำศัพท์ใหม่",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "生活",
+    "pinyin": "shēnghuó",
+    "partOfSpeech": "",
+    "meaning_th": "ชีวิต;การดำรงชีวิต",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "声音",
+    "pinyin": "shēngyīn",
+    "partOfSpeech": "",
+    "meaning_th": "เสียง",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "省（名）",
+    "pinyin": "shěng",
+    "partOfSpeech": "",
+    "meaning_th": "มณฑล;จังหวัด",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "省（动）",
+    "pinyin": "shěng",
+    "partOfSpeech": "",
+    "meaning_th": "ประหยัด;รักษา",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "十分",
+    "pinyin": "shífēn",
+    "partOfSpeech": "",
+    "meaning_th": "มาก;อย่างยิ่ง;สิบส่วน",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "实际",
+    "pinyin": "shíjì",
+    "partOfSpeech": "",
+    "meaning_th": "ความจริง;ปฏิบัติ",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "实习",
+    "pinyin": "shíxí",
+    "partOfSpeech": "",
+    "meaning_th": "ฝึกงาน;ปฏิบัติการ",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "实现",
+    "pinyin": "shíxiàn",
+    "partOfSpeech": "",
+    "meaning_th": "สำเร็จ;เป็นจริง",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "实在",
+    "pinyin": "shízài",
+    "partOfSpeech": "",
+    "meaning_th": "แท้จริง;จริงใจ",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "实在",
+    "pinyin": "shízai",
+    "partOfSpeech": "",
+    "meaning_th": "แท้จริง;จริงใจ",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "食物",
+    "pinyin": "shíwù",
+    "partOfSpeech": "",
+    "meaning_th": "อาหาร",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "使用",
+    "pinyin": "shǐyòng",
+    "partOfSpeech": "",
+    "meaning_th": "ใช้;ใช้งาน",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "市",
+    "pinyin": "shì",
+    "partOfSpeech": "",
+    "meaning_th": "เมือง;ตลาด",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "市长",
+    "pinyin": "shì zhǎng",
+    "partOfSpeech": "",
+    "meaning_th": "นายกเทศมนตรี",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "事情",
+    "pinyin": "shìqing",
+    "partOfSpeech": "",
+    "meaning_th": "เรื่อง;ธุระ",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "收",
+    "pinyin": "shōu",
+    "partOfSpeech": "",
+    "meaning_th": "รับ;เก็บ;รวบรวม",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "收到",
+    "pinyin": "shōu dào",
+    "partOfSpeech": "",
+    "meaning_th": "ได้รับ;รับแล้ว",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "收入",
+    "pinyin": "shōurù",
+    "partOfSpeech": "",
+    "meaning_th": "รายได้;รับ",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "手表",
+    "pinyin": "shǒubiǎo",
+    "partOfSpeech": "",
+    "meaning_th": "นาฬิกาข้อมือ",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "受到",
+    "pinyin": "shòudào",
+    "partOfSpeech": "",
+    "meaning_th": "ได้รับ;ประสบ",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "舒服",
+    "pinyin": "shūfu",
+    "partOfSpeech": "",
+    "meaning_th": "สบาย;ผ่อนคลาย",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "熟",
+    "pinyin": "shú",
+    "partOfSpeech": "",
+    "meaning_th": "สุก;คุ้นเคย;ชำนาญ",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "数",
+    "pinyin": "shǔ",
+    "partOfSpeech": "",
+    "meaning_th": "นับ;ตวง",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "数字",
+    "pinyin": "shùzì",
+    "partOfSpeech": "",
+    "meaning_th": "ตัวเลข;จำนวน",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "水平",
+    "pinyin": "shuǐpíng",
+    "partOfSpeech": "",
+    "meaning_th": "ระดับ;มาตรฐาน",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "顺利",
+    "pinyin": "shùnlì",
+    "partOfSpeech": "",
+    "meaning_th": "ราบรื่น;สำเร็จ",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "说明",
+    "pinyin": "shuōmíng",
+    "partOfSpeech": "",
+    "meaning_th": "อธิบาย;คำอธิบาย",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "司机",
+    "pinyin": "sījī",
+    "partOfSpeech": "",
+    "meaning_th": "คนขับรถ;พนักงานขับรถ",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "送到",
+    "pinyin": "sòng dào",
+    "partOfSpeech": "",
+    "meaning_th": "ส่งถึง",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "送给",
+    "pinyin": "sòng gěi",
+    "partOfSpeech": "",
+    "meaning_th": "ให้;มอบให้",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "算",
+    "pinyin": "suàn",
+    "partOfSpeech": "",
+    "meaning_th": "นับ;ถือว่า;คิด",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "虽然",
+    "pinyin": "suī rán",
+    "partOfSpeech": "",
+    "meaning_th": "แม้ว่า;ถึงแม้",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "随便",
+    "pinyin": "suíbiàn",
+    "partOfSpeech": "",
+    "meaning_th": "สุ่มสี่สุ่มห้า;ตามสบาย",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "随时",
+    "pinyin": "suíshí",
+    "partOfSpeech": "",
+    "meaning_th": "ตลอดเวลา;เมื่อไรก็ได้",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "所以",
+    "pinyin": "suǒ yǐ",
+    "partOfSpeech": "",
+    "meaning_th": "ดังนั้น;เพราะฉะนั้น",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "所有",
+    "pinyin": "suǒyǒu",
+    "partOfSpeech": "",
+    "meaning_th": "ทั้งหมด;ทุก",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "它",
+    "pinyin": "tā",
+    "partOfSpeech": "",
+    "meaning_th": "มัน;มันนั้น",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "它们",
+    "pinyin": "tā men",
+    "partOfSpeech": "",
+    "meaning_th": "พวกมัน",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "太太",
+    "pinyin": "tàitai",
+    "partOfSpeech": "",
+    "meaning_th": "ภรรยา;คุณนาย",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "太阳",
+    "pinyin": "tàiyáng",
+    "partOfSpeech": "",
+    "meaning_th": "ดวงอาทิตย์",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "态度",
+    "pinyin": "tàidu",
+    "partOfSpeech": "",
+    "meaning_th": "ท่าที;ทัศนคติ",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "讨论",
+    "pinyin": "tǎolùn",
+    "partOfSpeech": "",
+    "meaning_th": "หารือ;อภิปราย",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "套",
+    "pinyin": "tào",
+    "partOfSpeech": "",
+    "meaning_th": "ชุด;คู่",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "特别",
+    "pinyin": "tèbié",
+    "partOfSpeech": "",
+    "meaning_th": "พิเศษ;โดยเฉพาะ",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "特点",
+    "pinyin": "tèdiǎn",
+    "partOfSpeech": "",
+    "meaning_th": "จุดเด่น;ลักษณะเฉพาะ",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "疼",
+    "pinyin": "téng",
+    "partOfSpeech": "",
+    "meaning_th": "เจ็บ;ปวด;รัก",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "提",
+    "pinyin": "tí",
+    "partOfSpeech": "",
+    "meaning_th": "ยก;หยิบ;กล่าวถึง",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "提出",
+    "pinyin": "tí chū",
+    "partOfSpeech": "",
+    "meaning_th": "เสนอ;ยื่น",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "提到",
+    "pinyin": "tí dào",
+    "partOfSpeech": "",
+    "meaning_th": "กล่าวถึง;พูดถึง",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "提高",
+    "pinyin": "tígāo",
+    "partOfSpeech": "",
+    "meaning_th": "ยกระดับ;เพิ่ม",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "题",
+    "pinyin": "tí",
+    "partOfSpeech": "",
+    "meaning_th": "หัวข้อ;ข้อ;ปัญหา",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "体育",
+    "pinyin": "tǐyù",
+    "partOfSpeech": "",
+    "meaning_th": "พลศึกษา;กีฬา",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "体育场",
+    "pinyin": "tǐ yù chǎng",
+    "partOfSpeech": "",
+    "meaning_th": "สนามกีฬา",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "体育馆",
+    "pinyin": "tǐ yù guǎn",
+    "partOfSpeech": "",
+    "meaning_th": "สนามกีฬาในร่ม;ยิม",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "天上",
+    "pinyin": "tiān shàng",
+    "partOfSpeech": "",
+    "meaning_th": "บนฟ้า;ในอากาศ",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "条",
+    "pinyin": "tiáo",
+    "partOfSpeech": "",
+    "meaning_th": "เส้น;ฉบับ;บท",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "条件",
+    "pinyin": "tiáojiàn",
+    "partOfSpeech": "",
+    "meaning_th": "เงื่อนไข;ปัจจัย",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "听讲",
+    "pinyin": "tīng jiǎng",
+    "partOfSpeech": "",
+    "meaning_th": "ฟังบรรยาย;ตั้งใจฟัง",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "听说",
+    "pinyin": "tīng shuō",
+    "partOfSpeech": "",
+    "meaning_th": "ได้ยินมาว่า;ตามที่ได้ยิน",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "停",
+    "pinyin": "tíng",
+    "partOfSpeech": "",
+    "meaning_th": "หยุด;จอด",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "停车",
+    "pinyin": "tíng chē",
+    "partOfSpeech": "",
+    "meaning_th": "จอดรถ",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "停车场",
+    "pinyin": "tíng chē chǎng",
+    "partOfSpeech": "",
+    "meaning_th": "ที่จอดรถ;ลานจอดรถ",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "挺（副）",
+    "pinyin": "tǐng",
+    "partOfSpeech": "",
+    "meaning_th": "ค่อนข้าง;มาก",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "挺好",
+    "pinyin": "tǐng hǎo",
+    "partOfSpeech": "",
+    "meaning_th": "ค่อนข้างดี",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "通",
+    "pinyin": "tōng",
+    "partOfSpeech": "",
+    "meaning_th": "ผ่าน;เข้าใจ;โทร",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "通过",
+    "pinyin": "tōngguò",
+    "partOfSpeech": "",
+    "meaning_th": "ผ่าน;โดยทาง",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "通知",
+    "pinyin": "tōngzhī",
+    "partOfSpeech": "",
+    "meaning_th": "แจ้ง;ประกาศ;หนังสือแจ้ง",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "同时",
+    "pinyin": "tóngshí",
+    "partOfSpeech": "",
+    "meaning_th": "ในเวลาเดียวกัน;พร้อมกัน",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "同事",
+    "pinyin": "tóngshì",
+    "partOfSpeech": "",
+    "meaning_th": "เพื่อนร่วมงาน",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "同样",
+    "pinyin": "tóng yàng",
+    "partOfSpeech": "",
+    "meaning_th": "เช่นเดียวกัน;เหมือนกัน",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "头（名、量）",
+    "pinyin": "tóu",
+    "partOfSpeech": "",
+    "meaning_th": "หัว;ตัว;สติ",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "头（里头）",
+    "pinyin": "tóu",
+    "partOfSpeech": "",
+    "meaning_th": "หัว;ข้างในสุด",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "头发",
+    "pinyin": "tóufa",
+    "partOfSpeech": "",
+    "meaning_th": "ผม",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "图片",
+    "pinyin": "tú piàn",
+    "partOfSpeech": "",
+    "meaning_th": "รูปภาพ",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "推",
+    "pinyin": "tuī",
+    "partOfSpeech": "",
+    "meaning_th": "ผลัก;ตะขาย",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "腿",
+    "pinyin": "tuǐ",
+    "partOfSpeech": "",
+    "meaning_th": "ขา",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "外地",
+    "pinyin": "wài dì",
+    "partOfSpeech": "",
+    "meaning_th": "ต่างจังหวัด;ต่างถิ่น",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "外卖",
+    "pinyin": "wài mài",
+    "partOfSpeech": "",
+    "meaning_th": "อาหารเดลิเวอรี;สั่งกลับบ้าน",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "完",
+    "pinyin": "wán",
+    "partOfSpeech": "",
+    "meaning_th": "จบ;เสร็จ;หมด",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "完成",
+    "pinyin": "wánchéng",
+    "partOfSpeech": "",
+    "meaning_th": "เสร็จสิ้น;สำเร็จ",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "完全",
+    "pinyin": "wánquán",
+    "partOfSpeech": "",
+    "meaning_th": "สมบูรณ์;โดยสิ้นเชิง",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "晚安",
+    "pinyin": "wǎn ān",
+    "partOfSpeech": "",
+    "meaning_th": "ราตรีสวัสดิ์",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "晚报",
+    "pinyin": "wǎn bào",
+    "partOfSpeech": "",
+    "meaning_th": "หนังสือพิมพ์เย็น",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "晚餐",
+    "pinyin": "wǎn cān",
+    "partOfSpeech": "",
+    "meaning_th": "อาหารเย็น;มื้อเย็น",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "晚会",
+    "pinyin": "wǎn huì",
+    "partOfSpeech": "",
+    "meaning_th": "งานเลี้ยงตอนกลางคืน",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "碗",
+    "pinyin": "wǎn",
+    "partOfSpeech": "",
+    "meaning_th": "ชาม",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "万",
+    "pinyin": "wàn",
+    "partOfSpeech": "",
+    "meaning_th": "หมื่น",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "网",
+    "pinyin": "wǎng",
+    "partOfSpeech": "",
+    "meaning_th": "ตาข่าย;เครือข่าย;เน็ต",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "网球",
+    "pinyin": "wǎngqiú",
+    "partOfSpeech": "",
+    "meaning_th": "เทนนิส",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "网站",
+    "pinyin": "wǎngzhàn",
+    "partOfSpeech": "",
+    "meaning_th": "เว็บไซต์",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "往",
+    "pinyin": "wǎng",
+    "partOfSpeech": "",
+    "meaning_th": "ไปทาง;สู่",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "为",
+    "pinyin": "wèi",
+    "partOfSpeech": "",
+    "meaning_th": "เพื่อ;เพราะ;โดย",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "为什么",
+    "pinyin": "wèishénme",
+    "partOfSpeech": "",
+    "meaning_th": "ทำไม;เพราะอะไร",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "位",
+    "pinyin": "wèi",
+    "partOfSpeech": "",
+    "meaning_th": "ลำดับ;ตำแหน่ง;ท่าน",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "味道",
+    "pinyin": "wèidào",
+    "partOfSpeech": "",
+    "meaning_th": "รส;กลิ่น",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "喂（叹）",
+    "pinyin": "wèi",
+    "partOfSpeech": "",
+    "meaning_th": "ฮัลโหล;เอ๊ะ",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "温度",
+    "pinyin": "wēndù",
+    "partOfSpeech": "",
+    "meaning_th": "อุณหภูมิ",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "闻",
+    "pinyin": "wén",
+    "partOfSpeech": "",
+    "meaning_th": "ดม;ได้ยิน;ข่าว",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "问路",
+    "pinyin": "wèn lù",
+    "partOfSpeech": "",
+    "meaning_th": "ถามทาง",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "问题",
+    "pinyin": "wèntí",
+    "partOfSpeech": "",
+    "meaning_th": "ปัญหา;คำถาม",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "午餐",
+    "pinyin": "wǔ cān",
+    "partOfSpeech": "",
+    "meaning_th": "อาหารกลางวัน",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "午睡",
+    "pinyin": "wǔ shuì",
+    "partOfSpeech": "",
+    "meaning_th": "นอนกลางวัน;งีบหลับ",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "西北",
+    "pinyin": "xī běi",
+    "partOfSpeech": "",
+    "meaning_th": "ทิศตะวันตกเฉียงเหนือ",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "西餐",
+    "pinyin": "xī cān",
+    "partOfSpeech": "",
+    "meaning_th": "อาหารตะวันตก",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "西方",
+    "pinyin": "xī fāng",
+    "partOfSpeech": "",
+    "meaning_th": "ตะวันตก",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "西南",
+    "pinyin": "xī nán",
+    "partOfSpeech": "",
+    "meaning_th": "ทิศตะวันตกเฉียงใต้",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "西医",
+    "pinyin": "xī yī",
+    "partOfSpeech": "",
+    "meaning_th": "การแพทย์ตะวันตก",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "习惯",
+    "pinyin": "xíguàn",
+    "partOfSpeech": "",
+    "meaning_th": "นิสัย;เคยชิน",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "洗衣机",
+    "pinyin": "xǐ yī jī",
+    "partOfSpeech": "",
+    "meaning_th": "เครื่องซักผ้า",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "洗澡",
+    "pinyin": "xǐzǎo",
+    "partOfSpeech": "",
+    "meaning_th": "อาบน้ำ",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "下（量）",
+    "pinyin": "xià",
+    "partOfSpeech": "",
+    "meaning_th": "ครั้ง;ลง;ต่อไป",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "下雪",
+    "pinyin": "xià xuě",
+    "partOfSpeech": "",
+    "meaning_th": "หิมะตก",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "下周",
+    "pinyin": "xià zhōu",
+    "partOfSpeech": "",
+    "meaning_th": "อาทิตย์หน้า;สัปดาห์หน้า",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "夏天",
+    "pinyin": "xià tiān",
+    "partOfSpeech": "",
+    "meaning_th": "ฤดูร้อน",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "相同",
+    "pinyin": "xiāngtóng",
+    "partOfSpeech": "",
+    "meaning_th": "เหมือนกัน;เช่นกัน",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "相信",
+    "pinyin": "xiāngxìn",
+    "partOfSpeech": "",
+    "meaning_th": "เชื่อ;ไว้ใจ",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "响",
+    "pinyin": "xiǎng",
+    "partOfSpeech": "",
+    "meaning_th": "ดัง;กังวาน",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "想到",
+    "pinyin": "xiǎng dào",
+    "partOfSpeech": "",
+    "meaning_th": "นึกถึง;คิดถึง",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "想法",
+    "pinyin": "xiǎng fǎ",
+    "partOfSpeech": "",
+    "meaning_th": "ความคิด;แนวคิด",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "想起",
+    "pinyin": "xiǎng qǐ",
+    "partOfSpeech": "",
+    "meaning_th": "นึกขึ้นได้;ระลึกถึง",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "向",
+    "pinyin": "xiàng",
+    "partOfSpeech": "",
+    "meaning_th": "ไปทาง;ต่อ;ให้",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "相机",
+    "pinyin": "xiàng jī",
+    "partOfSpeech": "",
+    "meaning_th": "กล้องถ่ายรูป",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "像（动）",
+    "pinyin": "xiàng",
+    "partOfSpeech": "",
+    "meaning_th": "เหมือน;คล้าย",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "小（小王）",
+    "pinyin": "xiǎo  （ xiǎo wáng  ）",
+    "partOfSpeech": "",
+    "meaning_th": "เล็ก;น้อย",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "小声",
+    "pinyin": "xiǎo shēng",
+    "partOfSpeech": "",
+    "meaning_th": "เสียงเบา",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "小时候",
+    "pinyin": "xiǎo shí",
+    "partOfSpeech": "",
+    "meaning_th": "ตอนเด็ก;วัยเด็ก",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "小说",
+    "pinyin": "xiǎoshuō",
+    "partOfSpeech": "",
+    "meaning_th": "นิยาย",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "小心",
+    "pinyin": "xiǎoxīn",
+    "partOfSpeech": "",
+    "meaning_th": "ระวัง;จงระวัง",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "小组",
+    "pinyin": "xiǎo zǔ",
+    "partOfSpeech": "",
+    "meaning_th": "กลุ่มเล็ก",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "校园",
+    "pinyin": "xiào yuán",
+    "partOfSpeech": "",
+    "meaning_th": "วิทยาเขต",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "校长",
+    "pinyin": "xiàozhǎng",
+    "partOfSpeech": "",
+    "meaning_th": "อาจารย์ใหญ่;ผู้อำนวยการ",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "笑话",
+    "pinyin": "xiàohua",
+    "partOfSpeech": "",
+    "meaning_th": "เรื่องตลก",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "笑话儿",
+    "pinyin": "xiào huàr",
+    "partOfSpeech": "",
+    "meaning_th": "เรื่องตลก",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "鞋",
+    "pinyin": "xié",
+    "partOfSpeech": "",
+    "meaning_th": "รองเท้า",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "心里",
+    "pinyin": "xīn lǐ",
+    "partOfSpeech": "",
+    "meaning_th": "ในใจ",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "心情",
+    "pinyin": "xīnqíng",
+    "partOfSpeech": "",
+    "meaning_th": "อารมณ์;ความรู้สึก",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "心中",
+    "pinyin": "xīn zhōng",
+    "partOfSpeech": "",
+    "meaning_th": "ในใจ",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "新闻",
+    "pinyin": "xīnwén",
+    "partOfSpeech": "",
+    "meaning_th": "ข่าว",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "信（名）",
+    "pinyin": "xìn",
+    "partOfSpeech": "",
+    "meaning_th": "จดหมาย",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "信号",
+    "pinyin": "xìnhào",
+    "partOfSpeech": "",
+    "meaning_th": "สัญญาณ",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "信息",
+    "pinyin": "xìnxī",
+    "partOfSpeech": "",
+    "meaning_th": "ข้อมูล;สารสนเทศ",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "信心",
+    "pinyin": "xìnxīn",
+    "partOfSpeech": "",
+    "meaning_th": "ความมั่นใจ",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "信用卡",
+    "pinyin": "xìnyòngkǎ",
+    "partOfSpeech": "",
+    "meaning_th": "บัตรเครดิต",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "星星",
+    "pinyin": "xīng",
+    "partOfSpeech": "",
+    "meaning_th": "ดาว",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "行动",
+    "pinyin": "xíngdòng",
+    "partOfSpeech": "",
+    "meaning_th": "การกระทำ;ปฏิบัติ",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "行人",
+    "pinyin": "xíngrén",
+    "partOfSpeech": "",
+    "meaning_th": "คนเดินถนน",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "行为",
+    "pinyin": "xíngwéi",
+    "partOfSpeech": "",
+    "meaning_th": "พฤติกรรม",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "姓",
+    "pinyin": "xìng",
+    "partOfSpeech": "",
+    "meaning_th": "นามสกุล",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "姓名",
+    "pinyin": "xìng míng",
+    "partOfSpeech": "",
+    "meaning_th": "ชื่อนามสกุล",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "休假",
+    "pinyin": "xiū jià",
+    "partOfSpeech": "",
+    "meaning_th": "ลาพัก;พักผ่อน",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "许多",
+    "pinyin": "xǔduō",
+    "partOfSpeech": "",
+    "meaning_th": "มาก;หลาย",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "选",
+    "pinyin": "xuǎn",
+    "partOfSpeech": "",
+    "meaning_th": "เลือก",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "学期",
+    "pinyin": "xuéqī",
+    "partOfSpeech": "",
+    "meaning_th": "ภาคเรียน",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "雪",
+    "pinyin": "xuě",
+    "partOfSpeech": "",
+    "meaning_th": "หิมะ",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "颜色",
+    "pinyin": "yánsè",
+    "partOfSpeech": "",
+    "meaning_th": "สี",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "眼",
+    "pinyin": "yǎn",
+    "partOfSpeech": "",
+    "meaning_th": "ตา",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "眼睛",
+    "pinyin": "yǎnjing",
+    "partOfSpeech": "",
+    "meaning_th": "ตา",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "养",
+    "pinyin": "yǎng",
+    "partOfSpeech": "",
+    "meaning_th": "เลี้ยง;ฟอกฟัน",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "样子",
+    "pinyin": "yàngzi",
+    "partOfSpeech": "",
+    "meaning_th": "ลักษณะ;หน้าตา",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "要求",
+    "pinyin": "yāoqiú",
+    "partOfSpeech": "",
+    "meaning_th": "ต้องการ;ขอร้อง",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "药",
+    "pinyin": "yào",
+    "partOfSpeech": "",
+    "meaning_th": "ยา",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "药店",
+    "pinyin": "yào diàn",
+    "partOfSpeech": "",
+    "meaning_th": "ร้านขายยา",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "药片",
+    "pinyin": "yào piàn",
+    "partOfSpeech": "",
+    "meaning_th": "เม็ดยา",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "药水",
+    "pinyin": "yào shuǐ",
+    "partOfSpeech": "",
+    "meaning_th": "ยาน้ำ",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "也许",
+    "pinyin": "yěxǔ",
+    "partOfSpeech": "",
+    "meaning_th": "บางที;อาจ",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "夜",
+    "pinyin": "yè",
+    "partOfSpeech": "",
+    "meaning_th": "กลางคืน",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "夜里",
+    "pinyin": "yè lǐ",
+    "partOfSpeech": "",
+    "meaning_th": "กลางคืน",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "一部分",
+    "pinyin": "yí bù fèn",
+    "partOfSpeech": "",
+    "meaning_th": "ส่วนหนึ่ง",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "一定",
+    "pinyin": "yídìng",
+    "partOfSpeech": "",
+    "meaning_th": "แน่นอน;ต้อง",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "一共",
+    "pinyin": "yígòng",
+    "partOfSpeech": "",
+    "meaning_th": "รวม;ทั้งหมด",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "一会儿（副）",
+    "pinyin": "yí huìr",
+    "partOfSpeech": "",
+    "meaning_th": "สักครู่",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "一路平安",
+    "pinyin": "yí lù píng ān",
+    "partOfSpeech": "",
+    "meaning_th": "เดินทางปลอดภัย",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "一路顺风",
+    "pinyin": "yí lù shùn fēng",
+    "partOfSpeech": "",
+    "meaning_th": "เดินทางโดยสวัสดิ์",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "已经",
+    "pinyin": "yǐjīng",
+    "partOfSpeech": "",
+    "meaning_th": "แล้ว",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "以后",
+    "pinyin": "yǐ hòu",
+    "partOfSpeech": "",
+    "meaning_th": "หลังจาก;ต่อไป",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "以前",
+    "pinyin": "yǐqián",
+    "partOfSpeech": "",
+    "meaning_th": "ก่อน;เมื่อก่อน",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "以上",
+    "pinyin": "yǐ shàng",
+    "partOfSpeech": "",
+    "meaning_th": "ขึ้นไป;สูงกว่า",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "以外",
+    "pinyin": "yǐ wài",
+    "partOfSpeech": "",
+    "meaning_th": "นอกจาก",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "以为",
+    "pinyin": "yǐwéi",
+    "partOfSpeech": "",
+    "meaning_th": "คิดว่า;เข้าใจว่า",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "以下",
+    "pinyin": "yǐ xià",
+    "partOfSpeech": "",
+    "meaning_th": "ลงมา;ต่ำกว่า",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "椅子",
+    "pinyin": "yǐzi",
+    "partOfSpeech": "",
+    "meaning_th": "เก้าอี้",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "一般",
+    "pinyin": "yìbān",
+    "partOfSpeech": "",
+    "meaning_th": "ทั่วไป;ปกติ",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "一点点",
+    "pinyin": "yì diǎn diǎn",
+    "partOfSpeech": "",
+    "meaning_th": "นิดหน่อย",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "一生",
+    "pinyin": "yì shēng",
+    "partOfSpeech": "",
+    "meaning_th": "ตลอดชีวิต",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "一直",
+    "pinyin": "yìzhí",
+    "partOfSpeech": "",
+    "meaning_th": "ตลอด;โดยตรง",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "亿",
+    "pinyin": "yì",
+    "partOfSpeech": "",
+    "meaning_th": "ร้อยล้าน",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "意见",
+    "pinyin": "yìjiàn",
+    "partOfSpeech": "",
+    "meaning_th": "ความเห็น",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "意思",
+    "pinyin": "yìsi",
+    "partOfSpeech": "",
+    "meaning_th": "ความหมาย",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "因为",
+    "pinyin": "yīn wèi",
+    "partOfSpeech": "",
+    "meaning_th": "เพราะว่า",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "阴",
+    "pinyin": "yīn",
+    "partOfSpeech": "",
+    "meaning_th": "เมฆมาก;หยิน",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "阴天",
+    "pinyin": "yīn tiān",
+    "partOfSpeech": "",
+    "meaning_th": "วันที่มีเมฆมาก",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "音节",
+    "pinyin": "yīn jié",
+    "partOfSpeech": "",
+    "meaning_th": "พยางค์",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "音乐",
+    "pinyin": "yīnyuè",
+    "partOfSpeech": "",
+    "meaning_th": "ดนตรี",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "音乐会",
+    "pinyin": "yīn yuè huì",
+    "partOfSpeech": "",
+    "meaning_th": "คอนเสิร์ต",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "银行",
+    "pinyin": "yínháng",
+    "partOfSpeech": "",
+    "meaning_th": "ธนาคาร",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "银行卡",
+    "pinyin": "yín háng kǎ",
+    "partOfSpeech": "",
+    "meaning_th": "บัตรธนาคาร",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "应该",
+    "pinyin": "yīnggāi",
+    "partOfSpeech": "",
+    "meaning_th": "ควร;น่าจะ",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "英文",
+    "pinyin": "yīng wén",
+    "partOfSpeech": "",
+    "meaning_th": "ภาษาอังกฤษ",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "英语",
+    "pinyin": "yīng yǔ",
+    "partOfSpeech": "",
+    "meaning_th": "ภาษาอังกฤษ",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "影片",
+    "pinyin": "yǐng piàn",
+    "partOfSpeech": "",
+    "meaning_th": "ภาพยนตร์",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "影响",
+    "pinyin": "yǐngxiǎng",
+    "partOfSpeech": "",
+    "meaning_th": "มีผลต่อ;อิทธิพล",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "永远",
+    "pinyin": "yǒngyuǎn",
+    "partOfSpeech": "",
+    "meaning_th": "ตลอดไป;นิรันดร์",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "油",
+    "pinyin": "yóu",
+    "partOfSpeech": "",
+    "meaning_th": "น้ำมัน",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "游客",
+    "pinyin": "yóu kè",
+    "partOfSpeech": "",
+    "meaning_th": "นักท่องเที่ยว",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "友好",
+    "pinyin": "yǒuhǎo",
+    "partOfSpeech": "",
+    "meaning_th": "เป็นมิตร",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "有空儿",
+    "pinyin": "yǒu kòngr",
+    "partOfSpeech": "",
+    "meaning_th": "ว่าง",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "有人",
+    "pinyin": "yǒu rén",
+    "partOfSpeech": "",
+    "meaning_th": "มีคน",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "有（一）点儿",
+    "pinyin": "yǒu （ yì ）  diǎnr",
+    "partOfSpeech": "",
+    "meaning_th": "นิดหน่อย",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "有意思",
+    "pinyin": "yǒu yì",
+    "partOfSpeech": "",
+    "meaning_th": "น่าสนใจ;สนุก",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "又",
+    "pinyin": "yòu",
+    "partOfSpeech": "",
+    "meaning_th": "อีก;ก็",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "鱼",
+    "pinyin": "yú",
+    "partOfSpeech": "",
+    "meaning_th": "ปลา",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "语言",
+    "pinyin": "yǔyán",
+    "partOfSpeech": "",
+    "meaning_th": "ภาษา",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "原来",
+    "pinyin": "yuánlái",
+    "partOfSpeech": "",
+    "meaning_th": "ที่จริง;เดิม",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "原因",
+    "pinyin": "yuányīn",
+    "partOfSpeech": "",
+    "meaning_th": "เหตุผล",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "院",
+    "pinyin": "yuàn",
+    "partOfSpeech": "",
+    "meaning_th": "ลาน;สถาบัน",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "院长",
+    "pinyin": "yuàn zhǎng",
+    "partOfSpeech": "",
+    "meaning_th": "คณบดี;ผู้อำนวยการ",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "院子",
+    "pinyin": "yuàn zi",
+    "partOfSpeech": "",
+    "meaning_th": "ลานบ้าน",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "愿意",
+    "pinyin": "yuànyì",
+    "partOfSpeech": "",
+    "meaning_th": "เต็มใจ;ยินดี",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "月份",
+    "pinyin": "yuè fèn",
+    "partOfSpeech": "",
+    "meaning_th": "เดือน",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "月亮",
+    "pinyin": "yuèliang",
+    "partOfSpeech": "",
+    "meaning_th": "พระจันทร์",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "越",
+    "pinyin": "yuè",
+    "partOfSpeech": "",
+    "meaning_th": "ยิ่ง;ข้าม",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "越来越",
+    "pinyin": "yuè lái yuè",
+    "partOfSpeech": "",
+    "meaning_th": "ยิ่งขึ้นเรื่อยๆ",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "云",
+    "pinyin": "yún",
+    "partOfSpeech": "",
+    "meaning_th": "เมฆ",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "运动",
+    "pinyin": "yùndòng",
+    "partOfSpeech": "",
+    "meaning_th": "กีฬา;การเคลื่อนไหว",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "咱",
+    "pinyin": "zán",
+    "partOfSpeech": "",
+    "meaning_th": "เรา",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "咱们",
+    "pinyin": "zánmen",
+    "partOfSpeech": "",
+    "meaning_th": "เรา",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "脏",
+    "pinyin": "zāng",
+    "partOfSpeech": "",
+    "meaning_th": "สกปรก",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "早餐",
+    "pinyin": "zǎo cān",
+    "partOfSpeech": "",
+    "meaning_th": "อาหารเช้า",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "早晨",
+    "pinyin": "zǎo chén",
+    "partOfSpeech": "",
+    "meaning_th": "เช้า;ตอนเช้า",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "早就",
+    "pinyin": "zǎo jiù",
+    "partOfSpeech": "",
+    "meaning_th": "นานแล้ว",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "怎么办",
+    "pinyin": "zěn",
+    "partOfSpeech": "",
+    "meaning_th": "ทำอย่างไร",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "怎么样",
+    "pinyin": "zěnmeyàng",
+    "partOfSpeech": "",
+    "meaning_th": "อย่างไร;เป็นยังไง",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "怎样",
+    "pinyin": "zěn yàng",
+    "partOfSpeech": "",
+    "meaning_th": "อย่างไร",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "占",
+    "pinyin": "zhàn",
+    "partOfSpeech": "",
+    "meaning_th": "ครอบครอง;ยึด",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "站（动）",
+    "pinyin": "zhàn",
+    "partOfSpeech": "",
+    "meaning_th": "ยืน",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "站住",
+    "pinyin": "zhàn zhù",
+    "partOfSpeech": "",
+    "meaning_th": "หยุด;ยืนนิ่ง",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "长",
+    "pinyin": "zhǎng",
+    "partOfSpeech": "",
+    "meaning_th": "โต;อาวุโส",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "长大",
+    "pinyin": "zhǎng dà",
+    "partOfSpeech": "",
+    "meaning_th": "โตขึ้น",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "找出",
+    "pinyin": "zhǎo chū",
+    "partOfSpeech": "",
+    "meaning_th": "หาออก;ค้นหา",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "照顾",
+    "pinyin": "zhàogù",
+    "partOfSpeech": "",
+    "meaning_th": "ดูแล",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "照片",
+    "pinyin": "zhàopiàn",
+    "partOfSpeech": "",
+    "meaning_th": "รูปถ่าย",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "照相",
+    "pinyin": "zhào xiàng",
+    "partOfSpeech": "",
+    "meaning_th": "ถ่ายรูป",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "这么",
+    "pinyin": "zhè",
+    "partOfSpeech": "",
+    "meaning_th": "อย่างนี้;ขนาดนี้",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "这时候｜这时",
+    "pinyin": "zhè shí",
+    "partOfSpeech": "",
+    "meaning_th": "ตอนนี้;เวลานี้",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "这样",
+    "pinyin": "zhè yàng",
+    "partOfSpeech": "",
+    "meaning_th": "อย่างนี้;แบบนี้",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "真正",
+    "pinyin": "zhēnzhèng",
+    "partOfSpeech": "",
+    "meaning_th": "แท้จริง",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "正常",
+    "pinyin": "zhèngcháng",
+    "partOfSpeech": "",
+    "meaning_th": "ปกติ",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "正好",
+    "pinyin": "zhènghǎo",
+    "partOfSpeech": "",
+    "meaning_th": "พอดี;เหมาะ",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "正确",
+    "pinyin": "zhèngquè",
+    "partOfSpeech": "",
+    "meaning_th": "ถูกต้อง",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "正是",
+    "pinyin": "zhèng shì",
+    "partOfSpeech": "",
+    "meaning_th": "ใช่แล้ว;พอดี",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "直接",
+    "pinyin": "zhíjiē",
+    "partOfSpeech": "",
+    "meaning_th": "โดยตรง",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "只",
+    "pinyin": "zhǐ",
+    "partOfSpeech": "",
+    "meaning_th": "เท่านั้น;เพียง",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "只能",
+    "pinyin": "zhǐ néng",
+    "partOfSpeech": "",
+    "meaning_th": "ทำได้แค่",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "只要",
+    "pinyin": "zhǐyào",
+    "partOfSpeech": "",
+    "meaning_th": "ขอแค่;ตราบใด",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "纸",
+    "pinyin": "zhǐ",
+    "partOfSpeech": "",
+    "meaning_th": "กระดาษ",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "中餐",
+    "pinyin": "zhōng cān",
+    "partOfSpeech": "",
+    "meaning_th": "อาหารจีน",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "中级",
+    "pinyin": "zhōng jí",
+    "partOfSpeech": "",
+    "meaning_th": "ระดับกลาง",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "中年",
+    "pinyin": "zhōng nián",
+    "partOfSpeech": "",
+    "meaning_th": "วัยกลางคน",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "中小学",
+    "pinyin": "zhōng xiǎo xué",
+    "partOfSpeech": "",
+    "meaning_th": "ประถมและมัธยม",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "中心",
+    "pinyin": "zhōngxīn",
+    "partOfSpeech": "",
+    "meaning_th": "ศูนย์กลาง",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "中医",
+    "pinyin": "zhōng yī",
+    "partOfSpeech": "",
+    "meaning_th": "การแพทย์จีน",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "重点",
+    "pinyin": "zhòngdiǎn",
+    "partOfSpeech": "",
+    "meaning_th": "จุดเน้น;สำคัญ",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "重视",
+    "pinyin": "zhòngshì",
+    "partOfSpeech": "",
+    "meaning_th": "ให้ความสำคัญ",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "周",
+    "pinyin": "zhōu",
+    "partOfSpeech": "",
+    "meaning_th": "สัปดาห์",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "周末",
+    "pinyin": "zhōumò",
+    "partOfSpeech": "",
+    "meaning_th": "สุดสัปดาห์",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "周年",
+    "pinyin": "zhōunián",
+    "partOfSpeech": "",
+    "meaning_th": "ครบรอบ",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "主人",
+    "pinyin": "zhǔrén",
+    "partOfSpeech": "",
+    "meaning_th": "เจ้าของ;เจ้าภาพ",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "主要",
+    "pinyin": "zhǔyào",
+    "partOfSpeech": "",
+    "meaning_th": "หลัก;สำคัญ",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "住房",
+    "pinyin": "zhù fáng",
+    "partOfSpeech": "",
+    "meaning_th": "ที่อยู่อาศัย",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "住院",
+    "pinyin": "zhù yuàn",
+    "partOfSpeech": "",
+    "meaning_th": "นอนโรงพยาบาล",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "装",
+    "pinyin": "zhuāng",
+    "partOfSpeech": "",
+    "meaning_th": "ใส่;ทำเป็น;ติดตั้ง",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "准确",
+    "pinyin": "zhǔnquè",
+    "partOfSpeech": "",
+    "meaning_th": "แม่นยำ;ถูกต้อง",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "自己",
+    "pinyin": "zìjǐ",
+    "partOfSpeech": "",
+    "meaning_th": "ตัวเอง",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "自行车",
+    "pinyin": "zìxíngchē",
+    "partOfSpeech": "",
+    "meaning_th": "จักรยาน",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "自由",
+    "pinyin": "zìyóu",
+    "partOfSpeech": "",
+    "meaning_th": "อิสระ;เสรี",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "字典",
+    "pinyin": "zì diǎn",
+    "partOfSpeech": "",
+    "meaning_th": "พจนานุกรม",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "走过",
+    "pinyin": "zǒu guò",
+    "partOfSpeech": "",
+    "meaning_th": "เดินผ่าน",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "走进",
+    "pinyin": "zǒu jìn",
+    "partOfSpeech": "",
+    "meaning_th": "เดินเข้า",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "走开",
+    "pinyin": "zǒu kāi",
+    "partOfSpeech": "",
+    "meaning_th": "เดินออกไป;หลีกไป",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "租",
+    "pinyin": "zū",
+    "partOfSpeech": "",
+    "meaning_th": "เช่า",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "组",
+    "pinyin": "zǔ",
+    "partOfSpeech": "",
+    "meaning_th": "กลุ่ม;ทีม",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "组成",
+    "pinyin": "zǔchéng",
+    "partOfSpeech": "",
+    "meaning_th": "ประกอบ;รวมเป็น",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "组长",
+    "pinyin": "zǔ zhǎng",
+    "partOfSpeech": "",
+    "meaning_th": "หัวหน้ากลุ่ม",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "嘴",
+    "pinyin": "zuǐ",
+    "partOfSpeech": "",
+    "meaning_th": "ปาก",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "最近",
+    "pinyin": "zuìjìn",
+    "partOfSpeech": "",
+    "meaning_th": "ล่าสุด;เมื่อเร็วๆนี้",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "作家",
+    "pinyin": "zuòjiā",
+    "partOfSpeech": "",
+    "meaning_th": "นักเขียน",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "作文",
+    "pinyin": "zuòwén",
+    "partOfSpeech": "",
+    "meaning_th": "เรียงความ",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "作业",
+    "pinyin": "zuòyè",
+    "partOfSpeech": "",
+    "meaning_th": "การบ้าน",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "作用",
+    "pinyin": "zuòyòng",
+    "partOfSpeech": "",
+    "meaning_th": "ผล;หน้าที่",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "座",
+    "pinyin": "zuò",
+    "partOfSpeech": "",
+    "meaning_th": "ที่นั่ง;ลำ",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "座位",
+    "pinyin": "zuòwèi",
+    "partOfSpeech": "",
+    "meaning_th": "ที่นั่ง",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "做到",
+    "pinyin": "zuò dào",
+    "partOfSpeech": "",
+    "meaning_th": "ทำได้;ทำสำเร็จ",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "做法",
+    "pinyin": "zuò fǎ",
+    "partOfSpeech": "",
+    "meaning_th": "วิธีทำ",
+    "example": "",
+    "level": 2
+  },
+  {
+    "character": "做饭",
+    "pinyin": "zuò fàn",
+    "partOfSpeech": "",
+    "meaning_th": "ทำอาหาร",
+    "example": "",
+    "level": 2
+  }
+]

@@ -2,10 +2,12 @@
 import BaseLayout from '../../../layouts/BaseLayout.astro';
 import Masthead from '../../../components/Masthead.astro';
 import Footer from '../../../components/Footer.astro';
-import hskLevel1 from '../../../data/hsk-level-1.json';
-import hskLevel2 from '../../../data/hsk-level-2.json';
+import hskLevel1 from '../../../data/vocab-hsk1.json';
+import hskLevel2 from '../../../data/vocab-hsk2.json';
 import hskLevel3 from '../../../data/vocab-hsk3.json';
 import hskLevel4 from '../../../data/vocab-hsk4.json';
+import hskLevel5 from '../../../data/vocab-hsk5.json';
+import hskLevel6 from '../../../data/vocab-hsk6.json';
 
 type Entry = {
   character: string;
@@ -20,12 +22,16 @@ const hsk1 = hskLevel1 as Entry[];
 const hsk2 = hskLevel2 as Entry[];
 const hsk3 = hskLevel3 as Entry[];
 const hsk4 = hskLevel4 as Entry[];
+const hsk5 = hskLevel5 as Entry[];
+const hsk6 = hskLevel6 as Entry[];
 
 const levels = [
   { id: 1, name: 'Level 1', entries: hsk1 },
   { id: 2, name: 'Level 2', entries: hsk2 },
   { id: 3, name: 'Level 3', entries: hsk3 },
   { id: 4, name: 'Level 4', entries: hsk4 },
+  { id: 5, name: 'Level 5', entries: hsk5 },
+  { id: 6, name: 'Level 6', entries: hsk6 },
 ];
 ---
 
@@ -79,14 +85,17 @@ const levels = [
           <div class="filter-book">新 HSK 词汇（汉泰）</div>
           <div class="filter-head">
             <span>Level</span>
+            <div class="filter-actions">
+              <button type="button" id="filter-all">All</button>
+              <button type="button" id="filter-clear">Clear</button>
+            </div>
           </div>
           <div class="filter-levels" id="filter-levels">
             {
               levels.map((lv) => (
                 <label class="filter-chip">
                   <input
-                    type="radio"
-                    name="hsk-level"
+                    type="checkbox"
                     value={lv.id}
                     checked={lv.id === 1}
                     data-level={lv.id}
@@ -104,10 +113,10 @@ const levels = [
   <Footer />
 </BaseLayout>
 
-<script is:inline define:vars={{ hsk1, hsk2, hsk3, hsk4 }}>
+<script is:inline define:vars={{ hsk1, hsk2, hsk3, hsk4, hsk5, hsk6 }}>
   // ─── State ───
   const STORAGE_TAB = 'wenfang_hsk_flashcard_tab';
-  const STORAGE_LEVEL = 'wenfang_hsk_flashcard_level';
+  const STORAGE_LEVELS = 'wenfang_hsk_flashcard_levels';
 
   let activeTab = 'character';
   try {
@@ -117,11 +126,15 @@ const levels = [
     /* ignore */
   }
 
-  let activeLevel = 1;
+  let activeLevels = new Set([1]);
   try {
-    const savedLevel = localStorage.getItem(STORAGE_LEVEL);
-    if (savedLevel === '1' || savedLevel === '2' || savedLevel === '3' || savedLevel === '4')
-      activeLevel = Number(savedLevel);
+    const raw = localStorage.getItem(STORAGE_LEVELS);
+    if (raw) {
+      const parsed = JSON.parse(raw);
+      if (Array.isArray(parsed) && parsed.length > 0) {
+        activeLevels = new Set(parsed);
+      }
+    }
   } catch {
     /* ignore */
   }
@@ -142,14 +155,19 @@ const levels = [
   const filterPanel = document.getElementById('filter-panel');
   const filterBtn = document.getElementById('flash-filter');
   const levelInputs = document.querySelectorAll('input[data-level]');
+  const filterAllBtn = document.getElementById('filter-all');
+  const filterClearBtn = document.getElementById('filter-clear');
 
   // ─── Helpers ───
-  const getEntriesForLevel = (level) => {
-    if (level === 1) return hsk1;
-    if (level === 2) return hsk2;
-    if (level === 3) return hsk3;
-    if (level === 4) return hsk4;
-    return hsk1;
+  const getEntriesForLevels = (levelsSet) => {
+    let entries = [];
+    if (levelsSet.has(1)) entries = entries.concat(hsk1);
+    if (levelsSet.has(2)) entries = entries.concat(hsk2);
+    if (levelsSet.has(3)) entries = entries.concat(hsk3);
+    if (levelsSet.has(4)) entries = entries.concat(hsk4);
+    if (levelsSet.has(5)) entries = entries.concat(hsk5);
+    if (levelsSet.has(6)) entries = entries.concat(hsk6);
+    return entries;
   };
 
   const shuffle = (arr) => {
@@ -162,7 +180,7 @@ const levels = [
   };
 
   const rebuildDeck = () => {
-    const entries = getEntriesForLevel(activeLevel);
+    const entries = getEntriesForLevels(activeLevels);
     deck = shuffle(entries);
     idx = 0;
     render();
@@ -285,14 +303,14 @@ const levels = [
   // ─── Filter ───
   const syncFilterInputs = () => {
     levelInputs.forEach((input) => {
-      input.checked = Number(input.value) === activeLevel;
+      input.checked = activeLevels.has(Number(input.value));
     });
   };
   syncFilterInputs();
 
-  const saveLevel = () => {
+  const saveLevels = () => {
     try {
-      localStorage.setItem(STORAGE_LEVEL, String(activeLevel));
+      localStorage.setItem(STORAGE_LEVELS, JSON.stringify(Array.from(activeLevels)));
     } catch {
       /* ignore */
     }
@@ -301,10 +319,10 @@ const levels = [
 
   levelInputs.forEach((input) => {
     input.addEventListener('change', () => {
-      if (input.checked) {
-        activeLevel = Number(input.value);
-        saveLevel();
-      }
+      const lv = Number(input.value);
+      if (input.checked) activeLevels.add(lv);
+      else activeLevels.delete(lv);
+      saveLevels();
     });
   });
 
@@ -312,6 +330,17 @@ const levels = [
     const open = filterPanel.dataset.open !== 'true';
     filterPanel.dataset.open = String(open);
     filterBtn.classList.toggle('is-active', open);
+  });
+
+  filterAllBtn.addEventListener('click', () => {
+    for (let i = 1; i <= 6; i++) activeLevels.add(i);
+    syncFilterInputs();
+    saveLevels();
+  });
+  filterClearBtn.addEventListener('click', () => {
+    activeLevels.clear();
+    syncFilterInputs();
+    saveLevels();
   });
 
   // ─── Nav ───
@@ -575,6 +604,24 @@ const levels = [
     text-transform: uppercase;
     color: var(--color-fg);
   }
+  .filter-actions {
+    display: flex;
+    gap: 12px;
+  }
+  .filter-actions button {
+    background: none;
+    border: 0;
+    padding: 0;
+    font: inherit;
+    color: var(--color-muted);
+    cursor: pointer;
+    letter-spacing: inherit;
+    text-transform: inherit;
+    transition: color 0.15s ease;
+  }
+  .filter-actions button:hover {
+    color: var(--color-accent);
+  }
   .filter-levels {
     display: flex;
     flex-wrap: wrap;
@@ -601,7 +648,6 @@ const levels = [
     width: 14px;
     height: 14px;
     border: 1px solid var(--color-border);
-    border-radius: 50%;
     background: var(--color-bg);
     margin: 0;
     cursor: pointer;
@@ -616,11 +662,12 @@ const levels = [
     content: '';
     position: absolute;
     left: 4px;
-    top: 4px;
+    top: 1px;
     width: 4px;
-    height: 4px;
-    border-radius: 50%;
-    background: var(--color-bg);
+    height: 8px;
+    border: solid var(--color-bg);
+    border-width: 0 1.5px 1.5px 0;
+    transform: rotate(45deg);
   }
   .filter-chip-count {
     color: var(--color-muted);

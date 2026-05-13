@@ -11,6 +11,7 @@
     "lint": "eslint .",
     "format": "prettier --write .",
     "vocab:build": "python3 scripts/build-vocab.py",
+    "topik:build": "python3 scripts/build-topik-vocab.py",
     "hanzi:build": "node scripts/build-hanzi-data.js"
   },
   "dependencies": {

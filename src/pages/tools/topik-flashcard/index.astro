@@ -1,0 +1,602 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import Masthead from '../../../components/Masthead.astro';
+import Footer from '../../../components/Footer.astro';
+import topikVocab from '../../../data/topik-vocab.json';
+
+const data = topikVocab as {
+  word: string;
+  level: string;
+  meaning: string;
+}[];
+
+const entries = data.filter((e) => e.level === 'I' || e.level === 'II');
+const topikI = entries.filter((e) => e.level === 'I');
+const topikII = entries.filter((e) => e.level === 'II');
+---
+
+<BaseLayout title="TOPIK Flashcards · Wénfáng">
+  <Masthead />
+  <main id="main">
+    <section class="flash">
+      <div class="container">
+        <header class="flash-header">
+          <h1>TOPIK Flashcards</h1>
+          <p class="flash-deck">Tap the card to flip. Use arrows or swipe to move.</p>
+        </header>
+
+        <div class="flash-tabs" id="flash-tabs">
+          <button type="button" class="flash-tab" data-tab="korean">Korean</button>
+          <button type="button" class="flash-tab" data-tab="meaning">Meaning</button>
+        </div>
+
+        <div class="flash-card-wrap">
+          <div class="flash-card-scene">
+            <div role="button" tabindex="0" class="flash-card" id="flash-card" data-revealed="false" aria-label="Tap to flip">
+              <div class="flash-card-face flash-card-front">
+                <div class="flash-card-primary" id="card-primary"></div>
+              </div>
+              <div class="flash-card-face flash-card-back">
+                <div class="flash-card-secondary" id="card-secondary"></div>
+                <div class="flash-card-tertiary" id="card-tertiary"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="flash-controls">
+          <button type="button" id="flash-prev">← Prev</button>
+          <span class="flash-counter" id="card-counter">—</span>
+          <button type="button" id="flash-filter">Filter</button>
+          <button type="button" id="flash-next">Next →</button>
+        </div>
+
+        <div class="flash-filter-panel" id="filter-panel">
+          <div class="filter-book">Test of Proficiency in Korean</div>
+          <div class="filter-head">
+            <span>Levels</span>
+            <div class="filter-actions">
+              <button type="button" id="filter-all">All</button>
+              <button type="button" id="filter-none">Clear</button>
+            </div>
+          </div>
+          <div class="filter-chips" id="filter-chips">
+            <label class="filter-chip">
+              <input type="checkbox" value="I" checked data-level="I" />
+              <span>TOPIK I</span>
+              <span class="filter-chip-count">{topikI.length}</span>
+            </label>
+            <label class="filter-chip">
+              <input type="checkbox" value="II" checked data-level="II" />
+              <span>TOPIK II</span>
+              <span class="filter-chip-count">{topikII.length}</span>
+            </label>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  <Footer />
+</BaseLayout>
+
+<script is:inline define:vars={{ entries }}>
+  // ─── State ───
+  const STORAGE_TAB = 'wenfang_topik_tab';
+  const STORAGE_LEVELS = 'wenfang_topik_levels';
+
+  let activeTab = 'korean';
+  try {
+    const savedTab = localStorage.getItem(STORAGE_TAB);
+    if (savedTab === 'korean' || savedTab === 'meaning') activeTab = savedTab;
+  } catch {
+    /* ignore */
+  }
+
+  const savedLevels = new Set(['I', 'II']);
+  try {
+    const raw = localStorage.getItem(STORAGE_LEVELS);
+    if (raw) {
+      const parsed = JSON.parse(raw);
+      if (Array.isArray(parsed) && parsed.length > 0) {
+        savedLevels.clear();
+        parsed.forEach((l) => savedLevels.add(l));
+      }
+    }
+  } catch {
+    /* ignore */
+  }
+
+  let deck = [];
+  let idx = 0;
+  let pendingRender = false;
+
+  // ─── DOM ───
+  const cardEl = document.getElementById('flash-card');
+  const primaryEl = document.getElementById('card-primary');
+  const secondaryEl = document.getElementById('card-secondary');
+  const tertiaryEl = document.getElementById('card-tertiary');
+  const counterEl = document.getElementById('card-counter');
+  const tabEls = document.querySelectorAll('.flash-tab');
+  const filterPanel = document.getElementById('filter-panel');
+  const filterBtn = document.getElementById('flash-filter');
+  const levelInputs = document.querySelectorAll('input[data-level]');
+
+  // ─── Helpers ───
+  const shuffle = (arr) => {
+    const a = arr.slice();
+    for (let i = a.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [a[i], a[j]] = [a[j], a[i]];
+    }
+    return a;
+  };
+
+  const rebuildDeck = () => {
+    const filtered = entries.filter((e) => savedLevels.has(e.level));
+    deck = shuffle(filtered);
+    idx = 0;
+    render();
+  };
+
+  const render = () => {
+    pendingRender = false;
+    if (deck.length === 0) {
+      primaryEl.textContent = '—';
+      secondaryEl.textContent = '';
+      tertiaryEl.textContent = '';
+      counterEl.textContent = '0 / 0';
+      return;
+    }
+    const c = deck[idx];
+    cardEl.dataset.revealed = 'false';
+
+    if (activeTab === 'korean') {
+      primaryEl.textContent = c.word;
+      primaryEl.className = 'flash-card-primary mode-ko';
+      secondaryEl.textContent = c.meaning || '—';
+      secondaryEl.className = 'flash-card-secondary mode-meaning';
+      tertiaryEl.textContent = c.level === 'I' ? 'TOPIK I' : 'TOPIK II';
+    } else {
+      primaryEl.textContent = c.meaning || '—';
+      primaryEl.className = 'flash-card-primary mode-meaning';
+      secondaryEl.textContent = c.word;
+      secondaryEl.className = 'flash-card-secondary mode-ko';
+      tertiaryEl.textContent = '';
+    }
+    counterEl.textContent = `${idx + 1} / ${deck.length}`;
+  };
+
+  const next = () => {
+    if (deck.length === 0 || pendingRender) return;
+    idx = idx < deck.length - 1 ? idx + 1 : 0;
+    if (cardEl.dataset.revealed === 'true') {
+      pendingRender = true;
+      cardEl.dataset.revealed = 'false';
+    } else {
+      render();
+    }
+  };
+  const prev = () => {
+    if (deck.length === 0 || pendingRender) return;
+    idx = idx > 0 ? idx - 1 : deck.length - 1;
+    if (cardEl.dataset.revealed === 'true') {
+      pendingRender = true;
+      cardEl.dataset.revealed = 'false';
+    } else {
+      render();
+    }
+  };
+  const reveal = () => {
+    if (pendingRender) return;
+    cardEl.dataset.revealed = 'true';
+  };
+
+  // ─── Tabs ───
+  const updateTabs = () => {
+    tabEls.forEach((btn) => {
+      btn.classList.toggle('is-active', btn.dataset.tab === activeTab);
+    });
+  };
+
+  tabEls.forEach((btn) => {
+    btn.addEventListener('click', () => {
+      activeTab = btn.dataset.tab;
+      updateTabs();
+      try {
+        localStorage.setItem(STORAGE_TAB, activeTab);
+      } catch {
+        /* ignore */
+      }
+      render();
+    });
+  });
+  updateTabs();
+
+  // ─── Card interaction ───
+  cardEl.addEventListener('transitionend', (e) => {
+    if (e.target !== cardEl || e.propertyName !== 'transform') return;
+    if (pendingRender) render();
+  });
+
+  cardEl.addEventListener('click', () => {
+    if (cardEl.dataset.revealed === 'true') next();
+    else reveal();
+  });
+
+  cardEl.addEventListener('keydown', (e) => {
+    if (e.key === 'Enter' || e.key === ' ') {
+      e.preventDefault();
+      if (cardEl.dataset.revealed === 'true') next();
+      else reveal();
+    }
+  });
+
+  // ─── Filter ───
+  const syncFilterInputs = () => {
+    levelInputs.forEach((input) => {
+      input.checked = savedLevels.has(input.value);
+    });
+  };
+  syncFilterInputs();
+
+  const saveLevels = () => {
+    try {
+      localStorage.setItem(STORAGE_LEVELS, JSON.stringify(Array.from(savedLevels)));
+    } catch {
+      /* ignore */
+    }
+    rebuildDeck();
+  };
+
+  levelInputs.forEach((input) => {
+    input.addEventListener('change', () => {
+      if (input.checked) savedLevels.add(input.value);
+      else savedLevels.delete(input.value);
+      saveLevels();
+    });
+  });
+
+  filterBtn.addEventListener('click', () => {
+    const open = filterPanel.dataset.open !== 'true';
+    filterPanel.dataset.open = String(open);
+    filterBtn.classList.toggle('is-active', open);
+  });
+
+  document.getElementById('filter-all').addEventListener('click', () => {
+    savedLevels.add('I');
+    savedLevels.add('II');
+    syncFilterInputs();
+    saveLevels();
+  });
+  document.getElementById('filter-none').addEventListener('click', () => {
+    savedLevels.clear();
+    syncFilterInputs();
+    saveLevels();
+  });
+
+  // ─── Nav ───
+  document.getElementById('flash-next').addEventListener('click', next);
+  document.getElementById('flash-prev').addEventListener('click', prev);
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'ArrowRight') next();
+    if (e.key === 'ArrowLeft') prev();
+    if (e.key === ' ' || e.key === 'Enter') {
+      e.preventDefault();
+      if (cardEl.dataset.revealed === 'true') next();
+      else reveal();
+    }
+  });
+
+  let touchStartX = 0;
+  cardEl.addEventListener('touchstart', (e) => { touchStartX = e.changedTouches[0].screenX; }, { passive: true });
+  cardEl.addEventListener('touchend', (e) => {
+    const dx = e.changedTouches[0].screenX - touchStartX;
+    if (dx < -40) next();
+    if (dx > 40) prev();
+  }, { passive: true });
+
+  // ─── Init ───
+  rebuildDeck();
+</script>
+
+<style>
+  .flash {
+    padding: 48px 0 80px;
+  }
+  .flash-header {
+    text-align: center;
+    margin-bottom: 24px;
+  }
+  .flash-header h1 {
+    font-family: var(--font-display);
+    font-size: clamp(36px, 4vw, 56px);
+    font-weight: 400;
+    color: var(--color-ink);
+    margin-bottom: 6px;
+  }
+  .flash-deck {
+    font-size: 15px;
+    color: var(--color-muted);
+  }
+
+  /* ─── Tabs ─── */
+  .flash-tabs {
+    display: flex;
+    justify-content: center;
+    gap: 0;
+    margin-bottom: 32px;
+  }
+  .flash-tab {
+    background: var(--color-bg);
+    border: 1px solid var(--color-border);
+    padding: 10px 20px;
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--color-muted);
+    cursor: pointer;
+    transition:
+      color 0.15s ease,
+      background 0.15s ease,
+      border-color 0.15s ease;
+  }
+  .flash-tab + .flash-tab {
+    border-left: 0;
+  }
+  .flash-tab:hover {
+    color: var(--color-ink);
+  }
+  .flash-tab.is-active {
+    background: var(--color-ink);
+    color: var(--color-bg);
+    border-color: var(--color-ink);
+  }
+
+  /* ─── Card with 3D flip ─── */
+  .flash-card-wrap {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 28px;
+  }
+  .flash-card-scene {
+    width: 100%;
+    max-width: 420px;
+    aspect-ratio: 1;
+    perspective: 1000px;
+    -webkit-perspective: 1000px;
+  }
+  .flash-card {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transform-style: preserve-3d;
+    -webkit-transform-style: preserve-3d;
+    transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    background: none;
+    border: 0;
+    padding: 0;
+    cursor: pointer;
+    font: inherit;
+    color: inherit;
+  }
+  .flash-card[data-revealed='true'] {
+    transform: rotateY(180deg);
+  }
+
+  .flash-card-face {
+    position: absolute;
+    inset: 0;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    background: var(--color-paper);
+    border: 1px solid var(--color-border);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 32px;
+  }
+  .flash-card-back {
+    transform: rotateY(180deg);
+    gap: 20px;
+  }
+
+  .flash-card-primary {
+    line-height: 1.2;
+    text-align: center;
+    transition: opacity 0.2s ease;
+  }
+  .flash-card-primary.mode-ko {
+    font-family: 'Pretendard', 'Apple SD Gothic Neo', 'Noto Sans KR', 'Malgun Gothic', system-ui, sans-serif;
+    font-size: clamp(48px, 8vw, 80px);
+    font-weight: 500;
+    color: var(--color-ink);
+  }
+  .flash-card-primary.mode-meaning {
+    font-family: var(--font-body);
+    font-size: clamp(22px, 3vw, 32px);
+    color: var(--color-ink);
+    padding: 0 16px;
+  }
+
+  .flash-card-secondary.mode-ko {
+    font-family: 'Pretendard', 'Apple SD Gothic Neo', 'Noto Sans KR', 'Malgun Gothic', system-ui, sans-serif;
+    font-size: clamp(36px, 6vw, 60px);
+    font-weight: 500;
+    color: var(--color-ink);
+    text-align: center;
+  }
+  .flash-card-secondary.mode-meaning {
+    font-family: var(--font-body);
+    font-size: clamp(18px, 2.5vw, 26px);
+    color: var(--color-muted);
+    text-align: center;
+  }
+  .flash-card-tertiary {
+    font-family: var(--font-mono);
+    font-size: clamp(12px, 1.5vw, 14px);
+    color: var(--color-muted);
+    text-align: center;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+
+  /* ─── Controls ─── */
+  .flash-controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+  .flash-controls button {
+    background: var(--color-bg);
+    border: 1px solid var(--color-border);
+    padding: 10px 20px;
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--color-fg);
+    cursor: pointer;
+    transition: border-color 0.15s ease;
+  }
+  .flash-controls button:hover {
+    border-color: var(--color-ink);
+  }
+  .flash-controls button.is-active {
+    background: var(--color-ink);
+    color: var(--color-bg);
+    border-color: var(--color-ink);
+  }
+  .flash-counter {
+    font-family: var(--font-mono);
+    font-size: 12px;
+    color: var(--color-muted);
+    min-width: 70px;
+    text-align: center;
+  }
+
+  /* ─── Filter panel ─── */
+  .flash-filter-panel {
+    max-width: 520px;
+    margin: 20px auto 0;
+    border: 1px solid var(--color-border);
+    background: var(--color-paper);
+    padding: 20px;
+    display: none;
+  }
+  .flash-filter-panel[data-open='true'] {
+    display: block;
+  }
+  .filter-book {
+    font-family: var(--font-display);
+    font-size: 16px;
+    font-style: italic;
+    color: var(--color-ink);
+    margin-bottom: 12px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid var(--color-border);
+  }
+  .filter-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--color-fg);
+  }
+  .filter-actions {
+    display: flex;
+    gap: 12px;
+  }
+  .filter-actions button {
+    background: none;
+    border: 0;
+    padding: 0;
+    font: inherit;
+    color: var(--color-muted);
+    cursor: pointer;
+    letter-spacing: inherit;
+    text-transform: inherit;
+    transition: color 0.15s ease;
+  }
+  .filter-actions button:hover {
+    color: var(--color-accent);
+  }
+  .filter-chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+  .filter-chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--color-bg);
+    border: 1px solid var(--color-border);
+    padding: 8px 14px;
+    cursor: pointer;
+    font-family: var(--font-mono);
+    font-size: 11px;
+    color: var(--color-fg);
+    transition: border-color 0.15s ease;
+  }
+  .filter-chip:hover {
+    border-color: var(--color-ink);
+  }
+  .filter-chip input {
+    appearance: none;
+    width: 14px;
+    height: 14px;
+    border: 1px solid var(--color-border);
+    background: var(--color-bg);
+    margin: 0;
+    cursor: pointer;
+    position: relative;
+    transition: border-color 0.15s ease;
+  }
+  .filter-chip input:checked {
+    border-color: var(--color-ink);
+    background: var(--color-ink);
+  }
+  .filter-chip input:checked::after {
+    content: '';
+    position: absolute;
+    left: 4px;
+    top: 1px;
+    width: 4px;
+    height: 8px;
+    border: solid var(--color-bg);
+    border-width: 0 1.5px 1.5px 0;
+    transform: rotate(45deg);
+  }
+  .filter-chip-count {
+    color: var(--color-muted);
+    font-size: 10px;
+  }
+
+  @media (max-width: 560px) {
+    .flash {
+      padding: 32px 0 56px;
+    }
+    .flash-card-face {
+      padding: 24px;
+    }
+    .flash-controls {
+      gap: 12px;
+    }
+    .flash-controls button {
+      padding: 10px 14px;
+    }
+    .flash-filter-panel {
+      margin-left: 0;
+      margin-right: 0;
+    }
+  }
+</style>
